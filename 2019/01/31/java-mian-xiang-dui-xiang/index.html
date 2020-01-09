@@ -1,0 +1,1457 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java面向对象, KALIFUN">
+    <meta name="description" content="面向对象方法重载
+MethodOverloading.javapackage basic_grammar;
+
+public class MethodOverloading {    void receive(int i){        S">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java面向对象 | KALIFUN</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">KALIFUN</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">KALIFUN</div>
+        <div class="logo-desc">
+            
+            既然已经决定做一件事，那么除了当初决定做这件事的我之外，没人可以叫我傻瓜。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+<li class="m-nav-item">
+			
+				<a href="/" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-home"></i>
+					
+					首页
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/tags" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-tags"></i>
+					
+					标签
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/categories" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-bookmark"></i>
+					
+					分类
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/archives" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-archive"></i>
+					
+					归档
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/about" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-user-circle"></i>
+					
+					关于
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/friends" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-address-book"></i>
+					
+					友情链接
+				</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/kalifun" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/kalifun" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java面向对象
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/springboot/">
+                                <span class="chip bg-color">springboot</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-01-31
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        1.6k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        7 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h3><blockquote>
+<h4 id="MethodOverloading-java"><a href="#MethodOverloading-java" class="headerlink" title="MethodOverloading.java"></a>MethodOverloading.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class MethodOverloading {<br>    void receive(int i){<br>        System.out.println(“接收到一个int参数”);<br>        System.out.println(“i = “+i);<br>    }<br>    void receive(int x,int y){<br>        System.out.println(“接收到两个int参数。”);<br>        System.out.printf(“x = %d,y = %d \n”,x,y);<br>//        System.out.println();<br>    }</p>
+<pre><code>int receive(double x,double y){
+    System.out.println(&quot;接收到两个double参数。&quot;);
+    System.out.printf(&quot;x = %f , y = %f \r&quot;,x,y);
+    return  0;
+}</code></pre><p>}</p>
+<pre><code>&gt; ####  mo_class.java
+```java
+
+package basic_grammar;
+
+public class mo_class {
+    public static void main(String[] args){
+        MethodOverloading mo = new MethodOverloading();
+
+        mo.receive(1);
+        mo.receive(2,3);
+        mo.receive(2.0,3.3);
+    }
+}</code></pre><pre><code>接收到一个int参数
+i = 1
+接收到两个int参数。
+x = 2,y = 3 
+接收到两个double参数。
+x = 2.000000 , y = 3.300000</code></pre><h2 id="封装性与访问控制"><a href="#封装性与访问控制" class="headerlink" title="封装性与访问控制"></a>封装性与访问控制</h2><blockquote>
+<h4 id="Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有"><a href="#Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有" class="headerlink" title="Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有"></a>Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有</h4><table>
+<thead>
+<tr>
+<th align="center">控制等级</th>
+<th align="center">同一个类</th>
+<th align="center">同一个包</th>
+<th align="center">不同包的子类</th>
+<th align="center">不同包非子类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">私有</td>
+<td align="center">yes</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">默认</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">保护</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">公有</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+<td align="center">yes</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h3 id="私有级别"><a href="#私有级别" class="headerlink" title="私有级别"></a>私有级别</h3><blockquote>
+<h4 id="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"><a href="#私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。" class="headerlink" title="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"></a>私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。</h4><h4 id="PrivateClass-java"><a href="#PrivateClass-java" class="headerlink" title="PrivateClass.java"></a>PrivateClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class PrivateClass {<br>    private int x ;<br>    public PrivateClass(){<br>        x = 5 ;<br>    }<br>    private void printX() {<br>        System.out.println(“Values of x is “+x);<br>    }<br>}</p>
+<pre><code>&gt; #### PC_class
+```java
+package basic_grammar;
+
+public class PC_class {
+    public static void main(String[] args){
+        PrivateClass p;
+        p = new PrivateClass();
+        p.printX();
+    }
+}</code></pre><pre><code>Error:(7, 10) java: printX() 在 basic_grammar.PrivateClass 中是 private 访问控制</code></pre><h4 id="p-printX-是私有的所以无法调用。"><a href="#p-printX-是私有的所以无法调用。" class="headerlink" title="p.printX();是私有的所以无法调用。"></a>p.printX();是私有的所以无法调用。</h4><h3 id="默认级别"><a href="#默认级别" class="headerlink" title="默认级别"></a>默认级别</h3><blockquote>
+<h4 id="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"><a href="#默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。" class="headerlink" title="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"></a>默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。</h4><h4 id="DefaultClass-java"><a href="#DefaultClass-java" class="headerlink" title="DefaultClass.java"></a>DefaultClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class DefaultClass {<br>    int x;<br>    public DefaultClass(){<br>        x = 100;<br>    }<br>    void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
+<pre><code>&gt; #### DC_class.java
+```java
+package basic_grammar;
+
+public class DC_class {
+    public static void main(String[] args){
+        DefaultClass p;
+        p = new DefaultClass();
+        p.printX();
+    }
+}</code></pre><pre><code>x = 100</code></pre><h4 id="若在不同包体去编译执行，将会报错。"><a href="#若在不同包体去编译执行，将会报错。" class="headerlink" title="若在不同包体去编译执行，将会报错。"></a>若在不同包体去编译执行，将会报错。</h4><h3 id="公有级别"><a href="#公有级别" class="headerlink" title="公有级别"></a>公有级别</h3><blockquote>
+<h4 id="公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。"><a href="#公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。" class="headerlink" title="公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。"></a>公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。</h4><h4 id="PublicClass-java"><a href="#PublicClass-java" class="headerlink" title="PublicClass.java"></a>PublicClass.java</h4><pre class=" language-java"><code class="language-java">  <span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class PublicClass {<br>    public int x ;<br>    public PublicClass(){<br>        x = 100;<br>    }<br>    public void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
+<pre><code>  &gt; ####  PublicClass_class.java
+  ```java
+  package basic_grammar.basic_grammar;
+
+import basic_grammar.PublicClass;
+
+public class PublicClass_class {
+    public static void main(String[] args){
+        PublicClass p;
+        p = new PublicClass();
+        p.printX();
+    }
+}</code></pre><pre><code>  x = 100</code></pre><h3 id="保护级别"><a href="#保护级别" class="headerlink" title="保护级别"></a>保护级别</h3><blockquote>
+<h4 id="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"><a href="#保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。" class="headerlink" title="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"></a>保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。</h4><h4 id="ProtectedClass-java"><a href="#ProtectedClass-java" class="headerlink" title="ProtectedClass.java"></a>ProtectedClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class ProtectedClass {<br>    protected int x;<br>    public ProtectedClass(){<br>        x = 100;<br>    }<br>    protected void printX(){<br>        System.out.println(“value of is “+x);<br>    }<br>}</p>
+<pre><code>&gt; ####  ProtectedClass_class.java
+```java
+package basic_grammar;
+
+public class ProtectedClass_class {
+    public static void main(String[] args){
+        ProtectedClass p;
+        p = new ProtectedClass();
+        p.printX();
+    }
+}</code></pre><h4 id="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"><a href="#同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。" class="headerlink" title="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"></a>同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">.</span>basic_grammar<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> basic_grammar<span class="token punctuation">.</span>ProtectedClass<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProtectedClass_class</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SubClass</span> <span class="token keyword">extends</span> <span class="token class-name">ProtectedClass</span><span class="token punctuation">{</span>
+        <span class="token keyword">void</span> <span class="token function">diskplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">printX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code>value of is 100</code></pre><h4 id="不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。"><a href="#不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。" class="headerlink" title="不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。"></a>不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。</h4><blockquote>
+<h4 id="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。"><a href="#访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。" class="headerlink" title="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。"></a>访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。</h4></blockquote>
+<h3 id="静态变量和静态方法"><a href="#静态变量和静态方法" class="headerlink" title="静态变量和静态方法"></a>静态变量和静态方法</h3><blockquote>
+<h4 id="Account-java"><a href="#Account-java" class="headerlink" title="Account.java"></a>Account.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class Account {<br>    double mount = 0.0;<br>    String owner ;<br>    static double interestRate = 0.0668;<br>    public static double interestBy(double amt){<br>        return interestRate * amt;<br>    }<br>    public String messageWith(double amt){<br>        double interest = Account.interestBy(amt);<br>        StringBuilder sb = new StringBuilder();<br>        sb.append(owner).append(“的利息是”).append(interest);<br>        return sb.toString();<br>    }<br>}</p>
+<pre><code>&gt; #### Account_class
+```java
+package basic_grammar;
+
+public class Account_class {
+    public static void main(String[] args){
+        System.out.println(Account.interestRate);
+        System.out.println(Account.interestBy(1000));
+        Account myaccount = new Account();
+        myaccount.mount =  1000000;
+        myaccount.owner =  &quot;Tony&quot;;
+        System.out.println(myaccount.messageWith(1000));
+        System.out.println(myaccount.interestRate);
+    }
+}</code></pre><pre><code>0.0668
+66.8
+Tony的利息是66.8
+0.0668</code></pre><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
+<h4 id="实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"><a href="#实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。" class="headerlink" title="实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"></a>实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。</h4></blockquote>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><blockquote>
+<h4 id="创建对象包括两个步骤：声明和实例化。"><a href="#创建对象包括两个步骤：声明和实例化。" class="headerlink" title="创建对象包括两个步骤：声明和实例化。"></a>创建对象包括两个步骤：声明和实例化。</h4></blockquote>
+<h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><blockquote>
+<h5 id="声明对象与声明普通变量没有什么区别。"><a href="#声明对象与声明普通变量没有什么区别。" class="headerlink" title="声明对象与声明普通变量没有什么区别。"></a>声明对象与声明普通变量没有什么区别。</h5><pre><code>type objectName;</code></pre></blockquote>
+<h5 id="type是引用类型，即类，接口和数组。"><a href="#type是引用类型，即类，接口和数组。" class="headerlink" title="type是引用类型，即类，接口和数组。"></a>type是引用类型，即类，接口和数组。</h5><pre><code>String  name;</code></pre><h5 id="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"><a href="#该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。" class="headerlink" title="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"></a>该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。</h5><h4 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h4><blockquote>
+<h5 id="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"><a href="#实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。" class="headerlink" title="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"></a>实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。</h5><pre class=" language-java"><code class="language-java">String name <span class="token punctuation">;</span>
+name <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</blockquote>
+<h3 id="空对象"><a href="#空对象" class="headerlink" title="空对象"></a>空对象</h3><blockquote>
+<h4 id="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"><a href="#一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。" class="headerlink" title="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"></a>一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。</h4><pre><code>String name = null;
+name = &quot;Hello World&quot;;</code></pre><h4 id="引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException"><a href="#引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException" class="headerlink" title="引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException"></a>引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException</h4></blockquote>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><blockquote>
+<h4 id="构造方法名必须与类名相同。"><a href="#构造方法名必须与类名相同。" class="headerlink" title="构造方法名必须与类名相同。"></a>构造方法名必须与类名相同。</h4><h4 id="构造方法没有任何返回值。"><a href="#构造方法没有任何返回值。" class="headerlink" title="构造方法没有任何返回值。"></a>构造方法没有任何返回值。</h4><h4 id="构造方法只能与new结合使用。"><a href="#构造方法只能与new结合使用。" class="headerlink" title="构造方法只能与new结合使用。"></a>构造方法只能与new结合使用。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+</blockquote>
+<p>public class Rectangle {<br>    int width;<br>    int height;<br>    int area;<br>    public Rectangle(int w,int h){<br>        width = w ;<br>        height = h ;<br>        area = getArea(w,h);<br>    }<br>}</p>
+<pre><code>### 默认构造方法
+&gt; #### 默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。
+### 构造方法重载
+&gt; #### 在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。
+```java
+package basic_grammar;
+
+import java.util.Date;
+
+public class Person {
+    private String name ;
+    private int age ;
+    private Date birthday ;
+    public Person(String n,int a,Date b){
+        name = n;
+        age = a ;
+        birthday = b ;
+    }
+    public  Person(String n ,int a){
+        name = n ;
+        age = a ;
+    }
+    public Person(String n, Date b){
+        name = n ;
+        age = 30 ;
+        birthday = b ;
+    }
+    public  Person(String n){
+        name = n ;
+        age = 30;
+    }
+    public String  getinfo(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(&quot;名字：&quot;).append(name).append(&quot;\n&quot;);
+        sb.append(&quot;年龄：&quot;).append(age).append(&quot;\n&quot;);
+        sb.append(&quot;出生日：&quot;).append(birthday).append(&quot;\n&quot;);
+        return  sb.toString();
+    }
+}</code></pre><h3 id="构造方法封装"><a href="#构造方法封装" class="headerlink" title="构造方法封装"></a>构造方法封装</h3><blockquote>
+<h4 id="构造方法可以封装，访问级别和普通方法一样。"><a href="#构造方法可以封装，访问级别和普通方法一样。" class="headerlink" title="构造方法可以封装，访问级别和普通方法一样。"></a>构造方法可以封装，访问级别和普通方法一样。</h4></blockquote>
+<h3 id="this关键词"><a href="#this关键词" class="headerlink" title="this关键词"></a>this关键词</h3><blockquote>
+<h4 id="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"><a href="#this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。" class="headerlink" title="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"></a>this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。</h4><h4 id="调用实例变量。"><a href="#调用实例变量。" class="headerlink" title="[ ]调用实例变量。"></a>[ ]调用实例变量。</h4><h4 id="调用实例方法。"><a href="#调用实例方法。" class="headerlink" title="[ ]调用实例方法。"></a>[ ]调用实例方法。</h4><h4 id="调用其他构造方法。"><a href="#调用其他构造方法。" class="headerlink" title="[ ]调用其他构造方法。"></a>[ ]调用其他构造方法。</h4></blockquote>
+
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <!-- <p class="reprint-tip">
+            <i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p> -->
+        
+            <!-- <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">
+                    <img alt="知识共享许可协议"
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/>
+                </a>
+            </div> -->
+            <br/>
+            <a  href="/2019/01/31/java-mian-xiang-dui-xiang/">
+                《Java面向对象》
+            </a> 由
+            <a href="https://kalifun.github.io">
+                kalifun
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="https://unpkg.com/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'iraN3jfhmm5j0LEUAiIKqKCG-gzGzoHsz',
+        appKey: 'z0VM1V16mtmP6AMrCtxOK4wy',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/11/python-mian-shi-ti-ji-chu-pian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python面试题-基础篇">
+                        
+                        <span class="card-title">Python面试题-基础篇</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
+def get_lines():
+    with open('file.txt','rb') as f:
+        return 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/01/30/java-shu-zu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java数组">
+                        
+                        <span class="card-title">Java数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数组一维数组数组初始化静态数组初始化
+ 静态数组初始化是将元素放入大括号中。
+int intarray;
+intarray = {1,2,3};
+
+动态数组初始化
+  动态数组初始化是由new运算符分配长度的内存空间。
+int array;
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: KALIFUN<br />'
+            + '作者: kalifun<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://kalifun.github.io" target="_blank">kalifun</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">38.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "1";
+                    var startDate = "08";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/kalifun" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:kalifun@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+
+</body>
+
+</html>
