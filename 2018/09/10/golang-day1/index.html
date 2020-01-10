@@ -5,9 +5,16 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="GoLang_Day1, kalifun;blog.kalifun">
-    <meta name="description" content="GoLang创建hello.go1234567package mainimport &#34;fmt&#34;func main()  &amp;#123;	fmt.Println(&#34;Hello&#34;)&amp;#125;
+    <meta name="description" content="GoLang创建hello.gopackage main
 
-执行hello.go12go run hello.">
+import &#34;fmt&#34;
+
+func main()  {
+    fmt.Println(&#34;Hello&#34;)
+}
+执行hello.gogo run hello.go
+Hello
+编译">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +38,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -439,7 +446,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        952
+                        902
                     </div>
                     
 
@@ -462,56 +469,219 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="GoLang"><a href="#GoLang" class="headerlink" title="GoLang"></a>GoLang</h1><h2 id="创建hello-go"><a href="#创建hello-go" class="headerlink" title="创建hello.go"></a>创建hello.go</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Hello"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+                <h1 id="GoLang"><a href="#GoLang" class="headerlink" title="GoLang"></a>GoLang</h1><h2 id="创建hello-go"><a href="#创建hello-go" class="headerlink" title="创建hello.go"></a>创建hello.go</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<h2 id="执行hello-go"><a href="#执行hello-go" class="headerlink" title="执行hello.go"></a>执行hello.go</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br><span class="line">Hello</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> build hexxo.<span class="keyword">go</span></span><br><span class="line">会生成一个hello.exe</span><br><span class="line">执行hello.exe</span><br><span class="line">Hello （结果）</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="代码理解"><a href="#代码理解" class="headerlink" title="代码理解"></a>代码理解</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">如果是为了将代码编译成一个可执行程序，那么package必须是main</span><br><span class="line">如果是为了将代码编译成库，那么package则没有限制</span><br></pre></td></tr></table></figure></div>
-
-<ul>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="执行hello-go"><a href="#执行hello-go" class="headerlink" title="执行hello.go"></a>执行hello.go</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> run hello<span class="token punctuation">.</span><span class="token keyword">go</span>
+Hello</code></pre>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> build hexxo<span class="token punctuation">.</span><span class="token keyword">go</span>
+会生成一个hello<span class="token punctuation">.</span>exe
+执行hello<span class="token punctuation">.</span>exe
+Hello （结果）</code></pre>
+<h2 id="代码理解"><a href="#代码理解" class="headerlink" title="代码理解"></a>代码理解</h2><pre><code>如果是为了将代码编译成一个可执行程序，那么package必须是main
+如果是为了将代码编译成库，那么package则没有限制</code></pre><ul>
 <li>main()为程序的主函数</li>
 <li>fmt 是go的一个系统库 （路径为C:\Go\src\fmt）</li>
 <li>fmt.Println()打印输出</li>
 </ul>
 <h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><p>格式：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var 变量名 变量类型</span><br><span class="line">go语言中定义的函数必须被用到，否则会报错</span><br><span class="line">同时定义变量和赋值可以通过： 变量名：=值</span><br></pre></td></tr></table></figure></div>
+<pre><code>var 变量名 变量类型
+go语言中定义的函数必须被用到，否则会报错
+同时定义变量和赋值可以通过： 变量名：=值</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//import "fmt"</span></span><br><span class="line"><span class="comment">//var c,python,java bool</span></span><br><span class="line"><span class="comment">//func main()  &#123;</span></span><br><span class="line"><span class="comment">//	var i int</span></span><br><span class="line"><span class="comment">//	fmt.Println(i,c,python,java)</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i,j  = <span class="number">1</span>,<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> c,python,java = <span class="literal">true</span>,<span class="literal">false</span>,<span class="string">"no!"</span></span><br><span class="line">	fmt.Println(i,j,c,python,java)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x <span class="keyword">int</span>,y <span class="keyword">int</span>)</span>  <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(add(<span class="number">100</span>,<span class="number">200</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token comment" spellcheck="true">//import "fmt"</span>
+<span class="token comment" spellcheck="true">//var c,python,java bool</span>
+<span class="token comment" spellcheck="true">//func main()  {</span>
+<span class="token comment" spellcheck="true">//    var i int</span>
+<span class="token comment" spellcheck="true">//    fmt.Println(i,c,python,java)</span>
+<span class="token comment" spellcheck="true">//}</span>
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">当两个或者多个连续的函数命名是同一个类型</span><br><span class="line">则除了最后一个类型外，其他省略。</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x,y <span class="keyword">int</span>)</span>  <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">var</span> i<span class="token punctuation">,</span>j  <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>
 
-<h2 id="多值返回"><a href="#多值返回" class="headerlink" title="多值返回"></a>多值返回</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">swap</span><span class="params">(x,y <span class="keyword">string</span>)</span> <span class="params">(<span class="keyword">string</span>,<span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> x,y</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	a,b := swap(<span class="string">"hello"</span>,<span class="string">"word"</span>)</span><br><span class="line">	fmt.Println(a,b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> c<span class="token punctuation">,</span>python<span class="token punctuation">,</span>java <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token string">"no!"</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>c<span class="token punctuation">,</span>python<span class="token punctuation">,</span>java<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<h2 id="命名返回值"><a href="#命名返回值" class="headerlink" title="命名返回值"></a>命名返回值</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">split</span><span class="params">(sum <span class="keyword">int</span>)</span> <span class="params">(x,y <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	x = sum*<span class="number">4</span></span><br><span class="line">	y = sum<span class="number">-100</span></span><br><span class="line">	<span class="keyword">return</span>  x,y</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(split(<span class="number">1000</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">var</span> x,y <span class="keyword">int</span>  =  <span class="number">3</span>,<span class="number">4</span></span><br><span class="line">	<span class="keyword">var</span> f <span class="keyword">float64</span>  =  math.Sqrt(<span class="keyword">float64</span>(x*x+y*y))       <span class="comment">//math.Sqrt 计算平方根</span></span><br><span class="line">	<span class="keyword">var</span> z <span class="keyword">int</span> = <span class="keyword">int</span>(f)</span><br><span class="line">  z := <span class="keyword">int</span>(f)</span><br><span class="line">	fmt.Println(x,y,z)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span>x <span class="token builtin">int</span><span class="token punctuation">,</span>y <span class="token builtin">int</span><span class="token punctuation">)</span>  <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-go"><code class="language-go">当两个或者多个连续的函数命名是同一个类型
+则除了最后一个类型外，其他省略。
+<span class="token keyword">func</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y <span class="token builtin">int</span><span class="token punctuation">)</span>  <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y
+<span class="token punctuation">}</span></code></pre>
+<h2 id="多值返回"><a href="#多值返回" class="headerlink" title="多值返回"></a>多值返回</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">常量的定义与变量相似，只不过使用const关键词。</span><br><span class="line">常量可以是字符，字符串，数字类型等</span><br><span class="line">常量不能使用 ;= 语法定义。</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Go 只有一种循环结构-“for”循环</span><br><span class="line">for 也是Go 的“while”</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">swap</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">,</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">,</span>y
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    a<span class="token punctuation">,</span>b <span class="token operator">:=</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span><span class="token string">"word"</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="命名返回值"><a href="#命名返回值" class="headerlink" title="命名返回值"></a>命名返回值</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	sum := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span> ;i &lt; <span class="number">10</span> ; i++ &#123;</span><br><span class="line">		sum += i</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqrt</span><span class="params">(x <span class="keyword">float64</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> sqrt(-x)+ <span class="string">"i"</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>  fmt.Sprint(math.Sqrt(x))</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(sqrt(<span class="number">2</span>),sqrt(<span class="number">-4</span>))</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//func pow(x,n,lim float64) float64  &#123;</span></span><br><span class="line"><span class="comment">//	if v := math.Pow(x,n); v &lt; lim&#123;</span></span><br><span class="line"><span class="comment">//		return v</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="comment">//	return lim</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="comment">//func main()  &#123;</span></span><br><span class="line"><span class="comment">//	fmt.Println(</span></span><br><span class="line"><span class="comment">//		pow(3,2,10),</span></span><br><span class="line"><span class="comment">//		pow(3,3,20),</span></span><br><span class="line"><span class="comment">//		)</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line">值为：<span class="number">1.4142135623730951</span> <span class="number">2i</span></span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">split</span><span class="token punctuation">(</span>sum <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span>y <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x <span class="token operator">=</span> sum<span class="token operator">*</span><span class="token number">4</span>
+    y <span class="token operator">=</span> sum<span class="token number">-100</span>
+    <span class="token keyword">return</span>  x<span class="token punctuation">,</span>y
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<h2 id="if-else"><a href="#if-else" class="headerlink" title="if else"></a>if else</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pow</span><span class="params">(x,n,lim <span class="keyword">float64</span>)</span> <span class="title">float64</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> v := math.Pow(x,n); v &lt; lim&#123;</span><br><span class="line">		<span class="keyword">return</span> v</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		fmt.Printf(<span class="string">"%g&gt;=%g\n"</span>,v,lim)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> lim</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(</span><br><span class="line">		pow(<span class="number">3</span>,<span class="number">2</span>,<span class="number">10</span>),</span><br><span class="line">		pow(<span class="number">3</span>,<span class="number">3</span>,<span class="number">20</span>),</span><br><span class="line">		)</span><br><span class="line">&#125;</span><br><span class="line">值为：<span class="number">27</span>&gt;=<span class="number">20</span></span><br><span class="line">           <span class="number">9</span> <span class="number">20</span></span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"math"</span>
+<span class="token punctuation">)</span>
 
-<h2 id="循环和函数"><a href="#循环和函数" class="headerlink" title="循环和函数"></a>循环和函数</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在这个例子中，牛顿法是通过选择一个初始点 z 然后重复这一过程求 Sqrt(x) 的近似值：</span><br><span class="line">z = z - (z*z-x)/(2*z)</span><br><span class="line">为了做到这个，只需要重复计算 10 次，并且观察不同的值（1，2，3，……）是如何逐步逼近结果的。</span><br><span class="line">然后，修改循环条件，使得当值停止改变（或改变非常小）的时候退出循环。观察迭代次数是否变化。</span><br><span class="line">结果与 [[http://golang.org/pkg/math/#Sqrt][math.Sqrt] 接近吗？</span><br><span class="line">提示：定义并初始化一个浮点值，向其提供一个浮点语法或使用转换：</span><br><span class="line"></span><br><span class="line">z := float64(1)</span><br><span class="line">z := 1.0</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> x<span class="token punctuation">,</span>y <span class="token builtin">int</span>  <span class="token operator">=</span>  <span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span>
+    <span class="token keyword">var</span> f <span class="token builtin">float64</span>  <span class="token operator">=</span>  math<span class="token punctuation">.</span><span class="token function">Sqrt</span><span class="token punctuation">(</span><span class="token function">float64</span><span class="token punctuation">(</span>x<span class="token operator">*</span>x<span class="token operator">+</span>y<span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//math.Sqrt 计算平方根</span>
+    <span class="token keyword">var</span> z <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+  z <span class="token operator">:=</span> <span class="token function">int</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><pre><code>常量的定义与变量相似，只不过使用const关键词。
+常量可以是字符，字符串，数字类型等
+常量不能使用 ;= 语法定义。</code></pre><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><pre><code>Go 只有一种循环结构-“for”循环
+for 也是Go 的“while”</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqrt</span><span class="params">(x <span class="keyword">float64</span>)</span> <span class="title">float64</span></span> &#123;</span><br><span class="line">	<span class="keyword">const</span> a  =  <span class="number">0.000001</span></span><br><span class="line">	z := <span class="keyword">float64</span>(<span class="number">1</span>)</span><br><span class="line">	k := <span class="keyword">float64</span>(<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">for</span> ;; z = z - (z*z-x)/(<span class="number">2</span>*z) &#123;</span><br><span class="line">		<span class="keyword">if</span> z-k &lt;= a &amp;&amp; z-k &gt;= -a &#123;</span><br><span class="line">			<span class="keyword">return</span> z</span><br><span class="line">		&#125;</span><br><span class="line">		k=z</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(sqrt(<span class="number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line">值为：<span class="number">1.4142135623730951</span></span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
 
-<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch 的条件从上到下的执行，当匹配成功的时候停止。</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    sum <span class="token operator">:=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span> <span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token number">10</span> <span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> i
+    <span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"runtime"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Print(<span class="string">"go runs on "</span>)</span><br><span class="line">	<span class="keyword">switch</span> os := runtime.GOOS; os &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="string">"darwin"</span>:</span><br><span class="line">		fmt.Println(<span class="string">"os x"</span>)</span><br><span class="line">	<span class="keyword">case</span> <span class="string">"linux"</span>:</span><br><span class="line">		fmt.Println(<span class="string">"linux"</span>)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Printf(<span class="string">"%s"</span>,os)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"math"</span>
+<span class="token punctuation">)</span>
 
-<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defer语句会延迟函数的执行直到上层函数返回。</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">func</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>x <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> x <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token operator">+</span> <span class="token string">"i"</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span>  fmt<span class="token punctuation">.</span><span class="token function">Sprint</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token function">Sqrt</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//func pow(x,n,lim float64) float64  {</span>
+<span class="token comment" spellcheck="true">//    if v := math.Pow(x,n); v &lt; lim{</span>
+<span class="token comment" spellcheck="true">//        return v</span>
+<span class="token comment" spellcheck="true">//    }</span>
+<span class="token comment" spellcheck="true">//    return lim</span>
+<span class="token comment" spellcheck="true">//}</span>
+<span class="token comment" spellcheck="true">//func main()  {</span>
+<span class="token comment" spellcheck="true">//    fmt.Println(</span>
+<span class="token comment" spellcheck="true">//        pow(3,2,10),</span>
+<span class="token comment" spellcheck="true">//        pow(3,3,20),</span>
+<span class="token comment" spellcheck="true">//        )</span>
+<span class="token comment" spellcheck="true">//}</span>
+值为：<span class="token number">1.4142135623730951</span> <span class="token number">2i</span></code></pre>
+<h2 id="if-else"><a href="#if-else" class="headerlink" title="if else"></a>if else</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	<span class="keyword">defer</span> fmt.Println(<span class="string">"world"</span>)</span><br><span class="line">	fmt.Println(<span class="string">"hello"</span>)</span><br><span class="line">&#125;</span><br><span class="line">值为：hello</span><br><span class="line">           world</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"math"</span>
+<span class="token punctuation">)</span>
 
+<span class="token keyword">func</span> <span class="token function">pow</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>n<span class="token punctuation">,</span>lim <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> v <span class="token operator">:=</span> math<span class="token punctuation">.</span><span class="token function">Pow</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span> v <span class="token operator">&lt;</span> lim<span class="token punctuation">{</span>
+        <span class="token keyword">return</span> v
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%g>=%g\n"</span><span class="token punctuation">,</span>v<span class="token punctuation">,</span>lim<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> lim
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>
+        <span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+值为：<span class="token number">27</span><span class="token operator">>=</span><span class="token number">20</span>
+           <span class="token number">9</span> <span class="token number">20</span></code></pre>
+<h2 id="循环和函数"><a href="#循环和函数" class="headerlink" title="循环和函数"></a>循环和函数</h2><pre class=" language-作为练习函数和循环的简单途径，用牛顿法实现开方函数。"><code class="language-作为练习函数和循环的简单途径，用牛顿法实现开方函数。">在这个例子中，牛顿法是通过选择一个初始点 z 然后重复这一过程求 Sqrt(x) 的近似值：
+z = z - (z*z-x)/(2*z)
+为了做到这个，只需要重复计算 10 次，并且观察不同的值（1，2，3，……）是如何逐步逼近结果的。
+然后，修改循环条件，使得当值停止改变（或改变非常小）的时候退出循环。观察迭代次数是否变化。
+结果与 [[http://golang.org/pkg/math/#Sqrt][math.Sqrt] 接近吗？
+提示：定义并初始化一个浮点值，向其提供一个浮点语法或使用转换：
+
+z := float64(1)
+z := 1.0</code></pre>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>x <span class="token builtin">float64</span><span class="token punctuation">)</span> <span class="token builtin">float64</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> a  <span class="token operator">=</span>  <span class="token number">0.000001</span>
+    z <span class="token operator">:=</span> <span class="token function">float64</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    k <span class="token operator">:=</span> <span class="token function">float64</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> z <span class="token operator">=</span> z <span class="token operator">-</span> <span class="token punctuation">(</span>z<span class="token operator">*</span>z<span class="token operator">-</span>x<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> z<span class="token operator">-</span>k <span class="token operator">&lt;=</span> a <span class="token operator">&amp;&amp;</span> z<span class="token operator">-</span>k <span class="token operator">>=</span> <span class="token operator">-</span>a <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> z
+        <span class="token punctuation">}</span>
+        k<span class="token operator">=</span>z
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+值为：<span class="token number">1.4142135623730951</span></code></pre>
+<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><pre><code>switch 的条件从上到下的执行，当匹配成功的时候停止。</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"runtime"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Print</span><span class="token punctuation">(</span><span class="token string">"go runs on "</span><span class="token punctuation">)</span>
+    <span class="token keyword">switch</span> os <span class="token operator">:=</span> runtime<span class="token punctuation">.</span>GOOS<span class="token punctuation">;</span> os <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">"darwin"</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"os x"</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">"linux"</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"linux"</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span>os<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><pre><code>defer语句会延迟函数的执行直到上层函数返回。</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">defer</span> fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+值为：hello
+           world</code></pre>
 
             </div>
             <hr/>
@@ -852,21 +1022,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09/12/golang-day3/">
+                <a href="/2018/09/12/golang-day2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="GoLang_Day3">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="GoLang_Day2">
                         
-                        <span class="card-title">GoLang_Day3</span>
+                        <span class="card-title">GoLang_Day2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Golang_Day3结构体12一个结构体（`struct`）就是一个字段的集合。（而 type 的含义跟其字面意思相符。）
+                            Golang_Day2defer 栈package main
 
-123456789101112package mainimport "fmt"type test struct 
+import "fmt"
+
+func main()  {
+    fmt.Println("FUN")
+    for i :=0; i&lt;10 ;i++ {
+      
                         
                     </div>
                     <div class="publish-info">
@@ -907,21 +1082,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/10/ansible/">
+                <a href="/2018/09/10/fmt-ge-shi-zhan-wei-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="安装ansible">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Golang fmt格式“占位符”">
                         
-                        <span class="card-title">安装ansible</span>
+                        <span class="card-title">Golang fmt格式“占位符”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ANSIBLEcentos 安装 Minimal版本无法获取IP解决123vi /etc/sysconfig/network-scripts/ifcfg-ens33ONBOOT=yes  (修改内容)sudo reboot
-
-CENTOS 
+                            GoLang fmt格式“占位符”typr human struct{
+  name string
+}
+var  people = human{name:"FUN"}  
+普通占位符
+占位符         说明              
                         
                     </div>
                     <div class="publish-info">
@@ -932,8 +1110,8 @@ CENTOS
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/运维/" class="post-category">
-                                    运维
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
                                 </a>
                             
                             
@@ -943,8 +1121,12 @@ CENTOS
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ansible/">
-                        <span class="chip bg-color">ansible</span>
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
+                    </a>
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
                     </a>
                     
                 </div>
@@ -1107,7 +1289,7 @@ CENTOS
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

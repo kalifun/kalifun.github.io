@@ -35,7 +35,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -439,7 +439,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.6k
+                        2.5k
                     </div>
                     
 
@@ -483,143 +483,184 @@
 </blockquote>
 <h2 id="Java-分隔符"><a href="#Java-分隔符" class="headerlink" title="Java 分隔符"></a>Java 分隔符</h2><h3 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h3><blockquote>
 <p> 分号在java中，它表示一条语句结束。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">;</span>
+等价于
+<span class="token keyword">int</span> i <span class="token number">1</span><span class="token operator">+</span><span class="token number">2</span>
+<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">;</span></code></pre>
 </blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>+<span class="number">2</span>+<span class="number">3</span>;</span><br><span class="line">等价于</span><br><span class="line"><span class="keyword">int</span> i <span class="number">1</span>+<span class="number">2</span></span><br><span class="line">+<span class="number">3</span>;</span><br></pre></td></tr></table></figure></div>
-
 <h3 id="大括号"><a href="#大括号" class="headerlink" title="大括号"></a>大括号</h3><blockquote>
-<h3 id="左右大括号括起的语句集合称为语句块-block-或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。"><a href="#左右大括号括起的语句集合称为语句块-block-或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。" class="headerlink" title="左右大括号括起的语句集合称为语句块(block)或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。"></a>左右大括号括起的语句集合称为语句块(block)或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。</h3></blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">brace</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">static</span>  <span class="keyword">void</span>  <span class="title">main</span> <span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">if</span> (m&lt;<span class="number">10</span>) &#123;</span><br><span class="line">            System.out.println(m+<span class="string">"&lt;10"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="空百"><a href="#空百" class="headerlink" title="空百"></a>空百</h3><blockquote>
-<h3 id="java源码中需要有空白，空白数不限。"><a href="#java源码中需要有空白，空白数不限。" class="headerlink" title="java源码中需要有空白，空白数不限。"></a>java源码中需要有空白，空白数不限。</h3></blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (m&lt;<span class="number">10</span>) &#123;</span><br><span class="line">    System.out.println(m+<span class="string">"&lt;10"</span>);</span><br><span class="line">&#125;</span><br><span class="line">等于</span><br><span class="line">        <span class="keyword">if</span> (m&lt;<span class="number">10</span>) &#123;</span><br><span class="line">    System.out.println(m+<span class="string">"&lt;10"</span>);&#125;</span><br><span class="line">等于</span><br><span class="line">        <span class="keyword">if</span> (m&lt;<span class="number">10</span>) </span><br><span class="line">        &#123;</span><br><span class="line">    System.out.println(m+<span class="string">"&lt;10"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
-<h3 id="常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final-数据类型-变量名-初始值"><a href="#常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final-数据类型-变量名-初始值" class="headerlink" title="常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final 数据类型 变量名 = 初始值"></a>常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final 数据类型 变量名 = 初始值</h3></blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">constant</span> </span>&#123;</span><br><span class="line"><span class="comment">//    静态常量，替代const</span></span><br><span class="line">    <span class="keyword">public</span>  <span class="keyword">static</span>  <span class="keyword">final</span>  <span class="keyword">double</span> PI = <span class="number">3.14</span>;</span><br><span class="line"><span class="comment">//    声明成员常量</span></span><br><span class="line">    <span class="keyword">final</span>  <span class="keyword">int</span> y = <span class="number">2</span>;</span><br><span class="line"><span class="comment">//    声明局部常量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">static</span>  <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">final</span>  <span class="keyword">double</span> pi = <span class="number">3.14</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><blockquote>
-<h3 id="基本数据类型分为4大类，8种数据类型。"><a href="#基本数据类型分为4大类，8种数据类型。" class="headerlink" title="基本数据类型分为4大类，8种数据类型。"></a>基本数据类型分为4大类，8种数据类型。</h3><ul>
-<li><h4 id="整数类型：byte-long-int-short"><a href="#整数类型：byte-long-int-short" class="headerlink" title="整数类型：byte,long,int,short"></a>整数类型：byte,long,int,short</h4></li>
-<li><h4 id="浮点类型：float-double"><a href="#浮点类型：float-double" class="headerlink" title="浮点类型：float,double"></a>浮点类型：float,double</h4></li>
-<li><h4 id="字符类型：char"><a href="#字符类型：char" class="headerlink" title="字符类型：char"></a>字符类型：char</h4></li>
-<li><h4 id="布尔类型：boolean"><a href="#布尔类型：boolean" class="headerlink" title="布尔类型：boolean"></a>布尔类型：boolean</h4></li>
-</ul>
+<h3 id="左右大括号括起的语句集合称为语句块-block-或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。"><a href="#左右大括号括起的语句集合称为语句块-block-或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。" class="headerlink" title="左右大括号括起的语句集合称为语句块(block)或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。"></a>左右大括号括起的语句集合称为语句块(block)或复合语句，在语句块可以有n条语句。在定义类或方法时，语句块也被做分隔类体或方法体。语句块可以嵌套，且嵌套层次没有限制。</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
 </blockquote>
-<h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><blockquote>
-<h4 id="byte-long-int-short。它们的区别仅仅在于宽度和范围不同。Java的整数都是有符号的。"><a href="#byte-long-int-short。它们的区别仅仅在于宽度和范围不同。Java的整数都是有符号的。" class="headerlink" title="byte,long,int,short。它们的区别仅仅在于宽度和范围不同。Java的整数都是有符号的。"></a>byte,long,int,short。它们的区别仅仅在于宽度和范围不同。Java的整数都是有符号的。</h4><table>
-<thead>
-<tr>
-<th align="center">整数类型</th>
-<th align="center">宽度</th>
-<th align="center">范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">byte</td>
-<td align="center">1个字节(8位)</td>
-<td align="center">-128~127</td>
-</tr>
-<tr>
-<td align="center">int</td>
-<td align="center">4个字节</td>
-<td align="center">-2^{31} ~ 2^{31} -1</td>
-</tr>
-<tr>
-<td align="center">short</td>
-<td align="center">2个字节</td>
-<td align="center">-2^{15} ~ 2^{15}-1</td>
-</tr>
-<tr>
-<td align="center">long</td>
-<td align="center">8个字节</td>
-<td align="center">-2^{63} ~2^{63}-1</td>
-</tr>
-</tbody></table>
+<p>public class brace {<br>    public  static  void  main (String args[]) {<br>        int m = 5;<br>        if (m&lt;10) {<br>            System.out.println(m+”&lt;10”);<br>        }<br>    }<br>}</p>
+<pre><code>### 空百
+&gt; ### java源码中需要有空白，空白数不限。
+```java
+        if (m&lt;10) {
+            System.out.println(m+&quot;&lt;10&quot;);
+        }
+        等于
+                if (m&lt;10) {
+            System.out.println(m+&quot;&lt;10&quot;);}
+        等于
+                if (m&lt;10) 
+                {
+            System.out.println(m+&quot;&lt;10&quot;);
+        }</code></pre><h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
+<h3 id="常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final-数据类型-变量名-初始值"><a href="#常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final-数据类型-变量名-初始值" class="headerlink" title="常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final 数据类型 变量名 = 初始值"></a>常量事实上是那些不可修改的变量，常量和变量类似都需要被初始化。在声明常量的同时需要赋予初始值，常量一旦被初始化就不能被修改。final 数据类型 变量名 = 初始值</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
 </blockquote>
-<h4 id="Java默认的整数类型为int-long类型需要在后面添加l或者L"><a href="#Java默认的整数类型为int-long类型需要在后面添加l或者L" class="headerlink" title="Java默认的整数类型为int.long类型需要在后面添加l或者L."></a>Java默认的整数类型为int.long类型需要在后面添加l或者L.</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Shaping</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"默认整数常量 ="</span>+<span class="number">16</span>);</span><br><span class="line">        <span class="keyword">byte</span> a = <span class="number">16</span>;</span><br><span class="line">        <span class="keyword">short</span> b = <span class="number">16</span>;</span><br><span class="line">        <span class="keyword">int</span> c = <span class="number">16</span>;</span><br><span class="line">        <span class="keyword">long</span> d = <span class="number">16L</span>;</span><br><span class="line">        <span class="keyword">long</span> e = <span class="number">16l</span>;</span><br><span class="line">        System.out.println(<span class="string">"byte整数 = "</span>+a);</span><br><span class="line">        System.out.println(<span class="string">"Short整数 = "</span>+b);</span><br><span class="line">        System.out.println(<span class="string">"int整数 = "</span>+c);</span><br><span class="line">        System.out.println(<span class="string">"long整数 = "</span>+d);</span><br><span class="line">        System.out.println(<span class="string">"long整数 = "</span>+e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>public class constant {<br>//    静态常量，替代const<br>    public  static  final  double PI = 3.14;<br>//    声明成员常量<br>    final  int y = 2;<br>//    声明局部常量<br>    public  static  void  main(String[] args){<br>        final  double pi = 3.14;<br>    }<br>}</p>
+<pre><code>## 数据类型
+### 基础数据类型
+&gt; ### 基本数据类型分为4大类，8种数据类型。
+- ####  整数类型：byte,long,int,short
+- #### 浮点类型：float,double
+- #### 字符类型：char
+- #### 布尔类型：boolean
+### 整数类型
+&gt; #### byte,long,int,short。它们的区别仅仅在于宽度和范围不同。Java的整数都是有符号的。
+|整数类型|宽度|范围|
+|:------:|:------:|:-------:|
+|byte|1个字节(8位)|-128~127|
+|int|4个字节|-2^{31} ~ 2^{31} -1|
+|short|2个字节|-2^{15} ~ 2^{15}-1|
+|long|8个字节|-2^{63} ~2^{63}-1|
+#### Java默认的整数类型为int.long类型需要在后面添加l或者L.
+```java
+package basic_grammar;
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">默认整数常量 =16</span><br><span class="line">byte整数 = 16</span><br><span class="line">Short整数 = 16</span><br><span class="line">int整数 = 16</span><br><span class="line">long整数 = 16</span><br><span class="line">long整数 = 16</span><br><span class="line">```  </span><br><span class="line">### 浮点类型</span><br><span class="line">&gt;  浮点类型主要用来储存小数数值，也可以用来储存范围较大的整数。它分为浮点数(float)和双精度浮点数(double)。双精度浮点数比浮点数使用的内存空间多，可以表示数字范围和精确度比较大。</span><br><span class="line">|浮点类型|宽度|</span><br><span class="line">|:------:|:------:|</span><br><span class="line">|float|4个字节|</span><br><span class="line">|doble|8个字节|</span><br><span class="line">```java</span><br><span class="line">package basic_grammar;</span><br><span class="line"></span><br><span class="line">import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;</span><br><span class="line"></span><br><span class="line">public class Floating_point_number &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;默认浮点数 =&quot;+366.66);</span><br><span class="line">        float floatnum = 123.23f;</span><br><span class="line">        double doublenum = 456.12;</span><br><span class="line">        final  double PI = 3.1415926d;</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;float  =&quot;+floatnum);</span><br><span class="line">        System.out.println(&quot;double =&quot;+doublenum);</span><br><span class="line">        System.out.println(&quot;PI =&quot;+PI);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p> 浮点数默认是double类型，float浮点常数类型需要在数值后面添加f或者F。double浮点数也可以在后面添加d或者D。</p>
-<h2 id="数字表示方式"><a href="#数字表示方式" class="headerlink" title="数字表示方式"></a>数字表示方式</h2><h3 id="进制数表示"><a href="#进制数表示" class="headerlink" title="进制数表示"></a>进制数表示</h3><ul>
-<li>二进制数：以0b或0B为前缀。</li>
-<li>八进制数：以0位前缀。</li>
-<li>十六进制数：以0x或0X为前缀。<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int decimalint = 28;</span><br><span class="line">int binaryint1 = 0b11100;</span><br><span class="line">int binaryint2 = 0B111100;</span><br><span class="line">int octalint = 034;</span><br><span class="line">int hexadecimalint1 = 0x1C;</span><br><span class="line">int hexadecimalint2 = 0X1C;</span><br></pre></td></tr></table></figure></div>
-
-</li>
-</ul>
-<h3 id="指数表示"><a href="#指数表示" class="headerlink" title="指数表示"></a>指数表示</h3><blockquote>
-<p>  如果需要采用十进制来表示指数，需要使用大写或小写e来表示。e2 = 10^2</p>
+public class Shaping {
+    public static void main(String[] args){
+        System.out.println(&quot;默认整数常量 =&quot;+16);
+        byte a = 16;
+        short b = 16;
+        int c = 16;
+        long d = 16L;
+        long e = 16l;
+        System.out.println(&quot;byte整数 = &quot;+a);
+        System.out.println(&quot;Short整数 = &quot;+b);
+        System.out.println(&quot;int整数 = &quot;+c);
+        System.out.println(&quot;long整数 = &quot;+d);
+        System.out.println(&quot;long整数 = &quot;+e);
+    }
+}</code></pre><pre><code>默认整数常量 =16
+byte整数 = 16
+Short整数 = 16
+int整数 = 16
+long整数 = 16
+long整数 = 16</code></pre><h3 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h3><blockquote>
+<p> 浮点类型主要用来储存小数数值，也可以用来储存范围较大的整数。它分为浮点数(float)和双精度浮点数(double)。双精度浮点数比浮点数使用的内存空间多，可以表示数字范围和精确度比较大。<br>|浮点类型|宽度|<br>|:——:|:——:|<br>|float|4个字节|<br>|doble|8个字节|</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
 </blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double myMoney = 3.36e2;</span><br><span class="line">double interestRate = 1.56e-2;</span><br></pre></td></tr></table></figure></div>
+<p>import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;</p>
+<p>public class Floating_point_number {<br>    public static void main(String[] args){<br>        System.out.println(“默认浮点数 =”+366.66);<br>        float floatnum = 123.23f;<br>        double doublenum = 456.12;<br>        final  double PI = 3.1415926d;</p>
+<pre><code>    System.out.println(&quot;float  =&quot;+floatnum);
+    System.out.println(&quot;double =&quot;+doublenum);
+    System.out.println(&quot;PI =&quot;+PI);
 
-<p> 3.36e2 = 3.36x10^2,1.56e-2 = 1.56x10^-2</p>
-<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><blockquote>
-<p> 字符类型表示单个字符。java中以char来声明字符类型，字符类型必须以单引号括起里的单个字符。<br>  java字符采用双字节Unicode编码，占两个字节。可以用十六进制编码形式表示、</p>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">character</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> c1 = <span class="string">'A'</span>;</span><br><span class="line">        <span class="keyword">char</span> c2 = <span class="string">'\u0041'</span>;</span><br><span class="line">        <span class="keyword">char</span> c3 = <span class="string">'华'</span>;</span><br><span class="line">        System.out.println(c1);</span><br><span class="line">        System.out.println(c2);</span><br><span class="line">        System.out.println(c3);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+}</code></pre><p>}</p>
+<pre><code> 浮点数默认是double类型，float浮点常数类型需要在数值后面添加f或者F。double浮点数也可以在后面添加d或者D。
+## 数字表示方式
+### 进制数表示
+-  二进制数：以0b或0B为前缀。
+-  八进制数：以0位前缀。
+-  十六进制数：以0x或0X为前缀。</code></pre><p>int decimalint = 28;<br>int binaryint1 = 0b11100;<br>int binaryint2 = 0B111100;<br>int octalint = 034;<br>int hexadecimalint1 = 0x1C;<br>int hexadecimalint2 = 0X1C;</p>
+<pre><code>### 指数表示
+&gt;   如果需要采用十进制来表示指数，需要使用大写或小写e来表示。e2 = 10^2</code></pre><p>double myMoney = 3.36e2;<br>double interestRate = 1.56e-2;</p>
+<pre><code> 3.36e2 = 3.36x10^2,1.56e-2 = 1.56x10^-2
+### 字符类型
+&gt;  字符类型表示单个字符。java中以char来声明字符类型，字符类型必须以单引号括起里的单个字符。
+  java字符采用双字节Unicode编码，占两个字节。可以用十六进制编码形式表示、
+```java
+package basic_grammar;
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A</span><br><span class="line">A</span><br><span class="line">华</span><br></pre></td></tr></table></figure></div>
+public class character {
+    public static void main(String[] args){
+        char c1 = &#39;A&#39;;
+        char c2 = &#39;\u0041&#39;;
+        char c3 = &#39;华&#39;;
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+    }
+}</code></pre><pre><code>A
+A
+华</code></pre><p>java为了表示一些特殊字符，需要加上反斜杠(\n)，被称之为转义字符。<br>|字符表示|Unicode编码|说明|<br>|:——:|:——-:|:——:|<br>|\t|\u0009|tab|<br>|\n|\u000a|换行|<br>|\r|\u000d|回车|<br>|&quot;|\u0022|双引号|<br>|&#39;|\u0027|单引号|<br>|\ |\u005c|反斜线|</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span>
 
-<p>java为了表示一些特殊字符，需要加上反斜杠(\n)，被称之为转义字符。<br>|字符表示|Unicode编码|说明|<br>|:——:|:——-:|:——:|<br>|\t|\u0009|tab|<br>|\n|\u000a|换行|<br>|\r|\u000d|回车|<br>|&quot;|\u0022|双引号|<br>|&#39;|\u0027|单引号|<br>|\ |\u005c|反斜线|</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">character2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String tab1 = <span class="string">"Hello\tWorld"</span>;</span><br><span class="line">        String tab2 = <span class="string">"Hello\u0009World"</span>;</span><br><span class="line">        String Wrap1 = <span class="string">"Hello\nWorld"</span>;</span><br><span class="line">        String  enter1 = <span class="string">"Hello\rWorld"</span>;</span><br><span class="line">        String Double_quotes1 = <span class="string">"Hello\"World"</span>;</span><br><span class="line">        String apostrophe1 = <span class="string">"Hello\'World"</span>;</span><br><span class="line">        String Backslash1 = <span class="string">"Hello\\World"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Tab1 : "</span>+tab1);</span><br><span class="line">        System.out.println(<span class="string">"Tab2 : "</span>+tab2);</span><br><span class="line">        System.out.println(<span class="string">"Wrap1 : "</span>+Wrap1);</span><br><span class="line">        System.out.println(<span class="string">"Enter1 : "</span>+enter1);</span><br><span class="line">        System.out.println(<span class="string">"Double_quotes1 : "</span>+Double_quotes1);</span><br><span class="line">        System.out.println(<span class="string">"apostrophe1 : "</span>+apostrophe1);</span><br><span class="line">        System.out.println(<span class="string">"Backslash1 : "</span>+Backslash1);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">character2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        String tab1 <span class="token operator">=</span> <span class="token string">"Hello\tWorld"</span><span class="token punctuation">;</span>
+        String tab2 <span class="token operator">=</span> <span class="token string">"Hello\u0009World"</span><span class="token punctuation">;</span>
+        String Wrap1 <span class="token operator">=</span> <span class="token string">"Hello\nWorld"</span><span class="token punctuation">;</span>
+        String  enter1 <span class="token operator">=</span> <span class="token string">"Hello\rWorld"</span><span class="token punctuation">;</span>
+        String Double_quotes1 <span class="token operator">=</span> <span class="token string">"Hello\"World"</span><span class="token punctuation">;</span>
+        String apostrophe1 <span class="token operator">=</span> <span class="token string">"Hello\'World"</span><span class="token punctuation">;</span>
+        String Backslash1 <span class="token operator">=</span> <span class="token string">"Hello\\World"</span><span class="token punctuation">;</span>
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Tab1 : Hello    World</span><br><span class="line">Tab2 : Hello    World</span><br><span class="line">Wrap1 : Hello</span><br><span class="line">World</span><br><span class="line">World1 : Hello</span><br><span class="line">Double_quotes1 : Hello&quot;World</span><br><span class="line">apostrophe1 : Hello&apos;World</span><br><span class="line">Backslash1 : Hello\World</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><blockquote>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Tab1 : "</span><span class="token operator">+</span>tab1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Tab2 : "</span><span class="token operator">+</span>tab2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Wrap1 : "</span><span class="token operator">+</span>Wrap1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Enter1 : "</span><span class="token operator">+</span>enter1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Double_quotes1 : "</span><span class="token operator">+</span>Double_quotes1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"apostrophe1 : "</span><span class="token operator">+</span>apostrophe1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Backslash1 : "</span><span class="token operator">+</span>Backslash1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code>Tab1 : Hello    World
+Tab2 : Hello    World
+Wrap1 : Hello
+World
+World1 : Hello
+Double_quotes1 : Hello&quot;World
+apostrophe1 : Hello&#39;World
+Backslash1 : Hello\World</code></pre><h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><blockquote>
 <p> java中声明布尔类型的关键字是boolean。不能用0或1来代替，因为不属于数值类型，不能与数字类型等进行转换。</p>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">boolean isMan = true;</span><br><span class="line">boolean isWoman = false;</span><br></pre></td></tr></table></figure></div>
-
+<pre><code>boolean isMan = true;
+boolean isWoman = false;</code></pre></blockquote>
 <h2 id="数值类型相互转换"><a href="#数值类型相互转换" class="headerlink" title="数值类型相互转换"></a>数值类型相互转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><blockquote>
 <p> 自动类型转换就是需要类型之间转换是自动的，不需要任何操作手段。<br><a href="https://image.kalifun.top/temp/1901/1e4ed96f6a3c8f6f.png" target="_blank" rel="noopener"><img src="https://image.kalifun.top/temp/1901/1e4ed96f6a3c8f6f.png" alt></a><br>char可以自动转换为int，long，float，double。但是byte，short不能自动转换为char，且char不能转换为byte，short类型。</p>
 </blockquote>
 <h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><blockquote>
 <p> 强制类型转换是在变量或常量前加上（目标类型）实现。强制类型转换主要是用于大宽度类型转换为小宽度类型。</p>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i = 1;</span><br><span class="line">byte b = (byte)i;</span><br></pre></td></tr></table></figure></div>
-
+<pre><code>int i = 1;
+byte b = (byte)i;</code></pre></blockquote>
 <h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><blockquote>
 <p> 在Java中除了8中数据类型外，其他数据类型都是引用数据类型。引用数据类型用了表示复杂数据类型。包含：类，接口和数组声明的类型。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span></code></pre>
 </blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> y = x;</span><br><span class="line"></span><br><span class="line">String str1 = <span class="string">"Hello"</span>;</span><br><span class="line">String str2 = str1;     <span class="comment">//此时str1和str2指向相同地址</span></span><br><span class="line">str2 = <span class="string">"world"</span>;      <span class="comment">//此时str1和str2指向不同的地址</span></span><br></pre></td></tr></table></figure></div>
+<p>String str1 = “Hello”;<br>String str2 = str1;     //此时str1和str2指向相同地址<br>str2 = “world”;      //此时str1和str2指向不同的地址</p>
+<pre><code>## 算术运算符
+### 一元运算符
+&gt; #### 一元运算符有三种。-，++，--
+|运算符|名称|说明|例子|
+|:-----:|:------:|:------:|:------:|
+|-|取反符号|取反运算|b=-a|
+|++|自加一|先取值在加一，或先加一再取值|a++或++a|
+|--|自减一|先取值再减一，或先减一再取值|a--或--a|
+```java
+package basic_grammar;
 
-<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><blockquote>
-<h4 id="一元运算符有三种。-，-，–"><a href="#一元运算符有三种。-，-，–" class="headerlink" title="一元运算符有三种。-，++，–"></a>一元运算符有三种。-，++，–</h4><table>
-<thead>
-<tr>
-<th align="center">运算符</th>
-<th align="center">名称</th>
-<th align="center">说明</th>
-<th align="center">例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-</td>
-<td align="center">取反符号</td>
-<td align="center">取反运算</td>
-<td align="center">b=-a</td>
-</tr>
-<tr>
-<td align="center">++</td>
-<td align="center">自加一</td>
-<td align="center">先取值在加一，或先加一再取值</td>
-<td align="center">a++或++a</td>
-</tr>
-<tr>
-<td align="center">–</td>
-<td align="center">自减一</td>
-<td align="center">先取值再减一，或先减一再取值</td>
-<td align="center">a–或–a</td>
-</tr>
-</tbody></table>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">        System.out.println(-a);</span><br><span class="line">        <span class="keyword">int</span> b = a++;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="keyword">int</span> c = ++b;</span><br><span class="line">        System.out.println(c);</span><br><span class="line">        <span class="keyword">int</span> d = c--;</span><br><span class="line">        System.out.println(d);</span><br><span class="line">        <span class="keyword">int</span> e = --d;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-10</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">11</span><br><span class="line">10</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符　　"></a>二元运算符　　</h3><blockquote>
+public class Operator {
+    public static void main(String[] args){
+        int a = 10;
+        System.out.println(-a);
+        int b = a++;
+        System.out.println(b);
+        int c = ++b;
+        System.out.println(c);
+        int d = c--;
+        System.out.println(d);
+        int e = --d;
+        System.out.println(e);
+    }
+}</code></pre><pre><code>-10
+10
+11
+11
+10 </code></pre><h3 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符　　"></a>二元运算符　　</h3><blockquote>
 <p>　二元运算符包括：+，- , * , / 和 %。这些对数值类型都是有效的。  </p>
 </blockquote>
 <table>
@@ -662,77 +703,156 @@
 <td align="center">a%b</td>
 </tr>
 <tr>
-<td align="center"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Binary</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> charnum = <span class="string">'A'</span>;</span><br><span class="line">        <span class="keyword">int</span> intresult = charnum + <span class="number">1</span> ;</span><br><span class="line">        System.out.println(intresult);</span><br><span class="line">        intresult = intresult - <span class="number">1</span>;</span><br><span class="line">        System.out.println(intresult);</span><br><span class="line">        intresult = intresult * <span class="number">2</span> ;</span><br><span class="line">        System.out.println(intresult);</span><br><span class="line">        intresult = intresult / <span class="number">2</span> ;</span><br><span class="line">        System.out.println(intresult);</span><br><span class="line">        intresult = intresult + <span class="number">8</span> ;</span><br><span class="line">        intresult = intresult % <span class="number">7</span> ;</span><br><span class="line">        System.out.println(intresult);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> doubleresult = <span class="number">10.0</span>;</span><br><span class="line">        System.out.println(doubleresult);</span><br><span class="line"></span><br><span class="line">        doubleresult = doubleresult + <span class="number">1</span> ;</span><br><span class="line">        System.out.println(doubleresult);</span><br><span class="line">        </span><br><span class="line">        doubleresult = doubleresult -<span class="number">1</span> ;</span><br><span class="line">        System.out.println(doubleresult);</span><br><span class="line"></span><br><span class="line">        doubleresult = doubleresult * <span class="number">2</span> ;</span><br><span class="line">        System.out.println(doubleresult);</span><br><span class="line"></span><br><span class="line">        doubleresult = doubleresult / <span class="number">2</span> ;</span><br><span class="line">        System.out.println(doubleresult);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></td>
+<td align="center">```java</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">package basic_grammar;</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
 </tbody></table>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">66</span><br><span class="line">65</span><br><span class="line">130</span><br><span class="line">65</span><br><span class="line">3</span><br><span class="line">10.0</span><br><span class="line">11.0</span><br><span class="line">10.0</span><br><span class="line">20.0</span><br><span class="line">10.0</span><br></pre></td></tr></table></figure></div>
+<p>public class Binary {<br>    public static void main(String[] args){<br>        char charnum = ‘A’;<br>        int intresult = charnum + 1 ;<br>        System.out.println(intresult);<br>        intresult = intresult - 1;<br>        System.out.println(intresult);<br>        intresult = intresult * 2 ;<br>        System.out.println(intresult);<br>        intresult = intresult / 2 ;<br>        System.out.println(intresult);<br>        intresult = intresult + 8 ;<br>        intresult = intresult % 7 ;<br>        System.out.println(intresult);</p>
+<pre><code>    double doubleresult = 10.0;
+    System.out.println(doubleresult);
 
-<h3 id="算术赋值运算符"><a href="#算术赋值运算符" class="headerlink" title="算术赋值运算符"></a>算术赋值运算符</h3><table>
-<thead>
-<tr>
-<th align="center">运算符</th>
-<th align="center">名称</th>
-<th align="center">例子</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">+=</td>
-<td align="center">加赋值</td>
-<td align="center">a+=b</td>
-</tr>
-<tr>
-<td align="center">-=</td>
-<td align="center">减赋值</td>
-<td align="center">a-=b</td>
-</tr>
-<tr>
-<td align="center">*=</td>
-<td align="center">乘赋值</td>
-<td align="center">a*=b</td>
-</tr>
-<tr>
-<td align="center">/=</td>
-<td align="center">除赋值</td>
-<td align="center">a/=b</td>
-</tr>
-<tr>
-<td align="center">%=</td>
-<td align="center">取余赋值</td>
-<td align="center">a%=b</td>
-</tr>
-<tr>
-<td align="center"><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">arithmetic</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> b = <span class="number">3</span>;</span><br><span class="line">        a += b;   <span class="comment">//a = a+b</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a += b + <span class="number">2</span> ; <span class="comment">//a = a +b +2</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a -= b;  <span class="comment">//a = a-b</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a *= b;   <span class="comment">//a = a*b</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a /= b ;   <span class="comment">//a = a/b</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        a %= b ;    <span class="comment">//a = a % b</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">10</span><br><span class="line">7</span><br><span class="line">21</span><br><span class="line">7</span><br><span class="line">1</span><br></pre></td></tr></table></figure></div>
+    doubleresult = doubleresult + 1 ;
+    System.out.println(doubleresult);
 
-<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><blockquote>
+    doubleresult = doubleresult -1 ;
+    System.out.println(doubleresult);
+
+    doubleresult = doubleresult * 2 ;
+    System.out.println(doubleresult);
+
+    doubleresult = doubleresult / 2 ;
+    System.out.println(doubleresult);
+}</code></pre><p>}</p>
+<pre><code></code></pre><p>66<br>65<br>130<br>65<br>3<br>10.0<br>11.0<br>10.0<br>20.0<br>10.0</p>
+<pre><code>### 算术赋值运算符
+|运算符|名称|例子|
+|:------:|:------:|:-----:|
+|+=|加赋值|a+=b|
+|-=|减赋值|a-=b|
+|*=|乘赋值|a*=b|
+|/=|除赋值|a/=b|
+|%=|取余赋值|a%=b|
+```java
+package basic_grammar;
+
+public class arithmetic {
+    public static void main(String[] args){
+        int a = 2;
+        int b = 3;
+        a += b;   //a = a+b
+        System.out.println(a);
+        a += b + 2 ; //a = a +b +2
+        System.out.println(a);
+        a -= b;  //a = a-b
+        System.out.println(a);
+        a *= b;   //a = a*b
+        System.out.println(a);
+        a /= b ;   //a = a/b
+        System.out.println(a);
+        a %= b ;    //a = a % b
+        System.out.println(a);
+    }
+}</code></pre><pre><code>5
+10
+7
+21
+7
+1</code></pre><h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><blockquote>
 <p> 关系运算符的结果是布尔类型，True和False。关系运算符有6种：==,&lt;=,&gt;=,!=,&gt;,&lt;.</p>
 </blockquote>
 <h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><blockquote>
 <p>  逻辑运算符是布尔类型进行运算，所以结果也是布尔类型。<br>|运算符|名称|说明|例子|<br>|:——:|:——:|:——-:|:——:|<br>|!|非|a 为 true 时，值为 false，a 为 false 时，值为 true|a!b|<br>|&amp;|与|ab 全为 true 时，计算结果为 true，否则为 false|a&amp;b|<br>| | |或|ab 全为 false 时，计算结果为 false，否则为 true|a|b |<br>| &amp;&amp;|短路与|ab 全为 true 时，计算结果为 true，否则为 false。&amp;&amp;与&amp;区别：如果 a 为 false，则不计算b|a &amp;&amp; b|<br>||||短路或|ab 全为 false 时，计算结果为 false，否则为 true。||与|区别：如果 a 为 true，则不计算 b|a||b|</p>
 </blockquote>
-<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_if</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> source = <span class="number">95</span>;</span><br><span class="line">        <span class="keyword">if</span> (source &gt;= <span class="number">90</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"A"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span> (source &gt;= <span class="number">80</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"B"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span> (source &gt;= <span class="number">70</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"C"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"E"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        if (source &lt;60) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println("不及格，加油哦！");</span></span><br><span class="line"><span class="comment">//        &#125;else &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println("真棒，及格。");</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        if (source&gt;= 85)&#123;</span></span><br><span class="line"><span class="comment">//            System.out.println("你真优秀！");</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        if (source&lt;60)&#123;</span></span><br><span class="line"><span class="comment">//            System.out.println("您需要继续加油哦！");</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        if ((source&gt;60) &amp;&amp; (source&lt;=85)) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println("不错哦，继续努力！");</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span>
 
-<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Swatch</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> testsorce = <span class="number">75</span>;</span><br><span class="line">        <span class="keyword">char</span> grade;</span><br><span class="line">        <span class="keyword">switch</span> (testsorce/<span class="number">10</span>)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">                grade = <span class="string">'优'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">                grade = <span class="string">'良'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">                grade = <span class="string">'中'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    grade = <span class="string">'差'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"Grade="</span>+grade);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">java_if</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> source <span class="token operator">=</span> <span class="token number">95</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token operator">>=</span> <span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token operator">>=</span> <span class="token number">80</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span>source <span class="token operator">>=</span> <span class="token number">70</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//        if (source &lt;60) {</span>
+<span class="token comment" spellcheck="true">//            System.out.println("不及格，加油哦！");</span>
+<span class="token comment" spellcheck="true">//        }else {</span>
+<span class="token comment" spellcheck="true">//            System.out.println("真棒，及格。");</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        if (source>= 85){</span>
+<span class="token comment" spellcheck="true">//            System.out.println("你真优秀！");</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        if (source&lt;60){</span>
+<span class="token comment" spellcheck="true">//            System.out.println("您需要继续加油哦！");</span>
+<span class="token comment" spellcheck="true">//        }</span>
+<span class="token comment" spellcheck="true">//        if ((source>60) &amp;&amp; (source&lt;=85)) {</span>
+<span class="token comment" spellcheck="true">//            System.out.println("不错哦，继续努力！");</span>
+<span class="token comment" spellcheck="true">//        }</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span>
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Grade=中</span><br></pre></td></tr></table></figure></div>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Swatch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> testsorce <span class="token operator">=</span> <span class="token number">75</span><span class="token punctuation">;</span>
+        <span class="token keyword">char</span> grade<span class="token punctuation">;</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>testsorce<span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token number">9</span><span class="token operator">:</span>
+                grade <span class="token operator">=</span> <span class="token string">'优'</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">8</span><span class="token operator">:</span>
+                grade <span class="token operator">=</span> <span class="token string">'良'</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span>
+            <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span>
+                grade <span class="token operator">=</span> <span class="token string">'中'</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">default</span><span class="token operator">:</span>
+                    grade <span class="token operator">=</span> <span class="token string">'差'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Grade="</span><span class="token operator">+</span>grade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code>Grade=中</code></pre><h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span>
 
-<h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_while</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i*i&lt;<span class="number">100</span>)&#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            i ++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="do-while"><a href="#do-while" class="headerlink" title="do-while"></a>do-while</h3><blockquote>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">java_while</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i<span class="token operator">*</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            i <span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</code></pre><h3 id="do-while"><a href="#do-while" class="headerlink" title="do-while"></a>do-while</h3><blockquote>
 <p> do-while语句使用和while相似，不过do-while是事后判断循环的。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
 </blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">java_do_while</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            i++;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;<span class="keyword">while</span> (i*i&lt;<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>public class java_do_while {<br>    public static void main(String[] args){<br>        int i = 0;<br>        do {<br>            i++;<br>            System.out.println(i);<br>        }while (i*i&lt;100);<br>    }<br>}</p>
+<pre><code></code></pre><p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>```</p>
 
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td></tr></table></figure></div>
             </div>
             <hr/>
 
@@ -1072,24 +1192,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/29/di-yi-ge-java-cheng-xu/">
+                <a href="/2019/01/30/java-shu-zu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一个java程序">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java数组">
                         
-                        <span class="card-title">第一个java程序</span>
+                        <span class="card-title">Java数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一个java程序1234567package hello;public class helloword &#123;    public static void  main(String[] args) &#123;        Sys
+                            数组一维数组数组初始化静态数组初始化
+ 静态数组初始化是将元素放入大括号中。
+int intarray;
+intarray = {1,2,3};
+
+动态数组初始化
+  动态数组初始化是由new运算符分配长度的内存空间。
+int array;
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-30
                         </span>
                         <span class="publish-author">
                             
@@ -1121,34 +1248,35 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/19/nwx-wxpython/">
+                <a href="/2019/01/29/di-yi-ge-java-cheng-xu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="nwx（wxPython）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一个java程序">
                         
-                        <span class="card-title">nwx（wxPython）</span>
+                        <span class="card-title">第一个java程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            wx（wxPython）前言 使用了很多模块心血来潮觉得要写一些相关模块的使用文档。并想把常用的模块写成一个自己常用的类。这样只需要调用就行了，可以对自己写东西的时候节省时间。
-安装1pip install -U wxPython
+                            第一个java程序package hello;
 
-创建一
+public class helloword {
+    public static void  main(String[] args) {
+        System.out.print
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -1158,8 +1286,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
                     </a>
                     
                 </div>
@@ -1322,7 +1450,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

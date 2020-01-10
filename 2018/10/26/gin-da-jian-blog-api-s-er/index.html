@@ -33,7 +33,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -441,7 +441,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1.3k
                     </div>
                     
 
@@ -471,25 +471,171 @@
 <li>删除指定标签：DELETE(“/tags/:id”)</li>
 </ul>
 <h2 id="编写路由空壳"><a href="#编写路由空壳" class="headerlink" title="编写路由空壳"></a>编写路由空壳</h2><p>在routers下创建api目录，我们当前第一个版本，因此在api下新建v1目录，再创建tag.go。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> v1</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 获取tags</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AddTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 新增tags</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EditTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 更新tags</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DeleteTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 删除tags</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> v1
 
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"github.com/gin-gonic/gin"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">GetTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 获取tags</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">AddTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 新增tags</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">EditTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 更新tags</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">DeleteTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 删除tags</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h2><p>修改router.go</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> routers</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">	<span class="string">"gin-blog/routers/api/v1"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitRouter</span><span class="params">()</span> *<span class="title">gin</span>.<span class="title">Engine</span></span> &#123;</span><br><span class="line">	r := gin.New()</span><br><span class="line">	r.Use(gin.Logger())</span><br><span class="line">	r.Use(gin.Recovery())</span><br><span class="line"></span><br><span class="line">	gin.SetMode(setting.RunModel)</span><br><span class="line">	</span><br><span class="line">	apiv1 := r.Group(<span class="string">"/api/v1"</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		apiv1.GET(<span class="string">"/tags"</span>,v1.GetTags)</span><br><span class="line">		apiv1.POST(<span class="string">"/tags"</span>,v1.AddTags)</span><br><span class="line">		apiv1.PUT(<span class="string">"/tags/:id"</span>,v1.EditTags)</span><br><span class="line">		apiv1.DELETE(<span class="string">"/tags/:id"</span>,v1.DeleteTags)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// r.GET("/test",func(c *gin.Context)&#123;</span></span><br><span class="line">	<span class="comment">// 	c.JSON(200,gin.H&#123;</span></span><br><span class="line">	<span class="comment">// 		"message":"ok",</span></span><br><span class="line">	<span class="comment">// 	&#125;)</span></span><br><span class="line">	<span class="comment">// &#125;)</span></span><br><span class="line">	<span class="keyword">return</span> r</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> routers
 
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"gin-blog/pkg/setting"</span>
+    <span class="token string">"github.com/gin-gonic/gin"</span>
+    <span class="token string">"gin-blog/routers/api/v1"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">InitRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>gin<span class="token punctuation">.</span>Engine <span class="token punctuation">{</span>
+    r <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    r<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>gin<span class="token punctuation">.</span><span class="token function">Logger</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    r<span class="token punctuation">.</span><span class="token function">Use</span><span class="token punctuation">(</span>gin<span class="token punctuation">.</span><span class="token function">Recovery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    gin<span class="token punctuation">.</span><span class="token function">SetMode</span><span class="token punctuation">(</span>setting<span class="token punctuation">.</span>RunModel<span class="token punctuation">)</span>
+
+    apiv1 <span class="token operator">:=</span> r<span class="token punctuation">.</span><span class="token function">Group</span><span class="token punctuation">(</span><span class="token string">"/api/v1"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        apiv1<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/tags"</span><span class="token punctuation">,</span>v1<span class="token punctuation">.</span>GetTags<span class="token punctuation">)</span>
+        apiv1<span class="token punctuation">.</span><span class="token function">POST</span><span class="token punctuation">(</span><span class="token string">"/tags"</span><span class="token punctuation">,</span>v1<span class="token punctuation">.</span>AddTags<span class="token punctuation">)</span>
+        apiv1<span class="token punctuation">.</span><span class="token function">PUT</span><span class="token punctuation">(</span><span class="token string">"/tags/:id"</span><span class="token punctuation">,</span>v1<span class="token punctuation">.</span>EditTags<span class="token punctuation">)</span>
+        apiv1<span class="token punctuation">.</span><span class="token function">DELETE</span><span class="token punctuation">(</span><span class="token string">"/tags/:id"</span><span class="token punctuation">,</span>v1<span class="token punctuation">.</span>DeleteTags<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// r.GET("/test",func(c *gin.Context){</span>
+    <span class="token comment" spellcheck="true">//     c.JSON(200,gin.H{</span>
+    <span class="token comment" spellcheck="true">//         "message":"ok",</span>
+    <span class="token comment" spellcheck="true">//     })</span>
+    <span class="token comment" spellcheck="true">// })</span>
+    <span class="token keyword">return</span> r
+<span class="token punctuation">}</span></code></pre>
 <p>当出现下面这样，说明我们设计的路由规则通过了。<br><a href="https://postimg.cc/0bBHm7Xz" target="_blank" rel="noopener"><img src="https://i.postimg.cc/DwvV9gqP/answer.png" alt="answer.png"></a></p>
-<h4 id="目前的目录树是："><a href="#目前的目录树是：" class="headerlink" title="目前的目录树是："></a>目前的目录树是：</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">│  main.<span class="keyword">go</span></span><br><span class="line">│  test.<span class="keyword">go</span></span><br><span class="line">│</span><br><span class="line">├─conf</span><br><span class="line">│      app.ini</span><br><span class="line">│</span><br><span class="line">├─middleware</span><br><span class="line">├─models</span><br><span class="line">│      models.<span class="keyword">go</span></span><br><span class="line">│</span><br><span class="line">├─pkg</span><br><span class="line">│  ├─e</span><br><span class="line">│  │      code.<span class="keyword">go</span></span><br><span class="line">│  │      msg.<span class="keyword">go</span></span><br><span class="line">│  │</span><br><span class="line">│  ├─setting</span><br><span class="line">│  │      setting.<span class="keyword">go</span></span><br><span class="line">│  │</span><br><span class="line">│  └─util</span><br><span class="line">│          pagination.<span class="keyword">go</span></span><br><span class="line">│</span><br><span class="line">├─routers</span><br><span class="line">│  │  router.<span class="keyword">go</span></span><br><span class="line">│  │</span><br><span class="line">│  └─api</span><br><span class="line">│      └─v1</span><br><span class="line">│              tag.<span class="keyword">go</span></span><br><span class="line">│</span><br><span class="line">└─runtime</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">## 编写标签列表models逻辑</span></span><br><span class="line"><span class="string">下载依赖包[validation](https://beego.me/docs/mvc/controller/validation.md)。用于数据验证和错误收集的模块。</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="keyword">go</span></span><br><span class="line"><span class="keyword">go</span> get github.com/astaxie/beego/validation</span><br></pre></td></tr></table></figure></div>
-
+<h4 id="目前的目录树是："><a href="#目前的目录树是：" class="headerlink" title="目前的目录树是："></a>目前的目录树是：</h4><pre class=" language-go"><code class="language-go">│  main<span class="token punctuation">.</span><span class="token keyword">go</span>
+│  test<span class="token punctuation">.</span><span class="token keyword">go</span>
+│
+├─conf
+│      app<span class="token punctuation">.</span>ini
+│
+├─middleware
+├─models
+│      models<span class="token punctuation">.</span><span class="token keyword">go</span>
+│
+├─pkg
+│  ├─e
+│  │      code<span class="token punctuation">.</span><span class="token keyword">go</span>
+│  │      msg<span class="token punctuation">.</span><span class="token keyword">go</span>
+│  │
+│  ├─setting
+│  │      setting<span class="token punctuation">.</span><span class="token keyword">go</span>
+│  │
+│  └─util
+│          pagination<span class="token punctuation">.</span><span class="token keyword">go</span>
+│
+├─routers
+│  │  router<span class="token punctuation">.</span><span class="token keyword">go</span>
+│  │
+│  └─api
+│      └─v1
+│              tag<span class="token punctuation">.</span><span class="token keyword">go</span>
+│
+└─runtime</code></pre>
+<h2 id="编写标签列表models逻辑"><a href="#编写标签列表models逻辑" class="headerlink" title="编写标签列表models逻辑"></a>编写标签列表models逻辑</h2><p>下载依赖包<a href="https://beego.me/docs/mvc/controller/validation.md" target="_blank" rel="noopener">validation</a>。用于数据验证和错误收集的模块。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> get github<span class="token punctuation">.</span>com<span class="token operator">/</span>astaxie<span class="token operator">/</span>beego<span class="token operator">/</span>validation</code></pre>
 <p> 在models目录下创建tag.go</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Tag <span class="keyword">struct</span> &#123;</span><br><span class="line">	Model</span><br><span class="line"></span><br><span class="line">	Name <span class="keyword">string</span> <span class="string">`json:"name"`</span></span><br><span class="line">	CreatedBy <span class="keyword">string</span> <span class="string">`json:"created_by"`</span></span><br><span class="line">	ModifiedBy <span class="keyword">string</span> <span class="string">`json:"modified_by"`</span></span><br><span class="line">	State <span class="keyword">int</span> <span class="string">`json:"state"`</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetTags</span><span class="params">(pageNum <span class="keyword">int</span>, pageSize <span class="keyword">int</span>, maps <span class="keyword">interface</span> &#123;&#125;)</span> <span class="params">(tags []Tag)</span></span> &#123;</span><br><span class="line">	db.Where(maps).Offset(pageNum).Limit(pageSize).Find(&amp;tags)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetTotal</span><span class="params">(maps <span class="keyword">interface</span> &#123;&#125;)</span> <span class="params">(count <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	db.Model(&amp;Tag&#123;&#125;).Where(maps).Count(&amp;count)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> models
 
+<span class="token keyword">type</span> Tag <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    Model
+
+    Name <span class="token builtin">string</span> <span class="token string">`json:"name"`</span>
+    CreatedBy <span class="token builtin">string</span> <span class="token string">`json:"created_by"`</span>
+    ModifiedBy <span class="token builtin">string</span> <span class="token string">`json:"modified_by"`</span>
+    State <span class="token builtin">int</span> <span class="token string">`json:"state"`</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">GetTags</span><span class="token punctuation">(</span>pageNum <span class="token builtin">int</span><span class="token punctuation">,</span> pageSize <span class="token builtin">int</span><span class="token punctuation">,</span> maps <span class="token keyword">interface</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>tags <span class="token punctuation">[</span><span class="token punctuation">]</span>Tag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    db<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>maps<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Offset</span><span class="token punctuation">(</span>pageNum<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Limit</span><span class="token punctuation">(</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tags<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">GetTotal</span><span class="token punctuation">(</span>maps <span class="token keyword">interface</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>count <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    db<span class="token punctuation">.</span><span class="token function">Model</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>Tag<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>maps<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Count</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>count<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span></code></pre>
 <ul>
 <li>创建struct{}，提供给gorm使用。并给予了附属属性json，在c.json的时候会自动转换格式。</li>
 <li>可能会有的初学者看到return，而后面没有跟着变量，会不理解；其实你可以看到在函数末端，我们已经显示声明了返回值，这个变量在函数体内也可以直接使用，因为他在一开始就被声明了</li>
 <li>有人会疑惑db是哪里来的；因为在同个models包下，因此db *gorm.DB是可以直接使用的</li>
 </ul>
 <h2 id="编写标签列表的路由逻辑"><a href="#编写标签列表的路由逻辑" class="headerlink" title="编写标签列表的路由逻辑"></a>编写标签列表的路由逻辑</h2><p>编写获得标签列表的接口，修改routers/api/v1/tag.go</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> v1</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/e"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/util"</span></span><br><span class="line">	<span class="string">"gin-blog/models"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">	<span class="string">"github.com/Unknwon/com"</span></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 获取tags</span></span><br><span class="line">	name := c.Query(<span class="string">"name"</span>)</span><br><span class="line">	maps := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line">	data := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="string">"name"</span> != <span class="string">""</span> &#123;</span><br><span class="line">		maps[<span class="string">"name"</span>] = name</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> state <span class="keyword">int</span> = <span class="number">-1</span></span><br><span class="line">	<span class="keyword">if</span> arg := c.Query(<span class="string">"state"</span>);arg != <span class="string">""</span> &#123;</span><br><span class="line">		state = com.StrTo(arg).MustInt()</span><br><span class="line">		maps[<span class="string">"state"</span>] = state</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	code := e.SUCCESS</span><br><span class="line"></span><br><span class="line">	data[<span class="string">"lists"</span>] = models.GetTags(util.Getpag(c),setting.Pagesize,maps)</span><br><span class="line">	data[<span class="string">"total"</span>] = models.GetTotal(maps)</span><br><span class="line"></span><br><span class="line">	c.JSON(http.StatusOK,gin.H&#123;</span><br><span class="line">		<span class="string">"code"</span> : code,</span><br><span class="line">		<span class="string">"msg"</span> : e.GetMsg(code),</span><br><span class="line">		<span class="string">"data"</span> : data,</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AddTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 新增tags</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">EditTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 更新tags</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">DeleteTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 删除tags</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> v1
 
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"net/http"</span>
+    <span class="token string">"gin-blog/pkg/e"</span>
+    <span class="token string">"gin-blog/pkg/util"</span>
+    <span class="token string">"gin-blog/models"</span>
+    <span class="token string">"gin-blog/pkg/setting"</span>
+    <span class="token string">"github.com/Unknwon/com"</span>
+    <span class="token string">"github.com/gin-gonic/gin"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">GetTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 获取tags</span>
+    name <span class="token operator">:=</span> c<span class="token punctuation">.</span><span class="token function">Query</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span>
+    maps <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    data <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token keyword">interface</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token string">"name"</span> <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">{</span>
+        maps<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">var</span> state <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token keyword">if</span> arg <span class="token operator">:=</span> c<span class="token punctuation">.</span><span class="token function">Query</span><span class="token punctuation">(</span><span class="token string">"state"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>arg <span class="token operator">!=</span> <span class="token string">""</span> <span class="token punctuation">{</span>
+        state <span class="token operator">=</span> com<span class="token punctuation">.</span><span class="token function">StrTo</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        maps<span class="token punctuation">[</span><span class="token string">"state"</span><span class="token punctuation">]</span> <span class="token operator">=</span> state
+    <span class="token punctuation">}</span>
+
+    code <span class="token operator">:=</span> e<span class="token punctuation">.</span>SUCCESS
+
+    data<span class="token punctuation">[</span><span class="token string">"lists"</span><span class="token punctuation">]</span> <span class="token operator">=</span> models<span class="token punctuation">.</span><span class="token function">GetTags</span><span class="token punctuation">(</span>util<span class="token punctuation">.</span><span class="token function">Getpag</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">,</span>setting<span class="token punctuation">.</span>Pagesize<span class="token punctuation">,</span>maps<span class="token punctuation">)</span>
+    data<span class="token punctuation">[</span><span class="token string">"total"</span><span class="token punctuation">]</span> <span class="token operator">=</span> models<span class="token punctuation">.</span><span class="token function">GetTotal</span><span class="token punctuation">(</span>maps<span class="token punctuation">)</span>
+
+    c<span class="token punctuation">.</span><span class="token function">JSON</span><span class="token punctuation">(</span>http<span class="token punctuation">.</span>StatusOK<span class="token punctuation">,</span>gin<span class="token punctuation">.</span>H<span class="token punctuation">{</span>
+        <span class="token string">"code"</span> <span class="token punctuation">:</span> code<span class="token punctuation">,</span>
+        <span class="token string">"msg"</span> <span class="token punctuation">:</span> e<span class="token punctuation">.</span><span class="token function">GetMsg</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"data"</span> <span class="token punctuation">:</span> data<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">AddTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 新增tags</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">EditTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 更新tags</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">DeleteTags</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 删除tags</span>
+<span class="token punctuation">}</span></code></pre>
 <ul>
 <li><p>c.Query可用于获取?name=test&amp;state=1这类URL参数，而c.DefaultQuery则支持设置一个默认值.</p>
 </li>
@@ -499,22 +645,76 @@
 </li>
 <li><p>c *gin.Context是Gin很重要的组成部分，可以理解为上下文，它允许我们在中间件之间传递变量、管理流、验证请求的JSON和呈现JSON响应</p>
 <p>当我go run main.go的时候出现了错误。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run main.<span class="keyword">go</span></span><br><span class="line"># gin-blog/models</span><br><span class="line">models\models.<span class="keyword">go</span>:<span class="number">27</span>:<span class="number">14</span>: cannot refer to unexported name setting.cfg</span><br><span class="line">models\models.<span class="keyword">go</span>:<span class="number">27</span>:<span class="number">14</span>: undefined: setting.cfg</span><br></pre></td></tr></table></figure></div>
-
+<pre class=" language-go"><code class="language-go">$ <span class="token keyword">go</span> run main<span class="token punctuation">.</span><span class="token keyword">go</span>
+# gin<span class="token operator">-</span>blog<span class="token operator">/</span>models
+models\models<span class="token punctuation">.</span><span class="token keyword">go</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">:</span> cannot refer to unexported name setting<span class="token punctuation">.</span>cfg
+models\models<span class="token punctuation">.</span><span class="token keyword">go</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span><span class="token number">14</span><span class="token punctuation">:</span> undefined<span class="token punctuation">:</span> setting<span class="token punctuation">.</span>cfg</code></pre>
+<p>经过各种排查，终于知道了，当初我定义config *ini.File.而模块中导出的函数必须为字母大写。<br>现在我们再运行程序。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> run main<span class="token punctuation">.</span><span class="token keyword">go</span>
+curl <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags
+<span class="token punctuation">{</span><span class="token string">"code"</span><span class="token punctuation">:</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token string">"data"</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">"lists"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">"total"</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">"msg"</span><span class="token punctuation">:</span><span class="token string">"ok"</span><span class="token punctuation">}</span></code></pre>
+<h2 id="编写新增标签的models逻辑"><a href="#编写新增标签的models逻辑" class="headerlink" title="编写新增标签的models逻辑"></a>编写新增标签的models逻辑</h2><p>修改models目录下的tag.go文件。(新增)</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ExistTagByName</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+ <span class="token keyword">var</span> tag Tag
+ db<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span><span class="token string">"name = ?"</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">First</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tag<span class="token punctuation">)</span>
+ <span class="token keyword">if</span> tag<span class="token punctuation">.</span>ID <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token boolean">true</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
 </li>
 </ul>
-<p>经过各种排查，终于知道了，当初我定义config *ini.File.而模块中导出的函数必须为字母大写。<br>现在我们再运行程序。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run main.<span class="keyword">go</span></span><br><span class="line">curl <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8000</span>/api/v1/tags</span><br><span class="line">&#123;<span class="string">"code"</span>:<span class="number">200</span>,<span class="string">"data"</span>:&#123;<span class="string">"lists"</span>:[],<span class="string">"total"</span>:<span class="number">0</span>&#125;,<span class="string">"msg"</span>:<span class="string">"ok"</span>&#125;</span><br></pre></td></tr></table></figure></div>
+<p>func AddTag(name string, state int, createdBy string) bool{<br>    db.Create(&amp;Tag {<br>        Name : name,<br>        State : state,<br>        CreatedBy : createdBy,<br>    })</p>
+<pre><code>return true</code></pre><p>}</p>
+<pre><code>## 编写新增标签的路由逻辑。
+修改routers目录下v1下的tag.go。
+```go
+func AddTags(c *gin.Context) {
+    // 新增tags
+    name := c.Query(&quot;name&quot;)
+    state := com.StrTo(c.DefaultQuery(&quot;state&quot;, &quot;0&quot;)).MustInt()
+    createdBy := c.Query(&quot;created_by&quot;)
 
-<h2 id="编写新增标签的models逻辑"><a href="#编写新增标签的models逻辑" class="headerlink" title="编写新增标签的models逻辑"></a>编写新增标签的models逻辑</h2><p> 修改models目录下的tag.go文件。(新增)</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ExistTagByName</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> tag Tag</span><br><span class="line">	db.Select(<span class="string">"id"</span>).Where(<span class="string">"name = ?"</span>,name).First(&amp;tag)</span><br><span class="line">	<span class="keyword">if</span> tag.ID &gt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AddTag</span><span class="params">(name <span class="keyword">string</span>, state <span class="keyword">int</span>, createdBy <span class="keyword">string</span>)</span> <span class="title">bool</span></span>&#123;</span><br><span class="line">	db.Create(&amp;Tag &#123;</span><br><span class="line">		Name : name,</span><br><span class="line">		State : state,</span><br><span class="line">		CreatedBy : createdBy,</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+    valid := validation.Validation{}
+    valid.Required(name, &quot;name&quot;).Message(&quot;名称不能为空&quot;)
+    valid.MaxSize(name, 100, &quot;name&quot;).Message(&quot;名称最长为100&quot;)
+    valid.Required(createdBy, &quot;created_by&quot;).Message(&quot;创建人不能为空&quot;)
+    valid.MaxSize(createdBy, 100, &quot;created_by&quot;).Message(&quot;创建人不能大于100&quot;)
+    valid.Range(state, 0, 1, &quot;state&quot;).Message(&quot;状态只能0或1&quot;)
 
-<h2 id="编写新增标签的路由逻辑。"><a href="#编写新增标签的路由逻辑。" class="headerlink" title="编写新增标签的路由逻辑。"></a>编写新增标签的路由逻辑。</h2><p>修改routers目录下v1下的tag.go。</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">AddTags</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 新增tags</span></span><br><span class="line">	name := c.Query(<span class="string">"name"</span>)</span><br><span class="line">	state := com.StrTo(c.DefaultQuery(<span class="string">"state"</span>, <span class="string">"0"</span>)).MustInt()</span><br><span class="line">	createdBy := c.Query(<span class="string">"created_by"</span>)</span><br><span class="line"></span><br><span class="line">	valid := validation.Validation&#123;&#125;</span><br><span class="line">	valid.Required(name, <span class="string">"name"</span>).Message(<span class="string">"名称不能为空"</span>)</span><br><span class="line">	valid.MaxSize(name, <span class="number">100</span>, <span class="string">"name"</span>).Message(<span class="string">"名称最长为100"</span>)</span><br><span class="line">	valid.Required(createdBy, <span class="string">"created_by"</span>).Message(<span class="string">"创建人不能为空"</span>)</span><br><span class="line">	valid.MaxSize(createdBy, <span class="number">100</span>, <span class="string">"created_by"</span>).Message(<span class="string">"创建人不能大于100"</span>)</span><br><span class="line">	valid.Range(state, <span class="number">0</span>, <span class="number">1</span>, <span class="string">"state"</span>).Message(<span class="string">"状态只能0或1"</span>)</span><br><span class="line"></span><br><span class="line">	code := e.INVALID_PARAMS</span><br><span class="line">	<span class="keyword">if</span> !valid.HasErrors() &#123;</span><br><span class="line">		<span class="keyword">if</span> !models.ExistTagByName(name) &#123;</span><br><span class="line">			code = e.SUCCESS</span><br><span class="line">			models.AddTag(name, state, createdBy)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			code = e.ERROR_EXIST_TAG</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> _, err := <span class="keyword">range</span> valid.Errors &#123;</span><br><span class="line">			log.Fatalf(<span class="string">"fail %v"</span>, err.Message)</span><br><span class="line">			<span class="comment">// logging.Info(err.Key,err.Message)</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	c.JSON(http.StatusOK, gin.H&#123;</span><br><span class="line">		<span class="string">"code"</span>: code,</span><br><span class="line">		<span class="string">"msg"</span>:  e.GetMsg(code),</span><br><span class="line">		<span class="string">"data"</span>: <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>),</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+    code := e.INVALID_PARAMS
+    if !valid.HasErrors() {
+        if !models.ExistTagByName(name) {
+            code = e.SUCCESS
+            models.AddTag(name, state, createdBy)
+        } else {
+            code = e.ERROR_EXIST_TAG
+        }
+    } else {
+        for _, err := range valid.Errors {
+            log.Fatalf(&quot;fail %v&quot;, err.Message)
+            // logging.Info(err.Key,err.Message)
+        }
+    }
+    c.JSON(http.StatusOK, gin.H{
+        &quot;code&quot;: code,
+        &quot;msg&quot;:  e.GetMsg(code),
+        &quot;data&quot;: make(map[string]string),
+    })
 
-<h4 id="编写models-callbacks"><a href="#编写models-callbacks" class="headerlink" title="编写models callbacks"></a>编写models callbacks</h4><p>但是这个时候大家会发现，我明明新增了标签，但created_on居然没有值，那做修改标签的时候modified_on会不会也存在这个问题？为了解决这个问题，我们需要打开models目录下的tag.go文件，修改文件内容（修改包引用和增加2个方法）：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(tag *Tag)</span> <span class="title">BeforeCreate</span><span class="params">(scope *gorm.Scope)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">    scope.SetColumn(<span class="string">"CreatedOn"</span>, time.Now().Unix())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(tag *Tag)</span> <span class="title">BeforeUpdate</span><span class="params">(scope *gorm.Scope)</span> <span class="title">error</span></span> &#123;</span><br><span class="line">	scope.SetColumn(<span class="string">"ModifiedOn"</span>, time.Now().Unix())</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+}</code></pre><h4 id="编写models-callbacks"><a href="#编写models-callbacks" class="headerlink" title="编写models callbacks"></a>编写models callbacks</h4><p>但是这个时候大家会发现，我明明新增了标签，但created_on居然没有值，那做修改标签的时候modified_on会不会也存在这个问题？为了解决这个问题，我们需要打开models目录下的tag.go文件，修改文件内容（修改包引用和增加2个方法）：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>tag <span class="token operator">*</span>Tag<span class="token punctuation">)</span> <span class="token function">BeforeCreate</span><span class="token punctuation">(</span>scope <span class="token operator">*</span>gorm<span class="token punctuation">.</span>Scope<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+    scope<span class="token punctuation">.</span><span class="token function">SetColumn</span><span class="token punctuation">(</span><span class="token string">"CreatedOn"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Unix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
+    <span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>tag <span class="token operator">*</span>Tag<span class="token punctuation">)</span> <span class="token function">BeforeUpdate</span><span class="token punctuation">(</span>scope <span class="token operator">*</span>gorm<span class="token punctuation">.</span>Scope<span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+    scope<span class="token punctuation">.</span><span class="token function">SetColumn</span><span class="token punctuation">(</span><span class="token string">"ModifiedOn"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Unix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -910,23 +1110,20 @@ HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/24/gin-huan-jing-da-jian/">
+                <a href="/2018/10/24/iterm2-shua-yi-shua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Gin 环境搭建">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="iTerm2耍一耍">
                         
-                        <span class="card-title">Gin 环境搭建</span>
+                        <span class="card-title">iTerm2耍一耍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Gin 环境搭建
-Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小巧、易用、性能好很多，也因为 httprouter 的性能提高了40倍。
-
-1.安装Golang根据自己环境安装对应的环境。  
-2.安装Go
+                            iTerm2耍一耍安装iTerm2brew cask install iterm2配置iTerm2主题最常用的主题就属于它了Solarized Dark theme果断下载。打开iTerm2,到达preferences  
+配置Oh My 
                         
                     </div>
                     <div class="publish-info">
@@ -937,8 +1134,8 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Golang/" class="post-category">
-                                    Golang
+                            <a href="/categories/工具/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -948,16 +1145,12 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
+                    <a href="/tags/iTerm2/">
+                        <span class="chip bg-color">iTerm2</span>
                     </a>
                     
-                    <a href="/tags/golang/">
-                        <span class="chip bg-color">golang</span>
-                    </a>
-                    
-                    <a href="/tags/gin/">
-                        <span class="chip bg-color">gin</span>
+                    <a href="/tags/mac/">
+                        <span class="chip bg-color">mac</span>
                     </a>
                     
                 </div>
@@ -1120,7 +1313,7 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

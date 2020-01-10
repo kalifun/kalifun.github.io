@@ -30,7 +30,7 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -434,7 +434,7 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        290
+                        279
                     </div>
                     
 
@@ -459,10 +459,22 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
             <div id="articleContent">
                 <h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><h2 id="什么是Maven"><a href="#什么是Maven" class="headerlink" title="什么是Maven"></a>什么是Maven</h2><blockquote>
 <h3 id="Maven-是项目构建工具，能把项目抽象成-POM-project-object-model-Maven-使用-POM对项目进行构建、打包、文档化等操作。最重要的是解决了项目需要类库的依赖管理，简化了项目开发环境搭建的过程。"><a href="#Maven-是项目构建工具，能把项目抽象成-POM-project-object-model-Maven-使用-POM对项目进行构建、打包、文档化等操作。最重要的是解决了项目需要类库的依赖管理，简化了项目开发环境搭建的过程。" class="headerlink" title="Maven 是项目构建工具，能把项目抽象成 POM (project object model), Maven 使用 POM对项目进行构建、打包、文档化等操作。最重要的是解决了项目需要类库的依赖管理，简化了项目开发环境搭建的过程。"></a>Maven 是项目构建工具，能把项目抽象成 POM (project object model), Maven 使用 POM对项目进行构建、打包、文档化等操作。最重要的是解决了项目需要类库的依赖管理，简化了项目开发环境搭建的过程。</h3></blockquote>
-<h4 id="这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。"><a href="#这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。" class="headerlink" title="这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。"></a>这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。</h4><h2 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h2><h4 id="下载链接：Maven"><a href="#下载链接：Maven" class="headerlink" title="下载链接：Maven"></a>下载链接：<a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></h4><h4 id="阿里云的Maven镜像"><a href="#阿里云的Maven镜像" class="headerlink" title="阿里云的Maven镜像"></a>阿里云的<a href="https://maven.aliyun.com/mvn/view" target="_blank" rel="noopener">Maven镜像</a></h4><h4 id="1-解压到电脑的任意位置。"><a href="#1-解压到电脑的任意位置。" class="headerlink" title="1.解压到电脑的任意位置。"></a>1.解压到电脑的任意位置。</h4><h4 id="2-修改settings"><a href="#2-修改settings" class="headerlink" title="2.修改settings"></a>2.修改settings</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="XML"><figure class="iseeu highlight /xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>path<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span>   // maven目录下创建一个repository</span><br><span class="line">// 修改maven的源</span><br><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span>        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<h4 id="3-设置环境变量-将Maven目录下的bin设置到path中"><a href="#3-设置环境变量-将Maven目录下的bin设置到path中" class="headerlink" title="3.设置环境变量(将Maven目录下的bin设置到path中)"></a>3.设置环境变量(将Maven目录下的bin设置到path中)</h4><h4 id="4-测试是否成功"><a href="#4-测试是否成功" class="headerlink" title="4.测试是否成功"></a>4.测试是否成功</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ mvn -version</span><br><span class="line">Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-25T02:41:47+08:00)</span><br><span class="line">Maven home: D:\xxxxxxx\xxxx</span><br><span class="line">Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jre1.8.0_201</span><br><span class="line">Default locale: zh_CN, platform encoding: GBK</span><br><span class="line">OS name: <span class="string">"xxxxxx"</span>, version: <span class="string">"xxx"</span>, arch: <span class="string">"xxx"</span>, family: <span class="string">"xxxxx"</span></span><br></pre></td></tr></table></figure></div>
-
+<h4 id="这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。"><a href="#这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。" class="headerlink" title="这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。"></a>这个就很像我们学习Django中的django-admin相似，但是有缺少库管理。这样应该就更能理解了。</h4><h2 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h2><h4 id="下载链接：Maven"><a href="#下载链接：Maven" class="headerlink" title="下载链接：Maven"></a>下载链接：<a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven</a></h4><h4 id="阿里云的Maven镜像"><a href="#阿里云的Maven镜像" class="headerlink" title="阿里云的Maven镜像"></a>阿里云的<a href="https://maven.aliyun.com/mvn/view" target="_blank" rel="noopener">Maven镜像</a></h4><h4 id="1-解压到电脑的任意位置。"><a href="#1-解压到电脑的任意位置。" class="headerlink" title="1.解压到电脑的任意位置。"></a>1.解压到电脑的任意位置。</h4><h4 id="2-修改settings"><a href="#2-修改settings" class="headerlink" title="2.修改settings"></a>2.修改settings</h4><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>path<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span>   // maven目录下创建一个repository
+// 修改maven的源
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>aliyun maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">></span></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">></span></span>central<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">></span></span>        
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrors</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="3-设置环境变量-将Maven目录下的bin设置到path中"><a href="#3-设置环境变量-将Maven目录下的bin设置到path中" class="headerlink" title="3.设置环境变量(将Maven目录下的bin设置到path中)"></a>3.设置环境变量(将Maven目录下的bin设置到path中)</h4><h4 id="4-测试是否成功"><a href="#4-测试是否成功" class="headerlink" title="4.测试是否成功"></a>4.测试是否成功</h4><pre class=" language-bash"><code class="language-bash">$ mvn -version
+Apache Maven 3.6.0 <span class="token punctuation">(</span>97c98ec64a1fdfee7767ce5ffb20918da4f719f3<span class="token punctuation">;</span> 2018-10-25T02:41:47+08:00<span class="token punctuation">)</span>
+Maven home: D:\xxxxxxx\xxxx
+Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jre1.8.0_201
+Default locale: zh_CN, platform encoding: GBK
+OS name: <span class="token string">"xxxxxx"</span>, version: <span class="token string">"xxx"</span>, arch: <span class="token string">"xxx"</span>, family: <span class="token string">"xxxxx"</span></code></pre>
 <h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><h3 id="maven-一-maven到底是个啥玩意"><a href="#maven-一-maven到底是个啥玩意" class="headerlink" title="maven(一) maven到底是个啥玩意~"></a><a href="https://www.cnblogs.com/whgk/p/7112560.html" target="_blank" rel="noopener">maven(一) maven到底是个啥玩意~</a></h3>
             </div>
             <hr/>
@@ -866,7 +878,9 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
                     <div class="summary block-with-text">
                         
                             Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
-1234567def get_lines():    with open('file.txt','rb') as f:        re
+def get_lines():
+    with open('file.txt','rb') as f:
+        return 
                         
                     </div>
                     <div class="publish-info">
@@ -1056,7 +1070,7 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

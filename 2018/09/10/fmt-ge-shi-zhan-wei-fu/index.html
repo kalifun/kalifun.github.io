@@ -5,9 +5,12 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Golang fmt格式“占位符”, kalifun;blog.kalifun">
-    <meta name="description" content="GoLang fmt格式“占位符”1234typr human struct&amp;#123;  name string&amp;#125;var  people = human&amp;#123;name:&#34;FUN&#34;&amp;#125;
-
-1234普通占位符占位符  ">
+    <meta name="description" content="GoLang fmt格式“占位符”typr human struct{
+  name string
+}
+var  people = human{name:&#34;FUN&#34;}  
+普通占位符
+占位符         说明              ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +34,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -439,7 +442,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        134
+                        124
                     </div>
                     
 
@@ -462,13 +465,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="GoLang-fmt格式“占位符”"><a href="#GoLang-fmt格式“占位符”" class="headerlink" title="GoLang fmt格式“占位符”"></a>GoLang fmt格式“占位符”</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typr human <span class="keyword">struct</span>&#123;</span><br><span class="line">  name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span>  people = human&#123;name:<span class="string">"FUN"</span>&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">普通占位符</span><br><span class="line">占位符         说明                                          举例               输出</span><br><span class="line">%v           相应值的默认格式                     printf(&quot;%v&quot;,people)        &#123;FUN&#125;</span><br><span class="line">%+v          打印结构体时，会添加字段             printf（“%+v”,people）     &#123;name:&quot;FUN&quot;&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">字符串与字节切片</span><br><span class="line">占位符                说明                                  举例                           输出</span><br><span class="line">%s           输出字符串表示（string类型或者[]byte） printf（“%s”,[]byte(&quot;GO语言&quot;)）     GO语言</span><br><span class="line">%q           安全转义                               printf(&quot;%q&quot;,&quot;go语言&quot;)                “go语言”</span><br></pre></td></tr></table></figure></div>
-
-
+                <h1 id="GoLang-fmt格式“占位符”"><a href="#GoLang-fmt格式“占位符”" class="headerlink" title="GoLang fmt格式“占位符”"></a>GoLang fmt格式“占位符”</h1><pre class=" language-go"><code class="language-go">typr human <span class="token keyword">struct</span><span class="token punctuation">{</span>
+  name <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span>  people <span class="token operator">=</span> human<span class="token punctuation">{</span>name<span class="token punctuation">:</span><span class="token string">"FUN"</span><span class="token punctuation">}</span>  </code></pre>
+<pre><code>普通占位符
+占位符         说明                                          举例               输出
+%v           相应值的默认格式                     printf(&quot;%v&quot;,people)        {FUN}
+%+v          打印结构体时，会添加字段             printf（“%+v”,people）     {name:&quot;FUN&quot;}</code></pre><pre><code>字符串与字节切片
+占位符                说明                                  举例                           输出
+%s           输出字符串表示（string类型或者[]byte） printf（“%s”,[]byte(&quot;GO语言&quot;)）     GO语言
+%q           安全转义                               printf(&quot;%q&quot;,&quot;go语言&quot;)                “go语言”</code></pre>
             </div>
             <hr/>
 
@@ -808,6 +815,68 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2018/09/10/golang-day1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="GoLang_Day1">
+                        
+                        <span class="card-title">GoLang_Day1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            GoLang创建hello.gopackage main
+
+import "fmt"
+
+func main()  {
+    fmt.Println("Hello")
+}
+执行hello.gogo run hello.go
+Hello
+编译
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
+                    </a>
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2018/09/10/ansible/">
                     <div class="card-image">
                         
@@ -820,15 +889,16 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ANSIBLEcentos 安装 Minimal版本无法获取IP解决123vi /etc/sysconfig/network-scripts/ifcfg-ens33ONBOOT=yes  (修改内容)sudo reboot
-
-CENTOS 
+                            ANSIBLEcentos 安装 Minimal版本无法获取IP解决vi /etc/sysconfig/network-scripts/ifcfg-ens33
+ONBOOT=yes  (修改内容)
+sudo reboot
+CENTOS 安装
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-09-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -846,60 +916,6 @@ CENTOS
                     
                     <a href="/tags/ansible/">
                         <span class="chip bg-color">ansible</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/09/05/docker-bu-shu-oracle/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Docker部署Oracle">
-                        
-                        <span class="card-title">Docker部署Oracle</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Oracle部署第一部：准备工作一、环境准备
-①　操作系统：Ubuntu 14.04
-②　Docker 版本只适合Ubuntu 14.04
-二、安装包准备
-①　安装包名：oracle_install.tar.gz
-第二部：Oracle安装一
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据库/" class="post-category">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/oracle/">
-                        <span class="chip bg-color">oracle</span>
                     </a>
                     
                 </div>
@@ -1062,7 +1078,7 @@ CENTOS
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

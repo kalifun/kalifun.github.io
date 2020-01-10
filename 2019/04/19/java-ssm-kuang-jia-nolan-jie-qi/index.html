@@ -30,7 +30,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -434,7 +434,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        940
+                        924
                     </div>
                     
 
@@ -460,17 +460,108 @@
                 <h1 id="Java-ssm框架の拦截器"><a href="#Java-ssm框架の拦截器" class="headerlink" title="Java-ssm框架の拦截器"></a>Java-ssm框架の拦截器</h1><h2 id="为什么使用拦截器？"><a href="#为什么使用拦截器？" class="headerlink" title="为什么使用拦截器？"></a>为什么使用拦截器？</h2><blockquote>
 <p>之前我一直再考虑是不是每次访问页面的时候都需要去考虑有没有存在session，再判断是否可以访问页面？其实差不多，拦截器就是干这个事情的，但是不需要你每次去做判断，只需要把你的拦截器写好，其他的就不用管了。</p>
 </blockquote>
-<h2 id="如何使用拦截器？"><a href="#如何使用拦截器？" class="headerlink" title="如何使用拦截器？"></a>如何使用拦截器？</h2><h3 id="1-1配置XML"><a href="#1-1配置XML" class="headerlink" title="1.1配置XML"></a>1.1配置XML</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 拦截器 --&gt;</span><br><span class="line">    &lt;mvc:interceptors&gt;</span><br><span class="line">        &lt;!-- 多个拦截器，顺序执行 --&gt;</span><br><span class="line">        &lt;mvc:interceptor&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/**&quot;/&gt;</span><br><span class="line">            &lt;!--不拦截静态资源--&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/*.css&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.css&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.js&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.png&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.gif&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.jpg&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.jpeg&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/label_ctl/*&quot; /&gt;</span><br><span class="line">            &lt;!--自定义拦截器--&gt;</span><br><span class="line">            &lt;bean class=&quot;com.label.interceptor.LoginInterceptor&quot; /&gt;</span><br><span class="line">        &lt;/mvc:interceptor&gt;</span><br><span class="line">    &lt;/mvc:interceptors&gt;</span><br></pre></td></tr></table></figure></div>
-
-<h4 id="设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。"><a href="#设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。" class="headerlink" title="设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。"></a>设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。</h4><blockquote>
+<h2 id="如何使用拦截器？"><a href="#如何使用拦截器？" class="headerlink" title="如何使用拦截器？"></a>如何使用拦截器？</h2><h3 id="1-1配置XML"><a href="#1-1配置XML" class="headerlink" title="1.1配置XML"></a>1.1配置XML</h3><pre><code>&lt;!-- 拦截器 --&gt;
+    &lt;mvc:interceptors&gt;
+        &lt;!-- 多个拦截器，顺序执行 --&gt;
+        &lt;mvc:interceptor&gt;
+            &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+            &lt;!--不拦截静态资源--&gt;
+            &lt;mvc:exclude-mapping path=&quot;/*.css&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.css&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.js&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.png&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.gif&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.jpg&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/**/*.jpeg&quot;/&gt;
+            &lt;mvc:exclude-mapping path=&quot;/label_ctl/*&quot; /&gt;
+            &lt;!--自定义拦截器--&gt;
+            &lt;bean class=&quot;com.label.interceptor.LoginInterceptor&quot; /&gt;
+        &lt;/mvc:interceptor&gt;
+    &lt;/mvc:interceptors&gt;</code></pre><h4 id="设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。"><a href="#设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。" class="headerlink" title="设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。"></a>设置拦截器有多种方法，这只是其中一种，更具自己如何构造SSM框架来决定把代码放在哪。</h4><blockquote>
 <p> 完整XML文件spring-mvc.xml</p>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">       http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">       http://www.springframework.org/schema/context</span><br><span class="line">       http://www.springframework.org/schema/context/spring-context.xsd</span><br><span class="line">       http://www.springframework.org/schema/mvc</span><br><span class="line">       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.label.controller&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;mvc:annotation-driven /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--指定文件夹下所有文件不会被DispatcherServlet拦截，直接访问--&gt;</span><br><span class="line">    &lt;mvc:resources mapping=&quot;/文件夹名称/**&quot; location=&quot;/文件夹名称/&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 拦截器 --&gt;</span><br><span class="line">    &lt;mvc:interceptors&gt;</span><br><span class="line">        &lt;!-- 多个拦截器，顺序执行 --&gt;</span><br><span class="line">        &lt;mvc:interceptor&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/**&quot;/&gt;</span><br><span class="line">            &lt;!--不拦截静态资源--&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/*.css&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.css&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.js&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.png&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.gif&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.jpg&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/**/*.jpeg&quot;/&gt;</span><br><span class="line">            &lt;bean class=&quot;com.label.interceptor.LoginInterceptor&quot; /&gt;</span><br><span class="line">        &lt;/mvc:interceptor&gt;</span><br><span class="line">    &lt;/mvc:interceptors&gt;</span><br><span class="line"></span><br><span class="line">    &lt;mvc:default-servlet-handler /&gt;</span><br><span class="line">      &lt;!--指定服务view的文件夹及后缀名--&gt;</span><br><span class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;   </span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></div>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;
+    &lt;context:component-scan base-package=&quot;com.label.controller&quot; /&gt;</code></pre></blockquote>
+<pre><code>&lt;mvc:annotation-driven /&gt;
 
-<h3 id="1-2-自定义拦截器"><a href="#1-2-自定义拦截器" class="headerlink" title="1.2 自定义拦截器"></a>1.2 自定义拦截器</h3><p> 根据上面设置的目录下创建实例LoginInterceptor</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">package com.label.interceptor;</span><br><span class="line"></span><br><span class="line">import com.label.entity.User;</span><br><span class="line">import org.springframework.web.servlet.HandlerInterceptor;</span><br><span class="line">import org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">import javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line">public class LoginInterceptor implements HandlerInterceptor &#123;</span><br><span class="line">    /**</span><br><span class="line">     * Handler执行完成之后调用这个方法</span><br><span class="line">     */</span><br><span class="line">    public void afterCompletion(HttpServletRequest request,</span><br><span class="line">                                HttpServletResponse response, Object handler, Exception exc)</span><br><span class="line">            throws Exception &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Handler执行之后，ModelAndView返回之前调用这个方法</span><br><span class="line">     */</span><br><span class="line">    public void postHandle(HttpServletRequest request, HttpServletResponse response,</span><br><span class="line">                           Object handler, ModelAndView modelAndView) throws Exception &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Handler执行之前调用这个方法</span><br><span class="line">     */</span><br><span class="line">    public boolean preHandle(HttpServletRequest request, HttpServletResponse response,</span><br><span class="line">                             Object handler) throws Exception &#123;</span><br><span class="line">        //获取请求的URL</span><br><span class="line">        String url = request.getRequestURI();</span><br><span class="line">        //URL:login.jsp是公开的;这个demo是除了login.jsp是可以公开访问的，其它的URL都进行拦截控制</span><br><span class="line">        if(url.indexOf(&quot;/admin&quot;)&gt;=0)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        //获取Session</span><br><span class="line">        HttpSession session = request.getSession();</span><br><span class="line">        User user = (User) session.getAttribute(&quot;user&quot;);</span><br><span class="line"></span><br><span class="line">        if(user != null)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        //不符合条件的，跳转到登录界面</span><br><span class="line">        request.getRequestDispatcher(&quot;/WEB-INF/views/admin/login.jsp&quot;).forward(request, response);</span><br><span class="line"></span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+&lt;!--指定文件夹下所有文件不会被DispatcherServlet拦截，直接访问--&gt;
+&lt;mvc:resources mapping=&quot;/文件夹名称/**&quot; location=&quot;/文件夹名称/&quot;/&gt;
 
-<p>对于写后台的来说，上面基本是可以直接使用的。</p>
+&lt;!-- 拦截器 --&gt;
+&lt;mvc:interceptors&gt;
+    &lt;!-- 多个拦截器，顺序执行 --&gt;
+    &lt;mvc:interceptor&gt;
+        &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+        &lt;!--不拦截静态资源--&gt;
+        &lt;mvc:exclude-mapping path=&quot;/*.css&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.css&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.js&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.png&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.gif&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.jpg&quot;/&gt;
+        &lt;mvc:exclude-mapping path=&quot;/**/*.jpeg&quot;/&gt;
+        &lt;bean class=&quot;com.label.interceptor.LoginInterceptor&quot; /&gt;
+    &lt;/mvc:interceptor&gt;
+&lt;/mvc:interceptors&gt;
+
+&lt;mvc:default-servlet-handler /&gt;
+  &lt;!--指定服务view的文件夹及后缀名--&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;   
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
+&lt;/bean&gt;</code></pre>
+```
+### 1.2 自定义拦截器
+ 根据上面设置的目录下创建实例LoginInterceptor
+```
+package com.label.interceptor;
+
+<p>import com.label.entity.User;<br>import org.springframework.web.servlet.HandlerInterceptor;<br>import org.springframework.web.servlet.ModelAndView;</p>
+<p>import javax.servlet.http.HttpServletRequest;<br>import javax.servlet.http.HttpServletResponse;<br>import javax.servlet.http.HttpSession;</p>
+<p>public class LoginInterceptor implements HandlerInterceptor {<br>    /**<br>     * Handler执行完成之后调用这个方法<br>     */<br>    public void afterCompletion(HttpServletRequest request,<br>                                HttpServletResponse response, Object handler, Exception exc)<br>            throws Exception {</p>
+<pre><code>}
+
+/**
+ * Handler执行之后，ModelAndView返回之前调用这个方法
+ */
+public void postHandle(HttpServletRequest request, HttpServletResponse response,
+                       Object handler, ModelAndView modelAndView) throws Exception {
+}
+
+/**
+ * Handler执行之前调用这个方法
+ */
+public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
+                         Object handler) throws Exception {
+    //获取请求的URL
+    String url = request.getRequestURI();
+    //URL:login.jsp是公开的;这个demo是除了login.jsp是可以公开访问的，其它的URL都进行拦截控制
+    if(url.indexOf(&quot;/admin&quot;)&gt;=0){
+        return true;
+    }
+    //获取Session
+    HttpSession session = request.getSession();
+    User user = (User) session.getAttribute(&quot;user&quot;);
+
+    if(user != null){
+        return true;
+    }
+    //不符合条件的，跳转到登录界面
+    request.getRequestDispatcher(&quot;/WEB-INF/views/admin/login.jsp&quot;).forward(request, response);
+
+    return false;
+}</code></pre><p>}</p>
+<p>```<br>对于写后台的来说，上面基本是可以直接使用的。</p>
 
             </div>
             <hr/>
@@ -1063,7 +1154,7 @@ Spring-MVC 你可以理
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

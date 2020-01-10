@@ -35,7 +35,7 @@ RestController = @Contr">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -439,14 +439,14 @@ RestController = @Contr">
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        724
+                        702
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -473,8 +473,18 @@ RestController = @Contr">
 <h4 id="声明此类是一个Spring管理的类"><a href="#声明此类是一个Spring管理的类" class="headerlink" title="声明此类是一个Spring管理的类"></a>声明此类是一个Spring管理的类</h4></blockquote>
 <h3 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h3><blockquote>
 <h4 id="声明此类是一个配置类，通常与注解-Bean配合使用"><a href="#声明此类是一个配置类，通常与注解-Bean配合使用" class="headerlink" title="声明此类是一个配置类，通常与注解@Bean配合使用"></a>声明此类是一个配置类，通常与注解@Bean配合使用</h4></blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataSourceConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span>(name = <span class="string">"datasoucre"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">(Environment env)</span></span>&#123;</span><br><span class="line">        DruidDataSource druidDataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        druidDataSource.setUrl(env.getProperty(<span class="string">"spring.datasource.url"</span>));</span><br><span class="line">        druidDataSource.setUsername(env.getProperty(<span class="string">"spring.datasource.username"</span>));</span><br><span class="line">        druidDataSource.setPassword(env.getProperty(<span class="string">"spring.datasource.password"</span>));</span><br><span class="line">        druidDataSource.setDriverClassName(env.getProperty(<span class="string">"spring.datasource.driver-class-name"</span>));</span><br><span class="line">        <span class="keyword">return</span> druidDataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DataSourceConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"datasoucre"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> DataSource <span class="token function">dataSource</span><span class="token punctuation">(</span>Environment env<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        DruidDataSource druidDataSource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        druidDataSource<span class="token punctuation">.</span><span class="token function">setUrl</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.url"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        druidDataSource<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.username"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        druidDataSource<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.password"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        druidDataSource<span class="token punctuation">.</span><span class="token function">setDriverClassName</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"spring.datasource.driver-class-name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> druidDataSource<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="＠RequestMapping"><a href="#＠RequestMapping" class="headerlink" title="＠RequestMapping"></a>＠RequestMapping</h3><blockquote>
 <h4 id="Spring提供了简化后的-RequestMapping，提供了新的注解来表示http方法："><a href="#Spring提供了简化后的-RequestMapping，提供了新的注解来表示http方法：" class="headerlink" title="Spring提供了简化后的@RequestMapping，提供了新的注解来表示http方法："></a>Spring提供了简化后的@RequestMapping，提供了新的注解来表示http方法：</h4></blockquote>
 <ul>
@@ -490,37 +500,42 @@ RestController = @Contr">
 <hr>
 </li>
 </ul>
-<h4 id="属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法"><a href="#属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法" class="headerlink" title="属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法"></a>属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法</h4>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(value=(<span class="string">"/test.json"</span>),consumes=<span class="string">"appliation/json"</span>)</span><br></pre></td></tr></table></figure></div>
-
+<h4 id="属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法"><a href="#属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法" class="headerlink" title="属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法"></a>属性consumes意味着请求的http头的Content-Type媒体类型与consumes匹配才能调用此方法</h4><pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"/test.json"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>consumes<span class="token operator">=</span><span class="token string">"appliation/json"</span><span class="token punctuation">)</span></code></pre>
 <h5 id="这里映射的请求媒体类型是application-json，所以无法接收到Ajax的请求方法。"><a href="#这里映射的请求媒体类型是application-json，所以无法接收到Ajax的请求方法。" class="headerlink" title="这里映射的请求媒体类型是application/json，所以无法接收到Ajax的请求方法。"></a>这里映射的请求媒体类型是<strong>application/json</strong>，所以无法接收到Ajax的请求方法。</h5><hr>
-<h4 id="produces-属性对应于-HTTP-请求-Accept-字段-只有匹配得上的方法才能被调用。"><a href="#produces-属性对应于-HTTP-请求-Accept-字段-只有匹配得上的方法才能被调用。" class="headerlink" title="produces 属性对应于 HTTP 请求 Accept 字段 只有匹配得上的方法才能被调用。"></a>produces 属性对应于 HTTP 请求 Accept 字段 只有匹配得上的方法才能被调用。</h4>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(path=<span class="string">"/user/&#123;userID&#125;"</span>,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)</span><br></pre></td></tr></table></figure></div>
-
+<h4 id="produces-属性对应于-HTTP-请求-Accept-字段-只有匹配得上的方法才能被调用。"><a href="#produces-属性对应于-HTTP-请求-Accept-字段-只有匹配得上的方法才能被调用。" class="headerlink" title="produces 属性对应于 HTTP 请求 Accept 字段 只有匹配得上的方法才能被调用。"></a>produces 属性对应于 HTTP 请求 Accept 字段 只有匹配得上的方法才能被调用。</h4><pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>path<span class="token operator">=</span><span class="token string">"/user/{userID}"</span><span class="token punctuation">,</span>produces<span class="token operator">=</span>MediaType<span class="token punctuation">.</span>APPLICATION_JSON_UTF8_VALUE<span class="token punctuation">)</span></code></pre>
 <hr>
 <h2 id="方法参数"><a href="#方法参数" class="headerlink" title="方法参数"></a>方法参数</h2><ul>
 <li><p><strong>@PathVariable，可以将URL的值映射到方法参数中。</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">user</span><span class="params">(@PathVariable Long id)</span></span></span><br></pre></td></tr></table></figure></div>
-
-
-
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/user/{id}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> String <span class="token function">user</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> Long id<span class="token punctuation">)</span></code></pre>
 </li>
 </ul>
 <ul>
 <li><p><strong>Model，Spring中通用的MVC模型，也可以使用Map和ModelMap作为渲染视图的模型</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User userinfo = userService.getUserByName(userid);</span><br><span class="line">model.addAttribute(<span class="string">"user"</span>,userinfo);</span><br><span class="line"><span class="keyword">return</span> <span class="string">"user.jsp"</span>;</span><br></pre></td></tr></table></figure></div>
-
-<h5 id="将获得的userinfo的信息绑定到在user中。我们在user-jsp中即可调用。使用方法为："><a href="#将获得的userinfo的信息绑定到在user中。我们在user-jsp中即可调用。使用方法为：" class="headerlink" title="将获得的userinfo的信息绑定到在user中。我们在user.jsp中即可调用。使用方法为："></a><del>将获得的userinfo的信息绑定到在user中。我们在user.jsp中即可调用。使用方法为：</del></h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;&#123;user&#125;&#125;</span><br></pre></td></tr></table></figure></div>
-
-
-
+<pre class=" language-java"><code class="language-java">User userinfo <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">getUserByName</span><span class="token punctuation">(</span>userid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+model<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span>userinfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token string">"user.jsp"</span><span class="token punctuation">;</span></code></pre>
+<h5 id="将获得的userinfo的信息绑定到在user中。我们在user-jsp中即可调用。使用方法为："><a href="#将获得的userinfo的信息绑定到在user中。我们在user-jsp中即可调用。使用方法为：" class="headerlink" title="将获得的userinfo的信息绑定到在user中。我们在user.jsp中即可调用。使用方法为："></a><del>将获得的userinfo的信息绑定到在user中。我们在user.jsp中即可调用。使用方法为：</del></h5><pre class=" language-java"><code class="language-java">$<span class="token punctuation">{</span><span class="token punctuation">{</span>user<span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
 <ul>
 <li><p><strong>ModelAndView，包含了模型和视图路径</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(ModelAndView model)</span></span>&#123;</span><br><span class="line">    model.addObject(<span class="string">"user"</span>,userinfo);</span><br><span class="line">    model.setViewName(<span class="string">"hello.jsp"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> String <span class="token function">hello</span><span class="token punctuation">(</span>ModelAndView model<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    model<span class="token punctuation">.</span><span class="token function">addObject</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span>userinfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    model<span class="token punctuation">.</span><span class="token function">setViewName</span><span class="token punctuation">(</span><span class="token string">"hello.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 <li><p><strong>MultipartFile,用于处理文件上传</strong></p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/form"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">handleFormUpload</span><span class="params">(String name,MultipartFile file)</span> <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!file.isEmpty()) &#123;</span><br><span class="line">        String filename = file.getOriginalFilename();</span><br><span class="line">        InputStream ins = file.getInputStream();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"failure"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/form"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ResponseBody</span>
+<span class="token keyword">public</span> String <span class="token function">handleFormUpload</span><span class="token punctuation">(</span>String name<span class="token punctuation">,</span>MultipartFile file<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String filename <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getOriginalFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        InputStream ins <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"success"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">"failure"</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>MultipartFile提供了以下方法来获取上传的文件信息：</strong></p>
 <ul>
 <li><strong>getOriginalFilename，获取上传的文件名字；</strong></li>
@@ -1162,7 +1177,7 @@ Bootstrap Table可用快速的建表，查询，分页，排序，等一系列�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

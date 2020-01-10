@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -335,10 +335,19 @@
                 
                 
                 
+                <a href="/categories/Golang/" title="Golang: 11">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F9EBEA;">Golang
+                        <span class="tag-length">11</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/前端/" title="前端: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">前端
+                            style="background-color: #F5EEF8;">前端
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -347,17 +356,8 @@
                 <a href="/categories/信息安全/" title="信息安全: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">信息安全
+                            style="background-color: #D5F5E3;">信息安全
                         <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Golang/" title="Golang: 11">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #D5F5E3;">Golang
-                        <span class="tag-length">11</span>
                     </span>
                 </a>
                 
@@ -467,9 +467,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Beegobee工具简介bee工具是一个为了协助开发beego项目而创建的项目。bee安装1go get github.com/beego/bee
-
-安装完之后，bee可执行文件默认放到$GOPATH/bin里面，Windows默认已经添加
+                                Beegobee工具简介bee工具是一个为了协助开发beego项目而创建的项目。bee安装go get github.com/beego/bee
+安装完之后，bee可执行文件默认放到$GOPATH/bin里面，Windows默认已经添加了环
                             
                         </div>
                         <div class="publish-info">
@@ -520,7 +519,14 @@
                         <div class="summary block-with-text">
                             
                                 Go语言编程1.0数组切片1.1基于数组基于数组我们很好理解，先创建数组再创建切片。
-12345678910111213141516171819202122package mainimport (	"fmt")func main() &#1
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    var firstarry [10]int =
                             
                         </div>
                         <div class="publish-info">
@@ -623,7 +629,7 @@
                                 Gin搭建Blog API’s（一）按照Gin搭建Blog API’s (一)教程来的。此为原作者。
 本教程利用一款读写配置文件的库。INI,请提前阅读。
 1.介绍和初始化项目创建新的工作区，在src目录创建gin-blog.
-12345$
+$GOPAT
                             
                         </div>
                         <div class="publish-info">
@@ -735,9 +741,13 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GoLang_Day4函数1234Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。
+                                GoLang_Day4函数Go 语言中同时有函数和方法。
+一个方法就是一个包含了接受者的函数，
+接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
+所有给定类型的方法属于该类型的方法集。package main
 
-12345678910111213pac
+import (
+
                             
                         </div>
                         <div class="publish-info">
@@ -787,9 +797,10 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GoLang_Day51.字符串类型12字符串表示很简单，就是由双引号（“ ”），“单”引号（` `）来描述。注意（` `）非（&apos; &apos;）唯一区别在于，双引号转义字符可以转义，单引号无法转义。
+                                GoLang_Day51.字符串类型字符串表示很简单，就是由双引号（“ ”），“单”引号（` `）来描述。注意（` `）非（&#39; &#39;）
+唯一区别在于，双引号转义字符可以转义，单引号无法转义。package main
 
-1234567891011
+impo
                             
                         </div>
                         <div class="publish-info">
@@ -839,9 +850,14 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Golang_Day3结构体12一个结构体（`struct`）就是一个字段的集合。（而 type 的含义跟其字面意思相符。）
+                                Golang_Day3结构体一个结构体（`struct`）就是一个字段的集合。
+（而 type 的含义跟其字面意思相符。）package main
 
-123456789101112package mainimport "fmt"type test struct 
+import "fmt"
+
+type test struct {
+    x int
+  
                             
                         </div>
                         <div class="publish-info">
@@ -891,7 +907,14 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Golang_Day2defer 栈1234567891011package mainimport "fmt"func main()  &#123;	fmt.Println("FUN")	for i :=0; i&lt;10 ;i++ &#
+                                Golang_Day2defer 栈package main
+
+import "fmt"
+
+func main()  {
+    fmt.Println("FUN")
+    for i :=0; i&lt;10 ;i++ {
+      
                             
                         </div>
                         <div class="publish-info">
@@ -941,9 +964,16 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GoLang创建hello.go1234567package mainimport "fmt"func main()  &#123;	fmt.Println("Hello")&#125;
+                                GoLang创建hello.gopackage main
 
-执行hello.go12go run hello.
+import "fmt"
+
+func main()  {
+    fmt.Println("Hello")
+}
+执行hello.gogo run hello.go
+Hello
+编译
                             
                         </div>
                         <div class="publish-info">
@@ -993,9 +1023,12 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GoLang fmt格式“占位符”1234typr human struct&#123;  name string&#125;var  people = human&#123;name:"FUN"&#125;
-
-1234普通占位符占位符  
+                                GoLang fmt格式“占位符”typr human struct{
+  name string
+}
+var  people = human{name:"FUN"}  
+普通占位符
+占位符         说明              
                             
                         </div>
                         <div class="publish-info">
@@ -1049,7 +1082,7 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

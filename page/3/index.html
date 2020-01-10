@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
 
 <body>
@@ -445,7 +445,9 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
                         <div class="summary block-with-text">
                             
                                 Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
-1234567def get_lines():    with open('file.txt','rb') as f:        re
+def get_lines():
+    with open('file.txt','rb') as f:
+        return 
                             
                         </div>
                         <div class="publish-info">
@@ -497,8 +499,9 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
                         <div class="summary block-with-text">
                             
                                 面向对象方法重载
-MethodOverloading.java
-12345678910111213141516171819package basic_grammar;public class MethodOverloading &#123;
+MethodOverloading.javapackage basic_grammar;
+
+public class MethodOverloading {    void receive(int i){        S
                             
                         </div>
                         <div class="publish-info">
@@ -547,63 +550,17 @@ MethodOverloading.java
                             
                                 数组一维数组数组初始化静态数组初始化
  静态数组初始化是将元素放入大括号中。
-
-12int intarray;intarray = &#123;1,2,3&#125;;
+int intarray;
+intarray = {1,2,3};
 
 动态数组初始化
-  动态数组初始化是由new运算符分配长度的内存空间
+  动态数组初始化是由new运算符分配长度的内存空间。
+int array;
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2019-01-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/springboot/">
-                            <span class="chip bg-color">springboot</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/01/29/di-yi-ge-java-cheng-xu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一个java程序">
-                            
-                            <span class="card-title">第一个java程序</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                第一个java程序1234567package hello;public class helloword &#123;    public static void  main(String[] args) &#123;        Sys
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
                             </span>
                             <span class="publish-author">
                                 
@@ -685,6 +642,57 @@ MethodOverloading.java
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2019/01/29/di-yi-ge-java-cheng-xu/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一个java程序">
+                            
+                            <span class="card-title">第一个java程序</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                第一个java程序package hello;
+
+public class helloword {
+    public static void  main(String[] args) {
+        System.out.print
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/springboot/">
+                            <span class="chip bg-color">springboot</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2019/01/19/nwx-wxpython/">
                         <div class="card-image">
                             
@@ -699,9 +707,8 @@ MethodOverloading.java
                         <div class="summary block-with-text">
                             
                                 wx（wxPython）前言 使用了很多模块心血来潮觉得要写一些相关模块的使用文档。并想把常用的模块写成一个自己常用的类。这样只需要调用就行了，可以对自己写东西的时候节省时间。
-安装1pip install -U wxPython
-
-创建一
+安装pip install -U wxPython
+创建一个简
                             
                         </div>
                         <div class="publish-info">
@@ -888,7 +895,7 @@ Model [socket]
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             
