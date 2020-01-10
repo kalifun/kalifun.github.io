@@ -33,7 +33,7 @@ Model [socket]
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -445,7 +445,7 @@ Model [socket]
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        396
+                        398
                     </div>
                     
 
@@ -475,55 +475,18 @@ Model [socket]
 <p>网络上的两个程序通过一个双向的通信连接实现数据的交换，这个连接的一端称为一个socket。<br> 我们需要一个服务端和客户端之间进行通信连接<br> 支持TCP/UDP协议，在未被关闭TCP的情况下还是使用TCP协议（三次握手还是比较稳的）。</p>
 </blockquote>
 <h2 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h2><blockquote>
-<h3 id="server-py"><a href="#server-py" class="headerlink" title="server.py"></a>server.py</h3><pre class=" language-python"><code class="language-python">Tcp_server <span class="token operator">=</span> SocketServer<span class="token punctuation">.</span>ThreadingTCPServer<span class="token punctuation">(</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>socket_ip<span class="token punctuation">)</span><span class="token punctuation">,</span>int<span class="token punctuation">(</span>socket_port<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>Tcp_socket<span class="token punctuation">)</span>
-Tcp_server<span class="token punctuation">.</span>serve_forever<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-</blockquote>
-<h4 id="实现多线程TCP，这样可以多个客户端进行连接。"><a href="#实现多线程TCP，这样可以多个客户端进行连接。" class="headerlink" title="实现多线程TCP，这样可以多个客户端进行连接。"></a>实现多线程TCP，这样可以多个客户端进行连接。</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-            <span class="token keyword">try</span><span class="token punctuation">:</span>
-                get_bytes <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
-                get_info <span class="token operator">=</span> str<span class="token punctuation">(</span>get_bytes<span class="token punctuation">)</span>
-                <span class="token keyword">if</span> get_info <span class="token operator">==</span> <span class="token string">"q"</span><span class="token punctuation">:</span>
-                    <span class="token keyword">break</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    <span class="token keyword">try</span><span class="token punctuation">:</span>
-                        command <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>check_output<span class="token punctuation">(</span>get_bytes<span class="token punctuation">,</span>stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>STDOUT<span class="token punctuation">,</span>shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>universal_newlines<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-                        command_info <span class="token operator">=</span> conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>bytes<span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                    <span class="token keyword">except</span><span class="token punctuation">:</span>
-                        <span class="token keyword">return</span> command
-                    <span class="token comment" spellcheck="true"># try:</span>
-                    <span class="token comment" spellcheck="true">#     command = os.popen(get_bytes).read()</span>
-                    <span class="token comment" spellcheck="true">#     command_info = conn.send(bytes(command))</span>
-                    <span class="token comment" spellcheck="true"># except Exception,e:</span>
-                    <span class="token comment" spellcheck="true">#     command = os.popen(get_bytes).read()</span>
-                    <span class="token comment" spellcheck="true">#     command_info = conn.send(bytes(command))                     </span>
-            <span class="token keyword">except</span> Exception<span class="token punctuation">,</span>e<span class="token punctuation">:</span>
-                <span class="token keyword">print</span> e</code></pre>
+<h3 id="server-py"><a href="#server-py" class="headerlink" title="server.py"></a>server.py</h3></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Tcp_server = SocketServer.ThreadingTCPServer((str(socket_ip),int(socket_port)),Tcp_socket)</span><br><span class="line">Tcp_server.serve_forever()</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="实现多线程TCP，这样可以多个客户端进行连接。"><a href="#实现多线程TCP，这样可以多个客户端进行连接。" class="headerlink" title="实现多线程TCP，这样可以多个客户端进行连接。"></a>实现多线程TCP，这样可以多个客户端进行连接。</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                get_bytes = conn.recv(<span class="number">1024</span>)</span><br><span class="line">                get_info = str(get_bytes)</span><br><span class="line">                <span class="keyword">if</span> get_info == <span class="string">"q"</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        command = subprocess.check_output(get_bytes,stderr=subprocess.STDOUT,shell=<span class="literal">True</span>,universal_newlines=<span class="literal">True</span>)</span><br><span class="line">                        command_info = conn.send(bytes(command))</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">return</span> command</span><br><span class="line">                    <span class="comment"># try:</span></span><br><span class="line">                    <span class="comment">#     command = os.popen(get_bytes).read()</span></span><br><span class="line">                    <span class="comment">#     command_info = conn.send(bytes(command))</span></span><br><span class="line">                    <span class="comment"># except Exception,e:</span></span><br><span class="line">                    <span class="comment">#     command = os.popen(get_bytes).read()</span></span><br><span class="line">                    <span class="comment">#     command_info = conn.send(bytes(command))                     </span></span><br><span class="line">            <span class="keyword">except</span> Exception,e:</span><br><span class="line">                <span class="keyword">print</span> e</span><br></pre></td></tr></table></figure></div>
+
 <p> 摒弃os.popen，当出现错误命令时导致服务卡死。</p>
 <blockquote>
 <h3 id="client-py"><a href="#client-py" class="headerlink" title="client.py"></a>client.py</h3><p>将请求发送给服务端，然后接收返回值的一个过程。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
-        <span class="token keyword">try</span><span class="token punctuation">:</span>
-            sed_data <span class="token operator">=</span> raw_input<span class="token punctuation">(</span><span class="token string">">>>"</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> sed_data <span class="token operator">==</span> <span class="token string">"q"</span><span class="token punctuation">:</span>
-                conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>bytes<span class="token punctuation">(</span>sed_data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token keyword">break</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">try</span><span class="token punctuation">:</span>
-                    conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>bytes<span class="token punctuation">(</span>sed_data<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                    get_bytes <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
-                    get_info <span class="token operator">=</span> str<span class="token punctuation">(</span>get_bytes<span class="token punctuation">)</span>
-                    <span class="token keyword">print</span> get_info
-                <span class="token keyword">except</span> Exception<span class="token punctuation">,</span>e<span class="token punctuation">:</span>
-                    <span class="token keyword">print</span> <span class="token string">"Command Not Found !"</span>
-                    create_socket<span class="token punctuation">(</span>socket_ip<span class="token punctuation">,</span>socket_port<span class="token punctuation">)</span></code></pre>
 </blockquote>
-<pre><code>                # sed_data = raw_input(&quot;&gt;&gt;&gt;&quot;)
-                # conn.send(bytes(sed_data))
-                # get_bytes = conn.recv(1024)
-                # get_info = str(get_bytes)
-                # print get_info
-    except Exception,e:
-        print e</code></pre><p>```<br>利用报错处理来重新调用函数来解决输入错误命令卡死的现象。<br>当输入错误命令时，多输入两次命令让程序进行重新调用函数。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            sed_data = raw_input(<span class="string">"&gt;&gt;&gt;"</span>)</span><br><span class="line">            <span class="keyword">if</span> sed_data == <span class="string">"q"</span>:</span><br><span class="line">                conn.send(bytes(sed_data))</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    conn.send(bytes(sed_data))</span><br><span class="line">                    get_bytes = conn.recv(<span class="number">1024</span>)</span><br><span class="line">                    get_info = str(get_bytes)</span><br><span class="line">                    <span class="keyword">print</span> get_info</span><br><span class="line">                <span class="keyword">except</span> Exception,e:</span><br><span class="line">                    <span class="keyword">print</span> <span class="string">"Command Not Found !"</span></span><br><span class="line">                    create_socket(socket_ip,socket_port)</span><br><span class="line">                    <span class="comment"># sed_data = raw_input("&gt;&gt;&gt;")</span></span><br><span class="line">                    <span class="comment"># conn.send(bytes(sed_data))</span></span><br><span class="line">                    <span class="comment"># get_bytes = conn.recv(1024)</span></span><br><span class="line">                    <span class="comment"># get_info = str(get_bytes)</span></span><br><span class="line">                    <span class="comment"># print get_info</span></span><br><span class="line">        <span class="keyword">except</span> Exception,e:</span><br><span class="line">            <span class="keyword">print</span> e</span><br></pre></td></tr></table></figure></div>
+
+<p>利用报错处理来重新调用函数来解决输入错误命令卡死的现象。<br>当输入错误命令时，多输入两次命令让程序进行重新调用函数。</p>
 
             </div>
             <hr/>
@@ -877,8 +840,9 @@ Tcp_server<span class="token punctuation">.</span>serve_forever<span class="toke
                     <div class="summary block-with-text">
                         
                             wx（wxPython）前言 使用了很多模块心血来潮觉得要写一些相关模块的使用文档。并想把常用的模块写成一个自己常用的类。这样只需要调用就行了，可以对自己写东西的时候节省时间。
-安装pip install -U wxPython
-创建一个简
+安装1pip install -U wxPython
+
+创建一
                         
                     </div>
                     <div class="publish-info">
@@ -1118,7 +1082,7 @@ Tcp_server<span class="token punctuation">.</span>serve_forever<span class="toke
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

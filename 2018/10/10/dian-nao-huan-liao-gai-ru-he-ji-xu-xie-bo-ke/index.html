@@ -10,8 +10,7 @@
 GIT客户端
 node.js  
 
-2.在GitHub添加新电脑秘钥ssh-keygen -t rsa -C &#34;kalifun@163.com&#34;
-将id_rsa.pub复制到">
+2.在GitHub添加新电脑秘钥12345ssh-keygen -t rsa -C &#34;kalifun@163.com&#34;将id_rsa.pu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +34,7 @@ node.js
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -443,7 +442,7 @@ node.js
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        166
+                        162
                     </div>
                     
 
@@ -471,11 +470,8 @@ node.js
 <li>GIT客户端</li>
 <li>node.js  </li>
 </ul>
-<h2 id="2-在GitHub添加新电脑秘钥"><a href="#2-在GitHub添加新电脑秘钥" class="headerlink" title="2.在GitHub添加新电脑秘钥"></a>2.在GitHub添加新电脑秘钥</h2><pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"kalifun@163.com"</span>
-将id_rsa.pub复制到GitHub上
-<span class="token function">ssh</span> -T git@github.com
-Hi kalifun<span class="token operator">!</span> You've successfully authenticated, but GitHub does not provide shell access.
-出现这个字样说明已经连接成功。</code></pre>
+<h2 id="2-在GitHub添加新电脑秘钥"><a href="#2-在GitHub添加新电脑秘钥" class="headerlink" title="2.在GitHub添加新电脑秘钥"></a>2.在GitHub添加新电脑秘钥</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"kalifun@163.com"</span></span><br><span class="line">将id_rsa.pub复制到GitHub上</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">Hi kalifun! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="string">出现这个字样说明已经连接成功。</span></span><br></pre></td></tr></table></figure></div>
+
 <h2 id="3-拷贝源文件"><a href="#3-拷贝源文件" class="headerlink" title="3.拷贝源文件"></a>3.拷贝源文件</h2><p><img src="/.io//source.png" alt="source"></p>
 <ul>
 <li>_config.yml</li>
@@ -484,13 +480,13 @@ Hi kalifun<span class="token operator">!</span> You've successfully authenticate
 <li>source/</li>
 <li>themes/</li>
 </ul>
-<h2 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="4.安装hexo"></a>4.安装hexo</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g</code></pre>
-<h2 id="5-安装相关模块"><a href="#5-安装相关模块" class="headerlink" title="5.安装相关模块"></a>5.安装相关模块</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save</code></pre>
-<h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6.测试"></a>6.测试</h2><pre class=" language-bash"><code class="language-bash">hexo s
-访问127.0.0.1:4000和你之前博客一样说明成功了。</code></pre>
-<h2 id="7-指令"><a href="#7-指令" class="headerlink" title="7.指令"></a>7.指令</h2><pre class=" language-bash"><code class="language-bash">hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d</code></pre>
+<h2 id="4-安装hexo"><a href="#4-安装hexo" class="headerlink" title="4.安装hexo"></a>4.安装hexo</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="5-安装相关模块"><a href="#5-安装相关模块" class="headerlink" title="5.安装相关模块"></a>5.安装相关模块</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="6-测试"><a href="#6-测试" class="headerlink" title="6.测试"></a>6.测试</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">访问127.0.0.1:4000和你之前博客一样说明成功了。</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="7-指令"><a href="#7-指令" class="headerlink" title="7.指令"></a>7.指令</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></div>
             </div>
             <hr/>
 
@@ -896,13 +892,9 @@ Hi kalifun<span class="token operator">!</span> You've successfully authenticate
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            GoLang_Day4函数Go 语言中同时有函数和方法。
-一个方法就是一个包含了接受者的函数，
-接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
-所有给定类型的方法属于该类型的方法集。package main
+                            GoLang_Day4函数1234Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。
 
-import (
-
+12345678910111213pac
                         
                     </div>
                     <div class="publish-info">
@@ -1092,7 +1084,7 @@ import (
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

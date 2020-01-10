@@ -32,7 +32,7 @@ zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性�
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -436,7 +436,7 @@ zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性�
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        825
+                        872
                     </div>
                     
 
@@ -464,67 +464,19 @@ zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性�
 <p><strong>这当然是官方给的说法，不过我也是这么觉得。当你使用了会发现还是很有趣的。</strong></p>
 <h2 id="运用场景"><a href="#运用场景" class="headerlink" title="运用场景"></a>运用场景</h2><p>运用场景其实并不广泛，一般在后台管理页面出现的身影比较多。简单的结构我们都是悬着表格来展现。像文件浏览，资产管理，权限管理就可以看到它的身影了。</p>
 <h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p>在官网很多实例我们下载文件时都有，我们可以查看他们是如何实现的。</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css/metroStyle/metroStyle.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   //metro风格
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/jquery.ztree.all.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-请不要忘记了加载jQuery。</code></pre>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-1 modal-content<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>regionZTree<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ztree<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="自定义Js"><a href="#自定义Js" class="headerlink" title="自定义Js"></a>自定义Js</h3><pre class=" language-js"><code class="language-js">zTreeObj <span class="token operator">=</span> $<span class="token punctuation">.</span>fn<span class="token punctuation">.</span>zTree<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#regionZTree"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> setting<span class="token punctuation">,</span> treelist<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> setting <span class="token operator">=</span> <span class="token punctuation">{</span>
-    view<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        addHoverDom<span class="token punctuation">:</span> addHoverDom<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//添加创建文件夹按钮</span>
-        removeHoverDom<span class="token punctuation">:</span> removeHoverDom<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//去除创建文件夹按钮</span>
-        dblClickExpand<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//双击节点时，是否自动展开父节点的标识</span>
-        showLine<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//是否显示节点之间的连线</span>
-        fontCss<span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token string">'color'</span><span class="token punctuation">:</span><span class="token string">'black'</span><span class="token punctuation">,</span><span class="token string">'font-weight'</span><span class="token punctuation">:</span><span class="token string">'bold'</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//字体样式函数</span>
-        selectedMulti<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">//设置是否允许同时选中多个节点</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    check<span class="token punctuation">:</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//chkboxType: { "Y": "ps", "N": "ps" },</span>
-        chkboxType<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"Y"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"N"</span><span class="token punctuation">:</span> <span class="token string">""</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        chkStyle<span class="token punctuation">:</span> <span class="token string">"checkbox"</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//复选框类型</span>
-        enable<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token comment" spellcheck="true">//每个节点上是否显示 CheckBox</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    edit<span class="token punctuation">:</span><span class="token punctuation">{</span>
-        enable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-        editNameSelectAll<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        showRemoveBtn <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        showRenameBtn <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-        removeTitle <span class="token punctuation">:</span> <span class="token string">"remove"</span><span class="token punctuation">,</span>
-        renameTitle <span class="token punctuation">:</span> <span class="token string">"rename"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        simpleData<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//简单数据模式</span>
-            enable<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
-            idKey<span class="token punctuation">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
-            pIdKey<span class="token punctuation">:</span> <span class="token string">"IPARENTID"</span><span class="token punctuation">,</span>
-            rootPId<span class="token punctuation">:</span> <span class="token keyword">null</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    callback<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// beforeExpand:zTreeBeforeExpand, // 用于捕获父节点展开之前的事件回调函数，并且根据返回值确定是否允许展开操作</span>
-        beforeRightClick<span class="token punctuation">:</span> zTreeBeforeRightClick<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//用于捕获 zTree 上鼠标右键点击之前的事件回调函数，并且根据返回值确定触发 onRightClick 事件回调函数</span>
-        onClick<span class="token punctuation">:</span> Spanningtree<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//用于捕获节点被点击的事件回调函数</span>
-        onRightClick<span class="token punctuation">:</span> Downtreefile<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//用于捕获 zTree 上鼠标右键点击之后的事件回调函数</span>
-        onDrop<span class="token punctuation">:</span> Throwfile<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//用于捕获节点拖拽操作结束的事件回调函数</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<h2 id="zTree解析"><a href="#zTree解析" class="headerlink" title="zTree解析"></a>zTree解析</h2><pre class=" language-html"><code class="language-html">zTreeObj = $.fn.zTree.init($("#regionZTree"), setting, treelist); 
-//第一个参数是我需要显示tree的地方，第二个参数时我们针对tree的设置，第三个参数时数据源</code></pre>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/metroStyle/metroStyle.css"</span>&gt;</span>   //metro风格</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery.ztree.all.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">请不要忘记了加载jQuery。</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-1 modal-content"</span> &gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"regionZTree"</span> <span class="attr">class</span>=<span class="string">"ztree"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="自定义Js"><a href="#自定义Js" class="headerlink" title="自定义Js"></a>自定义Js</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">zTreeObj = $.fn.zTree.init($(<span class="string">"#regionZTree"</span>), setting, treelist);</span><br><span class="line"><span class="keyword">var</span> setting = &#123;</span><br><span class="line">    view: &#123;</span><br><span class="line">        addHoverDom: addHoverDom,   <span class="comment">//添加创建文件夹按钮</span></span><br><span class="line">        removeHoverDom: removeHoverDom,    <span class="comment">//去除创建文件夹按钮</span></span><br><span class="line">        dblClickExpand: <span class="literal">false</span>,<span class="comment">//双击节点时，是否自动展开父节点的标识</span></span><br><span class="line">        showLine: <span class="literal">true</span>,<span class="comment">//是否显示节点之间的连线</span></span><br><span class="line">        fontCss:&#123;<span class="string">'color'</span>:<span class="string">'black'</span>,<span class="string">'font-weight'</span>:<span class="string">'bold'</span>&#125;,<span class="comment">//字体样式函数</span></span><br><span class="line">        selectedMulti: <span class="literal">true</span> <span class="comment">//设置是否允许同时选中多个节点</span></span><br><span class="line">    &#125;,</span><br><span class="line">    check:&#123;</span><br><span class="line">        <span class="comment">//chkboxType: &#123; "Y": "ps", "N": "ps" &#125;,</span></span><br><span class="line">        chkboxType: &#123; <span class="string">"Y"</span>: <span class="string">""</span>, <span class="string">"N"</span>: <span class="string">""</span> &#125;,</span><br><span class="line">        chkStyle: <span class="string">"checkbox"</span>,<span class="comment">//复选框类型</span></span><br><span class="line">        enable: <span class="literal">false</span> <span class="comment">//每个节点上是否显示 CheckBox</span></span><br><span class="line">    &#125;,</span><br><span class="line">    edit:&#123;</span><br><span class="line">        enable: <span class="literal">true</span>,</span><br><span class="line">        editNameSelectAll: <span class="literal">false</span>,</span><br><span class="line">        showRemoveBtn : <span class="literal">false</span>,</span><br><span class="line">        showRenameBtn : <span class="literal">false</span>,</span><br><span class="line">        removeTitle : <span class="string">"remove"</span>,</span><br><span class="line">        renameTitle : <span class="string">"rename"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        simpleData: &#123;<span class="comment">//简单数据模式</span></span><br><span class="line">            enable:<span class="literal">true</span>,</span><br><span class="line">            idKey: <span class="string">"id"</span>,</span><br><span class="line">            pIdKey: <span class="string">"IPARENTID"</span>,</span><br><span class="line">            rootPId: <span class="literal">null</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    callback: &#123;</span><br><span class="line">        <span class="comment">// beforeExpand:zTreeBeforeExpand, // 用于捕获父节点展开之前的事件回调函数，并且根据返回值确定是否允许展开操作</span></span><br><span class="line">        beforeRightClick: zTreeBeforeRightClick,  <span class="comment">//用于捕获 zTree 上鼠标右键点击之前的事件回调函数，并且根据返回值确定触发 onRightClick 事件回调函数</span></span><br><span class="line">        onClick: Spanningtree, <span class="comment">//用于捕获节点被点击的事件回调函数</span></span><br><span class="line">        onRightClick: Downtreefile,   <span class="comment">//用于捕获 zTree 上鼠标右键点击之后的事件回调函数</span></span><br><span class="line">        onDrop: Throwfile,   <span class="comment">//用于捕获节点拖拽操作结束的事件回调函数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="zTree解析"><a href="#zTree解析" class="headerlink" title="zTree解析"></a>zTree解析</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zTreeObj = $.fn.zTree.init($("#regionZTree"), setting, treelist); </span><br><span class="line">//第一个参数是我需要显示tree的地方，第二个参数时我们针对tree的设置，第三个参数时数据源</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><strong>从上面可以看到我们还需要传入一个参数treelist。那treelist具体是什么一个形式呢？</strong></p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> nodes <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"父节点1"</span><span class="token punctuation">,</span> children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"子节点1"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">"子节点2"</span><span class="token punctuation">}</span>
-    <span class="token punctuation">]</span><span class="token punctuation">}</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> nodes <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>id<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> pId<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">"父节点1"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>id<span class="token punctuation">:</span><span class="token number">11</span><span class="token punctuation">,</span> pId<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">"子节点1"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>id<span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">,</span> pId<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token string">"子节点2"</span><span class="token punctuation">}</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
-简单模式的 JSON 数据需要使用 id <span class="token operator">/</span> pId 表示节点的父子包含关系<span class="token punctuation">.</span></code></pre>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nodes = [</span><br><span class="line">	&#123;<span class="attr">name</span>: <span class="string">"父节点1"</span>, <span class="attr">children</span>: [</span><br><span class="line">		&#123;<span class="attr">name</span>: <span class="string">"子节点1"</span>&#125;,</span><br><span class="line">		&#123;<span class="attr">name</span>: <span class="string">"子节点2"</span>&#125;</span><br><span class="line">	]&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nodes = [</span><br><span class="line">	&#123;<span class="attr">id</span>:<span class="number">1</span>, <span class="attr">pId</span>:<span class="number">0</span>, <span class="attr">name</span>: <span class="string">"父节点1"</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">id</span>:<span class="number">11</span>, <span class="attr">pId</span>:<span class="number">1</span>, <span class="attr">name</span>: <span class="string">"子节点1"</span>&#125;,</span><br><span class="line">	&#123;<span class="attr">id</span>:<span class="number">12</span>, <span class="attr">pId</span>:<span class="number">1</span>, <span class="attr">name</span>: <span class="string">"子节点2"</span>&#125;</span><br><span class="line">];</span><br><span class="line">简单模式的 <span class="built_in">JSON</span> 数据需要使用 id / pId 表示节点的父子包含关系.</span><br></pre></td></tr></table></figure></div>
+
 <p><strong>个人比较中意第一种，因为这个就像json一样，首先我们也方便构造，也很直观可以看清父子的关系。</strong></p>
 <h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><blockquote>
 <h5 id="具体的setting请查看官方的API文档。"><a href="#具体的setting请查看官方的API文档。" class="headerlink" title="具体的setting请查看官方的API文档。"></a>具体的setting请查看官方的API文档。</h5></blockquote>
@@ -535,14 +487,8 @@ zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性�
 <li><p>callback(回调机制)</p>
 </li>
 </ul>
-<h5 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h5><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">zTreeOnClick</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> treeId<span class="token punctuation">,</span> treeNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">alert</span><span class="token punctuation">(</span>treeNode<span class="token punctuation">.</span>tId <span class="token operator">+</span> <span class="token string">", "</span> <span class="token operator">+</span> treeNode<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> setting <span class="token operator">=</span> <span class="token punctuation">{</span>
-    callback<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-        onClick<span class="token punctuation">:</span> zTreeOnClick
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h5 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">zTreeOnClick</span>(<span class="params">event, treeId, treeNode</span>) </span>&#123;</span><br><span class="line">    alert(treeNode.tId + <span class="string">", "</span> + treeNode.name);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> setting = &#123;</span><br><span class="line">	callback: &#123;</span><br><span class="line">		onClick: zTreeOnClick</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+
 <ul>
 <li><p><strong>event</strong></p>
 <p><strong>记录触发的事件</strong></p>
@@ -894,6 +840,60 @@ zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2019/06/05/javascript-ji-ben-yu-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="JavaScriptの基本语法">
+                        
+                        <span class="card-title">JavaScriptの基本语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JavaScriptの基本语法基本语法语句
+JavaScript我理解为行语句，一行一行执行。很像Java都需要以”;”结尾。
+
+变量1var a = 1;
+
+很好理解，var是声明变量；a则是变量名；1则是将值赋值给变量a。引用变量a就会
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2019/06/03/bootstrap-table/">
                     <div class="card-image">
                         
@@ -912,9 +912,9 @@ Bootstrap Table可用快速的建表，查询，分页，排序，等一系列�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -932,61 +932,6 @@ Bootstrap Table可用快速的建表，查询，分页，排序，等一系列�
                     
                     <a href="/tags/boostatrp/">
                         <span class="chip bg-color">boostatrp</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/05/24/spring-boot-xue-xi-bi-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Spring Boot 学习笔记">
-                        
-                        <span class="card-title">Spring Boot 学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Spring Boot 学习笔记注释器@Aspect
-把当前的注释类标识为一个切面供容器读取
-@ResponseBody
-此方法返回的是文本而不是视图
-###　@RestController
-
-RestController = @Contr
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/springboot/">
-                        <span class="chip bg-color">springboot</span>
                     </a>
                     
                 </div>
@@ -1149,7 +1094,7 @@ RestController = @Contr
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

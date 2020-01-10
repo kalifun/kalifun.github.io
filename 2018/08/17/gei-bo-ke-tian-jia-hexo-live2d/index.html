@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="给博客添加hexo-live2d, kalifun;blog.kalifun">
     <meta name="description" content="安装live2d先上图把，不然估计不知道是啥玩意呢。
-安装模块npm install --save hexo-helper-live2d
-修改根目录_config.yml# Live2D
-## https://github.com/EYHN">
+安装模块1npm install --save hexo-helper-live2d
+
+修改根目录_config.yml12345678910111213141516171819# Li">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +32,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -464,26 +464,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="安装live2d"><a href="#安装live2d" class="headerlink" title="安装live2d"></a>安装live2d</h1><p>先上图把，不然估计不知道是啥玩意呢。<br><img src="/.io//cat.png" alt="cat"></p>
-<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save hexo-helper-live2d</code></pre>
-<h2 id="修改根目录-config-yml"><a href="#修改根目录-config-yml" class="headerlink" title="修改根目录_config.yml"></a>修改根目录_config.yml</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Live2D</span>
-<span class="token comment" spellcheck="true">## https://github.com/EYHN/hexo-helper-live2d</span>
-live2d:
-  enable: <span class="token boolean">true</span>
-  <span class="token comment" spellcheck="true"># enable: false</span>
-  scriptFrom: local <span class="token comment" spellcheck="true"># 默认</span>
-  pluginRootPath: live2dw/ <span class="token comment" spellcheck="true"># 插件在站点上的根目录(相对路径)</span>
-  pluginJsPath: lib/ <span class="token comment" spellcheck="true"># 脚本文件相对与插件根目录路径</span>
-  pluginModelPath: assets/ <span class="token comment" spellcheck="true"># 模型文件相对与插件根目录路径</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: jsdelivr # jsdelivr CDN</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: unpkg # unpkg CDN</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span>
-  tagMode: <span class="token boolean">false</span> <span class="token comment" spellcheck="true"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span>
-  debug: <span class="token boolean">false</span> <span class="token comment" spellcheck="true"># 调试, 是否在控制台输出日志</span>
-  model:
-    use: live2d-widget-model-wanko <span class="token comment" spellcheck="true"># npm-module package name</span>
-    <span class="token comment" spellcheck="true"># use: wanko # 博客根目录/live2d_models/ 下的目录名</span>
-    <span class="token comment" spellcheck="true"># use: ./wives/wanko # 相对于博客根目录的路径</span>
-    <span class="token comment" spellcheck="true"># use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span></code></pre>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="修改根目录-config-yml"><a href="#修改根目录-config-yml" class="headerlink" title="修改根目录_config.yml"></a>修改根目录_config.yml</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Live2D</span></span><br><span class="line"><span class="comment">## https://github.com/EYHN/hexo-helper-live2d</span></span><br><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># enable: false</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span> <span class="comment"># 默认</span></span><br><span class="line">  pluginRootPath: live2dw/ <span class="comment"># 插件在站点上的根目录(相对路径)</span></span><br><span class="line">  pluginJsPath: lib/ <span class="comment"># 脚本文件相对与插件根目录路径</span></span><br><span class="line">  pluginModelPath: assets/ <span class="comment"># 模型文件相对与插件根目录路径</span></span><br><span class="line">  <span class="comment"># scriptFrom: jsdelivr # jsdelivr CDN</span></span><br><span class="line">  <span class="comment"># scriptFrom: unpkg # unpkg CDN</span></span><br><span class="line">  <span class="comment"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span></span><br><span class="line">  tagMode: <span class="literal">false</span> <span class="comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span></span><br><span class="line">  debug: <span class="literal">false</span> <span class="comment"># 调试, 是否在控制台输出日志</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko <span class="comment"># npm-module package name</span></span><br><span class="line">    <span class="comment"># use: wanko # 博客根目录/live2d_models/ 下的目录名</span></span><br><span class="line">    <span class="comment"># use: ./wives/wanko # 相对于博客根目录的路径</span></span><br><span class="line">    <span class="comment"># use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span></span><br></pre></td></tr></table></figure></div>
+
 <p>默认有一个自带模块，你可以根据自己喜欢选择模块</p>
 <h2 id="模块列表"><a href="#模块列表" class="headerlink" title="模块列表"></a>模块列表</h2><ul>
 <li>live2d-widget-model-chitose</li>
@@ -507,11 +491,15 @@ live2d:
 <li>live2d-widget-model-tsumiki</li>
 <li>live2d-widget-model-unitychan</li>
 <li>live2d-widget-model-wanko</li>
-<li>live2d-widget-model-z16<br>安装 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> 模型的包名</code></pre>
-修改_config.yml<pre class=" language-bash"><code class="language-bash">use <span class="token keyword">:</span> 安装的模块名称</code></pre>
-<pre class=" language-bash"><code class="language-bash">hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d</code></pre>
+<li>live2d-widget-model-z16<br>安装 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 模型的包名</span><br></pre></td></tr></table></figure></div>
+
 </li>
 </ul>
+<p>修改_config.yml</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use : 安装的模块名称</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></div>
+
 
             </div>
             <hr/>
@@ -852,26 +840,30 @@ live2d:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/08/17/ru-he-chuang-jian-ni-de-hexo-bo-ke/">
+                <a href="/2018/08/20/hexo-asset-image-de-ku-nao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="如何创建你的hexo博客">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-asset-image的苦恼">
                         
-                        <span class="card-title">如何创建你的hexo博客</span>
+                        <span class="card-title">hexo-asset-image的苦恼</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何创建你的hexo博客也许搭建这套博客系统对小白来说有些麻烦吧，但重点它是免费的！没错你没听错，免费的！那还要啥自行车啊.  
-还是乖乖充钱买腾讯云，阿里云吧。简单粗暴找一套博客系统解决所有问题，还要什么hexo+github呢。
-没钱的
+                            hexo-asset-image的苦恼博客搞定很激动，写博客加上图片就更奈斯了对不对。可是很蛋疼的是，图片居然解析错了。我也很绝望啊！
+心路历程
+图片放到一个文件夹里面  
+写完md后自己解析图片路径
+
+百度结果
+使用工具 hexo-ass
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-08-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-08-20
                         </span>
                         <span class="publish-author">
                             
@@ -900,25 +892,22 @@ live2d:
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/08/17/gei-bo-ke-tian-jia-hexo-live2d/">
+                <a href="/2018/08/17/ru-he-chuang-jian-ni-de-hexo-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="给博客添加hexo-live2d">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="如何创建你的hexo博客">
                         
-                        <span class="card-title">给博客添加hexo-live2d</span>
+                        <span class="card-title">如何创建你的hexo博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装live2d先上图把，不然估计不知道是啥玩意呢。
-安装模块npm install --save hexo-helper-live2d
-修改根目录_config.yml# Live2D
-## https://github.com/EYHN
+                            如何创建你的hexo博客123也许搭建这套博客系统对小白来说有些麻烦吧，但重点它是免费的！没错你没听错，免费的！那还要啥自行车啊.  还是乖乖充钱买腾讯云，阿里云吧。简单粗暴找一套博客系统解决所有问题，还要什么hexo+github呢。没钱
                         
                     </div>
                     <div class="publish-info">
@@ -937,16 +926,11 @@ live2d:
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/hexo/">
                         <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/live2d/">
-                        <span class="chip bg-color">live2d</span>
                     </a>
                     
                 </div>
@@ -1109,7 +1093,7 @@ live2d:
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

@@ -5,11 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="第一个java程序, kalifun;blog.kalifun">
-    <meta name="description" content="第一个java程序package hello;
-
-public class helloword {
-    public static void  main(String[] args) {
-        System.out.print">
+    <meta name="description" content="第一个java程序1234567package hello;public class helloword &amp;#123;    public static void  main(String[] args) &amp;#123;        Sys">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +29,7 @@ public class helloword {
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -437,7 +433,7 @@ public class helloword {
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        249
+                        253
                     </div>
                     
 
@@ -460,52 +456,20 @@ public class helloword {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="第一个java程序"><a href="#第一个java程序" class="headerlink" title="第一个java程序"></a>第一个java程序</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> hello<span class="token punctuation">;</span>
+                <h1 id="第一个java程序"><a href="#第一个java程序" class="headerlink" title="第一个java程序"></a>第一个java程序</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">helloword</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"Hello World."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">helloword</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
 <li>只能一个类声明为公有的（public）</li>
 <li>文件名称必须与公有类名完全一致，包括字母大小写·。</li>
 <li>public static  void main(String[] args) 只能定义在公有类中</li>
 </ul>
-<h1 id="编译程序"><a href="#编译程序" class="headerlink" title="编译程序"></a>编译程序</h1><h4 id="编译需要到程序根目录下利用javac来编译"><a href="#编译需要到程序根目录下利用javac来编译" class="headerlink" title="编译需要到程序根目录下利用javac来编译"></a>编译需要到程序根目录下利用javac来编译</h4><pre class=" language-bash"><code class="language-bash">E:\java_sty\src\hello<span class="token operator">></span>ls
-helloword.java
+<h1 id="编译程序"><a href="#编译程序" class="headerlink" title="编译程序"></a>编译程序</h1><h4 id="编译需要到程序根目录下利用javac来编译"><a href="#编译需要到程序根目录下利用javac来编译" class="headerlink" title="编译需要到程序根目录下利用javac来编译"></a>编译需要到程序根目录下利用javac来编译</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E:\java_sty\src\hello&gt;ls</span><br><span class="line">helloword.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello&gt;javac helloword.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello&gt;ls</span><br><span class="line">helloword.class  helloword.java</span><br></pre></td></tr></table></figure></div>
 
-E:\java_sty\src\hello<span class="token operator">></span>javac helloword.java
+<h3 id="此时目录下生产了一个helloworld-class类文件。"><a href="#此时目录下生产了一个helloworld-class类文件。" class="headerlink" title="此时目录下生产了一个helloworld.class类文件。"></a>此时目录下生产了一个helloworld.class类文件。</h3><h3 id="若定义的包不是在这个目录下，需要添加-d-参数。将会自动创建文件夹及文件。"><a href="#若定义的包不是在这个目录下，需要添加-d-参数。将会自动创建文件夹及文件。" class="headerlink" title="若定义的包不是在这个目录下，需要添加-d 参数。将会自动创建文件夹及文件。"></a>若定义的包不是在这个目录下，需要添加-d 参数。将会自动创建文件夹及文件。</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> create1.create2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.print(<span class="string">"Hello world!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-E:\java_sty\src\hello<span class="token operator">></span>ls
-helloword.class  helloword.java</code></pre>
-<h3 id="此时目录下生产了一个helloworld-class类文件。"><a href="#此时目录下生产了一个helloworld-class类文件。" class="headerlink" title="此时目录下生产了一个helloworld.class类文件。"></a>此时目录下生产了一个helloworld.class类文件。</h3><h3 id="若定义的包不是在这个目录下，需要添加-d-参数。将会自动创建文件夹及文件。"><a href="#若定义的包不是在这个目录下，需要添加-d-参数。将会自动创建文件夹及文件。" class="headerlink" title="若定义的包不是在这个目录下，需要添加-d 参数。将会自动创建文件夹及文件。"></a>若定义的包不是在这个目录下，需要添加-d 参数。将会自动创建文件夹及文件。</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> create1<span class="token punctuation">.</span>create2<span class="token punctuation">;</span>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">E:\java_sty\src\hello2&gt;ls</span><br><span class="line">hello2.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2&gt;javac hello2.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2&gt;ls</span><br><span class="line">hello2.class  hello2.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2&gt;javac -d . hello2.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2&gt;ls</span><br><span class="line">create1  hello2.class  hello2.java</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2&gt;<span class="built_in">cd</span> create1</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2\create1&gt;<span class="built_in">cd</span> create2</span><br><span class="line"></span><br><span class="line">E:\java_sty\src\hello2\create1\create2&gt;ls</span><br><span class="line">hello2.class</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">hello2</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span>  <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre class=" language-sh"><code class="language-sh">E:\java_sty\src\hello2>ls
-hello2.java
-
-E:\java_sty\src\hello2>javac hello2.java
-
-E:\java_sty\src\hello2>ls
-hello2.class  hello2.java
-
-E:\java_sty\src\hello2>javac -d . hello2.java
-
-E:\java_sty\src\hello2>ls
-create1  hello2.class  hello2.java
-
-E:\java_sty\src\hello2>cd create1
-
-E:\java_sty\src\hello2\create1>cd create2
-
-E:\java_sty\src\hello2\create1\create2>ls
-hello2.class</code></pre>
-<h1 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h1><pre><code>java xxxx.xxx</code></pre>
+<h1 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java xxxx.xxx</span><br></pre></td></tr></table></figure></div>
             </div>
             <hr/>
 
@@ -845,30 +809,30 @@ hello2.class</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/29/java-ji-ben-yu-fa/">
+                <a href="/2019/01/30/java-shu-zu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JAVA基本语法">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java数组">
                         
-                        <span class="card-title">JAVA基本语法</span>
+                        <span class="card-title">Java数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JAVA基本语法标识符
-变量，常量，方法，枚举，类，接口的你敢由程序员指定的名字。
+                            数组一维数组数组初始化静态数组初始化
+ 静态数组初始化是将元素放入大括号中。
 
-区分大小写
-首字符，可以是下划线(_)或者美元符或者字母，但不能是数字
-除首字符外其他字符，可以是下划线(_)，美元符，字母和数字。
-关键字不能作为标识符
+12int intarray;intarray = &#123;1,2,3&#125;;
+
+动态数组初始化
+  动态数组初始化是由new运算符分配长度的内存空间
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-01-30
                         </span>
                         <span class="publish-author">
                             
@@ -900,33 +864,37 @@ hello2.class</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/01/19/nwx-wxpython/">
+                <a href="/2019/01/29/java-ji-ben-yu-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="nwx（wxPython）">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="JAVA基本语法">
                         
-                        <span class="card-title">nwx（wxPython）</span>
+                        <span class="card-title">JAVA基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            wx（wxPython）前言 使用了很多模块心血来潮觉得要写一些相关模块的使用文档。并想把常用的模块写成一个自己常用的类。这样只需要调用就行了，可以对自己写东西的时候节省时间。
-安装pip install -U wxPython
-创建一个简
+                            JAVA基本语法标识符
+变量，常量，方法，枚举，类，接口的你敢由程序员指定的名字。
+
+区分大小写
+首字符，可以是下划线(_)或者美元符或者字母，但不能是数字
+除首字符外其他字符，可以是下划线(_)，美元符，字母和数字。
+关键字不能作为标识符
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -936,8 +904,8 @@ hello2.class</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/springboot/">
+                        <span class="chip bg-color">springboot</span>
                     </a>
                     
                 </div>
@@ -1100,7 +1068,7 @@ hello2.class</code></pre>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

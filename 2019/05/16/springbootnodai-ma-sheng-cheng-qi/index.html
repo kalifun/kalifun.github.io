@@ -32,7 +32,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -436,7 +436,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        871
+                        890
                     </div>
                     
 
@@ -463,114 +463,16 @@
 <p>之前我们在使用SpringMVC的时候也讲到代码生成器。可以看<a href="https://kalifun.top/archives/214" target="_blank" rel="noopener">代码自动生成器のgeneratorconfig.xml</a>进行了解。代码生成器的好处就不用多说了，反正让我们可以快速搭建一个项目就对了。</p>
 </blockquote>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置pox.xml</p>
-<pre><code>&lt;!-- mybatisplus与springboot整合 --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
-            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
-            &lt;version&gt;3.0.5&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!-- velocity 模板引擎, 默认 --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;
-            &lt;artifactId&gt;velocity-engine-core&lt;/artifactId&gt;
-            &lt;version&gt;2.0&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!-- freemarker 模板引擎 --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.freemarker&lt;/groupId&gt;
-            &lt;artifactId&gt;freemarker&lt;/artifactId&gt;
-            &lt;version&gt;2.3.28&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!-- mysql数据库连接驱动 --&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;mysql&lt;/groupId&gt;
-            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-            &lt;version&gt;5.1.31&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;!--阿里druid数据库链接依赖--&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
-            &lt;artifactId&gt;druid&lt;/artifactId&gt;
-            &lt;version&gt;1.1.12&lt;/version&gt;
-        &lt;/dependency&gt;</code></pre><p>我们这里发现一个和我们之前提到不相同的东西那就是Mybatis-puls。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mybatisplus与springboot整合 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.0.5&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- velocity 模板引擎, 默认 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;velocity-engine-core&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- freemarker 模板引擎 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.freemarker&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;freemarker&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.3.28&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- mysql数据库连接驱动 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;5.1.31&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!--阿里druid数据库链接依赖--&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.1.12&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>我们这里发现一个和我们之前提到不相同的东西那就是Mybatis-puls。</p>
 <blockquote>
 <p> MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
 </blockquote>
 <h3 id="编写生成器程序"><a href="#编写生成器程序" class="headerlink" title="编写生成器程序"></a>编写生成器程序</h3><p> 到这步肯定都很懵了，就直接写生成器程序啦？对的，这里并不是采用的xml来配置生成器。而且是采用的springboot并没有之前繁琐的配置了。</p>
-<pre><code>public class CodeGenerator {
-    public static String scanner(String tip){
-        Scanner scanner = new Scanner(System.in);
-        StringBuilder help = new StringBuilder();
-        help.append(&quot;请输入&quot;+tip+&quot;:&quot;);
-        System.out.println(help.toString());
-        if (scanner.hasNext()){
-            String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)){
-                return ipt;
-            }
-        }
-        throw new MybatisPlusException(&quot;请输入正确的&quot;+tip);
-    }
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">public class CodeGenerator &#123;</span><br><span class="line">    public static String scanner(String tip)&#123;</span><br><span class="line">        Scanner scanner = new Scanner(System.in);</span><br><span class="line">        StringBuilder help = new StringBuilder();</span><br><span class="line">        help.append(&quot;请输入&quot;+tip+&quot;:&quot;);</span><br><span class="line">        System.out.println(help.toString());</span><br><span class="line">        if (scanner.hasNext())&#123;</span><br><span class="line">            String ipt = scanner.next();</span><br><span class="line">            if (StringUtils.isNotEmpty(ipt))&#123;</span><br><span class="line">                return ipt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        throw new MybatisPlusException(&quot;请输入正确的&quot;+tip);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        AutoGenerator mpg = new AutoGenerator();</span><br><span class="line"></span><br><span class="line">        GlobalConfig gc = new GlobalConfig();</span><br><span class="line">        String projectPath = System.getProperty(&quot;user.dir&quot;);</span><br><span class="line">        gc.setOutputDir(projectPath+&quot;/src/main/java&quot;);</span><br><span class="line">        gc.setOpen(false);</span><br><span class="line"></span><br><span class="line">        gc.setFileOverride(true);</span><br><span class="line">        gc.setActiveRecord(false);</span><br><span class="line">        gc.setEnableCache(false);</span><br><span class="line">        gc.setBaseResultMap(true);</span><br><span class="line">        gc.setBaseColumnList(false);</span><br><span class="line">        gc.setAuthor(&quot;fun&quot;);</span><br><span class="line">        mpg.setGlobalConfig(gc);</span><br><span class="line"></span><br><span class="line">        DataSourceConfig dsc = new DataSourceConfig();</span><br><span class="line">        dsc.setUrl(&quot;jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8&quot;);     //连接数据库地址</span><br><span class="line">        dsc.setDriverName(&quot;com.mysql.jdbc.Driver&quot;);       //连接数据库的驱动</span><br><span class="line">        dsc.setUsername(&quot;root&quot;);                     //数据库用户名</span><br><span class="line">        dsc.setPassword(&quot;root&quot;);                      //数据库密码</span><br><span class="line">        mpg.setDataSource(dsc);</span><br><span class="line"></span><br><span class="line">        PackageConfig pc = new PackageConfig();</span><br><span class="line">        pc.setModuleName(scanner(&quot;模块名&quot;));          //生成的代码将在此处输入的文件夹目录下</span><br><span class="line">        pc.setParent(&quot;top.kalifun.imgurl&quot;);                   //创建项目时的src/java下的目录</span><br><span class="line">        mpg.setPackageInfo(pc); </span><br><span class="line"></span><br><span class="line">        InjectionConfig cfg = new InjectionConfig() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void initMap() &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        List&lt;FileOutConfig&gt; focList = new ArrayList&lt;&gt;();</span><br><span class="line">        focList.add(new FileOutConfig(&quot;/templates/mapper.xml.ftl&quot;) &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public String outputFile(TableInfo tableInfo) &#123;</span><br><span class="line">                return projectPath + &quot;/src/main/resources/mapper/&quot; + pc.getModuleName() + &quot;/&quot; + tableInfo.getEntityName() + &quot;Mapper&quot; + StringPool.DOT_XML;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        cfg.setFileOutConfigList(focList);</span><br><span class="line">        mpg.setCfg(cfg);</span><br><span class="line">        mpg.setTemplate(new TemplateConfig().setXml(null));</span><br><span class="line"></span><br><span class="line">        StrategyConfig strategy = new StrategyConfig();</span><br><span class="line">        strategy.setNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setColumnNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setRestControllerStyle(true);</span><br><span class="line">        strategy.setInclude(scanner(&quot;表名&quot;));             //输入你需要生成此表相关的代码</span><br><span class="line">        strategy.setSuperEntityColumns(&quot;id&quot;);</span><br><span class="line">        strategy.setControllerMappingHyphenStyle(true);</span><br><span class="line">        strategy.setTablePrefix(pc.getModuleName()+&quot;_&quot;);</span><br><span class="line">        mpg.setStrategy(strategy);</span><br><span class="line">        mpg.setTemplateEngine(new FreemarkerTemplateEngine());</span><br><span class="line">        mpg.execute();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-    public static void main(String[] args){
-        AutoGenerator mpg = new AutoGenerator();
-
-        GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty(&quot;user.dir&quot;);
-        gc.setOutputDir(projectPath+&quot;/src/main/java&quot;);
-        gc.setOpen(false);
-
-        gc.setFileOverride(true);
-        gc.setActiveRecord(false);
-        gc.setEnableCache(false);
-        gc.setBaseResultMap(true);
-        gc.setBaseColumnList(false);
-        gc.setAuthor(&quot;fun&quot;);
-        mpg.setGlobalConfig(gc);
-
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl(&quot;jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;useSSL=false&amp;characterEncoding=utf8&quot;);     //连接数据库地址
-        dsc.setDriverName(&quot;com.mysql.jdbc.Driver&quot;);       //连接数据库的驱动
-        dsc.setUsername(&quot;root&quot;);                     //数据库用户名
-        dsc.setPassword(&quot;root&quot;);                      //数据库密码
-        mpg.setDataSource(dsc);
-
-        PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner(&quot;模块名&quot;));          //生成的代码将在此处输入的文件夹目录下
-        pc.setParent(&quot;top.kalifun.imgurl&quot;);                   //创建项目时的src/java下的目录
-        mpg.setPackageInfo(pc); 
-
-        InjectionConfig cfg = new InjectionConfig() {
-            @Override
-            public void initMap() {
-
-            }
-        };
-        List&lt;FileOutConfig&gt; focList = new ArrayList&lt;&gt;();
-        focList.add(new FileOutConfig(&quot;/templates/mapper.xml.ftl&quot;) {
-            @Override
-            public String outputFile(TableInfo tableInfo) {
-                return projectPath + &quot;/src/main/resources/mapper/&quot; + pc.getModuleName() + &quot;/&quot; + tableInfo.getEntityName() + &quot;Mapper&quot; + StringPool.DOT_XML;
-            }
-        });
-        cfg.setFileOutConfigList(focList);
-        mpg.setCfg(cfg);
-        mpg.setTemplate(new TemplateConfig().setXml(null));
-
-        StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.underline_to_camel);
-        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setRestControllerStyle(true);
-        strategy.setInclude(scanner(&quot;表名&quot;));             //输入你需要生成此表相关的代码
-        strategy.setSuperEntityColumns(&quot;id&quot;);
-        strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName()+&quot;_&quot;);
-        mpg.setStrategy(strategy);
-        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
-        mpg.execute();
-
-    }
-}</code></pre><p>这个可以定义为一个脚手架，当你需要自动生成代码时，直接对此代码进行修改就可以直接使用了，对效率提升是不是很大。<br><img src="https://image.kalifun.top/temp/1905/5879ce03f08a51af.png" alt="![](https://image.kalifun.top/temp/1905/5879ce03f08a51af.png)"><br>此程序可以直接运行，执行后将会获得执行log<br><img src="https://image.kalifun.top/temp/1905/2bdf13cd16a6c3e5.png" alt="![](https://image.kalifun.top/temp/1905/2bdf13cd16a6c3e5.png)"><br>我们将会获得controller,entity,mapper,service文件夹。在resource目录下的mapper也会根据数据库创建相应的mapper.xml文件。</p>
+<p>这个可以定义为一个脚手架，当你需要自动生成代码时，直接对此代码进行修改就可以直接使用了，对效率提升是不是很大。<br><img src="https://image.kalifun.top/temp/1905/5879ce03f08a51af.png" alt="![](https://image.kalifun.top/temp/1905/5879ce03f08a51af.png)"><br>此程序可以直接运行，执行后将会获得执行log<br><img src="https://image.kalifun.top/temp/1905/2bdf13cd16a6c3e5.png" alt="![](https://image.kalifun.top/temp/1905/2bdf13cd16a6c3e5.png)"><br>我们将会获得controller,entity,mapper,service文件夹。在resource目录下的mapper也会根据数据库创建相应的mapper.xml文件。</p>
 
             </div>
             <hr/>
@@ -966,21 +868,22 @@ RestController = @Contr
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/08/shironoji-chu-zhi-shi/">
+                <a href="/2019/05/08/dai-ma-zi-dong-sheng-cheng-qi-nogeneratorconfig/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Shiroの基础知识">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="代码自动生成器のgeneratorconfig.xml">
                         
-                        <span class="card-title">Shiroの基础知识</span>
+                        <span class="card-title">代码自动生成器のgeneratorconfig.xml</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Shiroの基础知识Authenticator(用户认证)
-用户认证，用户去访问系统，系统要验证用户身份的合法性
-认证方法 最常用的用户身份验证的方法：1、用户名密码方式、2、指纹打卡机、3、基于证书验证方法。。系统验证用户身份合法，用户方
+                            代码自动生成器のgeneratorconfig.xml前言
+当我们写Java项目的时候，我们和数据相关时必定要写Dao，DaoMapper，Model相关的实体和接口。我觉得很无脑的敲，虽然很多都有补全，但是感觉还是没有自动生成快。
+
+配置
                         
                     </div>
                     <div class="publish-info">
@@ -1166,7 +1069,7 @@ RestController = @Contr
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

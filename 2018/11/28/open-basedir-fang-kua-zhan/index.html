@@ -31,7 +31,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -435,7 +435,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        475
+                        478
                     </div>
                     
 
@@ -463,21 +463,11 @@
 </blockquote>
 <h2 id="1-跨站"><a href="#1-跨站" class="headerlink" title="1.跨站"></a>1.跨站</h2><p>学过信息安全的可能听到跨站很快会想到CSRF,XSS这两个词，但是这里主要说的是不同虚拟主机进行跨站（从A站点目录到B站点目录）。列：当获取A站点的webshell其他站点目录也可以随意进入了。  </p>
 <h2 id="2-open-basedir设置"><a href="#2-open-basedir设置" class="headerlink" title="2.open_basedir设置"></a>2.open_basedir设置</h2><h3 id="2-1-fastcgi-conf"><a href="#2-1-fastcgi-conf" class="headerlink" title="2.1 fastcgi.conf"></a>2.1 fastcgi.conf</h3><p>我们可以查看nginx.conf目录下有一个fastcgi.conf配置文件。查看最后一行是否有下面代码。</p>
-<pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">fastcgi_param</span> PHP_ADMIN_VALUE    <span class="token string">"open_basedir=$document_root:/tmp/:/proc/"</span><span class="token punctuation">;</span></code></pre>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="NGINX"><figure class="iseeu highlight /nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fastcgi_param</span> PHP_ADMIN_VALUE    <span class="string">"open_basedir=<span class="variable">$document_root</span>:/tmp/:/proc/"</span>;</span><br></pre></td></tr></table></figure></div>
+
 <p>如果没有可以添加在最后一行。<br>在上篇文章我提到虚拟主机配置中有include fastcgi.conf。如果这些都齐全了，重启服务就可以实现了。</p>
-<pre class=" language-nginx"><code class="language-nginx"><span class="token variable">$document_root</span> 这个是我们设置虚拟主机配置文件的站点地址
-列：
-    <span class="token punctuation">{</span>
-<span class="token keyword">listen</span>       <span class="token number">80</span><span class="token punctuation">;</span>    
-<span class="token keyword">server_name</span> xxx<span class="token punctuation">.</span>com<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>你的域名，二级域名，ip
-<span class="token keyword">index</span> <span class="token keyword">index</span><span class="token punctuation">.</span>php <span class="token keyword">index</span><span class="token punctuation">.</span>html <span class="token keyword">index</span><span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>html default<span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>php<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>默认寻找主页文件
-<span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>www<span class="token operator">/</span>xxx<span class="token punctuation">;</span>    <span class="token variable">$document_root</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="2-2-php-ini"><a href="#2-2-php-ini" class="headerlink" title="2.2 php.ini"></a>2.2 php.ini</h3><p>先确认自己php版本是否是5.3.3+，如果是5.3.3+的话可以直接在php.ini后面添加语句。</p>
-<pre class=" language-php"><code class="language-php"><span class="token punctuation">[</span><span class="token constant">HOST</span><span class="token operator">=</span>www<span class="token punctuation">.</span>asite<span class="token punctuation">.</span>com<span class="token punctuation">]</span>    域名
-open_basedir<span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span>asite<span class="token operator">/</span><span class="token punctuation">:</span><span class="token operator">/</span>tmp<span class="token operator">/</span>     一定需要在asite后面加入<span class="token operator">/</span>，不然可以遍历
-<span class="token punctuation">[</span><span class="token constant">PATH</span><span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span>asite<span class="token punctuation">]</span>
-open_basedir<span class="token operator">=</span><span class="token operator">/</span>home<span class="token operator">/</span>wwwroot<span class="token operator">/</span>asite<span class="token operator">/</span><span class="token punctuation">:</span><span class="token operator">/</span>tmp<span class="token operator">/</span></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$document_root 这个是我们设置虚拟主机配置文件的站点地址</span><br><span class="line">列：</span><br><span class="line">    &#123;</span><br><span class="line"><span class="attribute">listen</span>       <span class="number">80</span>;    </span><br><span class="line">server_name xxx.com;   //你的域名，二级域名，ip</span><br><span class="line">index index.php index.html index.htm default.html default.htm default.php;   //默认寻找主页文件</span><br><span class="line">root  /home/www/xxx;    $document_root</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">### 2.2 php.ini</span></span><br><span class="line">先确认自己php版本是否是5.3.3+，如果是5.3.3+的话可以直接在php.ini后面添加语句。</span><br><span class="line">``` php</span><br><span class="line">[HOST=www.asite.com]    域名</span><br><span class="line">open_basedir=/home/wwwroot/asite/:/tmp/     一定需要在asite后面加入/，不然可以遍历</span><br><span class="line">[PATH=/home/wwwroot/asite]</span><br><span class="line">open_basedir=/home/wwwroot/asite/:/tmp/</span><br></pre></td></tr></table></figure>
+
 <p>请在填写open_basedir地址时以/结束目录。如果你是site1,site2这样来设置自己站点目录名称将可以绕过。  </p>
 <h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h2><p>open_basedir这个并不能完全可靠，可能会被绕过。可以给每个站点单独开php-fpm,这样一个站点被沦陷也无法被利用。</p>
 
@@ -1078,7 +1068,7 @@ open_basedir<span class="token operator">=</span><span class="token operator">/<
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

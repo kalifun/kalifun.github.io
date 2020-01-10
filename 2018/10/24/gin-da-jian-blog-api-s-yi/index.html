@@ -8,7 +8,7 @@
     <meta name="description" content="Gin搭建Blog API’s（一）按照Gin搭建Blog API’s (一)教程来的。此为原作者。
 本教程利用一款读写配置文件的库。INI,请提前阅读。
 1.介绍和初始化项目创建新的工作区，在src目录创建gin-blog.
-$GOPAT">
+12345$">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +32,7 @@ $GOPAT">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -470,17 +470,11 @@ $GOPAT">
                 <h1 id="Gin搭建Blog-API’s（一）"><a href="#Gin搭建Blog-API’s（一）" class="headerlink" title="Gin搭建Blog API’s（一）"></a>Gin搭建Blog API’s（一）</h1><p>按照<a href="https://github.com/EDDYCJY/blog/blob/master/golang/gin/2018-02-16-Gin%E5%AE%9E%E8%B7%B5-%E8%BF%9E%E8%BD%BD%E4%BA%8C-%E6%90%AD%E5%BB%BABlogAPIs-01.md" target="_blank" rel="noopener">Gin搭建Blog API’s (一)</a>教程来的。此为原作者。</p>
 <p>本教程利用一款读写配置文件的库。<a href="https://ini.unknwon.io" target="_blank" rel="noopener">INI</a>,请提前阅读。</p>
 <h2 id="1-介绍和初始化项目"><a href="#1-介绍和初始化项目" class="headerlink" title="1.介绍和初始化项目"></a>1.介绍和初始化项目</h2><p>创建新的工作区，在src目录创建gin-blog.</p>
-<pre><code>$GOPATH
-├── bin
-├── pkg
-└── src
-    └── gin-blog</code></pre><h3 id="初始化项目目录"><a href="#初始化项目目录" class="headerlink" title="初始化项目目录"></a>初始化项目目录</h3><pre><code>gin-blog/
-├── conf
-├── middleware
-├── models
-├── pkg
-├── routers
-└── runtime</code></pre><ul>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$GOPATH</span><br><span class="line">├── bin</span><br><span class="line">├── pkg</span><br><span class="line">└── src</span><br><span class="line">    └── gin-blog</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="初始化项目目录"><a href="#初始化项目目录" class="headerlink" title="初始化项目目录"></a>初始化项目目录</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gin-blog/</span><br><span class="line">├── conf</span><br><span class="line">├── middleware</span><br><span class="line">├── models</span><br><span class="line">├── pkg</span><br><span class="line">├── routers</span><br><span class="line">└── runtime</span><br></pre></td></tr></table></figure></div>
+
+<ul>
 <li><h4 id="conf：用于存储配置文件"><a href="#conf：用于存储配置文件" class="headerlink" title="conf：用于存储配置文件"></a>conf：用于存储配置文件</h4></li>
 <li><h4 id="middleware：应用中间件"><a href="#middleware：应用中间件" class="headerlink" title="middleware：应用中间件"></a>middleware：应用中间件</h4></li>
 <li><h4 id="models：应用数据库模型"><a href="#models：应用数据库模型" class="headerlink" title="models：应用数据库模型"></a>models：应用数据库模型</h4></li>
@@ -490,266 +484,43 @@ $GOPAT">
 </ul>
 <h3 id="初始项目数据库"><a href="#初始项目数据库" class="headerlink" title="初始项目数据库"></a>初始项目数据库</h3><ul>
 <li><h3 id="下载安装数据库（mysql）"><a href="#下载安装数据库（mysql）" class="headerlink" title="下载安装数据库（mysql）"></a>下载安装数据库（mysql）</h3></li>
-<li><h3 id="新建blog数据库"><a href="#新建blog数据库" class="headerlink" title="新建blog数据库"></a>新建blog数据库</h3><a href="https://postimg.cc/QHs8bbTY" target="_blank" rel="noopener">database.png</a><br><a href="https://postimg.cc/QHs8bbTY" target="_blank" rel="noopener"><img src="https://i.postimg.cc/kXR27YXC/database.png" alt="database.png"></a><h3 id="创建blog数据库后，创建以下表格："><a href="#创建blog数据库后，创建以下表格：" class="headerlink" title="创建blog数据库后，创建以下表格："></a>创建blog数据库后，创建以下表格：</h3><h4 id="1-标签表"><a href="#1-标签表" class="headerlink" title="1.标签表"></a>1.标签表</h4><pre class=" language-mysql"><code class="language-mysql">CREATE TABLE `blog_tag` (
-`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-`name` varchar(100) DEFAULT '' COMMENT '标签名称',
-`created_on` int(10) unsigned DEFAULT '0' COMMENT '创建时间',
-`created_by` varchar(100) DEFAULT '' COMMENT '创建人',
-`modified_on` int(10) unsigned DEFAULT '0' COMMENT '修改时间',
-`modified_by` varchar(100) DEFAULT '' COMMENT '修改人',
-`state` tinyint(3) unsigned DEFAULT '1' COMMENT '状态 0为禁用、1为启用',
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章标签管理';</code></pre>
-<a href="https://postimg.cc/KKghFkTg" target="_blank" rel="noopener">database1.png</a><br><a href="https://postimg.cc/KKghFkTg" target="_blank" rel="noopener"><img src="https://i.postimg.cc/s2TjY5DK/database1.png" alt="database1.png"></a><h4 id="2-文章表"><a href="#2-文章表" class="headerlink" title="2.文章表"></a>2.文章表</h4><pre class=" language-mysql"><code class="language-mysql">CREATE TABLE `blog_article` (
-`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-`tag_id` int(10) unsigned DEFAULT '0' COMMENT '标签ID',
-`title` varchar(100) DEFAULT '' COMMENT '文章标题',
-`desc` varchar(255) DEFAULT '' COMMENT '简述',
-`content` text,
-`created_on` int(11) DEFAULT NULL,
-`created_by` varchar(100) DEFAULT '' COMMENT '创建人',
-`modified_on` int(10) unsigned DEFAULT '0' COMMENT '修改时间',
-`modified_by` varchar(255) DEFAULT '' COMMENT '修改人',
-`state` tinyint(3) unsigned DEFAULT '1' COMMENT '状态 0为禁用1为启用',
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章管理';</code></pre>
-<a href="https://postimg.cc/XXgJtm46" target="_blank" rel="noopener">database2.png</a><br><a href="https://postimg.cc/XXgJtm46" target="_blank" rel="noopener"><img src="https://i.postimg.cc/jqp7nY12/database2.png" alt="database2.png"></a><h4 id="3-认证表"><a href="#3-认证表" class="headerlink" title="3.认证表"></a>3.认证表</h4><pre class=" language-mysql"><code class="language-mysql">CREATE TABLE `blog_auth` (
-`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-`username` varchar(50) DEFAULT '' COMMENT '账号',
-`password` varchar(50) DEFAULT '' COMMENT '密码',
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-</code></pre>
+<li><h3 id="新建blog数据库"><a href="#新建blog数据库" class="headerlink" title="新建blog数据库"></a>新建blog数据库</h3><a href="https://postimg.cc/QHs8bbTY" target="_blank" rel="noopener">database.png</a><br><a href="https://postimg.cc/QHs8bbTY" target="_blank" rel="noopener"><img src="https://i.postimg.cc/kXR27YXC/database.png" alt="database.png"></a><h3 id="创建blog数据库后，创建以下表格："><a href="#创建blog数据库后，创建以下表格：" class="headerlink" title="创建blog数据库后，创建以下表格："></a>创建blog数据库后，创建以下表格：</h3><h4 id="1-标签表"><a href="#1-标签表" class="headerlink" title="1.标签表"></a>1.标签表</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `blog_tag` (</span><br><span class="line">  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `name` varchar(100) DEFAULT &apos;&apos; COMMENT &apos;标签名称&apos;,</span><br><span class="line">  `created_on` int(10) unsigned DEFAULT &apos;0&apos; COMMENT &apos;创建时间&apos;,</span><br><span class="line">  `created_by` varchar(100) DEFAULT &apos;&apos; COMMENT &apos;创建人&apos;,</span><br><span class="line">  `modified_on` int(10) unsigned DEFAULT &apos;0&apos; COMMENT &apos;修改时间&apos;,</span><br><span class="line">  `modified_by` varchar(100) DEFAULT &apos;&apos; COMMENT &apos;修改人&apos;,</span><br><span class="line">  `state` tinyint(3) unsigned DEFAULT &apos;1&apos; COMMENT &apos;状态 0为禁用、1为启用&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;文章标签管理&apos;;</span><br></pre></td></tr></table></figure></div>
+
 </li>
 </ul>
-<p>INSERT INTO <code>blog</code>.<code>blog_auth</code> (<code>id</code>, <code>username</code>, <code>password</code>) VALUES (null, ‘test’, ‘test123456’);</p>
-<pre><code>[database3.png](https://postimg.cc/6TB6VcRj)
-[![database3.png](https://i.postimg.cc/sfhBr02r/database3.png)](https://postimg.cc/6TB6VcRj)  
+<p><a href="https://postimg.cc/KKghFkTg" target="_blank" rel="noopener">database1.png</a><br><a href="https://postimg.cc/KKghFkTg" target="_blank" rel="noopener"><img src="https://i.postimg.cc/s2TjY5DK/database1.png" alt="database1.png"></a></p>
+<h4 id="2-文章表"><a href="#2-文章表" class="headerlink" title="2.文章表"></a>2.文章表</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `blog_article` (</span><br><span class="line">  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `tag_id` int(10) unsigned DEFAULT &apos;0&apos; COMMENT &apos;标签ID&apos;,</span><br><span class="line">  `title` varchar(100) DEFAULT &apos;&apos; COMMENT &apos;文章标题&apos;,</span><br><span class="line">  `desc` varchar(255) DEFAULT &apos;&apos; COMMENT &apos;简述&apos;,</span><br><span class="line">  `content` text,</span><br><span class="line">  `created_on` int(11) DEFAULT NULL,</span><br><span class="line">  `created_by` varchar(100) DEFAULT &apos;&apos; COMMENT &apos;创建人&apos;,</span><br><span class="line">  `modified_on` int(10) unsigned DEFAULT &apos;0&apos; COMMENT &apos;修改时间&apos;,</span><br><span class="line">  `modified_by` varchar(255) DEFAULT &apos;&apos; COMMENT &apos;修改人&apos;,</span><br><span class="line">  `state` tinyint(3) unsigned DEFAULT &apos;1&apos; COMMENT &apos;状态 0为禁用1为启用&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=&apos;文章管理&apos;;</span><br></pre></td></tr></table></figure></div>
 
-## 2.编写项目配置包
-### 下载依赖包[go-ini/ini](https://github.com/go-ini/ini)
-```go
-go get -u  github.com/go-ini/ini</code></pre><h3 id="在gin-blog的conf目录下创建app-ini文件"><a href="#在gin-blog的conf目录下创建app-ini文件" class="headerlink" title="在gin-blog的conf目录下创建app.ini文件"></a>在gin-blog的conf目录下创建app.ini文件</h3><pre><code>#debug or release
-RUN_MODE = debug
+<p><a href="https://postimg.cc/XXgJtm46" target="_blank" rel="noopener">database2.png</a><br><a href="https://postimg.cc/XXgJtm46" target="_blank" rel="noopener"><img src="https://i.postimg.cc/jqp7nY12/database2.png" alt="database2.png"></a></p>
+<h4 id="3-认证表"><a href="#3-认证表" class="headerlink" title="3.认证表"></a>3.认证表</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `blog_auth` (</span><br><span class="line">  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `username` varchar(50) DEFAULT &apos;&apos; COMMENT &apos;账号&apos;,</span><br><span class="line">  `password` varchar(50) DEFAULT &apos;&apos; COMMENT &apos;密码&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">INSERT INTO `blog`.`blog_auth` (`id`, `username`, `password`) VALUES (null, &apos;test&apos;, &apos;test123456&apos;);</span><br></pre></td></tr></table></figure></div>
 
-[app]
-PAGE_SIZE = 10
-JWT_SECRET = 23347$040412
+<p><a href="https://postimg.cc/6TB6VcRj" target="_blank" rel="noopener">database3.png</a><br><a href="https://postimg.cc/6TB6VcRj" target="_blank" rel="noopener"><img src="https://i.postimg.cc/sfhBr02r/database3.png" alt="database3.png"></a>  </p>
+<h2 id="2-编写项目配置包"><a href="#2-编写项目配置包" class="headerlink" title="2.编写项目配置包"></a>2.编写项目配置包</h2><h3 id="下载依赖包go-ini-ini"><a href="#下载依赖包go-ini-ini" class="headerlink" title="下载依赖包go-ini/ini"></a>下载依赖包<a href="https://github.com/go-ini/ini" target="_blank" rel="noopener">go-ini/ini</a></h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> get -u  github.com/<span class="keyword">go</span>-ini/ini</span><br></pre></td></tr></table></figure></div>
 
-[server]
-HTTP_PORT = 8000
-READ_TIMEOUT = 60
-WRITE_TIMEOUT = 60
+<h3 id="在gin-blog的conf目录下创建app-ini文件"><a href="#在gin-blog的conf目录下创建app-ini文件" class="headerlink" title="在gin-blog的conf目录下创建app.ini文件"></a>在gin-blog的conf目录下创建app.ini文件</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#debug or release</span><br><span class="line">RUN_MODE = debug</span><br><span class="line"></span><br><span class="line">[app]</span><br><span class="line">PAGE_SIZE = 10</span><br><span class="line">JWT_SECRET = 23347$040412</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">HTTP_PORT = 8000</span><br><span class="line">READ_TIMEOUT = 60</span><br><span class="line">WRITE_TIMEOUT = 60</span><br><span class="line"></span><br><span class="line">[database]</span><br><span class="line">TYPE = mysql</span><br><span class="line">USER = 数据库账号</span><br><span class="line">PASSWORD = 数据库密码</span><br><span class="line">#127.0.0.1:3306</span><br><span class="line">HOST = 数据库IP:数据库端口号</span><br><span class="line">NAME = blog</span><br><span class="line">TABLE_PREFIX = blog_</span><br></pre></td></tr></table></figure></div>
 
-[database]
-TYPE = mysql
-USER = 数据库账号
-PASSWORD = 数据库密码
-#127.0.0.1:3306
-HOST = 数据库IP:数据库端口号
-NAME = blog
-TABLE_PREFIX = blog_</code></pre><h3 id="建立配置setting模块，在pkg目录下创建setting目录，并且创建setting-go文件。"><a href="#建立配置setting模块，在pkg目录下创建setting目录，并且创建setting-go文件。" class="headerlink" title="建立配置setting模块，在pkg目录下创建setting目录，并且创建setting.go文件。"></a>建立配置setting模块，在pkg目录下创建setting目录，并且创建setting.go文件。</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> setting
+<h3 id="建立配置setting模块，在pkg目录下创建setting目录，并且创建setting-go文件。"><a href="#建立配置setting模块，在pkg目录下创建setting目录，并且创建setting-go文件。" class="headerlink" title="建立配置setting模块，在pkg目录下创建setting目录，并且创建setting.go文件。"></a>建立配置setting模块，在pkg目录下创建setting目录，并且创建setting.go文件。</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> setting</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"time"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line">	<span class="string">"github.com/go-ini/ini"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	config *ini.File</span><br><span class="line">	RunModel <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line">	Httpport <span class="keyword">int</span></span><br><span class="line">	ReadTimeOut time.Duration</span><br><span class="line">	WriteTimeOut time.Duration</span><br><span class="line"></span><br><span class="line">	Pagesize <span class="keyword">int</span></span><br><span class="line">	Jwtsecret <span class="keyword">string</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> err error</span><br><span class="line">	config, err = ini.Load(<span class="string">"conf/app.ini"</span>) </span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatalf(<span class="string">"Fail to read file: %v"</span>, err)</span><br><span class="line">	&#125;</span><br><span class="line">	LoadBase()</span><br><span class="line">	LoadServer()</span><br><span class="line">	LoadApp()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoadBase</span><span class="params">()</span></span> &#123;</span><br><span class="line">	RunModel = config.Section(<span class="string">""</span>).Key(<span class="string">"RUN_MODE"</span>).MustString(<span class="string">"debug"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoadServer</span><span class="params">()</span></span> &#123;</span><br><span class="line">	ser, err := config.GetSection(<span class="string">"server"</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatalf(<span class="string">"Fail to get selection %v"</span>,err)</span><br><span class="line">	&#125;</span><br><span class="line">	RunModel = config.Section(<span class="string">""</span>).Key(<span class="string">"RUN_MODE"</span>).MustString(<span class="string">"debug"</span>)</span><br><span class="line"></span><br><span class="line">	Httpport = ser.Key(<span class="string">"HTTP_PORT"</span>).MustInt(<span class="number">8000</span>)</span><br><span class="line">	ReadTimeOut = time.Duration(ser.Key(<span class="string">"READ_TIMEOUT"</span>).MustInt(<span class="number">60</span>)) * time.Second</span><br><span class="line">	WriteTimeOut = time.Duration(ser.Key(<span class="string">"WRITE_TIMEOUT"</span>).MustInt(<span class="number">60</span>)) * time.Second</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoadApp</span><span class="params">()</span></span> &#123;</span><br><span class="line">	App, err := config.GetSection(<span class="string">"app"</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatalf(<span class="string">"Fail to get selection %v"</span>,err)</span><br><span class="line">	&#125;</span><br><span class="line">	Pagesize = App.Key(<span class="string">"PAGE_SIZE"</span>).MustInt(<span class="number">10</span>)</span><br><span class="line">	Jwtsecret = App.Key(<span class="string">"JWT_SECRET"</span>).MustString(<span class="string">"!@)*#)!@U#@*!@!)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"time"</span>
-    <span class="token string">"log"</span>
-    <span class="token string">"github.com/go-ini/ini"</span>
-<span class="token punctuation">)</span>
+<h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">└─gin-blog</span><br><span class="line">    │  test.go</span><br><span class="line">    │</span><br><span class="line">    ├─conf</span><br><span class="line">    │      app.ini</span><br><span class="line">    │</span><br><span class="line">    ├─middleware</span><br><span class="line">    ├─models</span><br><span class="line">    ├─pkg</span><br><span class="line">    │      setting.go</span><br><span class="line">    │</span><br><span class="line">    ├─routers</span><br><span class="line">    └─runtime</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">var</span> <span class="token punctuation">(</span>
-    config <span class="token operator">*</span>ini<span class="token punctuation">.</span>File
-    RunModel <span class="token builtin">string</span>
+<h2 id="编写API错误码包"><a href="#编写API错误码包" class="headerlink" title="编写API错误码包"></a>编写API错误码包</h2><h4 id="建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code-go和msg-go文件。"><a href="#建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code-go和msg-go文件。" class="headerlink" title="建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code.go和msg.go文件。"></a>建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code.go和msg.go文件。</h4><h4 id="1-code-go"><a href="#1-code-go" class="headerlink" title="1.code.go"></a>1.code.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> e</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	SUCCESS = <span class="number">200</span></span><br><span class="line">	ERROR = <span class="number">500</span></span><br><span class="line">	INVALID_PARAMS = <span class="number">400</span></span><br><span class="line"></span><br><span class="line">	ERROR_EXIST_TAG = <span class="number">10001</span></span><br><span class="line">	ERROR_NOT_EXIST_TAG = <span class="number">10002</span></span><br><span class="line">	ERROR_NOT_EXIST_ARTICLE = <span class="number">10003</span></span><br><span class="line"></span><br><span class="line">	ERROR_AUTH_CHECK_TOKEN_FAIL = <span class="number">20001</span></span><br><span class="line">	ERROR_AUTH_CHECK_TOKEN_TIMEOUT = <span class="number">20002</span></span><br><span class="line">	ERROR_AUTH_TOKEN = <span class="number">20003</span></span><br><span class="line">	ERROR_AUTH = <span class="number">20004</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
 
-    Httpport <span class="token builtin">int</span>
-    ReadTimeOut time<span class="token punctuation">.</span>Duration
-    WriteTimeOut time<span class="token punctuation">.</span>Duration
+<h4 id="2-msg-go"><a href="#2-msg-go" class="headerlink" title="2.msg.go"></a>2.msg.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> e</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> MsgFlags = <span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">string</span> &#123;</span><br><span class="line">	SUCCESS : <span class="string">"ok"</span>,</span><br><span class="line">	ERROR : <span class="string">"fail"</span>,</span><br><span class="line">	INVALID_PARAMS : <span class="string">"请求参数错误！"</span>,</span><br><span class="line">	ERROR_EXIST_TAG : <span class="string">"已存在该标签名称"</span>,</span><br><span class="line">	ERROR_NOT_EXIST_TAG : <span class="string">"该标签不存在"</span>,</span><br><span class="line">	ERROR_NOT_EXIST_ARTICLE : <span class="string">"该文章不存在"</span>,</span><br><span class="line">	ERROR_AUTH_CHECK_TOKEN_FAIL : <span class="string">"Token鉴权失败"</span>,</span><br><span class="line">	ERROR_AUTH_CHECK_TOKEN_TIMEOUT : <span class="string">"Token已超时"</span>,</span><br><span class="line">	ERROR_AUTH_TOKEN : <span class="string">"Token生成失败"</span>,</span><br><span class="line">	ERROR_AUTH : <span class="string">"Token错误"</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">GetMsg</span><span class="params">(code <span class="keyword">int</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	msg, ok := MsgFlags[code]</span><br><span class="line">	<span class="keyword">if</span> ok &#123;</span><br><span class="line">		<span class="keyword">return</span> msg</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> MsgFlags[ERROR]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-    Pagesize <span class="token builtin">int</span>
-    Jwtsecret <span class="token builtin">string</span>
-<span class="token punctuation">)</span>
+<h2 id="编写工具包"><a href="#编写工具包" class="headerlink" title="编写工具包"></a>编写工具包</h2><h4 id="拉取依赖包com。"><a href="#拉取依赖包com。" class="headerlink" title="拉取依赖包com。"></a>拉取依赖包<a href="github.com/Unknwon/com">com</a>。</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> get -u github.com/Unknwon/com</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> err <span class="token builtin">error</span>
-    config<span class="token punctuation">,</span> err <span class="token operator">=</span> ini<span class="token punctuation">.</span><span class="token function">Load</span><span class="token punctuation">(</span><span class="token string">"conf/app.ini"</span><span class="token punctuation">)</span> 
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        log<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"Fail to read file: %v"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">LoadBase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token function">LoadServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token function">LoadApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
+<h3 id="编写分页页码的获取方法"><a href="#编写分页页码的获取方法" class="headerlink" title="编写分页页码的获取方法"></a>编写分页页码的获取方法</h3><h4 id="在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination-go"><a href="#在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination-go" class="headerlink" title="在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination.go"></a>在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination.go</h4><h4 id="pagination-go"><a href="#pagination-go" class="headerlink" title="pagination.go"></a>pagination.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> util</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">	<span class="string">"github.com/Unknwon/com"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Getpag</span><span class="params">(c *gin.Context)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	result := <span class="number">0</span></span><br><span class="line">	page,_ := com.StrTo(c.Query(<span class="string">"page"</span>)).Int()</span><br><span class="line">	<span class="keyword">if</span> page &gt; <span class="number">0</span> &#123;</span><br><span class="line">		result = (page - <span class="number">1</span>) * setting.PageSize</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">func</span> <span class="token function">LoadBase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    RunModel <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">Section</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"RUN_MODE"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustString</span><span class="token punctuation">(</span><span class="token string">"debug"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">LoadServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ser<span class="token punctuation">,</span> err <span class="token operator">:=</span> config<span class="token punctuation">.</span><span class="token function">GetSection</span><span class="token punctuation">(</span><span class="token string">"server"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        log<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"Fail to get selection %v"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    RunModel <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">Section</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"RUN_MODE"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustString</span><span class="token punctuation">(</span><span class="token string">"debug"</span><span class="token punctuation">)</span>
-
-    Httpport <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"HTTP_PORT"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustInt</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span>
-    ReadTimeOut <span class="token operator">=</span> time<span class="token punctuation">.</span><span class="token function">Duration</span><span class="token punctuation">(</span>ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"READ_TIMEOUT"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustInt</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second
-    WriteTimeOut <span class="token operator">=</span> time<span class="token punctuation">.</span><span class="token function">Duration</span><span class="token punctuation">(</span>ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"WRITE_TIMEOUT"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustInt</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">LoadApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    App<span class="token punctuation">,</span> err <span class="token operator">:=</span> config<span class="token punctuation">.</span><span class="token function">GetSection</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        log<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"Fail to get selection %v"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    Pagesize <span class="token operator">=</span> App<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"PAGE_SIZE"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustInt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-    Jwtsecret <span class="token operator">=</span> App<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"JWT_SECRET"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">MustString</span><span class="token punctuation">(</span><span class="token string">"!@)*#)!@U#@*!@!)"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-<h4 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h4><pre><code>└─gin-blog
-    │  test.go
-    │
-    ├─conf
-    │      app.ini
-    │
-    ├─middleware
-    ├─models
-    ├─pkg
-    │      setting.go
-    │
-    ├─routers
-    └─runtime</code></pre><h2 id="编写API错误码包"><a href="#编写API错误码包" class="headerlink" title="编写API错误码包"></a>编写API错误码包</h2><h4 id="建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code-go和msg-go文件。"><a href="#建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code-go和msg-go文件。" class="headerlink" title="建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code.go和msg.go文件。"></a>建立错误码包的e模块，在gin-blog中的pkg目录下创建e目录，在下创建code.go和msg.go文件。</h4><h4 id="1-code-go"><a href="#1-code-go" class="headerlink" title="1.code.go"></a>1.code.go</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> e
-
-<span class="token keyword">const</span> <span class="token punctuation">(</span>
-    SUCCESS <span class="token operator">=</span> <span class="token number">200</span>
-    ERROR <span class="token operator">=</span> <span class="token number">500</span>
-    INVALID_PARAMS <span class="token operator">=</span> <span class="token number">400</span>
-
-    ERROR_EXIST_TAG <span class="token operator">=</span> <span class="token number">10001</span>
-    ERROR_NOT_EXIST_TAG <span class="token operator">=</span> <span class="token number">10002</span>
-    ERROR_NOT_EXIST_ARTICLE <span class="token operator">=</span> <span class="token number">10003</span>
-
-    ERROR_AUTH_CHECK_TOKEN_FAIL <span class="token operator">=</span> <span class="token number">20001</span>
-    ERROR_AUTH_CHECK_TOKEN_TIMEOUT <span class="token operator">=</span> <span class="token number">20002</span>
-    ERROR_AUTH_TOKEN <span class="token operator">=</span> <span class="token number">20003</span>
-    ERROR_AUTH <span class="token operator">=</span> <span class="token number">20004</span>
-<span class="token punctuation">)</span></code></pre>
-<h4 id="2-msg-go"><a href="#2-msg-go" class="headerlink" title="2.msg.go"></a>2.msg.go</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> e
-
-<span class="token keyword">var</span> MsgFlags <span class="token operator">=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token builtin">string</span> <span class="token punctuation">{</span>
-    SUCCESS <span class="token punctuation">:</span> <span class="token string">"ok"</span><span class="token punctuation">,</span>
-    ERROR <span class="token punctuation">:</span> <span class="token string">"fail"</span><span class="token punctuation">,</span>
-    INVALID_PARAMS <span class="token punctuation">:</span> <span class="token string">"请求参数错误！"</span><span class="token punctuation">,</span>
-    ERROR_EXIST_TAG <span class="token punctuation">:</span> <span class="token string">"已存在该标签名称"</span><span class="token punctuation">,</span>
-    ERROR_NOT_EXIST_TAG <span class="token punctuation">:</span> <span class="token string">"该标签不存在"</span><span class="token punctuation">,</span>
-    ERROR_NOT_EXIST_ARTICLE <span class="token punctuation">:</span> <span class="token string">"该文章不存在"</span><span class="token punctuation">,</span>
-    ERROR_AUTH_CHECK_TOKEN_FAIL <span class="token punctuation">:</span> <span class="token string">"Token鉴权失败"</span><span class="token punctuation">,</span>
-    ERROR_AUTH_CHECK_TOKEN_TIMEOUT <span class="token punctuation">:</span> <span class="token string">"Token已超时"</span><span class="token punctuation">,</span>
-    ERROR_AUTH_TOKEN <span class="token punctuation">:</span> <span class="token string">"Token生成失败"</span><span class="token punctuation">,</span>
-    ERROR_AUTH <span class="token punctuation">:</span> <span class="token string">"Token错误"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">GetMsg</span><span class="token punctuation">(</span>code <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
-    msg<span class="token punctuation">,</span> ok <span class="token operator">:=</span> MsgFlags<span class="token punctuation">[</span>code<span class="token punctuation">]</span>
-    <span class="token keyword">if</span> ok <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> msg
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> MsgFlags<span class="token punctuation">[</span>ERROR<span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="编写工具包"><a href="#编写工具包" class="headerlink" title="编写工具包"></a>编写工具包</h2><h4 id="拉取依赖包com。"><a href="#拉取依赖包com。" class="headerlink" title="拉取依赖包com。"></a>拉取依赖包<a href="github.com/Unknwon/com">com</a>。</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> get <span class="token operator">-</span>u github<span class="token punctuation">.</span>com<span class="token operator">/</span>Unknwon<span class="token operator">/</span>com</code></pre>
-<h3 id="编写分页页码的获取方法"><a href="#编写分页页码的获取方法" class="headerlink" title="编写分页页码的获取方法"></a>编写分页页码的获取方法</h3><h4 id="在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination-go"><a href="#在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination-go" class="headerlink" title="在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination.go"></a>在gin-blog的pkg目录下，新建util目录。在util目录下创建pagination.go</h4><h4 id="pagination-go"><a href="#pagination-go" class="headerlink" title="pagination.go"></a>pagination.go</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> util
-
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"github.com/gin-gonic/gin"</span>
-    <span class="token string">"github.com/Unknwon/com"</span>
-    <span class="token string">"gin-blog/pkg/setting"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">Getpag</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
-    result <span class="token operator">:=</span> <span class="token number">0</span>
-    page<span class="token punctuation">,</span><span class="token boolean">_</span> <span class="token operator">:=</span> com<span class="token punctuation">.</span><span class="token function">StrTo</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">Query</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> page <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">{</span>
-        result <span class="token operator">=</span> <span class="token punctuation">(</span>page <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> setting<span class="token punctuation">.</span>PageSize
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> result
-<span class="token punctuation">}</span></code></pre>
 <p><a href="https://postimg.cc/QHT8wVqB" target="_blank" rel="noopener">error.png</a><br><a href="https://postimg.cc/QHT8wVqB" target="_blank" rel="noopener"><img src="https://i.postimg.cc/DyCSWXJc/error.png" alt="error.png"></a></p>
-<h4 id="根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。"><a href="#根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。" class="headerlink" title="根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。"></a>根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。</h4><h3 id="编写models-init"><a href="#编写models-init" class="headerlink" title="编写models init"></a>编写models init</h3><h4 id="拉取gorm依赖包。gorm文档"><a href="#拉取gorm依赖包。gorm文档" class="headerlink" title="拉取gorm依赖包。gorm文档"></a>拉取<a href="github.com/jinzhu/gorm">gorm</a>依赖包。<a href="http://gorm.book.jasperxu.com" target="_blank" rel="noopener">gorm文档</a></h4><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> get <span class="token operator">-</span>u github<span class="token punctuation">.</span>com<span class="token operator">/</span>jinzhu<span class="token operator">/</span>gorm</code></pre>
-<h4 id="拉取mysql驱动依赖包。"><a href="#拉取mysql驱动依赖包。" class="headerlink" title="拉取mysql驱动依赖包。"></a>拉取<a href="github.com/go-sql-driver/mysql">mysql</a>驱动依赖包。</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> get <span class="token operator">-</span>u github<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token keyword">go</span><span class="token operator">-</span>sql<span class="token operator">-</span>driver<span class="token operator">/</span>mysql</code></pre>
-<h4 id="在gin-blog的models目录下新建models-go，用于models的初始化使用"><a href="#在gin-blog的models目录下新建models-go，用于models的初始化使用" class="headerlink" title="在gin-blog的models目录下新建models.go，用于models的初始化使用."></a>在gin-blog的models目录下新建models.go，用于models的初始化使用.</h4><h4 id="models-go"><a href="#models-go" class="headerlink" title="models.go"></a>models.go</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> models
+<h4 id="根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。"><a href="#根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。" class="headerlink" title="根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。"></a>根据可以看出，我们的目录错了。应该在src中创建gin-blog。可以去看看GO的工作区的使用应该可以明白。</h4><h3 id="编写models-init"><a href="#编写models-init" class="headerlink" title="编写models init"></a>编写models init</h3><h4 id="拉取gorm依赖包。gorm文档"><a href="#拉取gorm依赖包。gorm文档" class="headerlink" title="拉取gorm依赖包。gorm文档"></a>拉取<a href="github.com/jinzhu/gorm">gorm</a>依赖包。<a href="http://gorm.book.jasperxu.com" target="_blank" rel="noopener">gorm文档</a></h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> get -u github.com/jinzhu/gorm</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"fmt"</span>
-    <span class="token string">"log"</span>
+<h4 id="拉取mysql驱动依赖包。"><a href="#拉取mysql驱动依赖包。" class="headerlink" title="拉取mysql驱动依赖包。"></a>拉取<a href="github.com/go-sql-driver/mysql">mysql</a>驱动依赖包。</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> get -u github.com/<span class="keyword">go</span>-sql-driver/mysql</span><br></pre></td></tr></table></figure></div>
 
-    <span class="token string">"github.com/jinzhu/gorm"</span>
-    <span class="token boolean">_</span> <span class="token string">"github.com/jinzhu/gorm/dialects/mysql"</span>
+<h4 id="在gin-blog的models目录下新建models-go，用于models的初始化使用"><a href="#在gin-blog的models目录下新建models-go，用于models的初始化使用" class="headerlink" title="在gin-blog的models目录下新建models.go，用于models的初始化使用."></a>在gin-blog的models目录下新建models.go，用于models的初始化使用.</h4><h4 id="models-go"><a href="#models-go" class="headerlink" title="models.go"></a>models.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> models</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"log"</span></span><br><span class="line"></span><br><span class="line">	<span class="string">"github.com/jinzhu/gorm"</span></span><br><span class="line">	_ <span class="string">"github.com/jinzhu/gorm/dialects/mysql"</span></span><br><span class="line"></span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> db *gorm.DB</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Model <span class="keyword">struct</span> &#123;</span><br><span class="line">	ID <span class="keyword">int</span> <span class="string">`gorm:"primary_key" json:"id"`</span></span><br><span class="line">	CreatedOn <span class="keyword">int</span> <span class="string">`json:"created_on"`</span></span><br><span class="line">	ModifiedOn <span class="keyword">int</span> <span class="string">`json:"modified_on"`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		err error</span><br><span class="line">		dbType, dbName, user, password, host, tablePrefix <span class="keyword">string</span></span><br><span class="line">	)</span><br><span class="line">	<span class="comment">// ser,err := setting.config.GetSection("database")</span></span><br><span class="line">	ser, err := setting.config.GetSection(<span class="string">"database"</span>)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatalf(<span class="string">"Fail get selection %v"</span>,err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	dbType = ser.Key(<span class="string">"TYPE"</span>).String()</span><br><span class="line">	dbName = ser.Key(<span class="string">"NAME"</span>).String()</span><br><span class="line">	user = ser.Key(<span class="string">"USER"</span>).String()</span><br><span class="line">	password = ser.Key(<span class="string">"PASSWORD"</span>).String()</span><br><span class="line">	host = ser.Key(<span class="string">"HOST"</span>).String()</span><br><span class="line">	tablePrefix = ser.Key(<span class="string">"TABLE_PREFIX"</span>).String()</span><br><span class="line"></span><br><span class="line">	db, err = gorm.Open(dbType, fmt.Sprintf(<span class="string">"%s:%s@tcp(%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local"</span>, user, password, host, dbName))</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Println(err)</span><br><span class="line">	&#125;</span><br><span class="line">	gorm.DefaultTableNameHandler = <span class="function"><span class="keyword">func</span> <span class="params">(db *gorm.DB, defaultTableName <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">		<span class="keyword">return</span> tablePrefix + defaultTableName;</span><br><span class="line">	&#125;</span><br><span class="line">	db.SingularTable(<span class="literal">true</span>)</span><br><span class="line">	db.DB().SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">	db.DB().SetMaxOpenConns(<span class="number">100</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CloseDB</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">defer</span> db.Close()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-    <span class="token string">"gin-blog/pkg/setting"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">var</span> db <span class="token operator">*</span>gorm<span class="token punctuation">.</span>DB
-
-<span class="token keyword">type</span> Model <span class="token keyword">struct</span> <span class="token punctuation">{</span>
-    ID <span class="token builtin">int</span> <span class="token string">`gorm:"primary_key" json:"id"`</span>
-    CreatedOn <span class="token builtin">int</span> <span class="token string">`json:"created_on"`</span>
-    ModifiedOn <span class="token builtin">int</span> <span class="token string">`json:"modified_on"`</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">func</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> <span class="token punctuation">(</span>
-        err <span class="token builtin">error</span>
-        dbType<span class="token punctuation">,</span> dbName<span class="token punctuation">,</span> user<span class="token punctuation">,</span> password<span class="token punctuation">,</span> host<span class="token punctuation">,</span> tablePrefix <span class="token builtin">string</span>
-    <span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">// ser,err := setting.config.GetSection("database")</span>
-    ser<span class="token punctuation">,</span> err <span class="token operator">:=</span> setting<span class="token punctuation">.</span>config<span class="token punctuation">.</span><span class="token function">GetSection</span><span class="token punctuation">(</span><span class="token string">"database"</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        log<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"Fail get selection %v"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-
-    dbType <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"TYPE"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    dbName <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"NAME"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    user <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"USER"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    password <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"PASSWORD"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    host <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"HOST"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    tablePrefix <span class="token operator">=</span> ser<span class="token punctuation">.</span><span class="token function">Key</span><span class="token punctuation">(</span><span class="token string">"TABLE_PREFIX"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    db<span class="token punctuation">,</span> err <span class="token operator">=</span> gorm<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span>dbType<span class="token punctuation">,</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%s:%s@tcp(%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local"</span><span class="token punctuation">,</span> user<span class="token punctuation">,</span> password<span class="token punctuation">,</span> host<span class="token punctuation">,</span> dbName<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    gorm<span class="token punctuation">.</span>DefaultTableNameHandler <span class="token operator">=</span> <span class="token keyword">func</span> <span class="token punctuation">(</span>db <span class="token operator">*</span>gorm<span class="token punctuation">.</span>DB<span class="token punctuation">,</span> defaultTableName <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> tablePrefix <span class="token operator">+</span> defaultTableName<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    db<span class="token punctuation">.</span><span class="token function">SingularTable</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
-    db<span class="token punctuation">.</span><span class="token function">DB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">SetMaxIdleConns</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-    db<span class="token punctuation">.</span><span class="token function">DB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">SetMaxOpenConns</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">func</span> <span class="token function">CloseDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">defer</span> db<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
 <p><a href="https://postimg.cc/75S3Ngtm" target="_blank" rel="noopener">error1.png</a><br><a href="https://postimg.cc/75S3Ngtm" target="_blank" rel="noopener"><img src="https://i.postimg.cc/g2TgmsVF/error1.png" alt="error1.png"></a></p>
-<h4 id="出现问题。和之前的一样，但是目前的目录已经迁移到src-gin-blog。"><a href="#出现问题。和之前的一样，但是目前的目录已经迁移到src-gin-blog。" class="headerlink" title="出现问题。和之前的一样，但是目前的目录已经迁移到src/gin-blog。"></a>出现问题。和之前的一样，但是目前的目录已经迁移到src/gin-blog。</h4><h2 id="编写项目启动，路由文件。"><a href="#编写项目启动，路由文件。" class="headerlink" title="编写项目启动，路由文件。"></a>编写项目启动，路由文件。</h2><h3 id="编写demo"><a href="#编写demo" class="headerlink" title="编写demo"></a>编写demo</h3><h4 id="在gin-blog的目录下创建main-go为启动文件。"><a href="#在gin-blog的目录下创建main-go为启动文件。" class="headerlink" title="在gin-blog的目录下创建main.go为启动文件。"></a>在gin-blog的目录下创建main.go为启动文件。</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<h4 id="出现问题。和之前的一样，但是目前的目录已经迁移到src-gin-blog。"><a href="#出现问题。和之前的一样，但是目前的目录已经迁移到src-gin-blog。" class="headerlink" title="出现问题。和之前的一样，但是目前的目录已经迁移到src/gin-blog。"></a>出现问题。和之前的一样，但是目前的目录已经迁移到src/gin-blog。</h4><h2 id="编写项目启动，路由文件。"><a href="#编写项目启动，路由文件。" class="headerlink" title="编写项目启动，路由文件。"></a>编写项目启动，路由文件。</h2><h3 id="编写demo"><a href="#编写demo" class="headerlink" title="编写demo"></a>编写demo</h3><h4 id="在gin-blog的目录下创建main-go为启动文件。"><a href="#在gin-blog的目录下创建main-go为启动文件。" class="headerlink" title="在gin-blog的目录下创建main.go为启动文件。"></a>在gin-blog的目录下创建main.go为启动文件。</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line"></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	router := gin.Default()</span><br><span class="line">	router.GET(<span class="string">"/test"</span>, <span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">		c.JSON(<span class="number">200</span>, gin.H&#123;</span><br><span class="line">			<span class="string">"message"</span>: <span class="string">"test"</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">	s := &amp;http.Server&#123;</span><br><span class="line">		Addr:           fmt.Sprintf(<span class="string">":%d"</span>, setting.Httpport),</span><br><span class="line">		Handler:        router,</span><br><span class="line">		ReadTimeout:    setting.ReadTimeOut,</span><br><span class="line">		WriteTimeout:   setting.WriteTimeOut,</span><br><span class="line">		MaxHeaderBytes: <span class="number">1</span> &lt;&lt; <span class="number">20</span>,</span><br><span class="line">	&#125;</span><br><span class="line">	s.ListenAndServe()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> <span class="token punctuation">(</span>
-    <span class="token string">"fmt"</span>
-    <span class="token string">"gin-blog/pkg/setting"</span>
-    <span class="token string">"net/http"</span>
-
-    <span class="token string">"github.com/gin-gonic/gin"</span>
-<span class="token punctuation">)</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    router <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/test"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        c<span class="token punctuation">.</span><span class="token function">JSON</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> gin<span class="token punctuation">.</span>H<span class="token punctuation">{</span>
-            <span class="token string">"message"</span><span class="token punctuation">:</span> <span class="token string">"test"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    s <span class="token operator">:=</span> <span class="token operator">&amp;</span>http<span class="token punctuation">.</span>Server<span class="token punctuation">{</span>
-        Addr<span class="token punctuation">:</span>           fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">":%d"</span><span class="token punctuation">,</span> setting<span class="token punctuation">.</span>Httpport<span class="token punctuation">)</span><span class="token punctuation">,</span>
-        Handler<span class="token punctuation">:</span>        router<span class="token punctuation">,</span>
-        ReadTimeout<span class="token punctuation">:</span>    setting<span class="token punctuation">.</span>ReadTimeOut<span class="token punctuation">,</span>
-        WriteTimeout<span class="token punctuation">:</span>   setting<span class="token punctuation">.</span>WriteTimeOut<span class="token punctuation">,</span>
-        MaxHeaderBytes<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">20</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-    s<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
 <ul>
 <li><h5 id="Addr：监听的TCP地址，格式为-8000"><a href="#Addr：监听的TCP地址，格式为-8000" class="headerlink" title="Addr：监听的TCP地址，格式为:8000"></a>Addr：监听的TCP地址，格式为:8000</h5></li>
 <li><h5 id="Handler：http句柄，实质为ServeHTTP，用于处理程序响应HTTP请求"><a href="#Handler：http句柄，实质为ServeHTTP，用于处理程序响应HTTP请求" class="headerlink" title="Handler：http句柄，实质为ServeHTTP，用于处理程序响应HTTP请求"></a>Handler：http句柄，实质为ServeHTTP，用于处理程序响应HTTP请求</h5></li>
@@ -760,54 +531,16 @@ TABLE_PREFIX = blog_</code></pre><h3 id="建立配置setting模块，在pkg目�
 <li><h5 id="IdleTimeout：等待的最大时间"><a href="#IdleTimeout：等待的最大时间" class="headerlink" title="IdleTimeout：等待的最大时间"></a>IdleTimeout：等待的最大时间</h5></li>
 <li><h5 id="MaxHeaderBytes：请求头的最大字节数"><a href="#MaxHeaderBytes：请求头的最大字节数" class="headerlink" title="MaxHeaderBytes：请求头的最大字节数"></a>MaxHeaderBytes：请求头的最大字节数</h5></li>
 <li><h5 id="ConnState：指定一个可选的回调函数，当客户端连接发生变化时调用"><a href="#ConnState：指定一个可选的回调函数，当客户端连接发生变化时调用" class="headerlink" title="ConnState：指定一个可选的回调函数，当客户端连接发生变化时调用"></a>ConnState：指定一个可选的回调函数，当客户端连接发生变化时调用</h5></li>
-<li><h5 id="ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）"><a href="#ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）" class="headerlink" title="ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）"></a>ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）</h5><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> run main<span class="token punctuation">.</span><span class="token keyword">go</span>
-curl <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test
-<span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"test"</span><span class="token punctuation">}</span></code></pre>
-<h3 id="修改路由规则"><a href="#修改路由规则" class="headerlink" title="修改路由规则"></a>修改路由规则</h3><h4 id="在routers目录下创建router-go"><a href="#在routers目录下创建router-go" class="headerlink" title="在routers目录下创建router.go"></a>在routers目录下创建router.go</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> routers
-</code></pre>
+<li><h5 id="ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）"><a href="#ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）" class="headerlink" title="ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）"></a>ErrorLog：指定一个可选的日志记录器，用于接收程序的意外行为和底层系统错误；如果未设置或为nil则默认以日志包的标准日志记录器完成（也就是在控制台输出）</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run main.<span class="keyword">go</span></span><br><span class="line">curl <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8000</span>/test</span><br><span class="line">&#123;<span class="string">"message"</span>:<span class="string">"test"</span>&#125;</span><br></pre></td></tr></table></figure></div>
+
 </li>
 </ul>
-<p>import (<br>    “gin-blog/pkg/setting”<br>    “github.com/gin-gonic/gin”<br>)</p>
-<p>func InitRouter() *gin.Engine {<br>    r := gin.New()<br>    r.Use(gin.Logger())<br>    r.Use(gin.Recovery())</p>
-<pre><code>gin.SetMode(setting.RunModel)
+<h3 id="修改路由规则"><a href="#修改路由规则" class="headerlink" title="修改路由规则"></a>修改路由规则</h3><h4 id="在routers目录下创建router-go"><a href="#在routers目录下创建router-go" class="headerlink" title="在routers目录下创建router.go"></a>在routers目录下创建router.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> routers</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">	<span class="string">"github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitRouter</span><span class="params">()</span> *<span class="title">gin</span>.<span class="title">Engine</span></span> &#123;</span><br><span class="line">	r := gin.New()</span><br><span class="line">	r.Use(gin.Logger())</span><br><span class="line">	r.Use(gin.Recovery())</span><br><span class="line"></span><br><span class="line">	gin.SetMode(setting.RunModel)</span><br><span class="line"></span><br><span class="line">	r.GET(<span class="string">"/test"</span>,<span class="function"><span class="keyword">func</span><span class="params">(c *gin.Context)</span></span>&#123;</span><br><span class="line">		c.JSON(<span class="number">200</span>,gin.H&#123;</span><br><span class="line">			<span class="string">"message"</span>:<span class="string">"ok"</span>,</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">  <span class="keyword">return</span> r</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-r.GET(&quot;/test&quot;,func(c *gin.Context){
-    c.JSON(200,gin.H{
-        &quot;message&quot;:&quot;ok&quot;,
-    })
-})</code></pre><p>  return r<br>}</p>
-<pre><code>#### 修改main.go
-```go
-package main
+<h4 id="修改main-go"><a href="#修改main-go" class="headerlink" title="修改main.go"></a>修改main.go</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"gin-blog/pkg/setting"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"gin-blog/routers"</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// "github.com/gin-gonic/gin"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	router := routers.InitRouter()</span><br><span class="line">	<span class="comment">// router := gin.Default()</span></span><br><span class="line">	<span class="comment">// router.GET("/test", func(c *gin.Context) &#123;</span></span><br><span class="line">	<span class="comment">// 	c.JSON(200, gin.H&#123;</span></span><br><span class="line">	<span class="comment">// 		"message": "test",</span></span><br><span class="line">	<span class="comment">// 	&#125;)</span></span><br><span class="line">	<span class="comment">// &#125;)</span></span><br><span class="line">	s := &amp;http.Server&#123;</span><br><span class="line">		Addr:           fmt.Sprintf(<span class="string">":%d"</span>, setting.Httpport),</span><br><span class="line">		Handler:        router,</span><br><span class="line">		ReadTimeout:    setting.ReadTimeOut,</span><br><span class="line">		WriteTimeout:   setting.WriteTimeOut,</span><br><span class="line">		MaxHeaderBytes: <span class="number">1</span> &lt;&lt; <span class="number">20</span>,</span><br><span class="line">	&#125;</span><br><span class="line">	s.ListenAndServe()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-import (
-    &quot;fmt&quot;
-    &quot;gin-blog/pkg/setting&quot;
-    &quot;net/http&quot;
-    &quot;gin-blog/routers&quot;
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run main.<span class="keyword">go</span></span><br><span class="line">curl <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8000</span>/test</span><br><span class="line">&#123;<span class="string">"message"</span>:<span class="string">"ok"</span>&#125;</span><br></pre></td></tr></table></figure></div>
 
-    // &quot;github.com/gin-gonic/gin&quot;
-)
-
-func main() {
-    router := routers.InitRouter()
-    // router := gin.Default()
-    // router.GET(&quot;/test&quot;, func(c *gin.Context) {
-    //     c.JSON(200, gin.H{
-    //         &quot;message&quot;: &quot;test&quot;,
-    //     })
-    // })
-    s := &amp;http.Server{
-        Addr:           fmt.Sprintf(&quot;:%d&quot;, setting.Httpport),
-        Handler:        router,
-        ReadTimeout:    setting.ReadTimeOut,
-        WriteTimeout:   setting.WriteTimeOut,
-        MaxHeaderBytes: 1 &lt;&lt; 20,
-    }
-    s.ListenAndServe()
-}</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">go</span> run main<span class="token punctuation">.</span><span class="token keyword">go</span>
-curl <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">8000</span><span class="token operator">/</span>test
-<span class="token punctuation">{</span><span class="token string">"message"</span><span class="token punctuation">:</span><span class="token string">"ok"</span><span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -1209,36 +942,34 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/17/jiao-ni-ru-he-huo-de-mian-fei-de-office-365-zhang-hu/">
+                <a href="/2018/10/24/iterm2-shua-yi-shua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="教你如何获得免费的Office 365账户">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="iTerm2耍一耍">
                         
-                        <span class="card-title">教你如何获得免费的Office 365账户</span>
+                        <span class="card-title">iTerm2耍一耍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            教你如何获得免费的Office 365账户
-申明，这是微软 Office 365 面向开发者提供的免费订阅，是不能应用于企业、个人的商业使用的，理论上只能用于开发测试使用，请大家合理使用。
+                            iTerm2耍一耍安装iTerm21brew cask install iterm2
 
-1.前期准备
-微软帐号
-可以接收短信的手机/号码
+配置iTerm2主题最常用的主题就属于它了Solarized Dark theme果断下载。打开iTerm2,到达preferences  
+配置Oh 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-10-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-10-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/福利/" class="post-category">
-                                    福利
+                            <a href="/categories/工具/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -1248,8 +979,12 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/office/">
-                        <span class="chip bg-color">office</span>
+                    <a href="/tags/iTerm2/">
+                        <span class="chip bg-color">iTerm2</span>
+                    </a>
+                    
+                    <a href="/tags/mac/">
+                        <span class="chip bg-color">mac</span>
                     </a>
                     
                 </div>
@@ -1412,7 +1147,7 @@ Gin是用Golang开发的一个微框架，类似Martinier的API，重点是小�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

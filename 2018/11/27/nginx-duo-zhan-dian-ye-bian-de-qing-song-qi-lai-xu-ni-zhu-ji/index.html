@@ -34,7 +34,7 @@ Web服务器：">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -438,7 +438,7 @@ Web服务器：">
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        496
+                        505
                     </div>
                     
 
@@ -472,38 +472,13 @@ Web服务器：">
 </ul>
 <p>你可以每个程序下载安装，然后配置连接好。还有一种方案就是一键安装环境。</p>
 <p><a href="https://lnmp.org/" target="_blank" rel="noopener">LNMP</a>，<a href="https://oneinstack.com/" target="_blank" rel="noopener">OneinStack</a>这样你无需烦恼如何去配置环境，一键帮你搞定。如果是企业级建议手动安装每一个程序。如果你不是安装lnmp环境的话，你可以选择OneinStack,它有很多组合选择。</p>
-<h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h2><h3 id="3-1首先查看nginx-conf文件。在最后几行你会看到"><a href="#3-1首先查看nginx-conf文件。在最后几行你会看到" class="headerlink" title="3.1首先查看nginx.conf文件。在最后几行你会看到"></a>3.1首先查看nginx.conf文件。在最后几行你会看到</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">include</span>  host<span class="token operator">/</span><span class="token operator">*</span><span class="token punctuation">.</span>conf<span class="token punctuation">;</span></code></pre>
-<h3 id="3-2如果未能找到你可以在最后面添加"><a href="#3-2如果未能找到你可以在最后面添加" class="headerlink" title="3.2如果未能找到你可以在最后面添加"></a>3.2如果未能找到你可以在最后面添加</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">include</span> host<span class="token operator">/</span><span class="token operator">*</span><span class="token punctuation">.</span>conf<span class="token punctuation">;</span></code></pre>
+<h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h2><h3 id="3-1首先查看nginx-conf文件。在最后几行你会看到"><a href="#3-1首先查看nginx-conf文件。在最后几行你会看到" class="headerlink" title="3.1首先查看nginx.conf文件。在最后几行你会看到"></a>3.1首先查看nginx.conf文件。在最后几行你会看到</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="NGINX"><figure class="iseeu highlight /nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">include</span>  host/<span class="regexp">*.conf</span>;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3-2如果未能找到你可以在最后面添加"><a href="#3-2如果未能找到你可以在最后面添加" class="headerlink" title="3.2如果未能找到你可以在最后面添加"></a>3.2如果未能找到你可以在最后面添加</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="NGINX"><figure class="iseeu highlight /nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">include</span> host/<span class="regexp">*.conf</span>;</span><br></pre></td></tr></table></figure></div>
+
 <p>并在nginx.conf文件目录下创建host这个目录。</p>
-<h3 id="3-3创建虚拟主机配置文件"><a href="#3-3创建虚拟主机配置文件" class="headerlink" title="3.3创建虚拟主机配置文件"></a>3.3创建虚拟主机配置文件</h3><h3 id="xxx-conf"><a href="#xxx-conf" class="headerlink" title="xxx.conf"></a>xxx.conf</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">server</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">listen</span>       <span class="token number">80</span><span class="token punctuation">;</span>    
-<span class="token keyword">server_name</span> xxx<span class="token punctuation">.</span>com<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>你的域名，二级域名，ip
-<span class="token keyword">index</span> <span class="token keyword">index</span><span class="token punctuation">.</span>php <span class="token keyword">index</span><span class="token punctuation">.</span>html <span class="token keyword">index</span><span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>html default<span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>php<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>默认寻找主页文件
-<span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>www<span class="token operator">/</span>xxx<span class="token punctuation">;</span>       <span class="token operator">/</span><span class="token operator">/</span>站点的目录地址
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>php<span class="token operator">|</span>php5<span class="token punctuation">)</span><span class="token operator">?</span>$        
-<span class="token punctuation">{</span>
-<span class="token keyword">fastcgi_pass</span>  unix<span class="token punctuation">:</span><span class="token operator">/</span>tmp<span class="token operator">/</span>php<span class="token operator">-</span>cgi<span class="token punctuation">.</span>sock<span class="token punctuation">;</span>
-<span class="token keyword">fastcgi_index</span> <span class="token keyword">index</span><span class="token punctuation">.</span>php<span class="token punctuation">;</span>
-<span class="token keyword">include</span> fastcgi<span class="token punctuation">.</span>conf<span class="token punctuation">;</span>     <span class="token operator">/</span><span class="token operator">/</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">location</span> <span class="token operator">/</span>status <span class="token punctuation">{</span>
-<span class="token keyword">stub_status</span> on<span class="token punctuation">;</span>
-<span class="token keyword">access_log</span>   off<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<h3 id="3-3创建虚拟主机配置文件"><a href="#3-3创建虚拟主机配置文件" class="headerlink" title="3.3创建虚拟主机配置文件"></a>3.3创建虚拟主机配置文件</h3><h3 id="xxx-conf"><a href="#xxx-conf" class="headerlink" title="xxx.conf"></a>xxx.conf</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="NGINX"><figure class="iseeu highlight /nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">listen</span>       <span class="number">80</span>;    </span><br><span class="line">server_name xxx.com;   //你的域名，二级域名，ip</span><br><span class="line">index index.php index.html index.htm default.html default.htm default.php;   //默认寻找主页文件</span><br><span class="line">root  /home/www/xxx;       //站点的目录地址</span><br><span class="line"><span class="attribute">location</span> <span class="regexp">~ .*\.(php|php5)?$</span>        </span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">fastcgi_pass</span>  unix:/tmp/php-cgi.sock;</span><br><span class="line"><span class="attribute">fastcgi_index</span> index.php;</span><br><span class="line">include fastcgi.conf;     //</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">location</span> /status &#123;</span><br><span class="line"><span class="attribute">stub_status</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">access_log</span>   <span class="literal">off</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">location</span> <span class="regexp">~ .*\.(gif|jpg|jpeg|png|bmp|swf)$</span></span><br><span class="line"><span class="regexp"></span>&#123;</span><br><span class="line">expires      30d;   //对于不怎么更新站点静态文件的话，可以把时间设大，让浏览器缓存降低对服务器流量带宽的压力。</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">location</span> <span class="regexp">~ .*\.(js|css)?$</span></span><br><span class="line"><span class="regexp"></span>&#123;</span><br><span class="line"><span class="attribute">expires</span>      <span class="number">12h</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">access_log off;    //这里你可以配置地址及文件名称，对网站访问日志感谢可以开启，说不定也能查问题。</span><br><span class="line"><span class="comment">#access_log logs/access.log main;   根据这个格式来修改。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>gif<span class="token operator">|</span>jpg<span class="token operator">|</span>jpeg<span class="token operator">|</span>png<span class="token operator">|</span>bmp<span class="token operator">|</span>swf<span class="token punctuation">)</span>$
-<span class="token punctuation">{</span>
-<span class="token keyword">expires</span>      30d<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>对于不怎么更新站点静态文件的话，可以把时间设大，让浏览器缓存降低对服务器流量带宽的压力。
-<span class="token punctuation">}</span>
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>js<span class="token operator">|</span>css<span class="token punctuation">)</span><span class="token operator">?</span>$
-<span class="token punctuation">{</span>
-<span class="token keyword">expires</span>      12h<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">access_log</span> off<span class="token punctuation">;</span>    <span class="token operator">/</span><span class="token operator">/</span>这里你可以配置地址及文件名称，对网站访问日志感谢可以开启，说不定也能查问题。
-<span class="token comment" spellcheck="true">#access_log logs/access.log main;   根据这个格式来修改。</span>
-<span class="token punctuation">}</span></code></pre>
 <p>在host目录下可以创建多个文件，看你自己需要什么。不管是一级域名还是二级域名，还是多个域名都可以。</p>
 <p>后期我可能会在基础上更新一些相关网站策略，负责均衡，HTTPS文章。</p>
 
@@ -913,8 +888,9 @@ Web服务器：">
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Beegobee工具简介bee工具是一个为了协助开发beego项目而创建的项目。bee安装go get github.com/beego/bee
-安装完之后，bee可执行文件默认放到$GOPATH/bin里面，Windows默认已经添加了环
+                            Beegobee工具简介bee工具是一个为了协助开发beego项目而创建的项目。bee安装1go get github.com/beego/bee
+
+安装完之后，bee可执行文件默认放到$GOPATH/bin里面，Windows默认已经添加
                         
                     </div>
                     <div class="publish-info">
@@ -1104,7 +1080,7 @@ Web服务器：">
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

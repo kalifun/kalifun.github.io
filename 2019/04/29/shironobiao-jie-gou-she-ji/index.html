@@ -30,7 +30,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -438,7 +438,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        900
+                        901
                     </div>
                     
 
@@ -470,83 +470,9 @@
 <h3 id="2-3users-roles表格"><a href="#2-3users-roles表格" class="headerlink" title="2.3users_roles表格"></a>2.3users_roles表格</h3><p><img src="https://image.kalifun.top/upload/1904/48955f65b0730ad9.png" alt="![48955f65b0730ad9.png](https://image.kalifun.top/upload/1904/48955f65b0730ad9.png)"><br> 这张表主要描述指定用户与角色间的依赖关系。</p>
 <h3 id="2-4permissions表"><a href="#2-4permissions表" class="headerlink" title="2.4permissions表"></a>2.4permissions表</h3><p><img src="https://image.kalifun.top/upload/1904/f01be9f000a1a985.png" alt="![f01be9f000a1a985.png](https://image.kalifun.top/upload/1904/f01be9f000a1a985.png)"></p>
 <h3 id="2-5roles-permissions表"><a href="#2-5roles-permissions表" class="headerlink" title="2.5roles_permissions表"></a>2.5roles_permissions表</h3><p><img src="https://image.kalifun.top/upload/1904/527412228ce38f2c.png" alt="![527412228ce38f2c.png](https://image.kalifun.top/upload/1904/527412228ce38f2c.png)"><br>主要描述角色和权限间的依赖关系</p>
-<h2 id="3-创建源码"><a href="#3-创建源码" class="headerlink" title="3.创建源码"></a>3.创建源码</h2><pre><code>-- --------------------------------------------------------
--- 主机:                           127.0.0.1
--- 服务器版本:                        10.3.10-MariaDB - mariadb.org binary distribution
--- 服务器操作系统:                      Win64
--- HeidiSQL 版本:                  9.4.0.5125
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=&#39;NO_AUTO_VALUE_ON_ZERO&#39; */;
+<h2 id="3-创建源码"><a href="#3-创建源码" class="headerlink" title="3.创建源码"></a>3.创建源码</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">-- --------------------------------------------------------</span><br><span class="line">-- 主机:                           127.0.0.1</span><br><span class="line">-- 服务器版本:                        10.3.10-MariaDB - mariadb.org binary distribution</span><br><span class="line">-- 服务器操作系统:                      Win64</span><br><span class="line">-- HeidiSQL 版本:                  9.4.0.5125</span><br><span class="line">-- --------------------------------------------------------</span><br><span class="line"></span><br><span class="line">/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;</span><br><span class="line">/*!40101 SET NAMES utf8 */;</span><br><span class="line">/*!50503 SET NAMES utf8mb4 */;</span><br><span class="line">/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;</span><br><span class="line">/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=&apos;NO_AUTO_VALUE_ON_ZERO&apos; */;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 导出 imgurl 的数据库结构</span><br><span class="line">CREATE DATABASE IF NOT EXISTS `imgurl` /*!40100 DEFAULT CHARACTER SET latin1 */;</span><br><span class="line">USE `imgurl`;</span><br><span class="line"></span><br><span class="line">-- 导出  表 imgurl.permissions 结构</span><br><span class="line">CREATE TABLE IF NOT EXISTS `permissions` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `permission` int(11) NOT NULL DEFAULT 0 COMMENT &apos;权限编号&apos;,</span><br><span class="line">  `description` int(11) NOT NULL DEFAULT 0 COMMENT &apos;权限描述&apos;,</span><br><span class="line">  `rid` int(11) NOT NULL DEFAULT 0 COMMENT &apos;权限关联角色&apos;,</span><br><span class="line">  `available` int(11) NOT NULL DEFAULT 0 COMMENT &apos;是否锁定&apos;,</span><br><span class="line">  PRIMARY KEY (`id`),</span><br><span class="line">  UNIQUE KEY `users_roles_permission` (`permission`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1;</span><br><span class="line"></span><br><span class="line">-- 数据导出被取消选择。</span><br><span class="line">-- 导出  表 imgurl.roles 结构</span><br><span class="line">CREATE TABLE IF NOT EXISTS `roles` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `role` varchar(50) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;角色名称&apos;,</span><br><span class="line">  `description` varchar(150) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;角色描述&apos;,</span><br><span class="line">  `pid` int(11) NOT NULL DEFAULT 0 COMMENT &apos;父节点&apos;,</span><br><span class="line">  `available` tinyint(4) NOT NULL DEFAULT 0 COMMENT &apos;是否锁定&apos;,</span><br><span class="line">  PRIMARY KEY (`id`),</span><br><span class="line">  UNIQUE KEY `roles_role` (`role`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1;</span><br><span class="line"></span><br><span class="line">-- 数据导出被取消选择。</span><br><span class="line">-- 导出  表 imgurl.roles_permissions 结构</span><br><span class="line">CREATE TABLE IF NOT EXISTS `roles_permissions` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `roles_id` int(11) DEFAULT 0 COMMENT &apos;角色编号&apos;,</span><br><span class="line">  `permissions_id` int(11) DEFAULT 0 COMMENT &apos;权限编号&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1;</span><br><span class="line"></span><br><span class="line">-- 数据导出被取消选择。</span><br><span class="line">-- 导出  表 imgurl.users 结构</span><br><span class="line">CREATE TABLE IF NOT EXISTS `users` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &apos;id&apos;,</span><br><span class="line">  `username` varchar(50) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;用户名&apos;,</span><br><span class="line">  `password` varchar(50) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;密码&apos;,</span><br><span class="line">  `salt` varchar(50) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;盐值&apos;,</span><br><span class="line">  `role_id` varchar(50) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;角色id&apos;,</span><br><span class="line">  `locked` tinyint(1) NOT NULL DEFAULT 0 COMMENT &apos;锁定&apos;,</span><br><span class="line">  PRIMARY KEY (`id`),</span><br><span class="line">  UNIQUE KEY `users_username` (`username`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1;</span><br><span class="line"></span><br><span class="line">-- 数据导出被取消选择。</span><br><span class="line">-- 导出  表 imgurl.users_roles 结构</span><br><span class="line">CREATE TABLE IF NOT EXISTS `users_roles` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `user_id` int(20) NOT NULL DEFAULT 0 COMMENT &apos;用户编号&apos;,</span><br><span class="line">  `role_id` int(20) NOT NULL DEFAULT 0 COMMENT &apos;角色编号&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1;</span><br><span class="line"></span><br><span class="line">-- 数据导出被取消选择。</span><br><span class="line">/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, &apos;&apos;) */;</span><br><span class="line">/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;</span><br><span class="line">/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;</span><br></pre></td></tr></table></figure></div>
 
 
--- 导出 imgurl 的数据库结构
-CREATE DATABASE IF NOT EXISTS `imgurl` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `imgurl`;
-
--- 导出  表 imgurl.permissions 结构
-CREATE TABLE IF NOT EXISTS `permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `permission` int(11) NOT NULL DEFAULT 0 COMMENT &#39;权限编号&#39;,
-  `description` int(11) NOT NULL DEFAULT 0 COMMENT &#39;权限描述&#39;,
-  `rid` int(11) NOT NULL DEFAULT 0 COMMENT &#39;权限关联角色&#39;,
-  `available` int(11) NOT NULL DEFAULT 0 COMMENT &#39;是否锁定&#39;,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_roles_permission` (`permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- 数据导出被取消选择。
--- 导出  表 imgurl.roles 结构
-CREATE TABLE IF NOT EXISTS `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role` varchar(50) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;角色名称&#39;,
-  `description` varchar(150) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;角色描述&#39;,
-  `pid` int(11) NOT NULL DEFAULT 0 COMMENT &#39;父节点&#39;,
-  `available` tinyint(4) NOT NULL DEFAULT 0 COMMENT &#39;是否锁定&#39;,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `roles_role` (`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- 数据导出被取消选择。
--- 导出  表 imgurl.roles_permissions 结构
-CREATE TABLE IF NOT EXISTS `roles_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `roles_id` int(11) DEFAULT 0 COMMENT &#39;角色编号&#39;,
-  `permissions_id` int(11) DEFAULT 0 COMMENT &#39;权限编号&#39;,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- 数据导出被取消选择。
--- 导出  表 imgurl.users 结构
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &#39;id&#39;,
-  `username` varchar(50) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;用户名&#39;,
-  `password` varchar(50) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;密码&#39;,
-  `salt` varchar(50) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;盐值&#39;,
-  `role_id` varchar(50) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;角色id&#39;,
-  `locked` tinyint(1) NOT NULL DEFAULT 0 COMMENT &#39;锁定&#39;,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- 数据导出被取消选择。
--- 导出  表 imgurl.users_roles 结构
-CREATE TABLE IF NOT EXISTS `users_roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(20) NOT NULL DEFAULT 0 COMMENT &#39;用户编号&#39;,
-  `role_id` int(20) NOT NULL DEFAULT 0 COMMENT &#39;角色编号&#39;,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- 数据导出被取消选择。
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, &#39;&#39;) */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-</code></pre>
             </div>
             <hr/>
 
@@ -886,29 +812,28 @@ CREATE TABLE IF NOT EXISTS `users_roles` (
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/05/javanoimgurl/">
+                <a href="/2019/04/29/ssm-kuang-jia-zheng-he-noshiro/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaのImgUrl">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SSM框架整合のShiro">
                         
-                        <span class="card-title">JavaのImgUrl</span>
+                        <span class="card-title">SSM框架整合のShiro</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaのImgUrl简介简单的一个图床网站。需要注册才能上传文件，管理员可以无限制的上传图片，普通注册用户一天只能5张图片。
-创建环境
-编辑器：IDEA
-数据库：MariaDB
-后端框架：SSM+Shiro
-前端框架：Boostrap +
+                            SSM框架整合のShiro
+ 前面我们学习了如何使用IDEA+Maven创建SSM框架，配置拦截器等。当你的项目越来越大，对不同的用户就有不同的权限，这样我们就不只是局限于系统去判定他是否登录了。
+
+前提
+ 已经利用Maven创建好SSM框
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-04-29
                         </span>
                         <span class="publish-author">
                             
@@ -929,6 +854,10 @@ CREATE TABLE IF NOT EXISTS `users_roles` (
                         <span class="chip bg-color">springboot</span>
                     </a>
                     
+                    <a href="/tags/shiro/">
+                        <span class="chip bg-color">shiro</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -940,23 +869,22 @@ CREATE TABLE IF NOT EXISTS `users_roles` (
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/29/ssm-kuang-jia-zheng-he-noshiro/">
+                <a href="/2019/04/29/spring-boot-cong-ru-men-dao-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SSM框架整合のShiro">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Spring Boot从入门到入门">
                         
-                        <span class="card-title">SSM框架整合のShiro</span>
+                        <span class="card-title">Spring Boot从入门到入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SSM框架整合のShiro
- 前面我们学习了如何使用IDEA+Maven创建SSM框架，配置拦截器等。当你的项目越来越大，对不同的用户就有不同的权限，这样我们就不只是局限于系统去判定他是否登录了。
-
-前提
- 已经利用Maven创建好SSM框
+                            Spring Boot从入门到入门什么是Spring Boot
+Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。
+Spring Boot的优点
+自动配置：无需繁琐的去
                         
                     </div>
                     <div class="publish-info">
@@ -980,10 +908,6 @@ CREATE TABLE IF NOT EXISTS `users_roles` (
                     
                     <a href="/tags/springboot/">
                         <span class="chip bg-color">springboot</span>
-                    </a>
-                    
-                    <a href="/tags/shiro/">
-                        <span class="chip bg-color">shiro</span>
                     </a>
                     
                 </div>
@@ -1146,7 +1070,7 @@ CREATE TABLE IF NOT EXISTS `users_roles` (
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

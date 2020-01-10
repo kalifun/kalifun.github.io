@@ -34,7 +34,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -472,225 +472,18 @@
 <h2 id="1-项目步骤"><a href="#1-项目步骤" class="headerlink" title="1.项目步骤"></a>1.项目步骤</h2><h3 id="1-1Maven创建项目"><a href="#1-1Maven创建项目" class="headerlink" title="1.1Maven创建项目"></a>1.1Maven创建项目</h3><blockquote>
 <p><a href="https://kalifun.top/archives/184" target="_blank" rel="noopener">IDEA 简单创建SSM框架</a></p>
 </blockquote>
-<h3 id="1-2修改pom-xml"><a href="#1-2修改pom-xml" class="headerlink" title="1.2修改pom.xml"></a>1.2修改pom.xml</h3><pre><code>    &lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;
-      &lt;artifactId&gt;shiro-spring&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-    &lt;/dependency&gt;
+<h3 id="1-2修改pom-xml"><a href="#1-2修改pom-xml" class="headerlink" title="1.2修改pom.xml"></a>1.2修改pom.xml</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;shiro-spring&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-ehcache --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;shiro-ehcache&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-quartz --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;shiro-quartz&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;shiro-web&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;shiro-core&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--excel--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;poi&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;4.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;jstl&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;jstl&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;4.1.6&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.2.17&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></div>
 
-    &lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-ehcache --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;
-      &lt;artifactId&gt;shiro-ehcache&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-    &lt;/dependency&gt;
+<p> 将项目需要使用的包先导入，后期导入也没关系。但是springmvc，jdbc，shiro需要提前导入，方便修改web.xml文件。</p>
+<h3 id="1-3修改web-xml"><a href="#1-3修改web-xml" class="headerlink" title="1.3修改web.xml"></a>1.3修改web.xml</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  Licensed to the Apache Software Foundation (ASF) under one or more</span><br><span class="line">  contributor license agreements.  See the NOTICE file distributed with</span><br><span class="line">  this work for additional information regarding copyright ownership.</span><br><span class="line">  The ASF licenses this file to You under the Apache License, Version 2.0</span><br><span class="line">  (the &quot;License&quot;); you may not use this file except in compliance with</span><br><span class="line">  the License.  You may obtain a copy of the License at</span><br><span class="line"></span><br><span class="line">      http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"></span><br><span class="line">  Unless required by applicable law or agreed to in writing, software</span><br><span class="line">  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span><br><span class="line">  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line">  See the License for the specific language governing permissions and</span><br><span class="line">  limitations under the License.</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">  - This is the Cocoon web-app configurations file</span><br><span class="line">  -</span><br><span class="line">  - $Id$</span><br><span class="line">  --&gt;</span><br><span class="line">&lt;web-app version=&quot;2.4&quot;</span><br><span class="line">         xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;</span><br><span class="line">  &lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;UTF-8&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/filter&gt;</span><br><span class="line">  &lt;filter-mapping&gt;</span><br><span class="line">    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/filter-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;filter&gt;</span><br><span class="line">    &lt;filter-name&gt;shiroFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;targetFilterLifecycle&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;true&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">  &lt;/filter&gt;</span><br><span class="line">  &lt;filter-mapping&gt;</span><br><span class="line">    &lt;filter-name&gt;shiroFilter&lt;/filter-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/filter-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet&gt;</span><br><span class="line">    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line">    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">      &lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">  &lt;/servlet&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line">    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line">    &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">  &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure></div>
 
-    &lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-quartz --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;
-      &lt;artifactId&gt;shiro-quartz&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-    &lt;/dependency&gt;
+<h3 id="1-4-创建spring-mvc-xml"><a href="#1-4-创建spring-mvc-xml" class="headerlink" title="1.4 创建spring-mvc.xml"></a>1.4 创建spring-mvc.xml</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">       http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">       http://www.springframework.org/schema/context</span><br><span class="line">       http://www.springframework.org/schema/context/spring-context.xsd</span><br><span class="line">       http://www.springframework.org/schema/mvc</span><br><span class="line">       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.imgurl.controller&quot; /&gt;</span><br><span class="line">    &lt;mvc:annotation-driven /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=&quot;shiroFilter&quot; class=&quot;org.apache.shiro.spring.web.ShiroFilterFactoryBean&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;securityManager&quot; ref=&quot;securityManager&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;filterChainDefinitions&quot;&gt;</span><br><span class="line">            &lt;value&gt;</span><br><span class="line">                /login=anon</span><br><span class="line">                /admin/**=authc</span><br><span class="line">            &lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;WEB-INF/views&quot; /&gt;</span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="1-5创建spring-shiro-xml"><a href="#1-5创建spring-shiro-xml" class="headerlink" title="1.5创建spring-shiro.xml"></a>1.5创建spring-shiro.xml</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;</span><br><span class="line">       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Shiro的Web过滤器 --&gt;</span><br><span class="line">    &lt;bean id=&quot;shiroFilter&quot; class=&quot;org.apache.shiro.spring.web.ShiroFilterFactoryBean&quot;&gt;</span><br><span class="line">        &lt;!-- Shiro的安全管理器，所有关于安全的操作都会经过SecurityManager --&gt;</span><br><span class="line">        &lt;property name=&quot;securityManager&quot; ref=&quot;securityManager&quot;/&gt;</span><br><span class="line">        &lt;!-- 系统认证提交地址，如果用户退出即session丢失就会访问这个页面 --&gt;</span><br><span class="line">        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot;/&gt;</span><br><span class="line">        &lt;!-- 权限验证失败跳转的页面，需要配合Spring的ExceptionHandler异常处理机制使用 --&gt;</span><br><span class="line">        &lt;property name=&quot;unauthorizedUrl&quot; value=&quot;/unauthorized.jsp&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;filters&quot;&gt;</span><br><span class="line">            &lt;util:map&gt;</span><br><span class="line">                &lt;entry key=&quot;authc&quot; value-ref=&quot;formAuthenticationFilter&quot;/&gt;</span><br><span class="line">            &lt;/util:map&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">        &lt;!-- 自定义的过滤器链，从上向下执行，一般将`/**`放到最下面 --&gt;</span><br><span class="line">        &lt;property name=&quot;filterChainDefinitions&quot;&gt;</span><br><span class="line">            &lt;value&gt;</span><br><span class="line">                &lt;!-- 静态资源不拦截 --&gt;</span><br><span class="line">                /static/** = anon</span><br><span class="line">                /lib/** = anon</span><br><span class="line">                /js/** = anon</span><br><span class="line"></span><br><span class="line">                &lt;!-- 登录页面不拦截 --&gt;</span><br><span class="line">                /login.jsp = anon</span><br><span class="line">                /login.do = anon</span><br><span class="line"></span><br><span class="line">                &lt;!-- Shiro提供了退出登录的配置`logout`，会生成路径为`/logout`的请求地址，访问这个地址即会退出当前账户并清空缓存 --&gt;</span><br><span class="line">                /logout = logout</span><br><span class="line"></span><br><span class="line">                &lt;!-- user表示身份通过或通过记住我通过的用户都能访问系统 --&gt;</span><br><span class="line">                /index.jsp = user</span><br><span class="line"></span><br><span class="line">                &lt;!-- `/**`表示所有请求，表示访问该地址的用户是身份验证通过或RememberMe登录的都可以 --&gt;</span><br><span class="line">                /** = user</span><br><span class="line">            &lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 基于Form表单的身份验证过滤器 --&gt;</span><br><span class="line">    &lt;bean id=&quot;formAuthenticationFilter&quot; class=&quot;org.apache.shiro.web.filter.authc.FormAuthenticationFilter&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;usernameParam&quot; value=&quot;username&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;passwordParam&quot; value=&quot;password&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 安全管理器 --&gt;</span><br><span class="line">    &lt;bean id=&quot;securityManager&quot; class=&quot;org.apache.shiro.web.mgt.DefaultWebSecurityManager&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;realm&quot; ref=&quot;userRealm&quot; /&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Realm实现 --&gt;</span><br><span class="line">    &lt;bean id=&quot;userRealm&quot; class=&quot;com.imgurl.realm.UserRealm&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="1-6创建UserRealm实例"><a href="#1-6创建UserRealm实例" class="headerlink" title="1.6创建UserRealm实例"></a>1.6创建UserRealm实例</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 
-    &lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;
-      &lt;artifactId&gt;shiro-web&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-    &lt;/dependency&gt;
-
-    &lt;!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.shiro&lt;/groupId&gt;
-      &lt;artifactId&gt;shiro-core&lt;/artifactId&gt;
-      &lt;version&gt;1.4.0&lt;/version&gt;
-    &lt;/dependency&gt;
-
-    &lt;!--excel--&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
-      &lt;artifactId&gt;poi&lt;/artifactId&gt;
-      &lt;version&gt;4.1.0&lt;/version&gt;
-    &lt;/dependency&gt;
-
-    &lt;dependency&gt;
-      &lt;groupId&gt;jstl&lt;/groupId&gt;
-      &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-      &lt;version&gt;1.2&lt;/version&gt;
-    &lt;/dependency&gt;
-
-    &lt;!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
-      &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;
-      &lt;version&gt;4.1.6&lt;/version&gt;
-    &lt;/dependency&gt;
-
-    &lt;dependency&gt;
-      &lt;groupId&gt;log4j&lt;/groupId&gt;
-      &lt;artifactId&gt;log4j&lt;/artifactId&gt;
-      &lt;version&gt;1.2.17&lt;/version&gt;
-    &lt;/dependency&gt;</code></pre><p> 将项目需要使用的包先导入，后期导入也没关系。但是springmvc，jdbc，shiro需要提前导入，方便修改web.xml文件。</p>
-<h3 id="1-3修改web-xml"><a href="#1-3修改web-xml" class="headerlink" title="1.3修改web.xml"></a>1.3修改web.xml</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!--
-  Licensed to the Apache Software Foundation (ASF) under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
-  (the &quot;License&quot;); you may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
---&gt;
-
-&lt;!--
-  - This is the Cocoon web-app configurations file
-  -
-  - $Id$
-  --&gt;
-&lt;web-app version=&quot;2.4&quot;
-         xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot;
-         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-         xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;&gt;
-  &lt;filter&gt;
-    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
-    &lt;init-param&gt;
-      &lt;param-name&gt;encoding&lt;/param-name&gt;
-      &lt;param-value&gt;UTF-8&lt;/param-value&gt;
-    &lt;/init-param&gt;
-  &lt;/filter&gt;
-  &lt;filter-mapping&gt;
-    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-  &lt;/filter-mapping&gt;
-
-  &lt;filter&gt;
-    &lt;filter-name&gt;shiroFilter&lt;/filter-name&gt;
-    &lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;
-    &lt;init-param&gt;
-      &lt;param-name&gt;targetFilterLifecycle&lt;/param-name&gt;
-      &lt;param-value&gt;true&lt;/param-value&gt;
-    &lt;/init-param&gt;
-  &lt;/filter&gt;
-  &lt;filter-mapping&gt;
-    &lt;filter-name&gt;shiroFilter&lt;/filter-name&gt;
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-  &lt;/filter-mapping&gt;
-
-  &lt;servlet&gt;
-    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-    &lt;init-param&gt;
-      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-      &lt;param-value&gt;classpath:spring/spring-*.xml&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-  &lt;/servlet&gt;
-
-  &lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
-    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
-  &lt;/servlet-mapping&gt;
-
-&lt;/web-app&gt;</code></pre><h3 id="1-4-创建spring-mvc-xml"><a href="#1-4-创建spring-mvc-xml" class="headerlink" title="1.4 创建spring-mvc.xml"></a>1.4 创建spring-mvc.xml</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd&quot;&gt;
-    &lt;context:component-scan base-package=&quot;com.imgurl.controller&quot; /&gt;
-    &lt;mvc:annotation-driven /&gt;
-
-    &lt;bean id=&quot;shiroFilter&quot; class=&quot;org.apache.shiro.spring.web.ShiroFilterFactoryBean&quot;&gt;
-        &lt;property name=&quot;securityManager&quot; ref=&quot;securityManager&quot; /&gt;
-        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot; /&gt;
-        &lt;property name=&quot;filterChainDefinitions&quot;&gt;
-            &lt;value&gt;
-                /login=anon
-                /admin/**=authc
-            &lt;/value&gt;
-        &lt;/property&gt;
-    &lt;/bean&gt;
-
-    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-        &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;
-        &lt;property name=&quot;prefix&quot; value=&quot;WEB-INF/views&quot; /&gt;
-        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot; /&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;</code></pre><h3 id="1-5创建spring-shiro-xml"><a href="#1-5创建spring-shiro-xml" class="headerlink" title="1.5创建spring-shiro.xml"></a>1.5创建spring-shiro.xml</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
-       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-       xsi:schemaLocation=&quot;
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd&quot;&gt;
-
-    &lt;!-- Shiro的Web过滤器 --&gt;
-    &lt;bean id=&quot;shiroFilter&quot; class=&quot;org.apache.shiro.spring.web.ShiroFilterFactoryBean&quot;&gt;
-        &lt;!-- Shiro的安全管理器，所有关于安全的操作都会经过SecurityManager --&gt;
-        &lt;property name=&quot;securityManager&quot; ref=&quot;securityManager&quot;/&gt;
-        &lt;!-- 系统认证提交地址，如果用户退出即session丢失就会访问这个页面 --&gt;
-        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot;/&gt;
-        &lt;!-- 权限验证失败跳转的页面，需要配合Spring的ExceptionHandler异常处理机制使用 --&gt;
-        &lt;property name=&quot;unauthorizedUrl&quot; value=&quot;/unauthorized.jsp&quot;/&gt;
-        &lt;property name=&quot;filters&quot;&gt;
-            &lt;util:map&gt;
-                &lt;entry key=&quot;authc&quot; value-ref=&quot;formAuthenticationFilter&quot;/&gt;
-            &lt;/util:map&gt;
-        &lt;/property&gt;
-        &lt;!-- 自定义的过滤器链，从上向下执行，一般将`/**`放到最下面 --&gt;
-        &lt;property name=&quot;filterChainDefinitions&quot;&gt;
-            &lt;value&gt;
-                &lt;!-- 静态资源不拦截 --&gt;
-                /static/** = anon
-                /lib/** = anon
-                /js/** = anon
-
-                &lt;!-- 登录页面不拦截 --&gt;
-                /login.jsp = anon
-                /login.do = anon
-
-                &lt;!-- Shiro提供了退出登录的配置`logout`，会生成路径为`/logout`的请求地址，访问这个地址即会退出当前账户并清空缓存 --&gt;
-                /logout = logout
-
-                &lt;!-- user表示身份通过或通过记住我通过的用户都能访问系统 --&gt;
-                /index.jsp = user
-
-                &lt;!-- `/**`表示所有请求，表示访问该地址的用户是身份验证通过或RememberMe登录的都可以 --&gt;
-                /** = user
-            &lt;/value&gt;
-        &lt;/property&gt;
-    &lt;/bean&gt;
-
-    &lt;!-- 基于Form表单的身份验证过滤器 --&gt;
-    &lt;bean id=&quot;formAuthenticationFilter&quot; class=&quot;org.apache.shiro.web.filter.authc.FormAuthenticationFilter&quot;&gt;
-        &lt;property name=&quot;usernameParam&quot; value=&quot;username&quot;/&gt;
-        &lt;property name=&quot;passwordParam&quot; value=&quot;password&quot;/&gt;
-        &lt;property name=&quot;loginUrl&quot; value=&quot;/login.jsp&quot;/&gt;
-    &lt;/bean&gt;
-
-    &lt;!-- 安全管理器 --&gt;
-    &lt;bean id=&quot;securityManager&quot; class=&quot;org.apache.shiro.web.mgt.DefaultWebSecurityManager&quot;&gt;
-        &lt;property name=&quot;realm&quot; ref=&quot;userRealm&quot; /&gt;
-    &lt;/bean&gt;
-
-    &lt;!-- Realm实现 --&gt;
-    &lt;bean id=&quot;userRealm&quot; class=&quot;com.imgurl.realm.UserRealm&quot;&gt;&lt;/bean&gt;
-&lt;/beans&gt;</code></pre><h3 id="1-6创建UserRealm实例"><a href="#1-6创建UserRealm实例" class="headerlink" title="1.6创建UserRealm实例"></a>1.6创建UserRealm实例</h3><pre><code></code></pre>
             </div>
             <hr/>
 
@@ -1030,22 +823,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/08/dai-ma-zi-dong-sheng-cheng-qi-nogeneratorconfig/">
+                <a href="/2019/05/08/shironoji-chu-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="代码自动生成器のgeneratorconfig.xml">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Shiroの基础知识">
                         
-                        <span class="card-title">代码自动生成器のgeneratorconfig.xml</span>
+                        <span class="card-title">Shiroの基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            代码自动生成器のgeneratorconfig.xml前言
-当我们写Java项目的时候，我们和数据相关时必定要写Dao，DaoMapper，Model相关的实体和接口。我觉得很无脑的敲，虽然很多都有补全，但是感觉还是没有自动生成快。
-
-配置
+                            Shiroの基础知识Authenticator(用户认证)
+用户认证，用户去访问系统，系统要验证用户身份的合法性
+认证方法 最常用的用户身份验证的方法：1、用户名密码方式、2、指纹打卡机、3、基于证书验证方法。。系统验证用户身份合法，用户方
                         
                     </div>
                     <div class="publish-info">
@@ -1082,20 +874,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/29/shironobiao-jie-gou-she-ji/">
+                <a href="/2019/04/29/ssm-kuang-jia-zheng-he-noshiro/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Shiroの表结构设计">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="SSM框架整合のShiro">
                         
-                        <span class="card-title">Shiroの表结构设计</span>
+                        <span class="card-title">SSM框架整合のShiro</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Shiroの表结构设计
-  通常我们的权限设计都是 用户–角色–权限 ,其中角色是我们写代码的人没法控制的,它可以有多条权限,每个用户又可以设计为拥有多个角色.因此如果从角色着手进行权限验证,系统都必须根据用户的配置动起来,非常复杂.角色的
+                            SSM框架整合のShiro
+ 前面我们学习了如何使用IDEA+Maven创建SSM框架，配置拦截器等。当你的项目越来越大，对不同的用户就有不同的权限，这样我们就不只是局限于系统去判定他是否登录了。
+
+前提
+ 已经利用Maven创建好SSM框
                         
                     </div>
                     <div class="publish-info">
@@ -1285,7 +1080,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

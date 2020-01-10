@@ -32,7 +32,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -436,7 +436,7 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        979
+                        995
                     </div>
                     
 
@@ -462,110 +462,11 @@
                 <h1 id="代码自动生成器のgeneratorconfig-xml"><a href="#代码自动生成器のgeneratorconfig-xml" class="headerlink" title="代码自动生成器のgeneratorconfig.xml"></a>代码自动生成器のgeneratorconfig.xml</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>当我们写Java项目的时候，我们和数据相关时必定要写Dao，DaoMapper，Model相关的实体和接口。我觉得很无脑的敲，虽然很多都有补全，但是感觉还是没有自动生成快。</p>
 </blockquote>
-<h2 id="配置pom-xml"><a href="#配置pom-xml" class="headerlink" title="配置pom.xml"></a>配置pom.xml</h2><pre><code>&lt;dependency&gt;
-      &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-      &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
-      &lt;version&gt;1.3.5&lt;/version&gt;
-    &lt;/dependency&gt;
-    ---------------------------------------------------------
-    下面是写在&lt;build&gt;下面的
-    &lt;plugin&gt;
-        &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-        &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;1.3.5&lt;/version&gt;
-        &lt;configuration&gt;
-          &lt;verbose&gt;true&lt;/verbose&gt;
-          &lt;overwrite&gt;true&lt;/overwrite&gt;
-        &lt;/configuration&gt;
-      &lt;/plugin&gt;</code></pre><h2 id="在recourse下面创建application-properties"><a href="#在recourse下面创建application-properties" class="headerlink" title="在recourse下面创建application.properties"></a>在recourse下面创建application.properties</h2><pre><code>db.example.type=mysql
-db.example.driver=com.mysql.jdbc.Driver
-db.example.url=jdbc:mysql://localhost:3306/bookshop?useUnicode=true&amp;characterEncoding=utf8
-db.example.username=username
-db.example.password=password
+<h2 id="配置pom-xml"><a href="#配置pom-xml" class="headerlink" title="配置pom.xml"></a>配置pom.xml</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.3.5&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    ---------------------------------------------------------</span><br><span class="line">    下面是写在&lt;build&gt;下面的</span><br><span class="line">    &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;1.3.5&lt;/version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;verbose&gt;true&lt;/verbose&gt;</span><br><span class="line">          &lt;overwrite&gt;true&lt;/overwrite&gt;</span><br><span class="line">        &lt;/configuration&gt;</span><br><span class="line">      &lt;/plugin&gt;</span><br></pre></td></tr></table></figure></div>
 
-#MBGInfo
-generator.location=D:/apache-maven-3.6.0/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar
-generator.targetPackage=com.kalifun.dao   //需要存放自动生成的目录
-gererator.schema=database    //数据库名称
-gererator.tableName=book     //需要生成的表名称
-gererator.objectName=Book  //自动生成的名称</code></pre><h2 id="recourse下创建generatorConfig-xml"><a href="#recourse下创建generatorConfig-xml" class="headerlink" title="recourse下创建generatorConfig.xml"></a>recourse下创建generatorConfig.xml</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE generatorConfiguration
-        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
-        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+<h2 id="在recourse下面创建application-properties"><a href="#在recourse下面创建application-properties" class="headerlink" title="在recourse下面创建application.properties"></a>在recourse下面创建application.properties</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">db.example.type=mysql</span><br><span class="line">db.example.driver=com.mysql.jdbc.Driver</span><br><span class="line">db.example.url=jdbc:mysql://localhost:3306/bookshop?useUnicode=true&amp;characterEncoding=utf8</span><br><span class="line">db.example.username=username</span><br><span class="line">db.example.password=password</span><br><span class="line"></span><br><span class="line">#MBGInfo</span><br><span class="line">generator.location=D:/apache-maven-3.6.0/repository/mysql/mysql-connector-java/5.1.41/mysql-connector-java-5.1.41.jar</span><br><span class="line">generator.targetPackage=com.kalifun.dao   //需要存放自动生成的目录</span><br><span class="line">gererator.schema=database    //数据库名称</span><br><span class="line">gererator.tableName=book     //需要生成的表名称</span><br><span class="line">gererator.objectName=Book  //自动生成的名称</span><br></pre></td></tr></table></figure></div>
 
-&lt;generatorConfiguration&gt;
-    &lt;!-- 引入配置文件 --&gt;
-    &lt;properties resource=&quot;application.properties&quot;/&gt;
-
-    &lt;!-- 指定数据库连接驱动jara地址 --&gt;
-    &lt;classPathEntry
-            location=&quot;${generator.location}&quot; /&gt;
-
-    &lt;!-- 一个数据库一个context --&gt;
-    &lt;context id=&quot;sqlserverTables&quot;&gt;
-        &lt;!-- 生成的pojo，将implements Serializable --&gt;
-        &lt;plugin type=&quot;org.mybatis.generator.plugins.SerializablePlugin&quot;&gt;&lt;/plugin&gt;
-
-        &lt;!-- 注释 --&gt;
-        &lt;commentGenerator&gt;
-            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;&lt;!-- 是否取消注释 --&gt;
-            &lt;!-- &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot; /&gt;  是否生成注释代时间戳 --&gt;
-        &lt;/commentGenerator&gt;
-
-        &lt;!-- 数据库链接URL、用户名、密码 --&gt;
-        &lt;jdbcConnection driverClass=&quot;${db.example.driver}&quot;
-                        connectionURL=&quot;${db.example.url}&quot; userId=&quot;${db.example.username}&quot;
-                        password=&quot;${db.example.password}&quot;&gt;
-        &lt;/jdbcConnection&gt;
-
-        &lt;!-- 类型转换 --&gt;
-        &lt;javaTypeResolver&gt;
-            &lt;!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL
-                和 NUMERIC 类型解析为java.math.BigDecimal --&gt;
-            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
-        &lt;/javaTypeResolver&gt;
-
-        &lt;!-- 生成model模型，对应的包路径，以及文件存放路径(targetProject)，targetProject可以指定具体的路径,如./src/main/java，
-            也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下 --&gt;
-        &lt;javaModelGenerator targetPackage=&quot;${generator.targetPackage}&quot;
-                            targetProject=&quot;./src/main/java&quot;&gt;
-            &lt;!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] --&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
-            &lt;!-- 从数据库返回的值被清理前后的空格 --&gt;
-            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
-        &lt;/javaModelGenerator&gt;
-
-        &lt;!--对应的mapper.xml文件 --&gt;
-        &lt;sqlMapGenerator targetPackage=&quot;${generator.targetPackage}&quot;
-                         targetProject=&quot;./src/main/java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
-        &lt;/sqlMapGenerator&gt;
-
-        &lt;!-- 对应的Mapper接口类文件 --&gt;
-        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot;
-                             targetPackage=&quot;${generator.targetPackage}&quot; targetProject=&quot;./src/main/java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
-        &lt;/javaClientGenerator&gt;
-
-
-        &lt;!-- 列出要生成代码的所有表，这里配置的是不生成Example文件 --&gt;
-        &lt;!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
-                   是否生成 example类   --&gt;
-        &lt;table tableName=&quot;${gererator.tableName}&quot; domainObjectName=&quot;${gererator.objectName}&quot;
-               schema=&quot;${gererator.schema}&quot;
-               enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot;
-               enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot;
-               selectByExampleQueryId=&quot;false&quot;&gt;
-            &lt;!-- 忽略列，不生成bean 字段
-            &lt;ignoreColumn column=&quot;FRED&quot; /&gt;--&gt;
-            &lt;!-- 指定列的java数据类型
-            &lt;columnOverride column=&quot;LONG_VARCHAR_FIELD&quot; jdbcType=&quot;VARCHAR&quot; /&gt;  --&gt;
-            &lt;!-- 用于指定生成实体类时是否使用实际的列名作为实体类的属性名。false是 Camel Case风格--&gt;
-            &lt;property name=&quot;useActualColumnNames&quot; value=&quot;false&quot; /&gt;
-        &lt;/table&gt;
-    &lt;/context&gt;
-&lt;/generatorConfiguration&gt;
-</code></pre>
+<h2 id="recourse下创建generatorConfig-xml"><a href="#recourse下创建generatorConfig-xml" class="headerlink" title="recourse下创建generatorConfig.xml"></a>recourse下创建generatorConfig.xml</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE generatorConfiguration</span><br><span class="line">        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;</span><br><span class="line">        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;generatorConfiguration&gt;</span><br><span class="line">    &lt;!-- 引入配置文件 --&gt;</span><br><span class="line">    &lt;properties resource=&quot;application.properties&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 指定数据库连接驱动jara地址 --&gt;</span><br><span class="line">    &lt;classPathEntry</span><br><span class="line">            location=&quot;$&#123;generator.location&#125;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 一个数据库一个context --&gt;</span><br><span class="line">    &lt;context id=&quot;sqlserverTables&quot;&gt;</span><br><span class="line">        &lt;!-- 生成的pojo，将implements Serializable --&gt;</span><br><span class="line">        &lt;plugin type=&quot;org.mybatis.generator.plugins.SerializablePlugin&quot;&gt;&lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 注释 --&gt;</span><br><span class="line">        &lt;commentGenerator&gt;</span><br><span class="line">            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;&lt;!-- 是否取消注释 --&gt;</span><br><span class="line">            &lt;!-- &lt;property name=&quot;suppressDate&quot; value=&quot;true&quot; /&gt;  是否生成注释代时间戳 --&gt;</span><br><span class="line">        &lt;/commentGenerator&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 数据库链接URL、用户名、密码 --&gt;</span><br><span class="line">        &lt;jdbcConnection driverClass=&quot;$&#123;db.example.driver&#125;&quot;</span><br><span class="line">                        connectionURL=&quot;$&#123;db.example.url&#125;&quot; userId=&quot;$&#123;db.example.username&#125;&quot;</span><br><span class="line">                        password=&quot;$&#123;db.example.password&#125;&quot;&gt;</span><br><span class="line">        &lt;/jdbcConnection&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 类型转换 --&gt;</span><br><span class="line">        &lt;javaTypeResolver&gt;</span><br><span class="line">            &lt;!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL</span><br><span class="line">                和 NUMERIC 类型解析为java.math.BigDecimal --&gt;</span><br><span class="line">            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;/javaTypeResolver&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 生成model模型，对应的包路径，以及文件存放路径(targetProject)，targetProject可以指定具体的路径,如./src/main/java，</span><br><span class="line">            也可以使用“MAVEN”来自动生成，这样生成的代码会在target/generatord-source目录下 --&gt;</span><br><span class="line">        &lt;javaModelGenerator targetPackage=&quot;$&#123;generator.targetPackage&#125;&quot;</span><br><span class="line">                            targetProject=&quot;./src/main/java&quot;&gt;</span><br><span class="line">            &lt;!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] --&gt;</span><br><span class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">            &lt;!-- 从数据库返回的值被清理前后的空格 --&gt;</span><br><span class="line">            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">        &lt;/javaModelGenerator&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--对应的mapper.xml文件 --&gt;</span><br><span class="line">        &lt;sqlMapGenerator targetPackage=&quot;$&#123;generator.targetPackage&#125;&quot;</span><br><span class="line">                         targetProject=&quot;./src/main/java&quot;&gt;</span><br><span class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;/sqlMapGenerator&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 对应的Mapper接口类文件 --&gt;</span><br><span class="line">        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot;</span><br><span class="line">                             targetPackage=&quot;$&#123;generator.targetPackage&#125;&quot; targetProject=&quot;./src/main/java&quot;&gt;</span><br><span class="line">            &lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;/javaClientGenerator&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;!-- 列出要生成代码的所有表，这里配置的是不生成Example文件 --&gt;</span><br><span class="line">        &lt;!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample</span><br><span class="line">                   是否生成 example类   --&gt;</span><br><span class="line">        &lt;table tableName=&quot;$&#123;gererator.tableName&#125;&quot; domainObjectName=&quot;$&#123;gererator.objectName&#125;&quot;</span><br><span class="line">               schema=&quot;$&#123;gererator.schema&#125;&quot;</span><br><span class="line">               enableCountByExample=&quot;false&quot; enableUpdateByExample=&quot;false&quot;</span><br><span class="line">               enableDeleteByExample=&quot;false&quot; enableSelectByExample=&quot;false&quot;</span><br><span class="line">               selectByExampleQueryId=&quot;false&quot;&gt;</span><br><span class="line">            &lt;!-- 忽略列，不生成bean 字段</span><br><span class="line">            &lt;ignoreColumn column=&quot;FRED&quot; /&gt;--&gt;</span><br><span class="line">            &lt;!-- 指定列的java数据类型</span><br><span class="line">            &lt;columnOverride column=&quot;LONG_VARCHAR_FIELD&quot; jdbcType=&quot;VARCHAR&quot; /&gt;  --&gt;</span><br><span class="line">            &lt;!-- 用于指定生成实体类时是否使用实际的列名作为实体类的属性名。false是 Camel Case风格--&gt;</span><br><span class="line">            &lt;property name=&quot;useActualColumnNames&quot; value=&quot;false&quot; /&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/context&gt;</span><br><span class="line">&lt;/generatorConfiguration&gt;</span><br></pre></td></tr></table></figure></div>
             </div>
             <hr/>
 
@@ -905,26 +806,27 @@ gererator.objectName=Book  //自动生成的名称</code></pre><h2 id="recourse�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/08/shironoji-chu-zhi-shi/">
+                <a href="/2019/05/16/springbootnodai-ma-sheng-cheng-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Shiroの基础知识">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="SpringBootの代码生成器">
                         
-                        <span class="card-title">Shiroの基础知识</span>
+                        <span class="card-title">SpringBootの代码生成器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Shiroの基础知识Authenticator(用户认证)
-用户认证，用户去访问系统，系统要验证用户身份的合法性
-认证方法 最常用的用户身份验证的方法：1、用户名密码方式、2、指纹打卡机、3、基于证书验证方法。。系统验证用户身份合法，用户方
+                            SpringBootの代码生成器前言
+之前我们在使用SpringMVC的时候也讲到代码生成器。可以看代码自动生成器のgeneratorconfig.xml进行了解。代码生成器的好处就不用多说了，反正让我们可以快速搭建一个项目就对了。
+
+配置
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-16
                         </span>
                         <span class="publish-author">
                             
@@ -956,29 +858,26 @@ gererator.objectName=Book  //自动生成的名称</code></pre><h2 id="recourse�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/05/javanoimgurl/">
+                <a href="/2019/05/08/shironoji-chu-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="JavaのImgUrl">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Shiroの基础知识">
                         
-                        <span class="card-title">JavaのImgUrl</span>
+                        <span class="card-title">Shiroの基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaのImgUrl简介简单的一个图床网站。需要注册才能上传文件，管理员可以无限制的上传图片，普通注册用户一天只能5张图片。
-创建环境
-编辑器：IDEA
-数据库：MariaDB
-后端框架：SSM+Shiro
-前端框架：Boostrap +
+                            Shiroの基础知识Authenticator(用户认证)
+用户认证，用户去访问系统，系统要验证用户身份的合法性
+认证方法 最常用的用户身份验证的方法：1、用户名密码方式、2、指纹打卡机、3、基于证书验证方法。。系统验证用户身份合法，用户方
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-08
                             </span>
                         <span class="publish-author">
                             
@@ -1159,7 +1058,7 @@ gererator.objectName=Book  //自动生成的名称</code></pre><h2 id="recourse�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

@@ -30,7 +30,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -434,14 +434,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        547
+                        648
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -464,63 +464,25 @@
 <li><h4 id="快速实现，不需要繁琐的前端知识。"><a href="#快速实现，不需要繁琐的前端知识。" class="headerlink" title="快速实现，不需要繁琐的前端知识。"></a>快速实现，不需要繁琐的前端知识。</h4></li>
 </ul>
 </blockquote>
-<h2 id="PageHelper实现步骤"><a href="#PageHelper实现步骤" class="headerlink" title="PageHelper实现步骤"></a>PageHelper实现步骤</h2><h3 id="1-1-配置pom-xml实现导包"><a href="#1-1-配置pom-xml实现导包" class="headerlink" title="1.1 配置pom.xml实现导包"></a>1.1 配置pom.xml实现导包</h3><pre><code>&lt;dependency&gt;
-      &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
-      &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;
-      &lt;version&gt;4.1.6&lt;/version&gt;
-  &lt;/dependency&gt;</code></pre><p> 建议高版本，因为我在低版本时功能无法实现。</p>
+<h2 id="PageHelper实现步骤"><a href="#PageHelper实现步骤" class="headerlink" title="PageHelper实现步骤"></a>PageHelper实现步骤</h2><h3 id="1-1-配置pom-xml实现导包"><a href="#1-1-配置pom-xml实现导包" class="headerlink" title="1.1 配置pom.xml实现导包"></a>1.1 配置pom.xml实现导包</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.1.6&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p> 建议高版本，因为我在低版本时功能无法实现。</p>
 <h3 id="1-2配置mybatis"><a href="#1-2配置mybatis" class="headerlink" title="1.2配置mybatis"></a>1.2配置mybatis</h3><p> 因为我们是针对数据库查询后，进行数据分页。这也算是为什么选择它的原因。</p>
-<pre><code>&lt;!-- 配置SqlSessionFactory对象 --&gt;
-    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-        &lt;!-- 注入数据库连接池 --&gt;
-        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
-        &lt;!-- 扫描entity包 使用别名 --&gt;
-        &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.label.entity&quot;/&gt;
-        &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
-        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;
-        &lt;!--设置PageHelper--&gt;
-        &lt;property name=&quot;plugins&quot;&gt;
-            &lt;array&gt;
-                &lt;bean class=&quot;com.github.pagehelper.PageHelper&quot;&gt;
-                    &lt;property name=&quot;properties&quot;&gt;
-                        &lt;value&gt;
-                          &lt;!-- 还有其他设置，可以自己去看文档根据自己需求进行设置--&gt;
-                            dialect=mysql
-                        &lt;/value&gt;
-                    &lt;/property&gt;
-                &lt;/bean&gt;
-            &lt;/array&gt;
-        &lt;/property&gt;
-    &lt;/bean&gt;</code></pre><h3 id="1-3SSM代码"><a href="#1-3SSM代码" class="headerlink" title="1.3SSM代码"></a>1.3SSM代码</h3><p> controller与前端交互</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置SqlSessionFactory对象 --&gt;</span><br><span class="line">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">        &lt;!-- 注入数据库连接池 --&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">        &lt;!-- 扫描entity包 使用别名 --&gt;</span><br><span class="line">        &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.label.entity&quot;/&gt;</span><br><span class="line">        &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;</span><br><span class="line">        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;</span><br><span class="line">        &lt;!--设置PageHelper--&gt;</span><br><span class="line">        &lt;property name=&quot;plugins&quot;&gt;</span><br><span class="line">            &lt;array&gt;</span><br><span class="line">                &lt;bean class=&quot;com.github.pagehelper.PageHelper&quot;&gt;</span><br><span class="line">                    &lt;property name=&quot;properties&quot;&gt;</span><br><span class="line">                        &lt;value&gt;</span><br><span class="line">                          &lt;!-- 还有其他设置，可以自己去看文档根据自己需求进行设置--&gt;</span><br><span class="line">                            dialect=mysql</span><br><span class="line">                        &lt;/value&gt;</span><br><span class="line">                    &lt;/property&gt;</span><br><span class="line">                &lt;/bean&gt;</span><br><span class="line">            &lt;/array&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="1-3SSM代码"><a href="#1-3SSM代码" class="headerlink" title="1.3SSM代码"></a>1.3SSM代码</h3><p> controller与前端交互</p>
 <blockquote>
 <p> controller片段代码</p>
-<pre><code>public ModelAndView fonTable(Page page){
-        ModelAndView mav = new ModelAndView(&quot;admin/test&quot;);
-        int total = pictureService.getTotal();
-        System.out.println(&quot;Total&gt;&gt;&gt;&gt;&quot;+total);
-        page.calculateEnd(total);
-        if (page.getStart() &lt; 0) {
-            page.setStart(0);
-        }else if (page.getStart() &gt; total) {
-            page.setEnd(page.getEnd());
-        }
-        PageHelper.offsetPage(page.getStart(),16);
-        List&lt;PictureDate&gt; allPic = pictureService.listPic();
-        for (int i = 0;i &lt; allPic.size();i++) {
-            System.out.println(allPic.get(i));
-        }
-        System.out.println(allPic);
-        mav.addObject(&quot;allpic&quot;,allPic);
-        return mav;
-    }</code></pre><p> 前端片段代码</p>
-<pre><code></code></pre></blockquote>
-<li class="am-disabled"><a href="?start=0">«</a></li>
-<li class="am-active"><a href="?start=${page.getStart()-page.getCount()}">上一页</a></li>
-<li><a href="?start=${page.getStart()+page.getCount()}">下一页</a></li>
-<li><a href="?start=${page.getEnd()}">»</a></li>
-```
- 其实很多代码都省略了，比如entity，dao，service，mapper相关的代码我都省略了。
- 立一个flag，写一个平台出一个详细的文章进行学习。
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public ModelAndView fonTable(Page page)&#123;</span><br><span class="line">        ModelAndView mav = new ModelAndView(&quot;admin/test&quot;);</span><br><span class="line">        int total = pictureService.getTotal();</span><br><span class="line">        System.out.println(&quot;Total&gt;&gt;&gt;&gt;&quot;+total);</span><br><span class="line">        page.calculateEnd(total);</span><br><span class="line">        if (page.getStart() &lt; 0) &#123;</span><br><span class="line">            page.setStart(0);</span><br><span class="line">        &#125;else if (page.getStart() &gt; total) &#123;</span><br><span class="line">            page.setEnd(page.getEnd());</span><br><span class="line">        &#125;</span><br><span class="line">        PageHelper.offsetPage(page.getStart(),16);</span><br><span class="line">        List&lt;PictureDate&gt; allPic = pictureService.listPic();</span><br><span class="line">        for (int i = 0;i &lt; allPic.size();i++) &#123;</span><br><span class="line">            System.out.println(allPic.get(i));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(allPic);</span><br><span class="line">        mav.addObject(&quot;allpic&quot;,allPic);</span><br><span class="line">        return mav;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p> 前端片段代码</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;li class=&quot;am-disabled&quot;&gt;&lt;a href=&quot;?start=0&quot;&gt;«&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li class=&quot;am-active&quot;&gt;&lt;a href=&quot;?start=$&#123;page.getStart()-page.getCount()&#125;&quot;&gt;上一页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;a href=&quot;?start=$&#123;page.getStart()+page.getCount()&#125;&quot;&gt;下一页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;a href=&quot;?start=$&#123;page.getEnd()&#125;&quot;&gt;»&lt;/a&gt;&lt;/li&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p> 其实很多代码都省略了，比如entity，dao，service，mapper相关的代码我都省略了。<br> 立一个flag，写一个平台出一个详细的文章进行学习。</p>
+
             </div>
             <hr/>
 
@@ -1109,7 +1071,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

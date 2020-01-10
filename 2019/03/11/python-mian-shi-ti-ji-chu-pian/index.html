@@ -6,9 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Python面试题-基础篇, kalifun;blog.kalifun">
     <meta name="description" content="Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
-def get_lines():
-    with open(&#39;file.txt&#39;,&#39;rb&#39;) as f:
-        return ">
+1234567def get_lines():    with open(&#39;file.txt&#39;,&#39;rb&#39;) as f:        re">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +30,7 @@ def get_lines():
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -440,7 +438,7 @@ def get_lines():
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        628
+                        631
                     </div>
                     
 
@@ -464,67 +462,32 @@ def get_lines():
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Python面试题-基础篇"><a href="#Python面试题-基础篇" class="headerlink" title="Python面试题-基础篇"></a>Python面试题-基础篇</h1><h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>1.有一个jsonline格式的文件file.txt大小约为10K</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-        <span class="token keyword">return</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_lines</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'file.txt'</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">return</span> f.readlines()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> get_lines():</span><br><span class="line">        process(e) <span class="comment"># 处理每一行数据</span></span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> e <span class="token keyword">in</span> get_lines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        process<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 处理每一行数据</span></code></pre>
 <p> 现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> f<span class="token punctuation">:</span>
-            <span class="token keyword">yield</span> i</code></pre>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_lines</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'file.txt'</span>,<span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">yield</span> i</span><br></pre></td></tr></table></figure></div>
+
 <p>因为内存只有4G，无法一次性读取10G文件，需要分批读取内容。每次读取内容的同时需要记录读取的位置，不然每次readline时，又是从第一行开始读取。</p>
 <blockquote>
 <p> <a href="yield.md">yield</a>生成器<br>  <a href="mmap.md">mmap</a>系统内存映射函数接口</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> mmap <span class="token keyword">import</span> mmap</code></pre>
 </blockquote>
-<p>def get_lines(filename):<br>    with open(filename,’r+’) as f:<br>        m = mmap(f.fileno(),0)<br>        tmp = 0<br>        for i,char in enumerate(m):<br>            if char == “\n”:<br>                yield m[tmp:i+1].decode()<br>                tmp = tmp+1<br>if <strong>name</strong> == “<strong>main</strong>“:<br>    for i in get_lines(“mmap_test.txt”):<br>        print i</p>
-<pre><code></code></pre><p>def get_lines():</p>
-<p>ef get_lines():<br>    with open(‘file.txt’,’rb’) as f:</p>
-<p>f get_lines():<br>    with open(‘file.txt’,’rb’) as f:<br>        for i in f:</p>
-<pre><code>#### mmap_test.txt
-```txt
-def get_lines():
-    with open(&#39;file.txt&#39;,&#39;rb&#39;) as f:
-        for i in f:
-            yield i</code></pre><p> 似乎使用mmap并不是特别好使，这样确实可以记录读取到行。似乎对tab比较多的并友好。</p>
-<h3 id="2-补充缺失的代码"><a href="#2-补充缺失的代码" class="headerlink" title="2.补充缺失的代码"></a>2.补充缺失的代码</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-sPath <span class="token operator">=</span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> sPath
-<span class="token keyword">def</span> <span class="token function">print_directory_contents</span><span class="token punctuation">(</span>sPath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> all_data <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>sPath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        files_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>sPath<span class="token punctuation">,</span>all_data<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>files_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            print_directory_contents<span class="token punctuation">(</span>files_path<span class="token punctuation">)</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">print</span> files_path</code></pre>
-<h3 id="3-输入日期，-判断这一天是这一年的第几天？"><a href="#3-输入日期，-判断这一天是这一年的第几天？" class="headerlink" title="3.输入日期， 判断这一天是这一年的第几天？"></a>3.输入日期， 判断这一天是这一年的第几天？</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding:utf-8 -*-</span>
-<span class="token keyword">import</span> datetime
-<span class="token keyword">def</span> <span class="token function">dayofyear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    year <span class="token operator">=</span> raw_input<span class="token punctuation">(</span><span class="token string">"请输入年份: "</span><span class="token punctuation">)</span>
-    month <span class="token operator">=</span> raw_input<span class="token punctuation">(</span><span class="token string">"请输入月份: "</span><span class="token punctuation">)</span>
-    day <span class="token operator">=</span> raw_input<span class="token punctuation">(</span><span class="token string">"请输入天: "</span><span class="token punctuation">)</span>
-    date1 <span class="token operator">=</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">(</span>year<span class="token operator">=</span>int<span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">,</span>month<span class="token operator">=</span>int<span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">,</span>day<span class="token operator">=</span>int<span class="token punctuation">(</span>day<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    date2 <span class="token operator">=</span> datetime<span class="token punctuation">.</span>date<span class="token punctuation">(</span>year<span class="token operator">=</span>int<span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">,</span>month<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>day<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span> <span class="token punctuation">(</span>date1<span class="token operator">-</span>date2<span class="token punctuation">)</span><span class="token punctuation">.</span>days<span class="token operator">+</span><span class="token number">1</span>
-dayofyear<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h3 id="4-打乱一个排好序的list对象alist？"><a href="#4-打乱一个排好序的list对象alist？" class="headerlink" title="4.打乱一个排好序的list对象alist？"></a>4.打乱一个排好序的list对象alist？</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
-alist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
-random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
-<span class="token keyword">print</span> alist</code></pre>
-<h3 id="5-现有字典-d-‘a’-24-’g’-52-’i’-12-’k’-33-请按value值进行排序"><a href="#5-现有字典-d-‘a’-24-’g’-52-’i’-12-’k’-33-请按value值进行排序" class="headerlink" title="5.现有字典 d= {‘a’:24,’g’:52,’i’:12,’k’:33}请按value值进行排序?"></a>5.现有字典 d= {‘a’:24,’g’:52,’i’:12,’k’:33}请按value值进行排序?</h3><pre class=" language-python"><code class="language-python">d<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">24</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">:</span><span class="token number">52</span><span class="token punctuation">,</span><span class="token string">'i'</span><span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">}</span>
-a <span class="token operator">=</span> d<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> a
-f <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span> f<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-b <span class="token operator">=</span> sorted<span class="token punctuation">(</span>d<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> b</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'a'</span>, 24<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'i'</span>, 12<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'k'</span>, 33<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'g'</span>, 52<span class="token punctuation">)</span><span class="token punctuation">]</span>
-<span class="token punctuation">(</span><span class="token string">'i'</span>, 12<span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'i'</span>, 12<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'a'</span>, 24<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'k'</span>, 33<span class="token punctuation">)</span>, <span class="token punctuation">(</span><span class="token string">'g'</span>, 52<span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mmap <span class="keyword">import</span> mmap</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_lines</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(filename,<span class="string">'r+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        m = mmap(f.fileno(),<span class="number">0</span>)</span><br><span class="line">        tmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i,char <span class="keyword">in</span> enumerate(m):</span><br><span class="line">            <span class="keyword">if</span> char == <span class="string">"\n"</span>:</span><br><span class="line">                <span class="keyword">yield</span> m[tmp:i+<span class="number">1</span>].decode()</span><br><span class="line">                tmp = tmp+<span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> get_lines(<span class="string">"mmap_test.txt"</span>):</span><br><span class="line">        <span class="keyword">print</span> i</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def get_lines():</span><br><span class="line"></span><br><span class="line">ef get_lines():</span><br><span class="line">    with open(&apos;file.txt&apos;,&apos;rb&apos;) as f:</span><br><span class="line"></span><br><span class="line">f get_lines():</span><br><span class="line">    with open(&apos;file.txt&apos;,&apos;rb&apos;) as f:</span><br><span class="line">        for i in f:</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="mmap-test-txt"><a href="#mmap-test-txt" class="headerlink" title="mmap_test.txt"></a>mmap_test.txt</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def get_lines():</span><br><span class="line">    with open(&apos;file.txt&apos;,&apos;rb&apos;) as f:</span><br><span class="line">        for i in f:</span><br><span class="line">            yield i</span><br></pre></td></tr></table></figure></div>
+
+<p> 似乎使用mmap并不是特别好使，这样确实可以记录读取到行。似乎对tab比较多的并友好。</p>
+<h3 id="2-补充缺失的代码"><a href="#2-补充缺失的代码" class="headerlink" title="2.补充缺失的代码"></a>2.补充缺失的代码</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">sPath = os.getcwd()</span><br><span class="line"><span class="keyword">print</span> sPath</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_directory_contents</span><span class="params">(sPath)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> all_data <span class="keyword">in</span> os.listdir(sPath):</span><br><span class="line">        files_path = os.path.join(sPath,all_data)</span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(files_path):</span><br><span class="line">            print_directory_contents(files_path)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">print</span> files_path</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="3-输入日期，-判断这一天是这一年的第几天？"><a href="#3-输入日期，-判断这一天是这一年的第几天？" class="headerlink" title="3.输入日期， 判断这一天是这一年的第几天？"></a>3.输入日期， 判断这一天是这一年的第几天？</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dayofyear</span><span class="params">()</span>:</span></span><br><span class="line">    year = raw_input(<span class="string">"请输入年份: "</span>)</span><br><span class="line">    month = raw_input(<span class="string">"请输入月份: "</span>)</span><br><span class="line">    day = raw_input(<span class="string">"请输入天: "</span>)</span><br><span class="line">    date1 = datetime.date(year=int(year),month=int(month),day=int(day))</span><br><span class="line">    date2 = datetime.date(year=int(year),month=<span class="number">1</span>,day=<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">print</span> (date1-date2).days+<span class="number">1</span></span><br><span class="line">dayofyear()</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="4-打乱一个排好序的list对象alist？"><a href="#4-打乱一个排好序的list对象alist？" class="headerlink" title="4.打乱一个排好序的list对象alist？"></a>4.打乱一个排好序的list对象alist？</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">alist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">random.shuffle(alist)</span><br><span class="line"><span class="keyword">print</span> alist</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="5-现有字典-d-‘a’-24-’g’-52-’i’-12-’k’-33-请按value值进行排序"><a href="#5-现有字典-d-‘a’-24-’g’-52-’i’-12-’k’-33-请按value值进行排序" class="headerlink" title="5.现有字典 d= {‘a’:24,’g’:52,’i’:12,’k’:33}请按value值进行排序?"></a>5.现有字典 d= {‘a’:24,’g’:52,’i’:12,’k’:33}请按value值进行排序?</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">d= &#123;<span class="string">'a'</span>:<span class="number">24</span>,<span class="string">'g'</span>:<span class="number">52</span>,<span class="string">'i'</span>:<span class="number">12</span>,<span class="string">'k'</span>:<span class="number">33</span>&#125;</span><br><span class="line">a = d.items()</span><br><span class="line"><span class="keyword">print</span> a</span><br><span class="line">f = <span class="keyword">lambda</span> x:x[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">print</span> f(a)</span><br><span class="line">b = sorted(d.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> b</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[(<span class="string">'a'</span>, 24), (<span class="string">'i'</span>, 12), (<span class="string">'k'</span>, 33), (<span class="string">'g'</span>, 52)]</span><br><span class="line">(<span class="string">'i'</span>, 12)</span><br><span class="line">[(<span class="string">'i'</span>, 12), (<span class="string">'a'</span>, 24), (<span class="string">'k'</span>, 33), (<span class="string">'g'</span>, 52)]</span><br></pre></td></tr></table></figure></div>
+
 <p>  lambda是一个隐函数，是固定写法，不要写成别的单词；x表示列表中的一个元素，在这里，表示一个元组，x只是临时起的一个名字，你可以使用任意的名字；x[0]表示元组里的第一个元素，当然第二个元素就是x[1]</p>
 
             </div>
@@ -929,9 +892,8 @@ Maven 是项目构建工具，能把项目抽象成 POM (project object model), 
                     <div class="summary block-with-text">
                         
                             面向对象方法重载
-MethodOverloading.javapackage basic_grammar;
-
-public class MethodOverloading {    void receive(int i){        S
+MethodOverloading.java
+12345678910111213141516171819package basic_grammar;public class MethodOverloading &#123;
                         
                     </div>
                     <div class="publish-info">
@@ -1117,7 +1079,7 @@ public class MethodOverloading {    void receive(int i){        S
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

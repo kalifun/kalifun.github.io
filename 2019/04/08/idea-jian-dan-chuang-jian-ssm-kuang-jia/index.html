@@ -33,7 +33,7 @@ Spring-MVC 你可以理">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -437,14 +437,14 @@ Spring-MVC 你可以理">
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.4k
+                        3.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        13 分
+                        18 分
                     </div>
                     
                 
@@ -471,456 +471,39 @@ Spring-MVC 你可以理">
 <li><p>已经安装jdk,maven(使用IDEA自带应该也是可以的)</p>
 <h3 id="1-1创建步骤"><a href="#1-1创建步骤" class="headerlink" title="1.1创建步骤"></a>1.1创建步骤</h3><p><img src="https://image.kalifun.top/upload/1904/23ef84aa9eba8d01.png" alt="![](https://image.kalifun.top/upload/1904/23ef84aa9eba8d01.png)"><br>建议选择1吧。<br><img src="https://image.kalifun.top/upload/1904/7613f966a0034e59.png" alt="![](https://image.kalifun.top/upload/1904/7613f966a0034e59.png)"><br><img src="https://image.kalifun.top/upload/1904/7ed744f109877b82.png" alt="![7ed744f109877b82.png](https://image.kalifun.top/upload/1904/7ed744f109877b82.png)"><br><img src="https://image.kalifun.top/upload/1904/e71140fd484f9479.png" alt="![e71140fd484f9479.png](https://image.kalifun.top/upload/1904/e71140fd484f9479.png)"><br><img src="https://image.kalifun.top/upload/1904/e1f7c4a6f0d70052.png" alt="![e1f7c4a6f0d70052.png](https://image.kalifun.top/upload/1904/e1f7c4a6f0d70052.png)"><br>当出现了上面的字眼，就说明已经创建成功了。</p>
 <h2 id="2-构造项目"><a href="#2-构造项目" class="headerlink" title="2.构造项目"></a>2.构造项目</h2><h3 id="2-1项目架构"><a href="#2-1项目架构" class="headerlink" title="2.1项目架构"></a>2.1项目架构</h3><p>先把项目按照图的架构来作准备。<br><img src="https://image.kalifun.top/upload/1904/879a384754458f38.png" alt="![879a384754458f38.png](https://image.kalifun.top/upload/1904/879a384754458f38.png)"></p>
-<h3 id="2-2修改pom-xml"><a href="#2-2修改pom-xml" class="headerlink" title="2.2修改pom.xml"></a>2.2修改pom.xml</h3><p>```</p>
-<?xml version="1.0" encoding="UTF-8"?>
-<p>&lt;!–<br>Licensed to the Apache Software Foundation (ASF) under one<br>or more contributor license agreements.  See the NOTICE file<br>distributed with this work for additional information<br>regarding copyright ownership.  The ASF licenses this file<br>to you under the Apache License, Version 2.0 (the<br>“License”); you may not use this file except in compliance<br>with the License.  You may obtain a copy of the License at</p>
-<p> <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing,<br>software distributed under the License is distributed on an<br>“AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY<br>KIND, either express or implied.  See the License for the<br>specific language governing permissions and limitations<br>under the License.</p>
+<h3 id="2-2修改pom-xml"><a href="#2-2修改pom-xml" class="headerlink" title="2.2修改pom.xml"></a>2.2修改pom.xml</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">  Licensed to the Apache Software Foundation (ASF) under one</span><br><span class="line">  or more contributor license agreements.  See the NOTICE file</span><br><span class="line">  distributed with this work for additional information</span><br><span class="line">  regarding copyright ownership.  The ASF licenses this file</span><br><span class="line">  to you under the Apache License, Version 2.0 (the</span><br><span class="line">  &quot;License&quot;); you may not use this file except in compliance</span><br><span class="line">  with the License.  You may obtain a copy of the License at</span><br><span class="line"></span><br><span class="line">   http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"></span><br><span class="line">  Unless required by applicable law or agreed to in writing,</span><br><span class="line">  software distributed under the License is distributed on an</span><br><span class="line">  &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span><br><span class="line">  KIND, either express or implied.  See the License for the</span><br><span class="line">  specific language governing permissions and limitations</span><br><span class="line">  under the License.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;!-- $Id: pom.xml 642118 2008-03-28 08:04:16Z reinhard $ --&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;ssmdemo&lt;/name&gt;</span><br><span class="line">  &lt;groupId&gt;ssmdemo&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;ssmdemo&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">  &lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;6.1.7&lt;/version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;connectors&gt;</span><br><span class="line">            &lt;connector implementation=&quot;org.mortbay.jetty.nio.SelectChannelConnector&quot;&gt;</span><br><span class="line">              &lt;port&gt;8888&lt;/port&gt;</span><br><span class="line">              &lt;maxIdleTime&gt;30000&lt;/maxIdleTime&gt;</span><br><span class="line">            &lt;/connector&gt;</span><br><span class="line">          &lt;/connectors&gt;</span><br><span class="line">          &lt;webAppSourceDirectory&gt;$&#123;project.build.directory&#125;/$&#123;pom.artifactId&#125;-$&#123;pom.version&#125;&lt;/webAppSourceDirectory&gt;</span><br><span class="line">          &lt;contextPath&gt;/&lt;/contextPath&gt;</span><br><span class="line">        &lt;/configuration&gt;</span><br><span class="line">      &lt;/plugin&gt;</span><br><span class="line">    &lt;/plugins&gt;</span><br><span class="line">  &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;!-- 设置项目编码编码 --&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">    &lt;!-- spring版本号 --&gt;</span><br><span class="line">    &lt;spring.version&gt;4.3.5.RELEASE&lt;/spring.version&gt;</span><br><span class="line">    &lt;!-- mybatis版本号 --&gt;</span><br><span class="line">    &lt;mybatis.version&gt;3.4.1&lt;/mybatis.version&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;!--dependency&gt;</span><br><span class="line">      &lt;groupId&gt;ssmdemo&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;[the artifact id of the block to be mounted]&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;/dependency--&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- java ee --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;javax&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;javaee-api&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;7.0&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 单元测试 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 实现slf4j接口并整合 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.2.2&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- JSON --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;2.8.7&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 数据库 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;5.1.41&lt;/version&gt;</span><br><span class="line">      &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 数据库连接池 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;com.mchange&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;c3p0&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;0.9.5.2&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- MyBatis --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;mybatis.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- mybatis/spring整合包 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.3.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Spring --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;spring-test&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>修改完成后将会自动下载jar包。</p>
+<h3 id="2-3修改web-xml"><a href="#2-3修改web-xml" class="headerlink" title="2.3修改web.xml"></a>2.3修改web.xml</h3><p>配置 DispatcherServlet ，告诉程序去哪里寻找对应的xml文件。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span><br><span class="line">         version=&quot;3.1&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 编码过滤器 --&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;UTF-8&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">    &lt;/filter&gt;</span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/filter-mapping&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置DispatcherServlet --&gt;</span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">        &lt;!-- 配置springMVC需要加载的配置文件--&gt;</span><br><span class="line">        &lt;init-param&gt;</span><br><span class="line">            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">            &lt;param-value&gt;classpath:spring-*.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">        &lt;async-supported&gt;true&lt;/async-supported&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;</span><br><span class="line">        &lt;!-- 匹配所有请求 --&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">&lt;/web-app&gt;</span><br></pre></td></tr></table></figure></div>
+
 </li>
-<li><p>-&gt;</p>
-<!-- $Id: pom.xml 642118 2008-03-28 08:04:16Z reinhard $ -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-<p> <modelversion>4.0.0</modelversion><br> <packaging>war</packaging></p>
-<p> <name>ssmdemo</name><br> <groupid>ssmdemo</groupid><br> <artifactid>ssmdemo</artifactid><br> <version>1.0-SNAPSHOT</version></p>
- <build>
-   <plugins>
-     <plugin>
-       <groupid>org.mortbay.jetty</groupid>
-       <artifactid>maven-jetty-plugin</artifactid>
-       <version>6.1.7</version>
-       <configuration>
-         <connectors>
-           <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-             <port>8888</port>
-             <maxidletime>30000</maxidletime>
-           </connector>
-         </connectors>
-         <webappsourcedirectory>${project.build.directory}/${pom.artifactId}-${pom.version}</webappsourcedirectory>
-         <contextpath>/</contextpath>
-       </configuration>
-     </plugin>
-   </plugins>
- </build>
-
- <properties>
-   <!-- 设置项目编码编码 -->
-   <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
-   <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
-   <!-- spring版本号 -->
-   <spring.version>4.3.5.RELEASE</spring.version>
-   <!-- mybatis版本号 -->
-   <mybatis.version>3.4.1</mybatis.version>
- </properties>
-
- <dependencies>
-   <!--dependency>
-     <groupId>ssmdemo</groupId>
-     <artifactId>[the artifact id of the block to be mounted]</artifactId>
-     <version>1.0-SNAPSHOT</version>
-   </dependency-->
-
-   <!-- java ee -->
-   <dependency>
-     <groupid>javax</groupid>
-     <artifactid>javaee-api</artifactid>
-     <version>7.0</version>
-   </dependency>
-
-   <!-- 单元测试 -->
-   <dependency>
-     <groupid>junit</groupid>
-     <artifactid>junit</artifactid>
-     <version>4.12</version>
-   </dependency>
-
-   <!-- 实现slf4j接口并整合 -->
-   <dependency>
-     <groupid>ch.qos.logback</groupid>
-     <artifactid>logback-classic</artifactid>
-     <version>1.2.2</version>
-   </dependency>
-
-   <!-- JSON -->
-   <dependency>
-     <groupid>com.fasterxml.jackson.core</groupid>
-     <artifactid>jackson-databind</artifactid>
-     <version>2.8.7</version>
-   </dependency>
-
-
-</dependencies></project></li>
 </ul>
-<pre><code>&lt;!-- 数据库 --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;mysql&lt;/groupId&gt;
-  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-  &lt;version&gt;5.1.41&lt;/version&gt;
-  &lt;scope&gt;runtime&lt;/scope&gt;
-&lt;/dependency&gt;
+<h3 id="2-4创建jdbc-properties"><a href="#2-4创建jdbc-properties" class="headerlink" title="2.4创建jdbc.properties"></a>2.4创建jdbc.properties</h3><p> 在resources目录下创建jdbc.properties</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">jdbc.driver=com.mysql.jdbc.Driver</span><br><span class="line">#数据库地址</span><br><span class="line">jdbc.url=jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;characterEncoding=utf8</span><br><span class="line">#用户名</span><br><span class="line">jdbc.username=root</span><br><span class="line">#密码</span><br><span class="line">jdbc.password=root</span><br><span class="line">#最大连接数</span><br><span class="line">c3p0.maxPoolSize=30</span><br><span class="line">#最小连接数</span><br><span class="line">c3p0.minPoolSize=10</span><br><span class="line">#关闭连接后不自动commit</span><br><span class="line">c3p0.autoCommitOnClose=false</span><br><span class="line">#获取连接超时时间</span><br><span class="line">c3p0.checkoutTimeout=10000</span><br><span class="line">#当获取连接失败重试次数</span><br><span class="line">c3p0.acquireRetryAttempts=2</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- 数据库连接池 --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;com.mchange&lt;/groupId&gt;
-  &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
-  &lt;version&gt;0.9.5.2&lt;/version&gt;
-&lt;/dependency&gt;
+<h3 id="2-5创建spring-mybatis-xml"><a href="#2-5创建spring-mybatis-xml" class="headerlink" title="2.5创建spring-mybatis.xml"></a>2.5创建spring-mybatis.xml</h3><p> 在resource目录下创建spring-mybatis.xml</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">       http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">       http://www.springframework.org/schema/context</span><br><span class="line">       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 扫描service包下所有使用注解的类型 --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.ssmdeom.service&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置数据库相关参数properties的属性：$&#123;url&#125; --&gt;</span><br><span class="line">    &lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 数据库连接池 --&gt;</span><br><span class="line">    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;driverClass&quot; value=&quot;$&#123;jdbc.driver&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;jdbcUrl&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;user&quot; value=&quot;$&#123;jdbc.username&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;maxPoolSize&quot; value=&quot;$&#123;c3p0.maxPoolSize&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;minPoolSize&quot; value=&quot;$&#123;c3p0.minPoolSize&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;$&#123;c3p0.autoCommitOnClose&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;checkoutTimeout&quot; value=&quot;$&#123;c3p0.checkoutTimeout&#125;&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;$&#123;c3p0.acquireRetryAttempts&#125;&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置SqlSessionFactory对象 --&gt;</span><br><span class="line">    &lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">        &lt;!-- 注入数据库连接池 --&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">        &lt;!-- 扫描entity包 使用别名 --&gt;</span><br><span class="line">        &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.ssmdemo.entity&quot;/&gt;</span><br><span class="line">        &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;</span><br><span class="line">        &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;</span><br><span class="line">    &lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;</span><br><span class="line">        &lt;!-- 注入sqlSessionFactory --&gt;</span><br><span class="line">        &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;</span><br><span class="line">        &lt;!-- 给出需要扫描Dao接口包 --&gt;</span><br><span class="line">        &lt;property name=&quot;basePackage&quot; value=&quot;com.ssmdeom.dao&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置事务管理器 --&gt;</span><br><span class="line">    &lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">        &lt;!-- 注入数据库连接池 --&gt;</span><br><span class="line">        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置基于注解的声明式事务 --&gt;</span><br><span class="line">    &lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- MyBatis --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-  &lt;version&gt;${mybatis.version}&lt;/version&gt;
-&lt;/dependency&gt;
+<h3 id="2-6创建spring-mvc-xml"><a href="#2-6创建spring-mvc-xml" class="headerlink" title="2.6创建spring-mvc.xml"></a>2.6创建spring-mvc.xml</h3><p> 在resource目录下创建spring-mvc.xml</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br><span class="line">       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</span><br><span class="line">       http://www.springframework.org/schema/beans/spring-beans.xsd</span><br><span class="line">       http://www.springframework.org/schema/context</span><br><span class="line">       http://www.springframework.org/schema/context/spring-context.xsd</span><br><span class="line">       http://www.springframework.org/schema/mvc</span><br><span class="line">       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 扫描web相关的bean --&gt;</span><br><span class="line">    &lt;context:component-scan base-package=&quot;com.ssmdeom.controller&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 开启SpringMVC注解模式 --&gt;</span><br><span class="line">    &lt;mvc:annotation-driven/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 静态资源默认servlet配置 --&gt;</span><br><span class="line">    &lt;mvc:default-servlet-handler/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 配置jsp 显示ViewResolver --&gt;</span><br><span class="line">    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">        &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot;/&gt;</span><br><span class="line">        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- mybatis/spring整合包 --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-  &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
-  &lt;version&gt;1.3.1&lt;/version&gt;
-&lt;/dependency&gt;
+<h3 id="2-7配置日志相关文件"><a href="#2-7配置日志相关文件" class="headerlink" title="2.7配置日志相关文件"></a>2.7配置日志相关文件</h3><p>在resource目录下创建logback.xml</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration debug=&quot;true&quot;&gt;</span><br><span class="line">    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;36&#125; - %msg%n&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line">    &lt;root level=&quot;debug&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- Spring --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
-  &lt;version&gt;${spring.version}&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>  
+<h2 id="3-创建数据库"><a href="#3-创建数据库" class="headerlink" title="3.创建数据库"></a>3.创建数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `student` (</span><br><span class="line">  `ID` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `stuName` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_nopad_ci DEFAULT NULL,</span><br><span class="line">  `stuAge` tinyint(4) DEFAULT NULL,</span><br><span class="line">  `mobile` varchar(11) CHARACTER SET latin1 DEFAULT NULL,</span><br><span class="line">  `address` varchar(256) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,</span><br><span class="line">  `EntranceTime` date DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`ID`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="4-编写程序"><a href="#4-编写程序" class="headerlink" title="4.编写程序"></a>4.编写程序</h2><h3 id="4-1在entity下创建Student实体"><a href="#4-1在entity下创建Student实体" class="headerlink" title="4.1在entity下创建Student实体"></a>4.1在entity下创建Student实体</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">package com.ssmdeom.entity;</span><br><span class="line"></span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String stuName;</span><br><span class="line">    private int stuAge;</span><br><span class="line">    private String mobile;</span><br><span class="line">    private String address;</span><br><span class="line">    private Date EntranceTime;</span><br><span class="line"></span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getStuName() &#123;</span><br><span class="line">        return stuName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setStuName(String stuName) &#123;</span><br><span class="line">        this.stuName = stuName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getStuAge() &#123;</span><br><span class="line">        return stuAge;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setStuAge(int stuAge) &#123;</span><br><span class="line">        this.stuAge = stuAge;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getMobile() &#123;</span><br><span class="line">        return mobile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setMobile(String mobile) &#123;</span><br><span class="line">        this.mobile = mobile;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getAddress() &#123;</span><br><span class="line">        return address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAddress(String address) &#123;</span><br><span class="line">        this.address = address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Date getEntranceTime() &#123;</span><br><span class="line">        return EntranceTime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setEntranceTime(Date entranceTime) &#123;</span><br><span class="line">        EntranceTime = entranceTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-```
- 修改完成后将会自动下载jar包。
-### 2.3修改web.xml
-配置 DispatcherServlet ，告诉程序去哪里寻找对应的xml文件。
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+<h3 id="4-2在Dao下面创建Dao接口"><a href="#4-2在Dao下面创建Dao接口" class="headerlink" title="4.2在Dao下面创建Dao接口"></a>4.2在Dao下面创建Dao接口</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package com.ssmdeom.dao;</span><br><span class="line"></span><br><span class="line">import com.ssmdeom.entity.Student;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface StudentDao &#123;</span><br><span class="line"></span><br><span class="line">    Student SearchStudentId(int id);</span><br><span class="line">    List&lt;Student&gt; listStudent();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<pre><code>&lt;!-- 编码过滤器 --&gt;
-&lt;filter&gt;
-    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;encoding&lt;/param-name&gt;
-        &lt;param-value&gt;UTF-8&lt;/param-value&gt;
-    &lt;/init-param&gt;
-&lt;/filter&gt;
-&lt;filter-mapping&gt;
-    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;
+<h3 id="4-3在resources-mapper下编写StudentDao-xml映射文件"><a href="#4-3在resources-mapper下编写StudentDao-xml映射文件" class="headerlink" title="4.3在resources/mapper下编写StudentDao.xml映射文件"></a>4.3在resources/mapper下编写StudentDao.xml映射文件</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置为IUserDao接口方法提供sql语句配置 --&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.ssmdeom.dao.StudentDao&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;select id=&quot;searchStudentId&quot; resultMap=&quot;student&quot; parameterType=&quot;int&quot;&gt;</span><br><span class="line">        SELECT * FROM student WHERE id = #&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;resultMap id=&quot;student&quot; type=&quot;student&quot;&gt;</span><br><span class="line">        &lt;id column=&quot;id&quot; property=&quot;id&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;stuName&quot; property=&quot;stuName&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;stuAge&quot; property=&quot;stuAge&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;mobile&quot; property=&quot;mobile&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;address&quot; property=&quot;address&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;EntranceTime&quot; property=&quot;EntranceTime&quot; /&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line"></span><br><span class="line">    &lt;select id=&quot;listStudent&quot; resultMap=&quot;student&quot;&gt;</span><br><span class="line">        SELECT * FROM student</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- 配置DispatcherServlet --&gt;
-&lt;servlet&gt;
-    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
-    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-    &lt;!-- 配置springMVC需要加载的配置文件--&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-        &lt;param-value&gt;classpath:spring-*.xml&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-    &lt;async-supported&gt;true&lt;/async-supported&gt;
-&lt;/servlet&gt;
-&lt;servlet-mapping&gt;
-    &lt;servlet-name&gt;SpringMVC&lt;/servlet-name&gt;
-    &lt;!-- 匹配所有请求 --&gt;
-    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
-&lt;/servlet-mapping&gt;</code></pre></web-app>
-```
-### 2.4创建jdbc.properties
- 在resources目录下创建jdbc.properties
-```
-jdbc.driver=com.mysql.jdbc.Driver
-#数据库地址
-jdbc.url=jdbc:mysql://localhost:3306/ssm?useUnicode=true&characterEncoding=utf8
-#用户名
-jdbc.username=root
-#密码
-jdbc.password=root
-#最大连接数
-c3p0.maxPoolSize=30
-#最小连接数
-c3p0.minPoolSize=10
-#关闭连接后不自动commit
-c3p0.autoCommitOnClose=false
-#获取连接超时时间
-c3p0.checkoutTimeout=10000
-#当获取连接失败重试次数
-c3p0.acquireRetryAttempts=2
-```
-### 2.5创建spring-mybatis.xml
- 在resource目录下创建spring-mybatis.xml
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemalocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+<h3 id="4-4在service下创建StudentService的接口"><a href="#4-4在service下创建StudentService的接口" class="headerlink" title="4.4在service下创建StudentService的接口"></a>4.4在service下创建StudentService的接口</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com.ssmdeom.service;</span><br><span class="line"></span><br><span class="line">import com.ssmdeom.entity.Student;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public interface StudentService &#123;</span><br><span class="line"></span><br><span class="line">    Student searchStudentId(int id);</span><br><span class="line">    List&lt;Student&gt; listStudent();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<pre><code>&lt;!-- 扫描service包下所有使用注解的类型 --&gt;
-&lt;context:component-scan base-package=&quot;com.ssmdeom.service&quot;/&gt;
+<h3 id="4-5在service下创建StudentServiceImpl类"><a href="#4-5在service下创建StudentServiceImpl类" class="headerlink" title="4.5在service下创建StudentServiceImpl类"></a>4.5在service下创建StudentServiceImpl类</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.ssmdeom.service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.ssmdeom.dao.StudentDao;</span><br><span class="line">import com.ssmdeom.entity.Student;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class StudentServiceImpl implements StudentService &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    StudentDao studentDao;</span><br><span class="line"></span><br><span class="line">    public Student searchStudentId(int id) &#123;</span><br><span class="line">        return studentDao.searchStudentId(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public List&lt;Student&gt; listStudent() &#123;</span><br><span class="line">        return studentDao.listStudent();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-&lt;!-- 配置数据库相关参数properties的属性：${url} --&gt;
-&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;
-
-&lt;!-- 数据库连接池 --&gt;
-&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
-    &lt;property name=&quot;driverClass&quot; value=&quot;${jdbc.driver}&quot;/&gt;
-    &lt;property name=&quot;jdbcUrl&quot; value=&quot;${jdbc.url}&quot;/&gt;
-    &lt;property name=&quot;user&quot; value=&quot;${jdbc.username}&quot;/&gt;
-    &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
-    &lt;property name=&quot;maxPoolSize&quot; value=&quot;${c3p0.maxPoolSize}&quot;/&gt;
-    &lt;property name=&quot;minPoolSize&quot; value=&quot;${c3p0.minPoolSize}&quot;/&gt;
-    &lt;property name=&quot;autoCommitOnClose&quot; value=&quot;${c3p0.autoCommitOnClose}&quot;/&gt;
-    &lt;property name=&quot;checkoutTimeout&quot; value=&quot;${c3p0.checkoutTimeout}&quot;/&gt;
-    &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;${c3p0.acquireRetryAttempts}&quot;/&gt;
-&lt;/bean&gt;
-
-&lt;!-- 配置SqlSessionFactory对象 --&gt;
-&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
-    &lt;!-- 注入数据库连接池 --&gt;
-    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
-    &lt;!-- 扫描entity包 使用别名 --&gt;
-    &lt;property name=&quot;typeAliasesPackage&quot; value=&quot;com.ssmdemo.entity&quot;/&gt;
-    &lt;!-- 扫描sql配置文件:mapper需要的xml文件 --&gt;
-    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;/&gt;
-&lt;/bean&gt;
-
-&lt;!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 --&gt;
-&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
-    &lt;!-- 注入sqlSessionFactory --&gt;
-    &lt;property name=&quot;sqlSessionFactoryBeanName&quot; value=&quot;sqlSessionFactory&quot;/&gt;
-    &lt;!-- 给出需要扫描Dao接口包 --&gt;
-    &lt;property name=&quot;basePackage&quot; value=&quot;com.ssmdeom.dao&quot;/&gt;
-&lt;/bean&gt;
-
-&lt;!-- 配置事务管理器 --&gt;
-&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
-    &lt;!-- 注入数据库连接池 --&gt;
-    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
-&lt;/bean&gt;
-
-&lt;!-- 配置基于注解的声明式事务 --&gt;
-&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</code></pre></beans>
-```
-### 2.6创建spring-mvc.xml
- 在resource目录下创建spring-mvc.xml
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xsi:schemalocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-
-<pre><code>&lt;!-- 扫描web相关的bean --&gt;
-&lt;context:component-scan base-package=&quot;com.ssmdeom.controller&quot;/&gt;
-
-&lt;!-- 开启SpringMVC注解模式 --&gt;
-&lt;mvc:annotation-driven/&gt;
-
-&lt;!-- 静态资源默认servlet配置 --&gt;
-&lt;mvc:default-servlet-handler/&gt;
-
-&lt;!-- 配置jsp 显示ViewResolver --&gt;
-&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-    &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;
-    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot;/&gt;
-    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
-&lt;/bean&gt;</code></pre></beans>
-```
-### 2.7配置日志相关文件
-在resource目录下创建logback.xml
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration debug="true">
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-    <root level="debug">
-        <appender-ref ref="STDOUT">
-    </appender-ref></root>
-</configuration>
-```
-## 3.创建数据库
-```
-CREATE TABLE `student` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `stuName` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_nopad_ci DEFAULT NULL,
-  `stuAge` tinyint(4) DEFAULT NULL,
-  `mobile` varchar(11) CHARACTER SET latin1 DEFAULT NULL,
-  `address` varchar(256) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `EntranceTime` date DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci
-```
-## 4.编写程序
-### 4.1在entity下创建Student实体
-```
-package com.ssmdeom.entity;
-
-<p>import java.util.Date;</p>
-<p>public class Student {<br>    private int id;<br>    private String stuName;<br>    private int stuAge;<br>    private String mobile;<br>    private String address;<br>    private Date EntranceTime;</p>
-<pre><code>public int getId() {
-    return id;
-}
-
-public void setId(int id) {
-    this.id = id;
-}
-
-public String getStuName() {
-    return stuName;
-}
-
-public void setStuName(String stuName) {
-    this.stuName = stuName;
-}
-
-public int getStuAge() {
-    return stuAge;
-}
-
-public void setStuAge(int stuAge) {
-    this.stuAge = stuAge;
-}
-
-public String getMobile() {
-    return mobile;
-}
-
-public void setMobile(String mobile) {
-    this.mobile = mobile;
-}
-
-public String getAddress() {
-    return address;
-}
-
-public void setAddress(String address) {
-    this.address = address;
-}
-
-public Date getEntranceTime() {
-    return EntranceTime;
-}
-
-public void setEntranceTime(Date entranceTime) {
-    EntranceTime = entranceTime;
-}</code></pre><p>}</p>
-<pre><code>### 4.2在Dao下面创建Dao接口</code></pre><p>package com.ssmdeom.dao;</p>
-<p>import com.ssmdeom.entity.Student;</p>
-<p>import java.util.List;</p>
-<p>public interface StudentDao {</p>
-<pre><code>Student SearchStudentId(int id);
-List&lt;Student&gt; listStudent();</code></pre><p>}</p>
-<pre><code>### 4.3在resources/mapper下编写StudentDao.xml映射文件</code></pre><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!-- 设置为IUserDao接口方法提供sql语句配置 -->
-<mapper namespace="com.ssmdeom.dao.StudentDao">
-
-<pre><code>&lt;select id=&quot;searchStudentId&quot; resultMap=&quot;student&quot; parameterType=&quot;int&quot;&gt;
-    SELECT * FROM student WHERE id = #{id}
-&lt;/select&gt;
-
-&lt;resultMap id=&quot;student&quot; type=&quot;student&quot;&gt;
-    &lt;id column=&quot;id&quot; property=&quot;id&quot; /&gt;
-    &lt;result column=&quot;stuName&quot; property=&quot;stuName&quot; /&gt;
-    &lt;result column=&quot;stuAge&quot; property=&quot;stuAge&quot; /&gt;
-    &lt;result column=&quot;mobile&quot; property=&quot;mobile&quot; /&gt;
-    &lt;result column=&quot;address&quot; property=&quot;address&quot; /&gt;
-    &lt;result column=&quot;EntranceTime&quot; property=&quot;EntranceTime&quot; /&gt;
-&lt;/resultMap&gt;
-
-&lt;select id=&quot;listStudent&quot; resultMap=&quot;student&quot;&gt;
-    SELECT * FROM student
-&lt;/select&gt;</code></pre></mapper>
-```
-### 4.4在service下创建StudentService的接口
-```
-package com.ssmdeom.service;
-
-<p>import com.ssmdeom.entity.Student;</p>
-<p>import java.util.List;</p>
-<p>public interface StudentService {</p>
-<pre><code>Student searchStudentId(int id);
-List&lt;Student&gt; listStudent();</code></pre><p>}</p>
-<pre><code>### 4.5在service下创建StudentServiceImpl类</code></pre><p>package com.ssmdeom.service;</p>
-<p>import com.ssmdeom.dao.StudentDao;<br>import com.ssmdeom.entity.Student;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.stereotype.Service;</p>
-<p>import java.util.List;</p>
-<p>@Service<br>public class StudentServiceImpl implements StudentService {</p>
-<pre><code>@Autowired
-StudentDao studentDao;
-
-public Student searchStudentId(int id) {
-    return studentDao.searchStudentId(id);
-}
-
-public List&lt;Student&gt; listStudent() {
-    return studentDao.listStudent();
-}</code></pre><p>}</p>
-<pre><code>### 4.6在controller下面创建StudentController</code></pre><p>package com.ssmdeom.controller;</p>
-<p>import com.ssmdeom.entity.Student;<br>import com.ssmdeom.service.StudentService;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.stereotype.Controller;<br>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.servlet.ModelAndView;</p>
-<p>import javax.servlet.http.HttpServletRequest;<br>import javax.servlet.http.HttpServletResponse;<br>import java.util.List;</p>
-<p>@Controller<br>@RequestMapping(“”)<br>public class StudentController {</p>
-<pre><code>@Autowired
-private StudentService studentService;
-
-@RequestMapping(&quot;/all&quot;)
-public String listStudent(HttpServletRequest request, HttpServletResponse response) {
-    List&lt;Student&gt; students = studentService.listStudent();
-    request.setAttribute(&quot;students&quot;,students);
-    return &quot;liststudents&quot;;
-}
-
-@RequestMapping(&quot;/student&quot;)
-public ModelAndView getstudent(int id) {
-    ModelAndView mav = new ModelAndView(&quot;student&quot;);
-    Student studentid = studentService.searchStudentId(id);
-    mav.addObject(&quot;student&quot;,studentid);
-    return  mav;
-}</code></pre><p>}<br>```</p>
-
+<h3 id="4-6在controller下面创建StudentController"><a href="#4-6在controller下面创建StudentController" class="headerlink" title="4.6在controller下面创建StudentController"></a>4.6在controller下面创建StudentController</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package com.ssmdeom.controller;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.ssmdeom.entity.Student;</span><br><span class="line">import com.ssmdeom.service.StudentService;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;&quot;)</span><br><span class="line">public class StudentController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private StudentService studentService;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/all&quot;)</span><br><span class="line">    public String listStudent(HttpServletRequest request, HttpServletResponse response) &#123;</span><br><span class="line">        List&lt;Student&gt; students = studentService.listStudent();</span><br><span class="line">        request.setAttribute(&quot;students&quot;,students);</span><br><span class="line">        return &quot;liststudents&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/student&quot;)</span><br><span class="line">    public ModelAndView getstudent(int id) &#123;</span><br><span class="line">        ModelAndView mav = new ModelAndView(&quot;student&quot;);</span><br><span class="line">        Student studentid = studentService.searchStudentId(id);</span><br><span class="line">        mav.addObject(&quot;student&quot;,studentid);</span><br><span class="line">        return  mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
             </div>
             <hr/>
 
@@ -1509,7 +1092,7 @@ public ModelAndView getstudent(int id) {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

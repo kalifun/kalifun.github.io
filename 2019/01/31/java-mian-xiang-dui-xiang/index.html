@@ -6,9 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Java面向对象, kalifun;blog.kalifun">
     <meta name="description" content="面向对象方法重载
-MethodOverloading.javapackage basic_grammar;
-
-public class MethodOverloading {    void receive(int i){        S">
+MethodOverloading.java
+12345678910111213141516171819package basic_grammar;public class MethodOverloading &amp;#123;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +31,7 @@ public class MethodOverloading {    void receive(int i){        S">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -460,33 +459,16 @@ public class MethodOverloading {    void receive(int i){        S">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h3><blockquote>
-<h4 id="MethodOverloading-java"><a href="#MethodOverloading-java" class="headerlink" title="MethodOverloading.java"></a>MethodOverloading.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class MethodOverloading {<br>    void receive(int i){<br>        System.out.println(“接收到一个int参数”);<br>        System.out.println(“i = “+i);<br>    }<br>    void receive(int x,int y){<br>        System.out.println(“接收到两个int参数。”);<br>        System.out.printf(“x = %d,y = %d \n”,x,y);<br>//        System.out.println();<br>    }</p>
-<pre><code>int receive(double x,double y){
-    System.out.println(&quot;接收到两个double参数。&quot;);
-    System.out.printf(&quot;x = %f , y = %f \r&quot;,x,y);
-    return  0;
-}</code></pre><p>}</p>
-<pre><code>&gt; ####  mo_class.java
-```java
+<h4 id="MethodOverloading-java"><a href="#MethodOverloading-java" class="headerlink" title="MethodOverloading.java"></a>MethodOverloading.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodOverloading</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">receive</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"接收到一个int参数"</span>);</span><br><span class="line">        System.out.println(<span class="string">"i = "</span>+i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">receive</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"接收到两个int参数。"</span>);</span><br><span class="line">        System.out.printf(<span class="string">"x = %d,y = %d \n"</span>,x,y);</span><br><span class="line"><span class="comment">//        System.out.println();</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">receive</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"接收到两个double参数。"</span>);</span><br><span class="line">        System.out.printf(<span class="string">"x = %f , y = %f \r"</span>,x,y);</span><br><span class="line">        <span class="keyword">return</span>  <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-package basic_grammar;
+<blockquote>
+<h4 id="mo-class-java"><a href="#mo-class-java" class="headerlink" title="mo_class.java"></a>mo_class.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mo_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        MethodOverloading mo = <span class="keyword">new</span> MethodOverloading();</span><br><span class="line"></span><br><span class="line">        mo.receive(<span class="number">1</span>);</span><br><span class="line">        mo.receive(<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line">        mo.receive(<span class="number">2.0</span>,<span class="number">3.3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-public class mo_class {
-    public static void main(String[] args){
-        MethodOverloading mo = new MethodOverloading();
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">接收到一个int参数</span><br><span class="line">i = 1</span><br><span class="line">接收到两个int参数。</span><br><span class="line">x = 2,y = 3 </span><br><span class="line">接收到两个double参数。</span><br><span class="line">x = 2.000000 , y = 3.300000</span><br></pre></td></tr></table></figure></div>
 
-        mo.receive(1);
-        mo.receive(2,3);
-        mo.receive(2.0,3.3);
-    }
-}</code></pre><pre><code>接收到一个int参数
-i = 1
-接收到两个int参数。
-x = 2,y = 3 
-接收到两个double参数。
-x = 2.000000 , y = 3.300000</code></pre><h2 id="封装性与访问控制"><a href="#封装性与访问控制" class="headerlink" title="封装性与访问控制"></a>封装性与访问控制</h2><blockquote>
+<h2 id="封装性与访问控制"><a href="#封装性与访问控制" class="headerlink" title="封装性与访问控制"></a>封装性与访问控制</h2><blockquote>
 <h4 id="Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有"><a href="#Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有" class="headerlink" title="Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有"></a>Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有</h4><table>
 <thead>
 <tr>
@@ -528,154 +510,88 @@ x = 2.000000 , y = 3.300000</code></pre><h2 id="封装性与访问控制"><a hre
 </tbody></table>
 </blockquote>
 <h3 id="私有级别"><a href="#私有级别" class="headerlink" title="私有级别"></a>私有级别</h3><blockquote>
-<h4 id="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"><a href="#私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。" class="headerlink" title="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"></a>私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。</h4><h4 id="PrivateClass-java"><a href="#PrivateClass-java" class="headerlink" title="PrivateClass.java"></a>PrivateClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+<h4 id="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"><a href="#私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。" class="headerlink" title="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"></a>私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。</h4><h4 id="PrivateClass-java"><a href="#PrivateClass-java" class="headerlink" title="PrivateClass.java"></a>PrivateClass.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrivateClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> x ;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PrivateClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        x = <span class="number">5</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">printX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Values of x is "</span>+x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<h4 id="PC-class"><a href="#PC-class" class="headerlink" title="PC_class"></a>PC_class</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PC_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        PrivateClass p;</span><br><span class="line">        p = <span class="keyword">new</span> PrivateClass();</span><br><span class="line">        p.printX();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error:(7, 10) java: printX() 在 basic_grammar.PrivateClass 中是 private 访问控制</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="p-printX-是私有的所以无法调用。"><a href="#p-printX-是私有的所以无法调用。" class="headerlink" title="p.printX();是私有的所以无法调用。"></a>p.printX();是私有的所以无法调用。</h4><h3 id="默认级别"><a href="#默认级别" class="headerlink" title="默认级别"></a>默认级别</h3><blockquote>
+<h4 id="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"><a href="#默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。" class="headerlink" title="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"></a>默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。</h4><h4 id="DefaultClass-java"><a href="#DefaultClass-java" class="headerlink" title="DefaultClass.java"></a>DefaultClass.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DefaultClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        x = <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printX</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"x = "</span>+x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<h4 id="DC-class-java"><a href="#DC-class-java" class="headerlink" title="DC_class.java"></a>DC_class.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DC_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        DefaultClass p;</span><br><span class="line">        p = <span class="keyword">new</span> DefaultClass();</span><br><span class="line">        p.printX();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = 100</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="若在不同包体去编译执行，将会报错。"><a href="#若在不同包体去编译执行，将会报错。" class="headerlink" title="若在不同包体去编译执行，将会报错。"></a>若在不同包体去编译执行，将会报错。</h4><h3 id="公有级别"><a href="#公有级别" class="headerlink" title="公有级别"></a>公有级别</h3><blockquote>
+<h4 id="公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。"><a href="#公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。" class="headerlink" title="公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。"></a>公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。</h4><h4 id="PublicClass-java"><a href="#PublicClass-java" class="headerlink" title="PublicClass.java"></a>PublicClass.java</h4> <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PublicClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> x ;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PublicClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        x = <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printX</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"x = "</span>+x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </blockquote>
-<p>public class PrivateClass {<br>    private int x ;<br>    public PrivateClass(){<br>        x = 5 ;<br>    }<br>    private void printX() {<br>        System.out.println(“Values of x is “+x);<br>    }<br>}</p>
-<pre><code>&gt; #### PC_class
-```java
-package basic_grammar;
-
-public class PC_class {
-    public static void main(String[] args){
-        PrivateClass p;
-        p = new PrivateClass();
-        p.printX();
-    }
-}</code></pre><pre><code>Error:(7, 10) java: printX() 在 basic_grammar.PrivateClass 中是 private 访问控制</code></pre><h4 id="p-printX-是私有的所以无法调用。"><a href="#p-printX-是私有的所以无法调用。" class="headerlink" title="p.printX();是私有的所以无法调用。"></a>p.printX();是私有的所以无法调用。</h4><h3 id="默认级别"><a href="#默认级别" class="headerlink" title="默认级别"></a>默认级别</h3><blockquote>
-<h4 id="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"><a href="#默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。" class="headerlink" title="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"></a>默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。</h4><h4 id="DefaultClass-java"><a href="#DefaultClass-java" class="headerlink" title="DefaultClass.java"></a>DefaultClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+<blockquote>
+<h4 id="PublicClass-class-java"><a href="#PublicClass-class-java" class="headerlink" title="PublicClass_class.java"></a>PublicClass_class.java</h4>  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">package</span> basic_grammar.basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> basic_grammar.PublicClass;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PublicClass_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        PublicClass p;</span><br><span class="line">        p = <span class="keyword">new</span> PublicClass();</span><br><span class="line">        p.printX();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 </blockquote>
-<p>public class DefaultClass {<br>    int x;<br>    public DefaultClass(){<br>        x = 100;<br>    }<br>    void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
-<pre><code>&gt; #### DC_class.java
-```java
-package basic_grammar;
+  <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = 100</span><br></pre></td></tr></table></figure></div>
 
-public class DC_class {
-    public static void main(String[] args){
-        DefaultClass p;
-        p = new DefaultClass();
-        p.printX();
-    }
-}</code></pre><pre><code>x = 100</code></pre><h4 id="若在不同包体去编译执行，将会报错。"><a href="#若在不同包体去编译执行，将会报错。" class="headerlink" title="若在不同包体去编译执行，将会报错。"></a>若在不同包体去编译执行，将会报错。</h4><h3 id="公有级别"><a href="#公有级别" class="headerlink" title="公有级别"></a>公有级别</h3><blockquote>
-<h4 id="公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。"><a href="#公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。" class="headerlink" title="公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。"></a>公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。</h4><h4 id="PublicClass-java"><a href="#PublicClass-java" class="headerlink" title="PublicClass.java"></a>PublicClass.java</h4><pre class=" language-java"><code class="language-java">  <span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class PublicClass {<br>    public int x ;<br>    public PublicClass(){<br>        x = 100;<br>    }<br>    public void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
-<pre><code>  &gt; ####  PublicClass_class.java
-  ```java
-  package basic_grammar.basic_grammar;
+<h3 id="保护级别"><a href="#保护级别" class="headerlink" title="保护级别"></a>保护级别</h3><blockquote>
+<h4 id="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"><a href="#保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。" class="headerlink" title="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"></a>保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。</h4><h4 id="ProtectedClass-java"><a href="#ProtectedClass-java" class="headerlink" title="ProtectedClass.java"></a>ProtectedClass.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProtectedClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ProtectedClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        x = <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">printX</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"value of is "</span>+x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-import basic_grammar.PublicClass;
+<blockquote>
+<h4 id="ProtectedClass-class-java"><a href="#ProtectedClass-class-java" class="headerlink" title="ProtectedClass_class.java"></a>ProtectedClass_class.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProtectedClass_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        ProtectedClass p;</span><br><span class="line">        p = <span class="keyword">new</span> ProtectedClass();</span><br><span class="line">        p.printX();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-public class PublicClass_class {
-    public static void main(String[] args){
-        PublicClass p;
-        p = new PublicClass();
-        p.printX();
-    }
-}</code></pre><pre><code>  x = 100</code></pre><h3 id="保护级别"><a href="#保护级别" class="headerlink" title="保护级别"></a>保护级别</h3><blockquote>
-<h4 id="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"><a href="#保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。" class="headerlink" title="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"></a>保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。</h4><h4 id="ProtectedClass-java"><a href="#ProtectedClass-java" class="headerlink" title="ProtectedClass.java"></a>ProtectedClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class ProtectedClass {<br>    protected int x;<br>    public ProtectedClass(){<br>        x = 100;<br>    }<br>    protected void printX(){<br>        System.out.println(“value of is “+x);<br>    }<br>}</p>
-<pre><code>&gt; ####  ProtectedClass_class.java
-```java
-package basic_grammar;
+<h4 id="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"><a href="#同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。" class="headerlink" title="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"></a>同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar.basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> basic_grammar.ProtectedClass;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProtectedClass_class</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">ProtectedClass</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">diskplay</span><span class="params">()</span></span>&#123;</span><br><span class="line">            printX();</span><br><span class="line">            System.out.println(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-public class ProtectedClass_class {
-    public static void main(String[] args){
-        ProtectedClass p;
-        p = new ProtectedClass();
-        p.printX();
-    }
-}</code></pre><h4 id="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"><a href="#同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。" class="headerlink" title="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"></a>同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">.</span>basic_grammar<span class="token punctuation">;</span>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value of is 100</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> basic_grammar<span class="token punctuation">.</span>ProtectedClass<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProtectedClass_class</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SubClass</span> <span class="token keyword">extends</span> <span class="token class-name">ProtectedClass</span><span class="token punctuation">{</span>
-        <span class="token keyword">void</span> <span class="token function">diskplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token function">printX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<pre><code>value of is 100</code></pre><h4 id="不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。"><a href="#不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。" class="headerlink" title="不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。"></a>不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。</h4><blockquote>
+<h4 id="不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。"><a href="#不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。" class="headerlink" title="不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。"></a>不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。</h4><blockquote>
 <h4 id="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。"><a href="#访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。" class="headerlink" title="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。"></a>访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。</h4></blockquote>
 <h3 id="静态变量和静态方法"><a href="#静态变量和静态方法" class="headerlink" title="静态变量和静态方法"></a>静态变量和静态方法</h3><blockquote>
-<h4 id="Account-java"><a href="#Account-java" class="headerlink" title="Account.java"></a>Account.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class Account {<br>    double mount = 0.0;<br>    String owner ;<br>    static double interestRate = 0.0668;<br>    public static double interestBy(double amt){<br>        return interestRate * amt;<br>    }<br>    public String messageWith(double amt){<br>        double interest = Account.interestBy(amt);<br>        StringBuilder sb = new StringBuilder();<br>        sb.append(owner).append(“的利息是”).append(interest);<br>        return sb.toString();<br>    }<br>}</p>
-<pre><code>&gt; #### Account_class
-```java
-package basic_grammar;
+<h4 id="Account-java"><a href="#Account-java" class="headerlink" title="Account.java"></a>Account.java</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Account</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> mount = <span class="number">0.0</span>;</span><br><span class="line">    String owner ;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">double</span> interestRate = <span class="number">0.0668</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">interestBy</span><span class="params">(<span class="keyword">double</span> amt)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> interestRate * amt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">messageWith</span><span class="params">(<span class="keyword">double</span> amt)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> interest = Account.interestBy(amt);</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sb.append(owner).append(<span class="string">"的利息是"</span>).append(interest);</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-public class Account_class {
-    public static void main(String[] args){
-        System.out.println(Account.interestRate);
-        System.out.println(Account.interestBy(1000));
-        Account myaccount = new Account();
-        myaccount.mount =  1000000;
-        myaccount.owner =  &quot;Tony&quot;;
-        System.out.println(myaccount.messageWith(1000));
-        System.out.println(myaccount.interestRate);
-    }
-}</code></pre><pre><code>0.0668
-66.8
-Tony的利息是66.8
-0.0668</code></pre><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
+<blockquote>
+<h4 id="Account-class"><a href="#Account-class" class="headerlink" title="Account_class"></a>Account_class</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Account_class</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(Account.interestRate);</span><br><span class="line">        System.out.println(Account.interestBy(<span class="number">1000</span>));</span><br><span class="line">        Account myaccount = <span class="keyword">new</span> Account();</span><br><span class="line">        myaccount.mount =  <span class="number">1000000</span>;</span><br><span class="line">        myaccount.owner =  <span class="string">"Tony"</span>;</span><br><span class="line">        System.out.println(myaccount.messageWith(<span class="number">1000</span>));</span><br><span class="line">        System.out.println(myaccount.interestRate);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0.0668</span><br><span class="line">66.8</span><br><span class="line">Tony的利息是66.8</span><br><span class="line">0.0668</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
 <h4 id="实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"><a href="#实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。" class="headerlink" title="实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"></a>实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。</h4></blockquote>
 <h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><blockquote>
 <h4 id="创建对象包括两个步骤：声明和实例化。"><a href="#创建对象包括两个步骤：声明和实例化。" class="headerlink" title="创建对象包括两个步骤：声明和实例化。"></a>创建对象包括两个步骤：声明和实例化。</h4></blockquote>
 <h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><blockquote>
-<h5 id="声明对象与声明普通变量没有什么区别。"><a href="#声明对象与声明普通变量没有什么区别。" class="headerlink" title="声明对象与声明普通变量没有什么区别。"></a>声明对象与声明普通变量没有什么区别。</h5><pre><code>type objectName;</code></pre></blockquote>
-<h5 id="type是引用类型，即类，接口和数组。"><a href="#type是引用类型，即类，接口和数组。" class="headerlink" title="type是引用类型，即类，接口和数组。"></a>type是引用类型，即类，接口和数组。</h5><pre><code>String  name;</code></pre><h5 id="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"><a href="#该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。" class="headerlink" title="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"></a>该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。</h5><h4 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h4><blockquote>
-<h5 id="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"><a href="#实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。" class="headerlink" title="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"></a>实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。</h5><pre class=" language-java"><code class="language-java">String name <span class="token punctuation">;</span>
-name <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</blockquote>
+<h5 id="声明对象与声明普通变量没有什么区别。"><a href="#声明对象与声明普通变量没有什么区别。" class="headerlink" title="声明对象与声明普通变量没有什么区别。"></a>声明对象与声明普通变量没有什么区别。</h5></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type objectName;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="type是引用类型，即类，接口和数组。"><a href="#type是引用类型，即类，接口和数组。" class="headerlink" title="type是引用类型，即类，接口和数组。"></a>type是引用类型，即类，接口和数组。</h5><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String  name;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"><a href="#该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。" class="headerlink" title="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"></a>该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。</h5><h4 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h4><blockquote>
+<h5 id="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"><a href="#实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。" class="headerlink" title="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"></a>实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。</h5></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name ;</span><br><span class="line">name = <span class="keyword">new</span> String(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="空对象"><a href="#空对象" class="headerlink" title="空对象"></a>空对象</h3><blockquote>
-<h4 id="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"><a href="#一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。" class="headerlink" title="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"></a>一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。</h4><pre><code>String name = null;
-name = &quot;Hello World&quot;;</code></pre><h4 id="引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException"><a href="#引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException" class="headerlink" title="引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException"></a>引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException</h4></blockquote>
+<h4 id="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"><a href="#一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。" class="headerlink" title="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"></a>一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = null;</span><br><span class="line">name = &quot;Hello World&quot;;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<h4 id="引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException"><a href="#引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException" class="headerlink" title="引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException"></a>引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException</h4></blockquote>
 <h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><blockquote>
-<h4 id="构造方法名必须与类名相同。"><a href="#构造方法名必须与类名相同。" class="headerlink" title="构造方法名必须与类名相同。"></a>构造方法名必须与类名相同。</h4><h4 id="构造方法没有任何返回值。"><a href="#构造方法没有任何返回值。" class="headerlink" title="构造方法没有任何返回值。"></a>构造方法没有任何返回值。</h4><h4 id="构造方法只能与new结合使用。"><a href="#构造方法只能与new结合使用。" class="headerlink" title="构造方法只能与new结合使用。"></a>构造方法只能与new结合使用。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class Rectangle {<br>    int width;<br>    int height;<br>    int area;<br>    public Rectangle(int w,int h){<br>        width = w ;<br>        height = h ;<br>        area = getArea(w,h);<br>    }<br>}</p>
-<pre><code>### 默认构造方法
-&gt; #### 默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。
-### 构造方法重载
-&gt; #### 在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。
-```java
-package basic_grammar;
+<h4 id="构造方法名必须与类名相同。"><a href="#构造方法名必须与类名相同。" class="headerlink" title="构造方法名必须与类名相同。"></a>构造方法名必须与类名相同。</h4><h4 id="构造方法没有任何返回值。"><a href="#构造方法没有任何返回值。" class="headerlink" title="构造方法没有任何返回值。"></a>构造方法没有任何返回值。</h4><h4 id="构造方法只能与new结合使用。"><a href="#构造方法只能与new结合使用。" class="headerlink" title="构造方法只能与new结合使用。"></a>构造方法只能与new结合使用。</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> width;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="keyword">int</span> area;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Rectangle</span><span class="params">(<span class="keyword">int</span> w,<span class="keyword">int</span> h)</span></span>&#123;</span><br><span class="line">        width = w ;</span><br><span class="line">        height = h ;</span><br><span class="line">        area = getArea(w,h);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-import java.util.Date;
+<h3 id="默认构造方法"><a href="#默认构造方法" class="headerlink" title="默认构造方法"></a>默认构造方法</h3><blockquote>
+<h4 id="默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。"><a href="#默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。" class="headerlink" title="默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。"></a>默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。</h4></blockquote>
+<h3 id="构造方法重载"><a href="#构造方法重载" class="headerlink" title="构造方法重载"></a>构造方法重载</h3><blockquote>
+<h4 id="在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。"><a href="#在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。" class="headerlink" title="在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。"></a>在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。</h4></blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVA"><figure class="iseeu highlight /java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> basic_grammar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name ;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age ;</span><br><span class="line">    <span class="keyword">private</span> Date birthday ;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n,<span class="keyword">int</span> a,Date b)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">        age = a ;</span><br><span class="line">        birthday = b ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="title">Person</span><span class="params">(String n ,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        name = n ;</span><br><span class="line">        age = a ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n, Date b)</span></span>&#123;</span><br><span class="line">        name = n ;</span><br><span class="line">        age = <span class="number">30</span> ;</span><br><span class="line">        birthday = b ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="title">Person</span><span class="params">(String n)</span></span>&#123;</span><br><span class="line">        name = n ;</span><br><span class="line">        age = <span class="number">30</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">getinfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        sb.append(<span class="string">"名字："</span>).append(name).append(<span class="string">"\n"</span>);</span><br><span class="line">        sb.append(<span class="string">"年龄："</span>).append(age).append(<span class="string">"\n"</span>);</span><br><span class="line">        sb.append(<span class="string">"出生日："</span>).append(birthday).append(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>  sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-public class Person {
-    private String name ;
-    private int age ;
-    private Date birthday ;
-    public Person(String n,int a,Date b){
-        name = n;
-        age = a ;
-        birthday = b ;
-    }
-    public  Person(String n ,int a){
-        name = n ;
-        age = a ;
-    }
-    public Person(String n, Date b){
-        name = n ;
-        age = 30 ;
-        birthday = b ;
-    }
-    public  Person(String n){
-        name = n ;
-        age = 30;
-    }
-    public String  getinfo(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(&quot;名字：&quot;).append(name).append(&quot;\n&quot;);
-        sb.append(&quot;年龄：&quot;).append(age).append(&quot;\n&quot;);
-        sb.append(&quot;出生日：&quot;).append(birthday).append(&quot;\n&quot;);
-        return  sb.toString();
-    }
-}</code></pre><h3 id="构造方法封装"><a href="#构造方法封装" class="headerlink" title="构造方法封装"></a>构造方法封装</h3><blockquote>
+<h3 id="构造方法封装"><a href="#构造方法封装" class="headerlink" title="构造方法封装"></a>构造方法封装</h3><blockquote>
 <h4 id="构造方法可以封装，访问级别和普通方法一样。"><a href="#构造方法可以封装，访问级别和普通方法一样。" class="headerlink" title="构造方法可以封装，访问级别和普通方法一样。"></a>构造方法可以封装，访问级别和普通方法一样。</h4></blockquote>
 <h3 id="this关键词"><a href="#this关键词" class="headerlink" title="this关键词"></a>this关键词</h3><blockquote>
 <h4 id="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"><a href="#this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。" class="headerlink" title="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"></a>this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。</h4><h4 id="调用实例变量。"><a href="#调用实例变量。" class="headerlink" title="[ ]调用实例变量。"></a>[ ]调用实例变量。</h4><h4 id="调用实例方法。"><a href="#调用实例方法。" class="headerlink" title="[ ]调用实例方法。"></a>[ ]调用实例方法。</h4><h4 id="调用其他构造方法。"><a href="#调用其他构造方法。" class="headerlink" title="[ ]调用其他构造方法。"></a>[ ]调用其他构造方法。</h4></blockquote>
@@ -1032,9 +948,7 @@ public class Person {
                     <div class="summary block-with-text">
                         
                             Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
-def get_lines():
-    with open('file.txt','rb') as f:
-        return 
+1234567def get_lines():    with open('file.txt','rb') as f:        re
                         
                     </div>
                     <div class="publish-info">
@@ -1089,12 +1003,11 @@ def get_lines():
                         
                             数组一维数组数组初始化静态数组初始化
  静态数组初始化是将元素放入大括号中。
-int intarray;
-intarray = {1,2,3};
+
+12int intarray;intarray = &#123;1,2,3&#125;;
 
 动态数组初始化
-  动态数组初始化是由new运算符分配长度的内存空间。
-int array;
+  动态数组初始化是由new运算符分配长度的内存空间
                         
                     </div>
                     <div class="publish-info">
@@ -1280,7 +1193,7 @@ int array;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             

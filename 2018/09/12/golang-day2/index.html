@@ -5,14 +5,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="GoLang_Day2, kalifun;blog.kalifun">
-    <meta name="description" content="Golang_Day2defer 栈package main
-
-import &#34;fmt&#34;
-
-func main()  {
-    fmt.Println(&#34;FUN&#34;)
-    for i :=0; i&amp;lt;10 ;i++ {
-      ">
+    <meta name="description" content="Golang_Day2defer 栈1234567891011package mainimport &#34;fmt&#34;func main()  &amp;#123;	fmt.Println(&#34;FUN&#34;)	for i :=0; i&amp;lt;10 ;i++ &amp;#">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +29,7 @@ func main()  {
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+</head>
 
 
 <body>
@@ -444,7 +437,7 @@ func main()  {
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        108
+                        101
                     </div>
                     
 
@@ -467,46 +460,14 @@ func main()  {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Golang-Day2"><a href="#Golang-Day2" class="headerlink" title="Golang_Day2"></a>Golang_Day2</h1><h2 id="defer-栈"><a href="#defer-栈" class="headerlink" title="defer 栈"></a>defer 栈</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+                <h1 id="Golang-Day2"><a href="#Golang-Day2" class="headerlink" title="Golang_Day2"></a>Golang_Day2</h1><h2 id="defer-栈"><a href="#defer-栈" class="headerlink" title="defer 栈"></a>defer 栈</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(<span class="string">"FUN"</span>)</span><br><span class="line">	<span class="keyword">for</span> i :=<span class="number">0</span>; i&lt;<span class="number">10</span> ;i++ &#123;</span><br><span class="line">		<span class="keyword">defer</span>  fmt.Println(i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(<span class="string">"done"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">D:\go_sty\day2&gt;go run defer_multi.go</span><br><span class="line">FUN</span><br><span class="line">done</span><br><span class="line">9</span><br><span class="line">8</span><br><span class="line">7</span><br><span class="line">6</span><br><span class="line">5</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"FUN"</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span> <span class="token punctuation">;</span>i<span class="token operator">++</span> <span class="token punctuation">{</span>
-        <span class="token keyword">defer</span>  fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"done"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
-<pre><code>D:\go_sty\day2&gt;go run defer_multi.go
-FUN
-done
-9
-8
-7
-6
-5
-4
-3
-2
-1
-0</code></pre><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><pre><code>指针保存了变量的内存地址
-类型*T 是指向类型T的值得指针。其零值是“nil”</code></pre><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指针保存了变量的内存地址</span><br><span class="line">类型*T 是指向类型T的值得指针。其零值是“nil”</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="GO"><figure class="iseeu highlight /go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	i,j := <span class="number">42</span>,<span class="number">27</span></span><br><span class="line"></span><br><span class="line">	p := &amp;i             </span><br><span class="line">	fmt.Println(*p)</span><br><span class="line">	*p = <span class="number">31</span></span><br><span class="line">	fmt.Println(i)</span><br><span class="line"></span><br><span class="line">	p = &amp;j</span><br><span class="line">	*p = *p/<span class="number">5</span></span><br><span class="line">	fmt.Println(j)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-    i<span class="token punctuation">,</span>j <span class="token operator">:=</span> <span class="token number">42</span><span class="token punctuation">,</span><span class="token number">27</span>
-
-    p <span class="token operator">:=</span> <span class="token operator">&amp;</span>i             
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span>
-    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">31</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-
-    p <span class="token operator">=</span> <span class="token operator">&amp;</span>j
-    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">*</span>p<span class="token operator">/</span><span class="token number">5</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -859,10 +820,9 @@ done
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            GoLang_Day51.字符串类型字符串表示很简单，就是由双引号（“ ”），“单”引号（` `）来描述。注意（` `）非（&#39; &#39;）
-唯一区别在于，双引号转义字符可以转义，单引号无法转义。package main
+                            GoLang_Day51.字符串类型12字符串表示很简单，就是由双引号（“ ”），“单”引号（` `）来描述。注意（` `）非（&apos; &apos;）唯一区别在于，双引号转义字符可以转义，单引号无法转义。
 
-impo
+1234567891011
                         
                     </div>
                     <div class="publish-info">
@@ -915,14 +875,9 @@ impo
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Golang_Day3结构体一个结构体（`struct`）就是一个字段的集合。
-（而 type 的含义跟其字面意思相符。）package main
+                            Golang_Day3结构体12一个结构体（`struct`）就是一个字段的集合。（而 type 的含义跟其字面意思相符。）
 
-import "fmt"
-
-type test struct {
-    x int
-  
+123456789101112package mainimport "fmt"type test struct 
                         
                     </div>
                     <div class="publish-info">
@@ -1112,7 +1067,7 @@ type test struct {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.7k</span>&nbsp;字
+                class="white-color">54.8k</span>&nbsp;字
             
             
             
