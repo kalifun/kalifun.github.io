@@ -4,11 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java面向对象, kalifun;blog.kalifun">
-    <meta name="description" content="面向对象方法重载
-MethodOverloading.javapackage basic_grammar;
+    <meta name="keywords" content="golang数组与切片, kalifun;blog.kalifun">
+    <meta name="description" content="golang数组与切片声明数组，切片类型的基本语法：
 
-public class MethodOverloading {    void receive(int i){        S">
+数组： var 数组变量名 [元素数量]元素类型
+切片： var 变量名 []元素类型
+
+单纯看上面的类型，你会发现它们很相似。没错切片就是基于数组类型做的一层封装。让它更加灵活，支持">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@ public class MethodOverloading {    void receive(int i){        S">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java面向对象 | kalifun</title>
+    <title>golang数组与切片 | kalifun</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -287,13 +289,13 @@ public class MethodOverloading {    void receive(int i){        S">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java面向对象
+                        golang数组与切片
                     </div>
                 </div>
             </div>
@@ -405,8 +407,8 @@ public class MethodOverloading {    void receive(int i){        S">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/springboot/">
-                                <span class="chip bg-color">springboot</span>
+                            <a href="/tags/golang/">
+                                <span class="chip bg-color">golang</span>
                             </a>
                         
                     </div>
@@ -417,8 +419,8 @@ public class MethodOverloading {    void receive(int i){        S">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/Golang/" class="post-category">
+                                Golang
                             </a>
                         
                     </div>
@@ -429,21 +431,21 @@ public class MethodOverloading {    void receive(int i){        S">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-01-31
+                    2020-01-13
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        5 分
                     </div>
                     
                 
@@ -459,226 +461,143 @@ public class MethodOverloading {    void receive(int i){        S">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h3 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h3><blockquote>
-<h4 id="MethodOverloading-java"><a href="#MethodOverloading-java" class="headerlink" title="MethodOverloading.java"></a>MethodOverloading.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
+                <h1 id="golang数组与切片"><a href="#golang数组与切片" class="headerlink" title="golang数组与切片"></a>golang数组与切片</h1><p>声明数组，切片类型的基本语法：</p>
+<blockquote>
+<p>数组： var 数组变量名 [元素数量]元素类型</p>
+<p>切片： var 变量名 []元素类型</p>
 </blockquote>
-<p>public class MethodOverloading {<br>    void receive(int i){<br>        System.out.println(“接收到一个int参数”);<br>        System.out.println(“i = “+i);<br>    }<br>    void receive(int x,int y){<br>        System.out.println(“接收到两个int参数。”);<br>        System.out.printf(“x = %d,y = %d \n”,x,y);<br>//        System.out.println();<br>    }</p>
-<pre><code>int receive(double x,double y){
-    System.out.println(&quot;接收到两个double参数。&quot;);
-    System.out.printf(&quot;x = %f , y = %f \r&quot;,x,y);
-    return  0;
-}</code></pre><p>}</p>
-<pre><code>&gt; ####  mo_class.java
-```java
+<p>单纯看上面的类型，你会发现它们很相似。没错切片就是基于数组类型做的一层封装。让它更加灵活，支持自动扩容。下面我们利用代码来区分它们的不同之处。</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><p>我们将列举常见的声明形式：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 不进行初始化值，但程序会帮我们初始化值</span>
+    <span class="token keyword">var</span> arr1 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"arr1的类型:%T,arr1的值:%v\n"</span><span class="token punctuation">,</span> arr1<span class="token punctuation">,</span> arr1<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 指定初始化值，完成初始化</span>
+    <span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"test"</span><span class="token punctuation">,</span> <span class="token string">"test1"</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"arr2的类型:%T,arr2的值:%v\n"</span><span class="token punctuation">,</span> arr2<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 通过编译器根据初始化值进行推断数组长度</span>
+    <span class="token keyword">var</span> arr3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"arr3的类型:%T,arr3的值:%v\n"</span><span class="token punctuation">,</span> arr3<span class="token punctuation">,</span> arr3<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 指定索引的值進行初始化</span>
+    <span class="token keyword">var</span> arr4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"arr4的类型:%T,arr4的值:%v\n"</span><span class="token punctuation">,</span> arr4<span class="token punctuation">,</span> arr4<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">arr1的类型:<span class="token punctuation">[</span>3<span class="token punctuation">]</span>int,arr1的值:<span class="token punctuation">[</span>0 0 0<span class="token punctuation">]</span>
+arr2的类型:<span class="token punctuation">[</span>3<span class="token punctuation">]</span>string,arr2的值:<span class="token punctuation">[</span>test test1 <span class="token punctuation">]</span>
+arr3的类型:<span class="token punctuation">[</span>5<span class="token punctuation">]</span>int,arr3的值:<span class="token punctuation">[</span>1 2 3 4 5<span class="token punctuation">]</span>
+arr4的类型:<span class="token punctuation">[</span>7<span class="token punctuation">]</span>int,arr4的值:<span class="token punctuation">[</span>0 1 0 0 0 0 6<span class="token punctuation">]</span></code></pre>
+<h3 id="切片初始化"><a href="#切片初始化" class="headerlink" title="切片初始化"></a>切片初始化</h3><p>我们将列举常见的声明形式：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 声明一个字符串切片</span>
+    <span class="token keyword">var</span> slice1 <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice1类型:%T,slice1的值:%v\n"</span><span class="token punctuation">,</span> slice1<span class="token punctuation">,</span> slice1<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 声明布尔类型的切片，并初始化值</span>
+    <span class="token keyword">var</span> slice2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">bool</span><span class="token punctuation">{</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice2类型:%T,slice2的值:%v\n"</span><span class="token punctuation">,</span> slice2<span class="token punctuation">,</span> slice2<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 基于数组定义切片</span>
+    array1 <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 基于数组array1创建切片</span>
+    slice3 <span class="token operator">:=</span> array1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice3类型:%T,slice3的值:%v\n"</span><span class="token punctuation">,</span> slice3<span class="token punctuation">,</span> slice3<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 使用make()函数创建切片</span>
+    <span class="token comment" spellcheck="true">// make([]类型,切片中的元素数量,切片的容量)</span>
+    slice4 <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice4类型:%T,slice4的值:%v\n"</span><span class="token punctuation">,</span> slice4<span class="token punctuation">,</span> slice4<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice3长度:%v\n"</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"slice3容量:%v\n"</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">slice1类型:<span class="token punctuation">[</span><span class="token punctuation">]</span>string,slice1的值:<span class="token punctuation">[</span><span class="token punctuation">]</span>
+slice2类型:<span class="token punctuation">[</span><span class="token punctuation">]</span>bool,slice2的值:<span class="token punctuation">[</span>true false<span class="token punctuation">]</span>
+slice3类型:<span class="token punctuation">[</span><span class="token punctuation">]</span>int,slice3的值:<span class="token punctuation">[</span>2 3<span class="token punctuation">]</span>
+slice4类型:<span class="token punctuation">[</span><span class="token punctuation">]</span>int,slice4的值:<span class="token punctuation">[</span>0 0<span class="token punctuation">]</span>
+slice3长度:2
+slice3容量:10</code></pre>
+<p>从这里应该可以看出一点小差异，数组需要指定元素长度。而切片有容量的说法，可以对长度进行扩展。</p>
+<h2 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h2><p>下面列举一些实际运用场景的不同方式。</p>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h4 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 第一种遍历方式</span>
+    <span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">"上海"</span><span class="token punctuation">,</span> <span class="token string">"北京"</span><span class="token punctuation">,</span> <span class="token string">"深圳"</span><span class="token punctuation">,</span> <span class="token string">"广州"</span><span class="token punctuation">}</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-package basic_grammar;
-
-public class mo_class {
-    public static void main(String[] args){
-        MethodOverloading mo = new MethodOverloading();
-
-        mo.receive(1);
-        mo.receive(2,3);
-        mo.receive(2.0,3.3);
-    }
-}</code></pre><pre><code>接收到一个int参数
-i = 1
-接收到两个int参数。
-x = 2,y = 3 
-接收到两个double参数。
-x = 2.000000 , y = 3.300000</code></pre><h2 id="封装性与访问控制"><a href="#封装性与访问控制" class="headerlink" title="封装性与访问控制"></a>封装性与访问控制</h2><blockquote>
-<h4 id="Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有"><a href="#Java-面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为-4-个等级：私有、默认、保护和公有" class="headerlink" title="Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有"></a>Java 面向对象的封装性是通过对成员变量和方法进行访问控制实现的，访问控制分为 4 个等级：私有、默认、保护和公有</h4><table>
-<thead>
-<tr>
-<th align="center">控制等级</th>
-<th align="center">同一个类</th>
-<th align="center">同一个包</th>
-<th align="center">不同包的子类</th>
-<th align="center">不同包非子类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">私有</td>
-<td align="center">yes</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">默认</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">保护</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">公有</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-<td align="center">yes</td>
-</tr>
-</tbody></table>
-</blockquote>
-<h3 id="私有级别"><a href="#私有级别" class="headerlink" title="私有级别"></a>私有级别</h3><blockquote>
-<h4 id="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"><a href="#私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。" class="headerlink" title="私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。"></a>私有级别的关键词是private，私有级别的成员变量和方法只能在其所在的类中自由使用，不允许其他类自由访问。私有级别限制性最高。</h4><h4 id="PrivateClass-java"><a href="#PrivateClass-java" class="headerlink" title="PrivateClass.java"></a>PrivateClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class PrivateClass {<br>    private int x ;<br>    public PrivateClass(){<br>        x = 5 ;<br>    }<br>    private void printX() {<br>        System.out.println(“Values of x is “+x);<br>    }<br>}</p>
-<pre><code>&gt; #### PC_class
-```java
-package basic_grammar;
-
-public class PC_class {
-    public static void main(String[] args){
-        PrivateClass p;
-        p = new PrivateClass();
-        p.printX();
-    }
-}</code></pre><pre><code>Error:(7, 10) java: printX() 在 basic_grammar.PrivateClass 中是 private 访问控制</code></pre><h4 id="p-printX-是私有的所以无法调用。"><a href="#p-printX-是私有的所以无法调用。" class="headerlink" title="p.printX();是私有的所以无法调用。"></a>p.printX();是私有的所以无法调用。</h4><h3 id="默认级别"><a href="#默认级别" class="headerlink" title="默认级别"></a>默认级别</h3><blockquote>
-<h4 id="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"><a href="#默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。" class="headerlink" title="默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。"></a>默认级别没有关键词，也就是没有访问修饰符，在不同包的类中是不允许被访问的。</h4><h4 id="DefaultClass-java"><a href="#DefaultClass-java" class="headerlink" title="DefaultClass.java"></a>DefaultClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class DefaultClass {<br>    int x;<br>    public DefaultClass(){<br>        x = 100;<br>    }<br>    void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
-<pre><code>&gt; #### DC_class.java
-```java
-package basic_grammar;
-
-public class DC_class {
-    public static void main(String[] args){
-        DefaultClass p;
-        p = new DefaultClass();
-        p.printX();
-    }
-}</code></pre><pre><code>x = 100</code></pre><h4 id="若在不同包体去编译执行，将会报错。"><a href="#若在不同包体去编译执行，将会报错。" class="headerlink" title="若在不同包体去编译执行，将会报错。"></a>若在不同包体去编译执行，将会报错。</h4><h3 id="公有级别"><a href="#公有级别" class="headerlink" title="公有级别"></a>公有级别</h3><blockquote>
-<h4 id="公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。"><a href="#公有级别的关键词是-public，公有级别的成员常量和方法可以再任何场合被直接调用。" class="headerlink" title="公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。"></a>公有级别的关键词是 public，公有级别的成员常量和方法可以再任何场合被直接调用。</h4><h4 id="PublicClass-java"><a href="#PublicClass-java" class="headerlink" title="PublicClass.java"></a>PublicClass.java</h4><pre class=" language-java"><code class="language-java">  <span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class PublicClass {<br>    public int x ;<br>    public PublicClass(){<br>        x = 100;<br>    }<br>    public void printX(){<br>        System.out.println(“x = “+x);<br>    }<br>}</p>
-<pre><code>  &gt; ####  PublicClass_class.java
-  ```java
-  package basic_grammar.basic_grammar;
-
-import basic_grammar.PublicClass;
-
-public class PublicClass_class {
-    public static void main(String[] args){
-        PublicClass p;
-        p = new PublicClass();
-        p.printX();
-    }
-}</code></pre><pre><code>  x = 100</code></pre><h3 id="保护级别"><a href="#保护级别" class="headerlink" title="保护级别"></a>保护级别</h3><blockquote>
-<h4 id="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"><a href="#保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。" class="headerlink" title="保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。"></a>保护级别的关键词protected，保护级别在同一包中完全与默认访问级别一样，但不同包中子类可继承父类中的protected的变量和方法。</h4><h4 id="ProtectedClass-java"><a href="#ProtectedClass-java" class="headerlink" title="ProtectedClass.java"></a>ProtectedClass.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class ProtectedClass {<br>    protected int x;<br>    public ProtectedClass(){<br>        x = 100;<br>    }<br>    protected void printX(){<br>        System.out.println(“value of is “+x);<br>    }<br>}</p>
-<pre><code>&gt; ####  ProtectedClass_class.java
-```java
-package basic_grammar;
-
-public class ProtectedClass_class {
-    public static void main(String[] args){
-        ProtectedClass p;
-        p = new ProtectedClass();
-        p.printX();
-    }
-}</code></pre><h4 id="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"><a href="#同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。" class="headerlink" title="同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。"></a>同一个包下保护级别和默认级别没有区别，不同包下也无法直接访问printX。需要在不同包内继承ProtectedClass类。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">.</span>basic_grammar<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> basic_grammar<span class="token punctuation">.</span>ProtectedClass<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProtectedClass_class</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SubClass</span> <span class="token keyword">extends</span> <span class="token class-name">ProtectedClass</span><span class="token punctuation">{</span>
-        <span class="token keyword">void</span> <span class="token function">diskplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token function">printX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 第二种遍历方式</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> array <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<pre><code>value of is 100</code></pre><h4 id="不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。"><a href="#不同包中SubClass从ProtectedClass类中继承了printX-方法和x实例变量。" class="headerlink" title="不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。"></a>不同包中SubClass从ProtectedClass类中继承了printX()方法和x实例变量。</h4><blockquote>
-<h4 id="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。"><a href="#访问成员有两种方式：一种是调用，通过类或对象调用成员，如p-printX-另一种是继承，子类继承父类的成员变量和方法。" class="headerlink" title="访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。"></a>访问成员有两种方式：一种是调用，通过类或对象调用成员，如p.printX().另一种是继承，子类继承父类的成员变量和方法。</h4></blockquote>
-<h3 id="静态变量和静态方法"><a href="#静态变量和静态方法" class="headerlink" title="静态变量和静态方法"></a>静态变量和静态方法</h3><blockquote>
-<h4 id="Account-java"><a href="#Account-java" class="headerlink" title="Account.java"></a>Account.java</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class Account {<br>    double mount = 0.0;<br>    String owner ;<br>    static double interestRate = 0.0668;<br>    public static double interestBy(double amt){<br>        return interestRate * amt;<br>    }<br>    public String messageWith(double amt){<br>        double interest = Account.interestBy(amt);<br>        StringBuilder sb = new StringBuilder();<br>        sb.append(owner).append(“的利息是”).append(interest);<br>        return sb.toString();<br>    }<br>}</p>
-<pre><code>&gt; #### Account_class
-```java
-package basic_grammar;
+<pre class=" language-bash"><code class="language-bash">    // 上海
+    // 北京
+    // 深圳
+    // 广州
+    // 0   上海
+    // 1   北京
+    // 2   深圳
+    // 3   广州</code></pre>
+<h4 id="切片遍历"><a href="#切片遍历" class="headerlink" title="切片遍历"></a>切片遍历</h4><pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    slice <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span>
 
-public class Account_class {
-    public static void main(String[] args){
-        System.out.println(Account.interestRate);
-        System.out.println(Account.interestBy(1000));
-        Account myaccount = new Account();
-        myaccount.mount =  1000000;
-        myaccount.owner =  &quot;Tony&quot;;
-        System.out.println(myaccount.messageWith(1000));
-        System.out.println(myaccount.interestRate);
-    }
-}</code></pre><pre><code>0.0668
-66.8
-Tony的利息是66.8
-0.0668</code></pre><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
-<h4 id="实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"><a href="#实例化可生产对象，实例方法就是对象方法-，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。" class="headerlink" title="实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。"></a>实例化可生产对象，实例方法就是对象方法 ，实例变量就是对象属性。一个对象的周期包括三个阶段：创建，使用和销毁。</h4></blockquote>
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><blockquote>
-<h4 id="创建对象包括两个步骤：声明和实例化。"><a href="#创建对象包括两个步骤：声明和实例化。" class="headerlink" title="创建对象包括两个步骤：声明和实例化。"></a>创建对象包括两个步骤：声明和实例化。</h4></blockquote>
-<h4 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h4><blockquote>
-<h5 id="声明对象与声明普通变量没有什么区别。"><a href="#声明对象与声明普通变量没有什么区别。" class="headerlink" title="声明对象与声明普通变量没有什么区别。"></a>声明对象与声明普通变量没有什么区别。</h5><pre><code>type objectName;</code></pre></blockquote>
-<h5 id="type是引用类型，即类，接口和数组。"><a href="#type是引用类型，即类，接口和数组。" class="headerlink" title="type是引用类型，即类，接口和数组。"></a>type是引用类型，即类，接口和数组。</h5><pre><code>String  name;</code></pre><h5 id="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"><a href="#该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。" class="headerlink" title="该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。"></a>该语句声明了字符串类型对象name。可以声明并不为对象分配内存空间，而只是分配一个引用。</h5><h4 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h4><blockquote>
-<h5 id="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"><a href="#实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。" class="headerlink" title="实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。"></a>实例化分为两个阶段：为对象分配内存空间和初始化对象。首先使用new运算符为对象分配内存空间，然后再调用构造方法初始化对象。</h5><pre class=" language-java"><code class="language-java">String name <span class="token punctuation">;</span>
-name <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</blockquote>
-<h3 id="空对象"><a href="#空对象" class="headerlink" title="空对象"></a>空对象</h3><blockquote>
-<h4 id="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"><a href="#一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。" class="headerlink" title="一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。"></a>一个引用变量没有通过new分配内存空间，这个对象就是空对象，java使用null表示空对象。</h4><pre><code>String name = null;
-name = &quot;Hello World&quot;;</code></pre><h4 id="引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException"><a href="#引用变量默认值是-null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常-NullPointerException" class="headerlink" title="引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException"></a>引用变量默认值是 null。当试图调用一个空对象的实例变量或实例方法时，会抛出空指针异常 NullPointerException</h4></blockquote>
-<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><blockquote>
-<h4 id="构造方法名必须与类名相同。"><a href="#构造方法名必须与类名相同。" class="headerlink" title="构造方法名必须与类名相同。"></a>构造方法名必须与类名相同。</h4><h4 id="构造方法没有任何返回值。"><a href="#构造方法没有任何返回值。" class="headerlink" title="构造方法没有任何返回值。"></a>构造方法没有任何返回值。</h4><h4 id="构造方法只能与new结合使用。"><a href="#构造方法只能与new结合使用。" class="headerlink" title="构造方法只能与new结合使用。"></a>构造方法只能与new结合使用。</h4><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> basic_grammar<span class="token punctuation">;</span></code></pre>
-</blockquote>
-<p>public class Rectangle {<br>    int width;<br>    int height;<br>    int area;<br>    public Rectangle(int w,int h){<br>        width = w ;<br>        height = h ;<br>        area = getArea(w,h);<br>    }<br>}</p>
-<pre><code>### 默认构造方法
-&gt; #### 默认构造方法的方法体内无任何语句，也就不能够初始化成员变量了。
-### 构造方法重载
-&gt; #### 在一个类中可以多个构造方法，他们具有相同的名字，参数列表不同，所以他们之间一定是重载关系。
-```java
-package basic_grammar;
+    <span class="token comment" spellcheck="true">// 第一种遍历方式</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>slice<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-import java.util.Date;
-
-public class Person {
-    private String name ;
-    private int age ;
-    private Date birthday ;
-    public Person(String n,int a,Date b){
-        name = n;
-        age = a ;
-        birthday = b ;
-    }
-    public  Person(String n ,int a){
-        name = n ;
-        age = a ;
-    }
-    public Person(String n, Date b){
-        name = n ;
-        age = 30 ;
-        birthday = b ;
-    }
-    public  Person(String n){
-        name = n ;
-        age = 30;
-    }
-    public String  getinfo(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(&quot;名字：&quot;).append(name).append(&quot;\n&quot;);
-        sb.append(&quot;年龄：&quot;).append(age).append(&quot;\n&quot;);
-        sb.append(&quot;出生日：&quot;).append(birthday).append(&quot;\n&quot;);
-        return  sb.toString();
-    }
-}</code></pre><h3 id="构造方法封装"><a href="#构造方法封装" class="headerlink" title="构造方法封装"></a>构造方法封装</h3><blockquote>
-<h4 id="构造方法可以封装，访问级别和普通方法一样。"><a href="#构造方法可以封装，访问级别和普通方法一样。" class="headerlink" title="构造方法可以封装，访问级别和普通方法一样。"></a>构造方法可以封装，访问级别和普通方法一样。</h4></blockquote>
-<h3 id="this关键词"><a href="#this关键词" class="headerlink" title="this关键词"></a>this关键词</h3><blockquote>
-<h4 id="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"><a href="#this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。" class="headerlink" title="this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。"></a>this指向对象本身，一个类可以通过this来获得一个代表它自身的对象变量。</h4><h4 id="调用实例变量。"><a href="#调用实例变量。" class="headerlink" title="[ ]调用实例变量。"></a>[ ]调用实例变量。</h4><h4 id="调用实例方法。"><a href="#调用实例方法。" class="headerlink" title="[ ]调用实例方法。"></a>[ ]调用实例方法。</h4><h4 id="调用其他构造方法。"><a href="#调用其他构造方法。" class="headerlink" title="[ ]调用其他构造方法。"></a>[ ]调用其他构造方法。</h4></blockquote>
+    <span class="token comment" spellcheck="true">// 第二种遍历方式</span>
+    <span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> slice <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">    // 1
+    // 2
+    // 3
+    // 4
+    // 5
+    // 0 1
+    // 1 2
+    // 2 3
+    // 3 4
+    // 4 5</code></pre>
+<p>你会发现数组和切片遍历是没有区别。方式都是一致的，源于切片是基于数组进行封装的。</p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><p>数组是不包含这个功能的，你可以理解数组是静态数组，无法添加新的元素，而切片是动态数组，可以追加元素。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> slice <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        slice <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>slice<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%v len:%d cap:%d prt:%p\n"</span><span class="token punctuation">,</span> slice<span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cap</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span><span class="token punctuation">,</span> slice<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">    // <span class="token punctuation">[</span>0<span class="token punctuation">]</span> len:1 cap:1 prt:0xc000012090
+    // <span class="token punctuation">[</span>0 1<span class="token punctuation">]</span> len:2 cap:2 prt:0xc0000120d0
+    // <span class="token punctuation">[</span>0 1 2<span class="token punctuation">]</span> len:3 cap:4 prt:0xc00009e000
+    // <span class="token punctuation">[</span>0 1 2 3<span class="token punctuation">]</span> len:4 cap:4 prt:0xc00009e000
+    // <span class="token punctuation">[</span>0 1 2 3 4<span class="token punctuation">]</span> len:5 cap:8 prt:0xc0000a4000
+    // <span class="token punctuation">[</span>0 1 2 3 4 5<span class="token punctuation">]</span> len:6 cap:8 prt:0xc0000a4000
+    // <span class="token punctuation">[</span>0 1 2 3 4 5 6<span class="token punctuation">]</span> len:7 cap:8 prt:0xc0000a4000
+    // <span class="token punctuation">[</span>0 1 2 3 4 5 6 7<span class="token punctuation">]</span> len:8 cap:8 prt:0xc0000a4000</code></pre>
+<p>你仔细看cap，你会发现一个规律，它是2的倍数进行递增的。当len大于cap时，cap将会进行扩容。</p>
+<h3 id="复制切片"><a href="#复制切片" class="headerlink" title="复制切片"></a>复制切片</h3><p>我们先看代码在对其进行分析：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span>
+    slice2 <span class="token operator">:=</span> slice
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"这是slice:"</span><span class="token punctuation">,</span> slice<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"这是slice2:"</span><span class="token punctuation">,</span> slice2<span class="token punctuation">)</span>
+    slice2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1000</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"这是新的slice:"</span><span class="token punctuation">,</span> slice<span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"这是新的slice2:"</span><span class="token punctuation">,</span> slice2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">    // 这是slice: <span class="token punctuation">[</span>1 2 3 4 5 6 7<span class="token punctuation">]</span>
+    // 这是slice2: <span class="token punctuation">[</span>1 2 3 4 5 6 7<span class="token punctuation">]</span>
+    // 这是新的slice: <span class="token punctuation">[</span>1000 2 3 4 5 6 7<span class="token punctuation">]</span>
+    // 这是新的slice2: <span class="token punctuation">[</span>1000 2 3 4 5 6 7<span class="token punctuation">]</span></code></pre>
+<p>当我们对复制的切片进行修改其值时，你会发现源切片的值也被修改了，说明当复制时，地址指针还是指向源切片地址，所以对任何一个切片进行修改，我们的值都会改变。</p>
+<h3 id="切片删除元素"><a href="#切片删除元素" class="headerlink" title="切片删除元素"></a>切片删除元素</h3><p>其实切片没有有删除元素的函数，但我们可以利用append来实现删除元素的功能。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> slice <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 需要删除索引为3的元素</span>
+    slice <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>slice<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> slice<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">...</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>slice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-bash"><code class="language-bash">    //<span class="token punctuation">[</span>1 2 3 5 6<span class="token punctuation">]</span></code></pre>
 
             </div>
             <hr/>
@@ -715,8 +634,8 @@ public class Person {
                 </a>
             </div> -->
             <br/>
-            <a  href="/2019/01/31/java-mian-xiang-dui-xiang/">
-                《Java面向对象》
+            <a  href="/2020/01/13/golang-shu-zu-yu-qie-pian/">
+                《golang数组与切片》
             </a> 由
             <a href="https://kalifun.github.io">
                 kalifun
@@ -1015,32 +934,86 @@ public class Person {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/11/python-mian-shi-ti-ji-chu-pian/">
+                <a href="/2020/01/13/golang-shu-zu-yu-qie-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python面试题-基础篇">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="golang数组与切片">
                         
-                        <span class="card-title">Python面试题-基础篇</span>
+                        <span class="card-title">golang数组与切片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python面试题-基础篇文件操作1.有一个jsonline格式的文件file.txt大小约为10K
-def get_lines():
-    with open('file.txt','rb') as f:
-        return 
+                            golang数组与切片声明数组，切片类型的基本语法：
+
+数组： var 数组变量名 [元素数量]元素类型
+切片： var 变量名 []元素类型
+
+单纯看上面的类型，你会发现它们很相似。没错切片就是基于数组类型做的一层封装。让它更加灵活，支持
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-11
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/18/flask-jiao-se-quan-xian-kong-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Flask角色权限控制">
+                        
+                        <span class="card-title">Flask角色权限控制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Flask角色权限控制前言目前flask的组件并不能完美的解决角色权限控制问题。大部分组件都是check是否登录，每次请求检查session？
+这并不是我想要的啊！我很喜欢前后端分离的理念，我不喜欢使用Python 模板语言，我觉得很臃肿。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1060,64 +1033,8 @@ def get_lines():
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/面试/">
-                        <span class="chip bg-color">面试</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/01/30/java-shu-zu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java数组">
-                        
-                        <span class="card-title">Java数组</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            数组一维数组数组初始化静态数组初始化
- 静态数组初始化是将元素放入大括号中。
-int intarray;
-intarray = {1,2,3};
-
-动态数组初始化
-  动态数组初始化是由new运算符分配长度的内存空间。
-int array;
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/springboot/">
-                        <span class="chip bg-color">springboot</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>
