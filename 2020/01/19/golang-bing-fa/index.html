@@ -4,13 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Nginx多站点也变得轻松起来（虚拟主机）, kalifun;blog.kalifun">
-    <meta name="description" content="Nginx多站点也变得轻松起来（虚拟主机）1.Nginx
-Nginx是WEB服务器，常见的还有Apache.这里我就不过多去说两个的优缺点，如果不的站点计划使用Nginx希望可以对你有帮助。
-
-2.环境介绍
-系统：Linux
-Web服务器：">
+    <meta name="keywords" content="Golang并发(goroutine), kalifun;blog.kalifun">
+    <meta name="description" content="Golang并发go语言这么受欢迎的原因之一，我们只需要将go关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些go都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。
+前言通常我们都会听到并发，并行，进程">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@ Web服务器：">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Nginx多站点也变得轻松起来（虚拟主机） | kalifun</title>
+    <title>Golang并发(goroutine) | kalifun</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,13 +285,13 @@ Web服务器：">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Nginx多站点也变得轻松起来（虚拟主机）
+                        Golang并发(goroutine)
                     </div>
                 </div>
             </div>
@@ -407,8 +403,8 @@ Web服务器：">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/nginx/">
-                                <span class="chip bg-color">nginx</span>
+                            <a href="/tags/golang/">
+                                <span class="chip bg-color">golang</span>
                             </a>
                         
                     </div>
@@ -419,8 +415,8 @@ Web服务器：">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Nginx/" class="post-category">
-                                Nginx
+                            <a href="/categories/Golang/" class="post-category">
+                                Golang
                             </a>
                         
                     </div>
@@ -431,21 +427,21 @@ Web服务器：">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-11-27
+                    2020-01-19
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        496
+                        2.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        8 分
                     </div>
                     
                 
@@ -461,52 +457,237 @@ Web服务器：">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Nginx多站点也变得轻松起来（虚拟主机）"><a href="#Nginx多站点也变得轻松起来（虚拟主机）" class="headerlink" title="Nginx多站点也变得轻松起来（虚拟主机）"></a>Nginx多站点也变得轻松起来（虚拟主机）</h1><h2 id="1-Nginx"><a href="#1-Nginx" class="headerlink" title="1.Nginx"></a>1.<a href="http://nginx.org/en/" target="_blank" rel="noopener">Nginx</a></h2><blockquote>
-<p>Nginx是<a href="https://baike.baidu.com/item/WEB%E6%9C%8D%E5%8A%A1%E5%99%A8/8390210?fr=aladdin" target="_blank" rel="noopener">WEB服务器</a>，常见的还有<a href="http://www.apache.org/" target="_blank" rel="noopener">Apache</a>.这里我就不过多去说两个的优缺点，如果不的站点计划使用Nginx希望可以对你有帮助。</p>
+                <h1 id="Golang并发"><a href="#Golang并发" class="headerlink" title="Golang并发"></a>Golang并发</h1><p><code>go</code>语言这么受欢迎的原因之一，我们只需要将<code>go</code>关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些<code>go</code>都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通常我们都会听到并发，并行，进程，线程。这些概念总会被我们搞混淆，并傻傻分不清楚。下面我们再通过一些例子来说明：</p>
+<p><code>并发： 逻辑上具有处理多个同时性任务的能力。(在一段时间里，你与A和B在聊天)</code></p>
+<p><code>并行：物理上同一时刻执行多个并发任务。(在同一时刻，A和B都与你聊天)</code></p>
+<p><code>进程：具有一定独立功能的程序在一个数据集上的一次动态执行的过程。（我们可以理解进程就是一座矿山）</code></p>
+<p><code>线程：程序执行中一个单一的顺序控制流程，是程序执行流的最小单元，是处理器调度和分派的基本单位。(而线程则是矿工，且最少不能少于1个)</code></p>
+<p>我们这里不会扩展去讲<code>Golang</code>调度器<a href="https://www.cnblogs.com/sunsky303/p/9705727.html" target="_blank" rel="noopener"><code>GMP模型</code></a>,文章结尾会给出推荐文章，感兴趣的可以进行学习。这里主要讲如何使用并发，及函数与函数之前是如何数据共享<code>channel</code>。</p>
+<p>那就跟着我去了解<code>goroutine</code>,<code>channel</code>吧！</p>
+<h2 id="goroutine"><a href="#goroutine" class="headerlink" title="goroutine"></a>goroutine</h2><blockquote>
+<p>建议先阅读<a href="https://www.liwenzhou.com/posts/Go/14_concurrence/" target="_blank" rel="noopener">Go语言基础之并发</a></p>
 </blockquote>
-<h2 id="2-环境介绍"><a href="#2-环境介绍" class="headerlink" title="2.环境介绍"></a>2.环境介绍</h2><ul>
-<li>系统：Linux</li>
-<li>Web服务器：Nginx</li>
-<li>数据库 ：<a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a></li>
-<li>脚本语言：PHP</li>
-</ul>
-<p>你可以每个程序下载安装，然后配置连接好。还有一种方案就是一键安装环境。</p>
-<p><a href="https://lnmp.org/" target="_blank" rel="noopener">LNMP</a>，<a href="https://oneinstack.com/" target="_blank" rel="noopener">OneinStack</a>这样你无需烦恼如何去配置环境，一键帮你搞定。如果是企业级建议手动安装每一个程序。如果你不是安装lnmp环境的话，你可以选择OneinStack,它有很多组合选择。</p>
-<h2 id="3-配置"><a href="#3-配置" class="headerlink" title="3.配置"></a>3.配置</h2><h3 id="3-1首先查看nginx-conf文件。在最后几行你会看到"><a href="#3-1首先查看nginx-conf文件。在最后几行你会看到" class="headerlink" title="3.1首先查看nginx.conf文件。在最后几行你会看到"></a>3.1首先查看nginx.conf文件。在最后几行你会看到</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">include</span>  host<span class="token operator">/</span><span class="token operator">*</span><span class="token punctuation">.</span>conf<span class="token punctuation">;</span></code></pre>
-<h3 id="3-2如果未能找到你可以在最后面添加"><a href="#3-2如果未能找到你可以在最后面添加" class="headerlink" title="3.2如果未能找到你可以在最后面添加"></a>3.2如果未能找到你可以在最后面添加</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">include</span> host<span class="token operator">/</span><span class="token operator">*</span><span class="token punctuation">.</span>conf<span class="token punctuation">;</span></code></pre>
-<p>并在nginx.conf文件目录下创建host这个目录。</p>
-<h3 id="3-3创建虚拟主机配置文件"><a href="#3-3创建虚拟主机配置文件" class="headerlink" title="3.3创建虚拟主机配置文件"></a>3.3创建虚拟主机配置文件</h3><h3 id="xxx-conf"><a href="#xxx-conf" class="headerlink" title="xxx.conf"></a>xxx.conf</h3><pre class=" language-nginx"><code class="language-nginx"><span class="token keyword">server</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">listen</span>       <span class="token number">80</span><span class="token punctuation">;</span>    
-<span class="token keyword">server_name</span> xxx<span class="token punctuation">.</span>com<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>你的域名，二级域名，ip
-<span class="token keyword">index</span> <span class="token keyword">index</span><span class="token punctuation">.</span>php <span class="token keyword">index</span><span class="token punctuation">.</span>html <span class="token keyword">index</span><span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>html default<span class="token punctuation">.</span>htm default<span class="token punctuation">.</span>php<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>默认寻找主页文件
-<span class="token keyword">root</span>  <span class="token operator">/</span>home<span class="token operator">/</span>www<span class="token operator">/</span>xxx<span class="token punctuation">;</span>       <span class="token operator">/</span><span class="token operator">/</span>站点的目录地址
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>php<span class="token operator">|</span>php5<span class="token punctuation">)</span><span class="token operator">?</span>$        
-<span class="token punctuation">{</span>
-<span class="token keyword">fastcgi_pass</span>  unix<span class="token punctuation">:</span><span class="token operator">/</span>tmp<span class="token operator">/</span>php<span class="token operator">-</span>cgi<span class="token punctuation">.</span>sock<span class="token punctuation">;</span>
-<span class="token keyword">fastcgi_index</span> <span class="token keyword">index</span><span class="token punctuation">.</span>php<span class="token punctuation">;</span>
-<span class="token keyword">include</span> fastcgi<span class="token punctuation">.</span>conf<span class="token punctuation">;</span>     <span class="token operator">/</span><span class="token operator">/</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">location</span> <span class="token operator">/</span>status <span class="token punctuation">{</span>
-<span class="token keyword">stub_status</span> on<span class="token punctuation">;</span>
-<span class="token keyword">access_log</span>   off<span class="token punctuation">;</span>
+<p><code>goroutine</code> 可以看作是轻量级线程。一个<code>goroutine</code>必定对应一个函数，可以创建多个<code>goroutine</code>去执行相同的函数。</p>
+<p>下面我们加入<code>goroutine</code>实例：</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello Goroutine!"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>gif<span class="token operator">|</span>jpg<span class="token operator">|</span>jpeg<span class="token operator">|</span>png<span class="token operator">|</span>bmp<span class="token operator">|</span>swf<span class="token punctuation">)</span>$
-<span class="token punctuation">{</span>
-<span class="token keyword">expires</span>      30d<span class="token punctuation">;</span>   <span class="token operator">/</span><span class="token operator">/</span>对于不怎么更新站点静态文件的话，可以把时间设大，让浏览器缓存降低对服务器流量带宽的压力。
-<span class="token punctuation">}</span>
-<span class="token keyword">location</span> <span class="token operator">~</span> <span class="token punctuation">.</span><span class="token operator">*</span>\<span class="token punctuation">.</span><span class="token punctuation">(</span>js<span class="token operator">|</span>css<span class="token punctuation">)</span><span class="token operator">?</span>$
-<span class="token punctuation">{</span>
-<span class="token keyword">expires</span>      12h<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">access_log</span> off<span class="token punctuation">;</span>    <span class="token operator">/</span><span class="token operator">/</span>这里你可以配置地址及文件名称，对网站访问日志感谢可以开启，说不定也能查问题。
-<span class="token comment" spellcheck="true">#access_log logs/access.log main;   根据这个格式来修改。</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">go</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"main goroutine done"</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
-<p>在host目录下可以创建多个文件，看你自己需要什么。不管是一级域名还是二级域名，还是多个域名都可以。</p>
-<p>后期我可能会在基础上更新一些相关网站策略，负责均衡，HTTPS文章。</p>
+<p>我们得到的结果是:</p>
+<pre class=" language-bash"><code class="language-bash">main goroutine <span class="token keyword">done</span></code></pre>
+<p>肯定会好奇，怎么没有返回 hello 函数的值？因为创建<code>goroutine</code> 需要消耗时间。当我们准备返回值是，<code>main goroutibne</code>已经结束了。所以我们看不到返回值。</p>
+<p>我们可以使用<code>time.sleep()</code>这个和我们其他语言不要一样。它的最小单位纳秒，所以不要直接填一个整数，这样可能还是无法正常返回值。</p>
+<h3 id="WaitGroup"><a href="#WaitGroup" class="headerlink" title="WaitGroup"></a>WaitGroup</h3><p><code>Waitgroup</code> 用来等待一组<code>goroutines</code>的结束。</p>
+<pre class=" language-bash"><code class="language-bash">func <span class="token punctuation">(</span>wg *WaitGroup<span class="token punctuation">)</span> Add<span class="token punctuation">(</span>delta int<span class="token punctuation">)</span>
+func <span class="token punctuation">(</span>wg *WaitGroup<span class="token punctuation">)</span> Done<span class="token punctuation">(</span><span class="token punctuation">)</span>
+func <span class="token punctuation">(</span>wg *WaitGroup<span class="token punctuation">)</span> Wait<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>在主<code>goroutine</code>里声明，并且Add要等待的<code>goroutine</code>的个数，每个<code>goroutine</code>执行完成之后调用 Done（每次完成就减一），最后在主<code>goroutines</code> 里 Wait 即可。<code>Add()</code> 方法一定要在 <code>goroutine</code>开始前执行。</p>
+<p>下面我们结合<code>waitgroup</code>一起使用:</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
 
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"sync"</span>
+    <span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// 声明一个waitgroup</span>
+<span class="token keyword">var</span> wg sync<span class="token punctuation">.</span>WaitGroup
+
+<span class="token keyword">func</span> <span class="token function">hello</span><span class="token punctuation">(</span>i <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 在函数结束前计数减一</span>
+    <span class="token keyword">defer</span> wg<span class="token punctuation">.</span><span class="token function">Done</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello Goroutine!"</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 设置需要等待goroutine的个数</span>
+        wg<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">go</span> <span class="token function">hello</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//等待主goroutine结束</span>
+    wg<span class="token punctuation">.</span><span class="token function">Wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>我们得到的结果是:</p>
+<pre class=" language-bash"><code class="language-bash">$ go run main.go
+hello Goroutine<span class="token operator">!</span> 3 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 9 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 0 2020-01-20 11:06:27.256148 +0800 CST m<span class="token operator">=</span>+0.003000001
+hello Goroutine<span class="token operator">!</span> 6 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 7 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 4 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 8 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 1 2020-01-20 11:06:27.256148 +0800 CST m<span class="token operator">=</span>+0.003000001
+hello Goroutine<span class="token operator">!</span> 5 2020-01-20 11:06:27.257148 +0800 CST m<span class="token operator">=</span>+0.004000001
+hello Goroutine<span class="token operator">!</span> 2 2020-01-20 11:06:27.256148 +0800 CST m<span class="token operator">=</span>+0.003000001</code></pre>
+<p>你会发现它们的先后顺序不一致，那是因为我们使用的是并发，<code>goroutine</code>的调度是随机的。</p>
+<p>如果我们学习并发只是为了使用<code>goroutine</code>那就太委屈它了，还有一个关键点<code>channel</code>.</p>
+<h2 id="channel"><a href="#channel" class="headerlink" title="channel"></a>channel</h2><blockquote>
+<p>Channel是可以让一个goroutine发送特定的值到另外一个goroutine的通信机制。</p>
+</blockquote>
+<h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><p><code>channel</code>是一种类型，一种引用类型。</p>
+<pre><code>var 变量名 chan 类型</code></pre><p>由于它是引用类型，所以必须初始化之后才能使用，否则会报错。</p>
+<pre><code>make(chan 元素类型, [缓冲大小])
+缓冲大小是可选项。</code></pre><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p> 我们可以理解<code>channel</code>只有三个概念：取值，传值，关闭。还有一个需要明白的是<code>channel</code>的操作只有<code>&lt;-</code>.</p>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><p>顾名思义就是从通道中进行取值。</p>
+<pre><code>x := &lt;- ch
+&lt;-ch       // 从ch中接收值，忽略结果
+这里很好理解，我们从一个channel赋值给了另一个channel</code></pre><h4 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h4><p>将一些值传入一个channel中</p>
+<pre><code>ch &lt;- 100
+将100传入channel中</code></pre><h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h4><p>我们通过调用内置的<code>close</code>函数来关闭通道。</p>
+<pre><code>close(ch)</code></pre><p>只有在通知接收方<code>goroutine</code>所有的数据都发送完毕的时候才需要关闭通道。通道和打开文件不一样，关闭文件并不是必须的，因为通过可以被垃圾回收机制回收。</p>
+<p>我们需要注意的是：</p>
+<ol>
+<li>对已经关闭的通道发送消息会导致panic。</li>
+<li>对已经关闭的通道取值会将其取空为止。</li>
+<li>对已经关闭的通道且无值进行取值的话会获取对应类型的空值。</li>
+<li>关闭一个已经关闭的通道会导致panic。</li>
+</ol>
+<h3 id="四种通道类型"><a href="#四种通道类型" class="headerlink" title="四种通道类型"></a>四种通道类型</h3><h4 id="无缓冲通道"><a href="#无缓冲通道" class="headerlink" title="无缓冲通道"></a>无缓冲通道</h4><p>无缓冲意味需要排队，一个接着一个。属于阻塞通道，需要完整的走完流程，才会判定下一个传值是可以继续的。</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func recv(c chan int) {
+    msg := &lt;-c
+    fmt.Println(&quot;接收消息&quot;, msg)
+}
+
+func main() {
+    ch := make(chan int)
+    go recv(ch)
+    ch &lt;- 10
+    fmt.Println(&quot;发送成功&quot;)
+}</code></pre><pre><code>$ go run main.go
+发送成功
+
+$ go run main.go
+接收消息 10
+发送成功
+
+$ go run main.go
+发送成功
+接收消息 10</code></pre><p>如果你出现了一下那些情况，我们上面已经解释过了。</p>
+<h4 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h4><p><img src="https://image.kalifun.top/upload/2001/5abd9e17ba1d2c6e.jpg" alt></p>
+<p>通道可以用来连接<code>goroutine</code>，这样一个的输出是另一个输入。这就叫做管道。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">var</span> receive <span class="token keyword">chan</span> <span class="token builtin">string</span>
+<span class="token keyword">var</span> send <span class="token keyword">chan</span> <span class="token builtin">string</span>
+
+<span class="token keyword">func</span> <span class="token function">Receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    newmsg <span class="token operator">:=</span> <span class="token operator">&lt;-</span>send
+    receive <span class="token operator">&lt;-</span> newmsg
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">Send</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    send <span class="token operator">&lt;-</span> <span class="token string">"发送消息"</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    receive <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">string</span><span class="token punctuation">)</span>
+    send <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">string</span><span class="token punctuation">)</span>
+    <span class="token keyword">go</span> <span class="token function">Send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">go</span> <span class="token function">Receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    getmsg <span class="token operator">:=</span> <span class="token operator">&lt;-</span>receive
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>getmsg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>其实这个很好理解，就是和取快递是一个性质。你拿取件码去取件，他会根据取件码把快递给你。</p>
+<h4 id="单项通道类型"><a href="#单项通道类型" class="headerlink" title="单项通道类型"></a>单项通道类型</h4><p>看着表里也可以很快速知道，就是我指定你只能接收你就只能接收。我指定你只能取值，那你只能取值。</p>
+<p>那下面我们看看我们是如何限制它的：</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+// send 只允许接收不允许发送
+// receive 只允许发送不允许接收
+func Receive(send &lt;-chan string, receive chan&lt;- string) {
+    newmsg := &lt;-send
+    receive &lt;- newmsg
+}
+
+// send只允许发送不能接收
+func Send(send chan&lt;- string) {
+    send &lt;- &quot;发送消息&quot;
+}
+
+func main() {
+    receive := make(chan string)
+    send := make(chan string)
+    go Send(send)
+    go Receive(send, receive)
+
+    getmsg := &lt;-receive
+    fmt.Println(getmsg)
+}</code></pre><p><code>chan &lt;- Type 只能发送的通道，可以发送不允许接收</code></p>
+<p><code>&lt;-chan Type 只能接收的通道，可以接收不允许发送</code></p>
+<h4 id="有缓冲通道"><a href="#有缓冲通道" class="headerlink" title="有缓冲通道"></a>有缓冲通道</h4><p>可以在使用make函数初始化通道的时候为其指定通道的容量。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 创建一个容量为1的有缓冲区通道</span>
+    ch <span class="token operator">&lt;-</span> <span class="token number">10</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"发送成功"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>只要通道的容量大于零，那么该通道就是有缓冲的通道，通道的容量表示通道中能存放元素的数量。就像你小区的快递柜只有那么个多格子，格子满了就装不下了，就阻塞了，等到别人取走一个快递员就能往里面放一个。</p>
+<h3 id="工作池"><a href="#工作池" class="headerlink" title="工作池"></a>工作池</h3><p>在工作中我们通常会使用可以指定启动的<code>goroutine</code>数量–<code>worker pool</code>模式，控制<code>goroutine</code>的数量，防止<code>goroutine</code>泄漏和暴涨。</p>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"fmt"</span>
+    <span class="token string">"time"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">Worker</span><span class="token punctuation">(</span>id <span class="token builtin">int</span><span class="token punctuation">,</span> jobs <span class="token operator">&lt;-</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> results <span class="token keyword">chan</span><span class="token operator">&lt;-</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> job <span class="token operator">:=</span> <span class="token keyword">range</span> jobs <span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"worker:%d start job:%d\n"</span><span class="token punctuation">,</span> id<span class="token punctuation">,</span> job<span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span><span class="token function">Sleep</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"worker:%d end job:%d\n"</span><span class="token punctuation">,</span> id<span class="token punctuation">,</span> job<span class="token punctuation">)</span>
+        results <span class="token operator">&lt;-</span> job <span class="token operator">*</span> <span class="token number">2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jobs <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    results <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> <span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// 开启多个goroutine</span>
+    <span class="token keyword">for</span> work <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> work <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">;</span> work<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token keyword">go</span> <span class="token function">Worker</span><span class="token punctuation">(</span>work<span class="token punctuation">,</span> jobs<span class="token punctuation">,</span> results<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> j <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">{</span>
+        jobs <span class="token operator">&lt;-</span> j
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>jobs<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> a <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> a <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> a<span class="token operator">++</span> <span class="token punctuation">{</span>
+        <span class="token operator">&lt;-</span>results
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre><code>$ go run main.go
+worker:2 start job:1
+worker:1 start job:2
+worker:1 end job:2
+worker:1 start job:3
+worker:2 end job:1
+worker:2 start job:4
+worker:2 end job:4
+worker:1 end job:3
+worker:2 start job:5
+worker:2 end job:5</code></pre>
             </div>
             <hr/>
 
@@ -542,8 +723,8 @@ Web服务器：">
                 </a>
             </div> -->
             <br/>
-            <a  href="/2018/11/27/nginx-duo-zhan-dian-ye-bian-de-qing-song-qi-lai-xu-ni-zhu-ji/">
-                《Nginx多站点也变得轻松起来（虚拟主机）》
+            <a  href="/2020/01/19/golang-bing-fa/">
+                《Golang并发(goroutine)》
             </a> 由
             <a href="https://kalifun.github.io">
                 kalifun
@@ -842,52 +1023,49 @@ Web服务器：">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/11/28/hexo-jia-ru-ping-lun-gong-neng-lai-bi-li/">
+                <a href="/2020/01/19/golang-bing-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="hexo加入评论功能(来必力)">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Golang并发(goroutine)">
                         
-                        <span class="card-title">hexo加入评论功能(来必力)</span>
+                        <span class="card-title">Golang并发(goroutine)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo加入评论功能(来必力)
-1.登录注册 来必力，如何登录注册我就不冗余了，随便搞个邮箱什么的就可以了。  
-2.来必力配置 来到代码管理选择一般网站里面有一个data-uid 再来到你主题目录下有一个_config.yml，进行搜索查
+                            Golang并发go语言这么受欢迎的原因之一，我们只需要将go关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些go都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。
+前言通常我们都会听到并发，并行，进程
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-11-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/站点/" class="post-category">
-                                    站点
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/来必力/">
-                        <span class="chip bg-color">来必力</span>
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
                     </a>
                     
                 </div>
@@ -901,25 +1079,24 @@ Web服务器：">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/11/22/beego/">
+                <a href="/2020/01/17/reflect/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Beego">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Golang反射(reflect)">
                         
-                        <span class="card-title">Beego</span>
+                        <span class="card-title">Golang反射(reflect)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Beegobee工具简介bee工具是一个为了协助开发beego项目而创建的项目。bee安装go get github.com/beego/bee
-安装完之后，bee可执行文件默认放到$GOPATH/bin里面，Windows默认已经添加了环
+                            Golang反射(reflect)大表哥我创建了一个数据库，我想通过一个函数就能实现所有表的插入。那你就用传入不定参数进行数据添加啊。可是我觉得好麻烦哦，我还得分析它的类型符不符合，它属于哪个表的数据。这样太费劲了，我还不如直接使用别人的o
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-17
                             </span>
                         <span class="publish-author">
                             
@@ -935,10 +1112,6 @@ Web服务器：">
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
-                    </a>
                     
                     <a href="/tags/golang/">
                         <span class="chip bg-color">golang</span>
