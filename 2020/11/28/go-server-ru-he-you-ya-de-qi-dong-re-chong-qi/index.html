@@ -4,19 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="kalifun;blog.kalifun">
-    <meta name="description" content="
+    <meta name="keywords" content="Go-Server如何优雅的启动（热重启）, kalifun;blog.kalifun">
+    <meta name="description" content="Go-Server如何优雅的启动（热重启）
+假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
 
-
-    
-    github喵
-    
-        .zdog-canvas{
-            display: block;
-            margin: 0px auto;
-        }
-    
-">
+A：负载均衡不就好了，我们一个一个来更新～
+B：那你需要重启的节点刚好正在处理咋办呢？
+A：那就等着没有请求了我们">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>kalifun</title>
+    <title>Go-Server如何优雅的启动（热重启） | kalifun</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -40,7 +34,7 @@
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -295,13 +289,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        Go-Server如何优雅的启动（热重启）
                     </div>
                 </div>
             </div>
@@ -411,12 +405,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/go/">
+                                <span class="chip bg-color">go</span>
+                            </a>
+                        
+                            <a href="/tags/golang/">
+                                <span class="chip bg-color">golang</span>
+                            </a>
+                        
+                            <a href="/tags/gin/">
+                                <span class="chip bg-color">gin</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Golang/" class="post-category">
+                                Golang
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -424,21 +439,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-10
+                    2020-11-28
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        632
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        2 分
                     </div>
                     
                 
@@ -454,372 +469,180 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <title>github喵</title>
-    <style>
-        .zdog-canvas{
-            display: block;
-            margin: 0px auto;
-        }
-    </style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
-<body>
-<!--Zdog在<canvas>或<svg>元素上呈现。width和height属性以设置大小。-->
-<canvas class="zdog-canvas" width="1200" height="800" style="width: 600px;height: 400px"></canvas>
-<!--引入js文件-->
-<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-<script>
-    // 1.将选定画布，进行创作
-    let illo = new Zdog.Illustration({
-        element: ".zdog-canvas",
-        dragRotate: true,
-    });
+                <h1 id="Go-Server如何优雅的启动（热重启）"><a href="#Go-Server如何优雅的启动（热重启）" class="headerlink" title="Go-Server如何优雅的启动（热重启）"></a>Go-Server如何优雅的启动（热重启）</h1><blockquote>
+<p>假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～</p>
+</blockquote>
+<p>A：负载均衡不就好了，我们一个一个来更新～</p>
+<p>B：那你需要重启的节点刚好正在处理咋办呢？</p>
+<p>A：那就等着没有请求了我们再更新～</p>
+<p>B：…………….(🙄️)</p>
+<h2 id="一、分析问题"><a href="#一、分析问题" class="headerlink" title="一、分析问题"></a>一、分析问题</h2><p><img src="/.io//one.png" alt="image-20201228155113032"></p>
+<p>A正在访问请求，必须正常返回才完成了请求的闭环; 当正在重启时我们需要将A用户的请求正常返回;</p>
+<h2 id="二、热重启"><a href="#二、热重启" class="headerlink" title="二、热重启"></a>二、热重启</h2><blockquote>
+<p>当关闭一个正在运行的进程时，该进程并不会立即停止，而是会等待所有当前逻辑继续执行完毕，才会中断。</p>
+</blockquote>
+<h3 id="2-1-原理"><a href="#2-1-原理" class="headerlink" title="2.1 原理"></a>2.1 原理</h3><ol>
+<li>监听信号（USR2..）</li>
+<li>收到信号时fork子进程（使用相同的启动命令），将服务监听的socket文件描述符传递给子进程</li>
+<li>子进程监听父进程的socket，这个时候父进程和子进程都可以接收请求</li>
+<li>子进程启动成功之后，父进程停止接收新的连接，等待旧连接处理完成（或超时）</li>
+<li>父进程退出，重启完成</li>
+</ol>
+<h2 id="三、Golang实现"><a href="#三、Golang实现" class="headerlink" title="三、Golang实现"></a>三、Golang实现</h2><h3 id="3-1-监听信号"><a href="#3-1-监听信号" class="headerlink" title="3.1 监听信号"></a>3.1 监听信号</h3><table>
+<thead>
+<tr>
+<th align="center">信号</th>
+<th align="center">键值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SIGHUP</td>
+<td align="center">1</td>
+<td align="center">挂起（hangup）</td>
+</tr>
+<tr>
+<td align="center">SIGINT</td>
+<td align="center">2</td>
+<td align="center">用户从键盘按^c键或^break键时</td>
+</tr>
+<tr>
+<td align="center">SIGQUIT</td>
+<td align="center">3</td>
+<td align="center">用户从键盘按quit键时</td>
+</tr>
+<tr>
+<td align="center">SIGTRAP</td>
+<td align="center">5</td>
+<td align="center">跟踪陷阱（trace trap），启动进程，跟踪代码的执行</td>
+</tr>
+<tr>
+<td align="center">SIGKILL</td>
+<td align="center">9</td>
+<td align="center">杀死、终止进程</td>
+</tr>
+<tr>
+<td align="center">SIGTERM</td>
+<td align="center">15</td>
+<td align="center">结束程序(可以被捕获、阻塞或忽略)</td>
+</tr>
+</tbody></table>
+<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ListeningSignals</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> os<span class="token punctuation">.</span>Signal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 监听指定信号</span>
+    signal<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGQUIT<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">{</span>
+        sig <span class="token operator">:=</span> <span class="token operator">&lt;-</span>ch
+        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Get Signal is %v\n"</span><span class="token punctuation">,</span> sig<span class="token punctuation">)</span>
+        ctx<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> context<span class="token punctuation">.</span><span class="token function">WithTimeout</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
+        <span class="token keyword">switch</span> sig <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true">// 停止监听信号</span>
+        <span class="token keyword">case</span> syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true">//  重启</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="3-2-服务实现"><a href="#3-2-服务实现" class="headerlink" title="3.2 服务实现"></a>3.2 服务实现</h3><pre class=" language-golang"><code class="language-golang">package main
 
-    var TAU = Zdog.TAU;
+import (
+    "context"
+    "flag"
+    "fmt"
+    "net"
+    "net/http"
+    "os"
+    "os/exec"
+    "os/signal"
+    "syscall"
+    "time"
+)
 
-    // 下面是准备的配色
-    // 瞳孔的颜色
-    const colorFeatures = "#AB5C53";
-    // 头的颜色
-    const black         = "#211F1F";
-    // 阴影的颜色
-    const colorShadow   = "#C39B88";
-    // 皮肤的颜色
-    const colorSkin     = "#E5C0AA";
-    // 眼睛最外圈的颜色
-    const white         = "#FFF";
+var (
+    server        *http.Server
+    listener      net.Listener
+    gracefulChild = flag.Bool("graceful", false, "listen on fd open 3 (internal use only)")
+)
 
-    // 2.进行绘画
+func main() {
+    flag.Parse()
+    http.HandleFunc("/hello", Hello)
+    server = &http.Server{Addr: ":8100"}
 
-    // 可以添加到Zdog场景的所有项目都充当锚点。
-    const head = new Zdog.Anchor({
-        addTo: illo,
-        // 向y轴移动
-        translate: {
-            y: 15
-        },
-    });
-
-    // 具有分离渲染顺序的项目。继承Anchor。
-    const domepiece = new Zdog.Group({
-        addTo: head
-    });
-
-    // 真正进行画头，是一个实体矩形
-    const noggin = new Zdog.RoundedRect({
-        addTo: domepiece,
-        // 设置高度和宽度
-        width: 160,
-        height: 66,
-        // 渲染形状线并设置线宽。默认笔划：1。
-        stroke: 230,
-        // 使用cornerRadius设置圆角半径
-        cornerRadius: 25,
-        // 设置颜色
-        color: black,
-        path: [
-            { x: -4.5 },
-            { x: 5.5 }
-        ]
-    });
-
-
-    // 我们需要画下一组图形，那就是脸。脸被定义为一组
-    const face = new Zdog.Group({
-        addTo: head,
-        // 将阴影部分进行位置的调节
-        translate: {
-            // x轴我们不动，保持正中
-            x: 0,
-            // y轴进行往下移动
-            y: 36,
-            // 为了3D更加真实，我们需要将脸部往外突出一点。这样才更加逼真
-            z: 20
-        },
-    });
-
-    // 下面我们开始进行阴影的绘画，它是由一个实体矩形组成
-    const skinShadow = new Zdog.RoundedRect({
-        addTo: face,
-        // 设置高度和宽度
-        width: 100,
-        height: 0,
-        // 渲染形状线并设置线宽。默认笔划：1。
-        stroke: 180,
-        //使用cornerRadius设置圆角半径
-        cornerRadius: 40,
-        // 设置颜色
-        color: colorShadow,
-    });
-
-    // 下面开始画脸的部分
-    const skin = new Zdog.RoundedRect({
-        addTo: face,
-        // 高宽和上面需要一直，为了产生阴影的效果，我们只需要将我们的画笔的宽度小一点并就可以看到想要的效果。
-        width: 100,
-        height: 0,
-        // 比之前的阴影部分减小一点
-        stroke: 170,
-        // 圆角半径和阴影部分是一致的
-        cornerRadius: 40,
-        // 设置颜色
-        color: colorSkin,
-        // 为了和阴影的下半部分重叠，需要将其往下移动
-        translate: {
-            y: 4.5
-        }
-    });
-
-
-    // 下面我们进行画眼睛👀，我们不难发现，我们可以利用常规的一个椭圆进行旋转，则可以更加简单的获得想要的效果
-    // 你可以认为它就是一个P，以弧度为单位的完整旋转。
-    var TAU = Zdog.TAU;
-    // 我们先进行绘画右眼
-    const eyeleft = new Zdog.Anchor({
-        addTo: face,
-        // 将它在原点进行移动，让我们所有和眼睛相关的形状都固定到那个位置。
-        translate: {
-            x: -76,
-            y: 6,
-            z: 80
-        },
-        // 其实在这里我觉得不加这个也可以让它看着很舒服
-        rotate: {
-            y: TAU / 14
-        }
-    });
-
-    const eye = new Zdog.Group({
-        addTo: eyeleft
-    });
-
-    // 眼睛最外部分为纯白色
-    const iris = new Zdog.Ellipse({
-        addTo: eye,
-        // 渲染内部形状区域
-        fill: true,
-        width: 40,
-        height: 56,
-        // 圆角半径
-        stroke: 2,
-        // 放大或缩小项目几何体
-        scale: 1.5,
-        color: white,
-    });
-
-    // 瞳孔部分
-    const pupil = new Zdog.Ellipse({
-        addTo: eye,
-        // 设置长宽
-        width: 37,
-        height: 56,
-        stroke: 0,
-        fill: true,
-        color: colorFeatures,
-        // 由于它的位置需要更靠近右边
-        translate: {
-            x: 3,
-            y: 5,
-            z: 0
-        },
-    });
-
-    // 然后是瞳孔里的小白点
-    const anotherpupil = new Zdog.Ellipse({
-        addTo: pupil,
-        // 设置宽度
-        width: 10,
-        height: 10,
-        color: white,
-        fill: true,
-        stroke: 0,
-        // 设置位置
-        translate: {
-            x: -7,
-            y: -12,
-            z: 3
-        }
-    });
-
-    // 这里将刚绘画好的左眼复制出来
-    const eyeright = eyeleft.copyGraph({
-        // 并调整好眼睛的位置
-        translate: {
-            x: 76,
-            y: 6,
-            z: 80
-        },
-        rotate: {
-            y: TAU / -14
-        }
-    });
-
-
-    // 画鼻子部分，相对很简单，因为就是一个圆形
-    const nose = new Zdog.Ellipse({
-        addTo: face,
-        // 设置宽度
-        width: 6,
-        height: 6,
-        fill: true,
-        stroke: 10,
-        // 设置颜色
-        color: colorFeatures,
-        // 调整位置
-        translate: {
-            x: 0,
-            y: 32,
-            z: 74
-        },
-    });
-
-
-    //接下来是画嘴巴部分
-    const mouth = new Zdog.Ellipse({
-        addTo: face,
-        // 设置圆的直径
-        diameter: 30,
-        // 将其设置为1/4的圆，我们取值为2，所以获得半圆
-        quarters: 2,
-        // 设置圆角半径
-        stroke: 4,
-        // 将半圆进行缩放，使其更加逼真
-        scale: {
-            x: 0.8,
-            y: 1
-        },
-        color: colorFeatures,
-        // 将半圆进行旋转，让开口向上
-        rotate: {
-            x: TAU / 2.3,
-            z: TAU / -4
-        },
-        // 然后再对其调整合理的位置
-        translate: {
-            x: 0,
-            y: 46,
-            z: 74
-        },
-    });
-
-
-    // 画耳朵
-    // 带圆形底座的方形圆柱
-    // 绘画左耳
-    const ear = new Zdog.Cone({
-        addTo: head,
-        // 设置圆的直径
-        diameter: 120,
-        // 设置长度
-        length: 90,
-        stroke: false,
-        color: black,
-        // 调整位置
-        translate: {
-            x: -120,
-            y: -105
-        },
-        // 圆角朝向为正z轴，因此需要对其旋转
-        rotate: {
-            x: TAU/4,
-            y: TAU/12
-        },
-    });
-
-    // 绘画右耳，将左耳进行复制，移动，旋转
-    ear.copy({
-        translate: {
-            x: 120,
-            y: -105
-        },
-        rotate: {
-            x: TAU/4,
-            y: TAU/-12
-        },
-    });
-
-    // 我们进行画胡须
-    const whiskersleft = new Zdog.Anchor({
-        addTo: head,
-        // 将位置固定
-        translate: {
-            x: -290,
-            y: 20
-        },
-    });
-
-    const whiskers = new Zdog.Group({
-        addTo: whiskersleft
-    });
-
-    // 开始进行画胡须
-    // shape自定义形状
-    const whisker = new Zdog.Shape({
-        addTo: whiskers,
-        path: [
-            // 起始点
-            { x: 100, y: 0 },
-            // 曲线的椭圆适合由前一个拐角和终点形成的矩形。
-            { arc: [
-                    // 拐角
-                    { x: 30, y: -10 }, // corner
-                    // 终点
-                    { x: -30, y: 0 }, // end point
-                ]}
-        ],
-        closed: false,
-        // 胡须的宽度
-        stroke: 4,
-        color: black,
-    });
-
-    // 左侧的另一条胡须，只需要按照上面的设置进行下移即可
-    whisker.copy ({
-        path: [
-            { x: 100, y: 0 },
-            { arc: [
-                    { x: 30, y: -5 }, // corner
-                    { x: -30, y: 10 }, // end point
-                ]}
-        ],
-        // 将胡须往下移
-        translate: {
-            y: 20
-        },
-    });
-
-    // 将左侧的胡须复制进行移动并旋转
-    const whiskersright = whiskersleft.copyGraph({
-        translate: {
-            x: 290,
-            y: 20
-        },
-        rotate: {
-            y: TAU/2,
-        },
-    });
-
-
-
-    // illo.updateRenderGraph();
-
-    function animate() {
-        // rotate illo each frame
-        illo.rotate.y += 0.03;
-        illo.updateRenderGraph();
-        // animate next frame
-        requestAnimationFrame( animate );
+    var err error
+    if *gracefulChild {
+        f := os.NewFile(3, "") // FD 3 is special number
+        listener, err = net.FileListener(f)
+    } else {
+        url := fmt.Sprintf("%s", server.Addr)
+        listener, err = net.Listen("tcp", url)
     }
-    // start animation
-    animate();
+    if err != nil {
+        fmt.Printf("Listening failed: %v\n", err)
+        return
+    }
 
+    go func() {
+        err = server.Serve(listener)
+        if err != nil {
+            fmt.Printf("server.Serve failed: %v\n", err)
+        }
+    }()
+    ListeningSignals()
+}
 
-</script>
-</body>
-</html>
+func Hello(w http.ResponseWriter, r *http.Request) {
+    // 让程序等待
+    time.Sleep(time.Second * 10)
+    w.Write([]byte("调用完成～"))
+}
+
+func ListeningSignals() {
+    ch := make(chan os.Signal, 1)
+    // 监听指定信号
+    signal.Notify(ch, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
+    for {
+        sig := <-ch
+        fmt.Printf("Get Signal is %v\n", sig)
+        ctx, _ := context.WithTimeout(context.Background(), 20*time.Second)
+        switch sig {
+        case syscall.SIGINT, syscall.SIGTERM:
+            // 停止监听信号
+            signal.Stop(ch)
+            // 优雅地关闭服务器而不中断任何工作
+            server.Shutdown(ctx)
+            return
+        case syscall.SIGHUP:
+            //
+            err := RestartServer()
+            if err != nil {
+                fmt.Printf("graceful restart failed: %v\n", err)
+            }
+            return
+        }
+    }
+}
+
+func RestartServer() error {
+    tl, ok := listener.(*net.TCPListener)
+    if !ok {
+        return fmt.Errorf("listener is not tcp listener")
+    }
+    f, err := tl.File()
+    if err != nil {
+        return err
+    }
+
+    args := []string{"-graceful"}
+    cmd := exec.Command(os.Args[0], args...)
+    cmd.Stdout = os.Stdout
+    cmd.Stderr = os.Stderr
+    cmd.ExtraFiles = []*os.File{f}
+    return cmd.Start()
+}</code></pre>
+<h2 id="四、参考资料"><a href="#四、参考资料" class="headerlink" title="四、参考资料"></a>四、参考资料</h2><p><a href="https://grisha.org/blog/2014/06/03/graceful-restart-in-golang/" target="_blank" rel="noopener">Graceful Restart in Golang</a></p>
+<p><a href="https://cloud.tencent.com/developer/article/1388556" target="_blank" rel="noopener">Golang中的热重启</a></p>
+
             </div>
             <hr/>
 
@@ -855,8 +678,8 @@
                 </a>
             </div> -->
             <br/>
-            <a  href="/2020/01/10/zdog-advance/index/">
-                《》
+            <a  href="/2020/11/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
+                《Go-Server如何优雅的启动（热重启）》
             </a> 由
             <a href="https://kalifun.github.io">
                 kalifun
@@ -1160,45 +983,59 @@
                 <i class="fas fa-chevron-left"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/01/10/zdog-advance/index/">
+                <a href="/2020/11/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Go-Server如何优雅的启动（热重启）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Go-Server如何优雅的启动（热重启）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Go-Server如何优雅的启动（热重启）
+假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
 
-
-    
-    github喵
-    
-        .zdog-canvas{
-            display: block;
-            margin: 0px auto;
-        }
-    
-
+A：负载均衡不就好了，我们一个一个来更新～
+B：那你需要重启的节点刚好正在处理咋办呢？
+A：那就等着没有请求了我们
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            kalifun
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
+                    </a>
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                    <a href="/tags/gin/">
+                        <span class="chip bg-color">gin</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1209,32 +1046,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/18/flask-jiao-se-quan-xian-kong-zhi/">
+                <a href="/2020/01/19/golang-bing-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Flask角色权限控制">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Golang并发(goroutine)">
                         
-                        <span class="card-title">Flask角色权限控制</span>
+                        <span class="card-title">Golang并发(goroutine)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flask角色权限控制前言目前flask的组件并不能完美的解决角色权限控制问题。大部分组件都是check是否登录，每次请求检查session？
-这并不是我想要的啊！我很喜欢前后端分离的理念，我不喜欢使用Python 模板语言，我觉得很臃肿。
+                            Golang并发go语言这么受欢迎的原因之一，我们只需要将go关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些go都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。
+前言通常我们都会听到并发，并行，进程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
                                 </a>
                             
                             
@@ -1244,12 +1081,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/flask/">
-                        <span class="chip bg-color">flask</span>
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
                     </a>
                     
                 </div>
@@ -1412,7 +1245,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.3k</span>&nbsp;字
+                class="white-color">60.4k</span>&nbsp;字
             
             
             
