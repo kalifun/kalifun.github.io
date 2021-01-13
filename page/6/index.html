@@ -115,6 +115,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/resume" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-card" style="zoom: 0.6;"></i>
+      
+      <span>简历</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -202,6 +213,17 @@
 					<i class="fa-fw fas fa-address-book"></i>
 					
 					友情链接
+				</a>
+          
+        </li>
+        
+<li class="m-nav-item">
+			
+				<a href="/resume" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-address-card"></i>
+					
+					Resume
 				</a>
           
         </li>
@@ -335,6 +357,63 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2018/09/16/golang-day4/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="GoLang_Day4">
+                            
+                            <span class="card-title">GoLang_Day4</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                GoLang_Day4函数Go 语言中同时有函数和方法。
+一个方法就是一个包含了接受者的函数，
+接受者可以是命名类型或者结构体类型的一个值或者是一个指针。
+所有给定类型的方法属于该类型的方法集。package main
+
+import (
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-16
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Golang/" class="post-category">
+                                    Golang
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/go/">
+                            <span class="chip bg-color">go</span>
+                        </a>
+                        
+                        <a href="/tags/golang/">
+                            <span class="chip bg-color">golang</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2018/09/16/golang-day5/">
                         <div class="card-image">
                             
@@ -389,27 +468,27 @@ impo
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/09/12/golang-day2/">
+                    <a href="/2018/09/12/golang-day3/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="GoLang_Day2">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="GoLang_Day3">
                             
-                            <span class="card-title">GoLang_Day2</span>
+                            <span class="card-title">GoLang_Day3</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Golang_Day2defer 栈package main
+                                Golang_Day3结构体一个结构体（`struct`）就是一个字段的集合。
+（而 type 的含义跟其字面意思相符。）package main
 
 import "fmt"
 
-func main()  {
-    fmt.Println("FUN")
-    for i :=0; i&lt;10 ;i++ {
-      
+type test struct {
+    x int
+  
                             
                         </div>
                         <div class="publish-info">
@@ -447,27 +526,27 @@ func main()  {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/09/12/golang-day3/">
+                    <a href="/2018/09/12/golang-day2/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="GoLang_Day3">
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="GoLang_Day2">
                             
-                            <span class="card-title">GoLang_Day3</span>
+                            <span class="card-title">GoLang_Day2</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Golang_Day3结构体一个结构体（`struct`）就是一个字段的集合。
-（而 type 的含义跟其字面意思相符。）package main
+                                Golang_Day2defer 栈package main
 
 import "fmt"
 
-type test struct {
-    x int
-  
+func main()  {
+    fmt.Println("FUN")
+    for i :=0; i&lt;10 ;i++ {
+      
                             
                         </div>
                         <div class="publish-info">
@@ -823,60 +902,6 @@ var  people = human{name:"FUN"}
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/08/17/gei-bo-ke-tian-jia-hexo-live2d/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="给博客添加hexo-live2d">
-                            
-                            <span class="card-title">给博客添加hexo-live2d</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                安装live2d先上图把，不然估计不知道是啥玩意呢。
-安装模块npm install --save hexo-helper-live2d
-修改根目录_config.yml# Live2D
-## https://github.com/EYHN
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/站点/" class="post-category">
-                                    站点
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/hexo/">
-                            <span class="chip bg-color">hexo</span>
-                        </a>
-                        
-                        <a href="/tags/live2d/">
-                            <span class="chip bg-color">live2d</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -894,11 +919,12 @@ var  people = human{name:"FUN"}
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">6 / 6</div>
+            <div class="center-align b-text-gray">6 / 7</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a class="right btn-floating btn-large disabled">
+            <a href="/page/7/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fas fa-angle-right"></i>
             </a>
             
@@ -920,7 +946,7 @@ var  people = human{name:"FUN"}
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.5k</span>&nbsp;字
+                class="white-color">61k</span>&nbsp;字
             
             
             

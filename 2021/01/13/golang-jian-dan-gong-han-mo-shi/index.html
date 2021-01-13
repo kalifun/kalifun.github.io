@@ -4,13 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Go-Server如何优雅的启动（热重启）, kalifun;blog.kalifun">
-    <meta name="description" content="Go-Server如何优雅的启动（热重启）
-假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
-
-A：负载均衡不就好了，我们一个一个来更新～
-B：那你需要重启的节点刚好正在处理咋办呢？
-A：那就等着没有请求了我们">
+    <meta name="keywords" content="Golang-简单工厂模式, kalifun;blog.kalifun">
+    <meta name="description" content="简单工厂模式简单来说，简单工厂模式有一个具体的工厂类，可以生成多个不同的产品，属于创建型设计模式。简单工厂模式不在 GoF 23 种设计模式之列。
+优点和缺点优点：1.工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +14,7 @@ A：那就等着没有请求了我们">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Go-Server如何优雅的启动（热重启） | kalifun</title>
+    <title>Golang-简单工厂模式 | kalifun</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -120,6 +116,17 @@ A：那就等着没有请求了我们">
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/resume" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-card" style="zoom: 0.6;"></i>
+      
+      <span>简历</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -211,6 +218,17 @@ A：那就等着没有请求了我们">
           
         </li>
         
+<li class="m-nav-item">
+			
+				<a href="/resume" class="waves-effect waves-light">
+					
+					<i class="fa-fw fas fa-address-card"></i>
+					
+					Resume
+				</a>
+          
+        </li>
+        
         
         <li><div class="divider"></div></li>
         <li>
@@ -289,13 +307,13 @@ A：那就等着没有请求了我们">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Go-Server如何优雅的启动（热重启）
+                        Golang-简单工厂模式
                     </div>
                 </div>
             </div>
@@ -439,21 +457,21 @@ A：那就等着没有请求了我们">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-28
+                    2021-01-13
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        632
+                        524
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -469,179 +487,49 @@ A：那就等着没有请求了我们">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Go-Server如何优雅的启动（热重启）"><a href="#Go-Server如何优雅的启动（热重启）" class="headerlink" title="Go-Server如何优雅的启动（热重启）"></a>Go-Server如何优雅的启动（热重启）</h1><blockquote>
-<p>假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～</p>
-</blockquote>
-<p>A：负载均衡不就好了，我们一个一个来更新～</p>
-<p>B：那你需要重启的节点刚好正在处理咋办呢？</p>
-<p>A：那就等着没有请求了我们再更新～</p>
-<p>B：…………….(🙄️)</p>
-<h2 id="一、分析问题"><a href="#一、分析问题" class="headerlink" title="一、分析问题"></a>一、分析问题</h2><p><img src="images/one.png" alt="image-20201228155113032"></p>
-<p>A正在访问请求，必须正常返回才完成了请求的闭环; 当正在重启时我们需要将A用户的请求正常返回;</p>
-<h2 id="二、热重启"><a href="#二、热重启" class="headerlink" title="二、热重启"></a>二、热重启</h2><blockquote>
-<p>当关闭一个正在运行的进程时，该进程并不会立即停止，而是会等待所有当前逻辑继续执行完毕，才会中断。</p>
-</blockquote>
-<h3 id="2-1-原理"><a href="#2-1-原理" class="headerlink" title="2.1 原理"></a>2.1 原理</h3><ol>
-<li>监听信号（USR2..）</li>
-<li>收到信号时fork子进程（使用相同的启动命令），将服务监听的socket文件描述符传递给子进程</li>
-<li>子进程监听父进程的socket，这个时候父进程和子进程都可以接收请求</li>
-<li>子进程启动成功之后，父进程停止接收新的连接，等待旧连接处理完成（或超时）</li>
-<li>父进程退出，重启完成</li>
-</ol>
-<h2 id="三、Golang实现"><a href="#三、Golang实现" class="headerlink" title="三、Golang实现"></a>三、Golang实现</h2><h3 id="3-1-监听信号"><a href="#3-1-监听信号" class="headerlink" title="3.1 监听信号"></a>3.1 监听信号</h3><table>
-<thead>
-<tr>
-<th align="center">信号</th>
-<th align="center">键值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">SIGHUP</td>
-<td align="center">1</td>
-<td align="center">挂起（hangup）</td>
-</tr>
-<tr>
-<td align="center">SIGINT</td>
-<td align="center">2</td>
-<td align="center">用户从键盘按^c键或^break键时</td>
-</tr>
-<tr>
-<td align="center">SIGQUIT</td>
-<td align="center">3</td>
-<td align="center">用户从键盘按quit键时</td>
-</tr>
-<tr>
-<td align="center">SIGTRAP</td>
-<td align="center">5</td>
-<td align="center">跟踪陷阱（trace trap），启动进程，跟踪代码的执行</td>
-</tr>
-<tr>
-<td align="center">SIGKILL</td>
-<td align="center">9</td>
-<td align="center">杀死、终止进程</td>
-</tr>
-<tr>
-<td align="center">SIGTERM</td>
-<td align="center">15</td>
-<td align="center">结束程序(可以被捕获、阻塞或忽略)</td>
-</tr>
-</tbody></table>
-<pre class=" language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">ListeningSignals</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ch <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">chan</span> os<span class="token punctuation">.</span>Signal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">// 监听指定信号</span>
-    signal<span class="token punctuation">.</span><span class="token function">Notify</span><span class="token punctuation">(</span>ch<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGQUIT<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token punctuation">{</span>
-        sig <span class="token operator">:=</span> <span class="token operator">&lt;-</span>ch
-        fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Get Signal is %v\n"</span><span class="token punctuation">,</span> sig<span class="token punctuation">)</span>
-        ctx<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> context<span class="token punctuation">.</span><span class="token function">WithTimeout</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">Background</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token operator">*</span>time<span class="token punctuation">.</span>Second<span class="token punctuation">)</span>
-        <span class="token keyword">switch</span> sig <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> syscall<span class="token punctuation">.</span>SIGINT<span class="token punctuation">,</span> syscall<span class="token punctuation">.</span>SIGTERM<span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true">// 停止监听信号</span>
-        <span class="token keyword">case</span> syscall<span class="token punctuation">.</span>SIGHUP<span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true">//  重启</span>
-        <span class="token punctuation">}</span>
+                <h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>简单来说，简单工厂模式有一个具体的工厂类，可以生成多个不同的产品，属于创建型设计模式。简单工厂模式不在 GoF 23 种设计模式之列。</p>
+<h2 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h2><h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>1.工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端可以免除直接创建产品对象的职责，很方便的创建出相应的产品。工厂和产品的职责区分明确。<br>2.客户端无需知道所创建具体产品的类名，只需知道参数即可。<br>3.可以引入配置文件，在不修改客户端代码的情况下更换和添加新的具体产品类。</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>1.简单工厂模式的工厂类单一，负责所有产品的创建，职责过重，一旦异常，整个系统将受影响。且工厂类代码会非常臃肿，违背高聚合原则。<br>使用简单工厂模式会增加系统中类的个数（引入新的工厂类），增加系统的复杂度和理解难度<br>2.系统扩展困难，一旦增加新产品不得不修改工厂逻辑，在产品类型较多时，可能造成逻辑过于复杂<br>3.简单工厂模式使用了 static 工厂方法，造成工厂角色无法形成基于继承的等级结构。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>对于产品种类相对较少的情况，考虑使用简单工厂模式。使用简单工厂模式的客户端只需要传入工厂类的参数，不需要关心如何创建对象的逻辑，可以很方便地创建所需产品。</p>
+<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// A car has four wheels</span>
+    <span class="token function">NewTheTrafficTools</span><span class="token punctuation">(</span><span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToGetParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// A bicycle has two wheels</span>
+    <span class="token function">NewTheTrafficTools</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToGetParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> TheTrafficTools <span class="token keyword">interface</span> <span class="token punctuation">{</span>
+    <span class="token function">ToGetParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Car <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>c <span class="token operator">*</span>Car<span class="token punctuation">)</span> <span class="token function">ToGetParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"A car has four wheels"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> Bicycle <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>b <span class="token operator">*</span>Bicycle<span class="token punctuation">)</span> <span class="token function">ToGetParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"A bicycle has two wheels"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">NewTheTrafficTools</span><span class="token punctuation">(</span>name <span class="token builtin">string</span><span class="token punctuation">)</span> TheTrafficTools <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> name <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">"c"</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token operator">&amp;</span>Car<span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">"b"</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token operator">&amp;</span>Bicycle<span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">nil</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="3-2-服务实现"><a href="#3-2-服务实现" class="headerlink" title="3.2 服务实现"></a>3.2 服务实现</h3><pre class=" language-golang"><code class="language-golang">package main
-
-import (
-    "context"
-    "flag"
-    "fmt"
-    "net"
-    "net/http"
-    "os"
-    "os/exec"
-    "os/signal"
-    "syscall"
-    "time"
-)
-
-var (
-    server        *http.Server
-    listener      net.Listener
-    gracefulChild = flag.Bool("graceful", false, "listen on fd open 3 (internal use only)")
-)
-
-func main() {
-    flag.Parse()
-    http.HandleFunc("/hello", Hello)
-    server = &http.Server{Addr: ":8100"}
-
-    var err error
-    if *gracefulChild {
-        f := os.NewFile(3, "") // FD 3 is special number
-        listener, err = net.FileListener(f)
-    } else {
-        url := fmt.Sprintf("%s", server.Addr)
-        listener, err = net.Listen("tcp", url)
-    }
-    if err != nil {
-        fmt.Printf("Listening failed: %v\n", err)
-        return
-    }
-
-    go func() {
-        err = server.Serve(listener)
-        if err != nil {
-            fmt.Printf("server.Serve failed: %v\n", err)
-        }
-    }()
-    ListeningSignals()
-}
-
-func Hello(w http.ResponseWriter, r *http.Request) {
-    // 让程序等待
-    time.Sleep(time.Second * 10)
-    w.Write([]byte("调用完成～"))
-}
-
-func ListeningSignals() {
-    ch := make(chan os.Signal, 1)
-    // 监听指定信号
-    signal.Notify(ch, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
-    for {
-        sig := <-ch
-        fmt.Printf("Get Signal is %v\n", sig)
-        ctx, _ := context.WithTimeout(context.Background(), 20*time.Second)
-        switch sig {
-        case syscall.SIGINT, syscall.SIGTERM:
-            // 停止监听信号
-            signal.Stop(ch)
-            // 优雅地关闭服务器而不中断任何工作
-            server.Shutdown(ctx)
-            return
-        case syscall.SIGHUP:
-            //
-            err := RestartServer()
-            if err != nil {
-                fmt.Printf("graceful restart failed: %v\n", err)
-            }
-            return
-        }
-    }
-}
-
-func RestartServer() error {
-    tl, ok := listener.(*net.TCPListener)
-    if !ok {
-        return fmt.Errorf("listener is not tcp listener")
-    }
-    f, err := tl.File()
-    if err != nil {
-        return err
-    }
-
-    args := []string{"-graceful"}
-    cmd := exec.Command(os.Args[0], args...)
-    cmd.Stdout = os.Stdout
-    cmd.Stderr = os.Stderr
-    cmd.ExtraFiles = []*os.File{f}
-    return cmd.Start()
-}</code></pre>
-<h2 id="四、参考资料"><a href="#四、参考资料" class="headerlink" title="四、参考资料"></a>四、参考资料</h2><p><a href="https://grisha.org/blog/2014/06/03/graceful-restart-in-golang/" target="_blank" rel="noopener">Graceful Restart in Golang</a></p>
-<p><a href="https://cloud.tencent.com/developer/article/1388556" target="_blank" rel="noopener">Golang中的热重启</a></p>
 
             </div>
             <hr/>
@@ -678,8 +566,8 @@ func RestartServer() error {
                 </a>
             </div> -->
             <br/>
-            <a  href="/2020/11/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
-                《Go-Server如何优雅的启动（热重启）》
+            <a  href="/2021/01/13/golang-jian-dan-gong-han-mo-shi/">
+                《Golang-简单工厂模式》
             </a> 由
             <a href="https://kalifun.github.io">
                 kalifun
@@ -983,29 +871,25 @@ func RestartServer() error {
                 <i class="fas fa-chevron-left"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/11/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
+                <a href="/2021/01/13/golang-jian-dan-gong-han-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Go-Server如何优雅的启动（热重启）">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Golang-简单工厂模式">
                         
-                        <span class="card-title">Go-Server如何优雅的启动（热重启）</span>
+                        <span class="card-title">Golang-简单工厂模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Go-Server如何优雅的启动（热重启）
-假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
-
-A：负载均衡不就好了，我们一个一个来更新～
-B：那你需要重启的节点刚好正在处理咋办呢？
-A：那就等着没有请求了我们
+                            简单工厂模式简单来说，简单工厂模式有一个具体的工厂类，可以生成多个不同的产品，属于创建型设计模式。简单工厂模式不在 GoF 23 种设计模式之列。
+优点和缺点优点：1.工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
                             </span>
                         <span class="publish-author">
                             
@@ -1046,25 +930,29 @@ A：那就等着没有请求了我们
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/19/golang-bing-fa/">
+                <a href="/2020/12/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Golang并发(goroutine)">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Go-Server如何优雅的启动（热重启）">
                         
-                        <span class="card-title">Golang并发(goroutine)</span>
+                        <span class="card-title">Go-Server如何优雅的启动（热重启）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Golang并发go语言这么受欢迎的原因之一，我们只需要将go关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些go都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。
-前言通常我们都会听到并发，并行，进程
+                            Go-Server如何优雅的启动（热重启）
+假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
+
+A：负载均衡不就好了，我们一个一个来更新～
+B：那你需要重启的节点刚好正在处理咋办呢？
+A：那就等着没有请求了我们
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-28
                             </span>
                         <span class="publish-author">
                             
@@ -1081,8 +969,16 @@ A：那就等着没有请求了我们
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
+                    </a>
+                    
                     <a href="/tags/golang/">
                         <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                    <a href="/tags/gin/">
+                        <span class="chip bg-color">gin</span>
                     </a>
                     
                 </div>
@@ -1245,7 +1141,7 @@ A：那就等着没有请求了我们
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.4k</span>&nbsp;字
+                class="white-color">61k</span>&nbsp;字
             
             
             
