@@ -4,11 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="给博客添加hexo-live2d, kalifun;blog.kalifun">
-    <meta name="description" content="安装live2d先上图把，不然估计不知道是啥玩意呢。
-安装模块npm install --save hexo-helper-live2d
-修改根目录_config.yml# Live2D
-## https://github.com/EYHN">
+    <meta name="keywords" content="Golang 定时器, kalifun;blog.kalifun">
+    <meta name="description" content="Golang 定时器
+有一批业务数据需要定时处理，业务是采取的分布式架构，部署了多个节点，但是不想因为这一部分的功能开新的节点，或者利用redis来处理。所以在后台代码中新增了一个定时处理的逻辑。  
+
+痛点：
+
+多节点启动时会造成数据处理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>给博客添加hexo-live2d | kalifun</title>
+    <title>Golang 定时器 | kalifun</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,13 +311,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        给博客添加hexo-live2d
+                        Golang 定时器
                     </div>
                 </div>
             </div>
@@ -427,12 +429,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/go/">
+                                <span class="chip bg-color">go</span>
                             </a>
                         
-                            <a href="/tags/live2d/">
-                                <span class="chip bg-color">live2d</span>
+                            <a href="/tags/golang/">
+                                <span class="chip bg-color">golang</span>
                             </a>
                         
                     </div>
@@ -443,8 +445,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/站点/" class="post-category">
-                                站点
+                            <a href="/categories/Golang/" class="post-category">
+                                Golang
                             </a>
                         
                     </div>
@@ -455,21 +457,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-08-17
+                    2021-02-19
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        391
+                        507
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -485,55 +487,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装live2d"><a href="#安装live2d" class="headerlink" title="安装live2d"></a>安装live2d</h1><p>先上图把，不然估计不知道是啥玩意呢。<br><img src="/.io//cat.png" alt="cat"></p>
-<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save hexo-helper-live2d</code></pre>
-<h2 id="修改根目录-config-yml"><a href="#修改根目录-config-yml" class="headerlink" title="修改根目录_config.yml"></a>修改根目录_config.yml</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Live2D</span>
-<span class="token comment" spellcheck="true">## https://github.com/EYHN/hexo-helper-live2d</span>
-live2d:
-  enable: <span class="token boolean">true</span>
-  <span class="token comment" spellcheck="true"># enable: false</span>
-  scriptFrom: local <span class="token comment" spellcheck="true"># 默认</span>
-  pluginRootPath: live2dw/ <span class="token comment" spellcheck="true"># 插件在站点上的根目录(相对路径)</span>
-  pluginJsPath: lib/ <span class="token comment" spellcheck="true"># 脚本文件相对与插件根目录路径</span>
-  pluginModelPath: assets/ <span class="token comment" spellcheck="true"># 模型文件相对与插件根目录路径</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: jsdelivr # jsdelivr CDN</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: unpkg # unpkg CDN</span>
-  <span class="token comment" spellcheck="true"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span>
-  tagMode: <span class="token boolean">false</span> <span class="token comment" spellcheck="true"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span>
-  debug: <span class="token boolean">false</span> <span class="token comment" spellcheck="true"># 调试, 是否在控制台输出日志</span>
-  model:
-    use: live2d-widget-model-wanko <span class="token comment" spellcheck="true"># npm-module package name</span>
-    <span class="token comment" spellcheck="true"># use: wanko # 博客根目录/live2d_models/ 下的目录名</span>
-    <span class="token comment" spellcheck="true"># use: ./wives/wanko # 相对于博客根目录的路径</span>
-    <span class="token comment" spellcheck="true"># use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span></code></pre>
-<p>默认有一个自带模块，你可以根据自己喜欢选择模块</p>
-<h2 id="模块列表"><a href="#模块列表" class="headerlink" title="模块列表"></a>模块列表</h2><ul>
-<li>live2d-widget-model-chitose</li>
-<li>live2d-widget-model-epsilon2_1</li>
-<li>live2d-widget-model-gf</li>
-<li>live2d-widget-model-haru/01 (use npm i1nstall –save live2d-widget-model-haru)</li>
-<li>live2d-widget-model-haru/02 (use npm install –save live2d-widget-model-haru)</li>
-<li>live2d-widget-model-haruto</li>
-<li>live2d-widget-model-hibiki</li>
-<li>live2d-widget-model-hijiki</li>
-<li>live2d-widget-model-izumi</li>
-<li>live2d-widget-model-koharu</li>
-<li>live2d-widget-model-miku</li>
-<li>live2d-widget-model-ni-j</li>
-<li>live2d-widget-model-nico</li>
-<li>live2d-widget-model-nietzsche</li>
-<li>live2d-widget-model-nipsilon</li>
-<li>live2d-widget-model-nito</li>
-<li>live2d-widget-model-shizuku</li>
-<li>live2d-widget-model-tororo</li>
-<li>live2d-widget-model-tsumiki</li>
-<li>live2d-widget-model-unitychan</li>
-<li>live2d-widget-model-wanko</li>
-<li>live2d-widget-model-z16<br>安装 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> 模型的包名</code></pre>
-修改_config.yml<pre class=" language-bash"><code class="language-bash">use <span class="token keyword">:</span> 安装的模块名称</code></pre>
-<pre class=" language-bash"><code class="language-bash">hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d</code></pre>
-</li>
+                <h1 id="Golang-定时器"><a href="#Golang-定时器" class="headerlink" title="Golang 定时器"></a>Golang 定时器</h1><blockquote>
+<p>有一批业务数据需要定时处理，业务是采取的分布式架构，部署了多个节点，但是不想因为这一部分的功能开新的节点，或者利用redis来处理。所以在后台代码中新增了一个定时处理的逻辑。  </p>
+</blockquote>
+<p>痛点：</p>
+<ol>
+<li>多节点启动时会造成数据处理2遍。</li>
+<li>开设单独节点新增维护成本。  </li>
+</ol>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>我们采用锁的形式来解决问题。</p>
+<p><img src="https://image.kalifun.top/upload/2102/97a9ea7a117d9a12.png" alt></p>
+<ol>
+<li>多节点去抢锁。抢锁成功的执行具体函数。</li>
+<li>失败的则在下个节点继续抢锁。</li>
+</ol>
+<h2 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h2><p>库：</p>
+<ul>
+<li>github.com/robfig/cron/v3 （定时任务）  </li>
 </ul>
+<p>数据库模型：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">/*
+TaskLock表
+ */</span>
+<span class="token keyword">type</span> TaskLock <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    Id      <span class="token builtin">int64</span>  <span class="token string">`json:"id"`</span>
+    LockKey <span class="token builtin">string</span> <span class="token string">`json:"lock_key" orm:"unique"`</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>加锁：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 加锁方法，bool值表示是否成功</span>
+<span class="token keyword">func</span> <span class="token function">AddLock</span><span class="token punctuation">(</span>lockValue <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+    insertData <span class="token operator">:=</span> models<span class="token punctuation">.</span>TaskLock<span class="token punctuation">{</span>
+        Id<span class="token punctuation">:</span>      <span class="token number">1</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">//避免一直递增超过最大数</span>
+        LockKey<span class="token punctuation">:</span> lockValue<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    o <span class="token operator">:=</span> orm<span class="token punctuation">.</span><span class="token function">NewOrm</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> o<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>insertData<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<p>解锁：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 删除锁方法，只要成功添加了锁，任务执行后，无论成功还是失败都必须调用删除方法</span>
+<span class="token keyword">func</span> <span class="token function">deleteLock</span><span class="token punctuation">(</span>lockValue <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    o <span class="token operator">:=</span> orm<span class="token punctuation">.</span><span class="token function">NewOrm</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> o<span class="token punctuation">.</span><span class="token function">QueryTable</span><span class="token punctuation">(</span><span class="token function">new</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>TaskLock<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Filter</span><span class="token punctuation">(</span><span class="token string">"lock_key"</span><span class="token punctuation">,</span> lockValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+        global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//if _, err := o.Delete(&amp;models.TaskLock{LockKey: lockValue}); err == nil {</span>
+    <span class="token comment" spellcheck="true">//    global.Oplog.Error(err)</span>
+    <span class="token comment" spellcheck="true">//}</span>
+    global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">"The aggregation task has been completed"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>装饰器：</p>
+<pre class=" language-go"><code class="language-go"><span class="token comment" spellcheck="true">// 单节点任务装饰器，被装饰的任务在分布式多节点下同一时间只能运行一次</span>
+<span class="token keyword">func</span> <span class="token function">SingleTask</span><span class="token punctuation">(</span>wrap <span class="token keyword">func</span><span class="token punctuation">(</span>lockValue <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span><span class="token punctuation">)</span> <span class="token keyword">func</span><span class="token punctuation">(</span>lockValue <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">func</span><span class="token punctuation">(</span>lockValue <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        add <span class="token operator">:=</span> <span class="token function">wrap</span><span class="token punctuation">(</span>lockValue<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> add <span class="token punctuation">{</span>
+            global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">"当前节点正在进行:"</span><span class="token punctuation">,</span> lockValue<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">// 执行程序</span>
+            <span class="token comment" spellcheck="true">//CleanTemporaryData()</span>
+            <span class="token function">deleteLock</span><span class="token punctuation">(</span>lockValue<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Info</span><span class="token punctuation">(</span><span class="token string">"当前节点获取任务失败"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>主程序：</p>
+<pre class=" language-go"><code class="language-go">crontab <span class="token operator">:=</span> cron<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+task <span class="token operator">:=</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//global.Oplog.Info("Hello Word")</span>
+  decorator<span class="token punctuation">.</span><span class="token function">SingleTask</span><span class="token punctuation">(</span>decorator<span class="token punctuation">.</span>AddLock<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 添加定时任务, * * * * * 是 crontab,表示每分钟执行一次</span>
+id<span class="token punctuation">,</span> err <span class="token operator">:=</span> crontab<span class="token punctuation">.</span><span class="token function">AddFunc</span><span class="token punctuation">(</span><span class="token string">"* * * * *"</span><span class="token punctuation">,</span> task<span class="token punctuation">)</span>
+<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+  global<span class="token punctuation">.</span>Oplog<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>像采用这种方式就不需要担心多节点都会同事处理相同数据了。这也是变相的使用锁的思想。</p>
 
             </div>
             <hr/>
@@ -570,8 +605,8 @@ live2d:
                 </a>
             </div> -->
             <br/>
-            <a  href="/2018/08/17/gei-bo-ke-tian-jia-hexo-live2d/">
-                《给博客添加hexo-live2d》
+            <a  href="/2021/02/19/golang-ding-shi-qi/">
+                《Golang 定时器》
             </a> 由
             <a href="https://kalifun.github.io">
                 kalifun
@@ -870,89 +905,41 @@ live2d:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/08/17/ru-he-chuang-jian-ni-de-hexo-bo-ke/">
+                <a href="/2021/02/19/golang-ding-shi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="如何创建你的hexo博客">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Golang 定时器">
                         
-                        <span class="card-title">如何创建你的hexo博客</span>
+                        <span class="card-title">Golang 定时器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何创建你的hexo博客也许搭建这套博客系统对小白来说有些麻烦吧，但重点它是免费的！没错你没听错，免费的！那还要啥自行车啊.  
-还是乖乖充钱买腾讯云，阿里云吧。简单粗暴找一套博客系统解决所有问题，还要什么hexo+github呢。
-没钱的
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-08-17
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/站点/" class="post-category">
-                                    站点
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/08/17/gei-bo-ke-tian-jia-hexo-live2d/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="给博客添加hexo-live2d">
-                        
-                        <span class="card-title">给博客添加hexo-live2d</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            安装live2d先上图把，不然估计不知道是啥玩意呢。
-安装模块npm install --save hexo-helper-live2d
-修改根目录_config.yml# Live2D
-## https://github.com/EYHN
+                            Golang 定时器
+有一批业务数据需要定时处理，业务是采取的分布式架构，部署了多个节点，但是不想因为这一部分的功能开新的节点，或者利用redis来处理。所以在后台代码中新增了一个定时处理的逻辑。  
+
+痛点：
+
+多节点启动时会造成数据处理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-08-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/站点/" class="post-category">
-                                    站点
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
                                 </a>
                             
                             
@@ -963,12 +950,74 @@ live2d:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
                     </a>
                     
-                    <a href="/tags/live2d/">
-                        <span class="chip bg-color">live2d</span>
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/01/13/golang-jian-dan-gong-han-mo-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Golang-简单工厂模式">
+                        
+                        <span class="card-title">Golang-简单工厂模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            简单工厂模式简单来说，简单工厂模式有一个具体的工厂类，可以生成多个不同的产品，属于创建型设计模式。简单工厂模式不在 GoF 23 种设计模式之列。
+优点和缺点优点：1.工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Golang/" class="post-category">
+                                    Golang
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
+                    </a>
+                    
+                    <a href="/tags/golang/">
+                        <span class="chip bg-color">golang</span>
+                    </a>
+                    
+                    <a href="/tags/gin/">
+                        <span class="chip bg-color">gin</span>
+                    </a>
+                    
+                    <a href="/tags/设计模式/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
