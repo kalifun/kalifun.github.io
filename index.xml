@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kalifun</title>
+    <link>https://blog.kalifun.top/</link>
+    <description>Recent content on kalifun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kalifun.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Broadcom Wrieless Archlinux</title>
+    <link>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</link>
+    <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+    <author>kalifun</author>
+    <guid>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</guid>
+    <description>
+        &lt;p&gt;I recently installed &lt;code&gt;Arch&lt;/code&gt;. but my network card is not working.&lt;/p&gt;
+&lt;p&gt;I was surprised, i still had to install the driver myself?&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;Arch&lt;/code&gt; documentation is so rich.&lt;/p&gt;
+&lt;p&gt;You can visit this &lt;a href=&#34;https://wiki.archlinux.org/title/Broadcom_wireless&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;look-for-problems&#34;&gt;
+    &lt;a href=&#34;#look-for-problems&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Look for problems
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lspic -vnn -d 14e4:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; 
+    src=&#34;https://blog.kalifun.top/./images/arch/lspci.png&#34; 
+    alt=&#34;lspic&#34; 
+     
+    width=1053 
+    height=&#34;40&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;The NIC is already recognized by the system.&lt;/p&gt;
+&lt;h3 id=&#34;display-message&#34;&gt;
+    &lt;a href=&#34;#display-message&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    display message
+&lt;/h3&gt;
+&lt;p&gt;Check whether the system starts abnormally.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dmesg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; 
+    src=&#34;https://blog.kalifun.top/./images/arch/1.png&#34; 
+    alt=&#34;&#34; 
+     
+    width=1089 
+    height=&#34;146&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;I thought it was a driver error and I tried uninstalling the installation. does not solve the problem.&lt;/p&gt;
+&lt;h3 id=&#34;hwinfo&#34;&gt;
+    &lt;a href=&#34;#hwinfo&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    hwinfo
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hwinfo --netcard --bluetooth | grep -Ei &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;(speed|hotplug|model|status|cmd|file|detected|driver:)&amp;#34;&lt;/span&gt; | grep -v &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Config S&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; 
+    src=&#34;https://blog.kalifun.top/./images/arch/4.png&#34; 
+    alt=&#34;&#34; 
+     
+    width=743 
+    height=&#34;121&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;To find the problem, the driver needs to execute the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;modprobe wl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But to restart, you still need to execute the command again.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s awful, I need to really fix it. Maybe execute a script at startup?&lt;/p&gt;
+
+    </description>
+    </item>
+    
+  </channel>
+</rss>

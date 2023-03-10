@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mes on kalifun</title>
+    <link>https://blog.kalifun.top/me/</link>
+    <description>Recent content in Mes on kalifun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2023 10:13:28 +0800</lastBuildDate><atom:link href="https://blog.kalifun.top/me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://blog.kalifun.top/me/about/</link>
+      <pubDate>Thu, 19 Jan 2023 10:13:28 +0800</pubDate>
+      
+      <guid>https://blog.kalifun.top/me/about/</guid>
+      <description>I left nothing behind
+Introduction hi, I&amp;rsquo;am kalifun.
+I majored in information security in college and taught myself back-end development as a rookie.
+Contact Me Github: kalifun
+Email: a2FsaWZ1bkBvdXRsb29rLmNvbQ==</description>
+    </item>
+    
+  </channel>
+</rss>

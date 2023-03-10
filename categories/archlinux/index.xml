@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>archlinux on kalifun</title>
+    <link>https://blog.kalifun.top/categories/archlinux/</link>
+    <description>Recent content in archlinux on kalifun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kalifun.top/categories/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Broadcom Wrieless Archlinux</title>
+      <link>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</guid>
+      <description>I recently installed Arch. but my network card is not working.
+I was surprised, i still had to install the driver myself?
+The Arch documentation is so rich.
+You can visit this link.
+Look for problems lspic -vnn -d 14e4: The NIC is already recognized by the system.
+display message Check whether the system starts abnormally.
+dmesg I thought it was a driver error and I tried uninstalling the installation. does not solve the problem.</description>
+    </item>
+    
+  </channel>
+</rss>

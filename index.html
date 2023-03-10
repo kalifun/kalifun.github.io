@@ -1,1441 +1,185 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
-
-
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="kalifun;blog.kalifun">
-    <meta name="description" content="kalifun">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!DOCTYPE html>
+<html lang="en-us">
+    
+<head>
+	<meta name="generator" content="Hugo 0.111.2">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
     <title>kalifun</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    <style type="text/css">
-        
-    </style>
-
-    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+    
+    
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="kalifun"/>
+    <meta itemprop="name" content="kalifun" />
+    <meta name="twitter:title" content="kalifun" />
+    <meta name="application-name" content="kalifun" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="" />
+    <meta name="twitter:description" content=""/>
+    <meta itemprop="description" content=""/>
+    <meta property="og:description" content="" />
+
+    
 
 
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">kalifun</span>
-                </a>
-            </div>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.72f4d77e20a9a49c021e9452e2eb88438f5b524639bbb1893860f58937321530.css">
+    
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/categories" class="waves-effect waves-light">
-      
-      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
-      
-      <span>分类</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
-<div id="mobile-nav" class="side-nav sidenav">
-
-    <div class="mobile-head bg-color">
-        
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">kalifun</div>
-        <div class="logo-desc">
-            
-            既然已经决定做一件事，那么除了当初决定做这件事的我之外，没人可以叫我傻瓜。
-            
-        </div>
-    </div>
-
-    
-
-    <ul class="menu-list mobile-menu-list">
-        
-<li class="m-nav-item">
-			
-				<a href="/" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-home"></i>
-					
-					首页
-				</a>
-          
-        </li>
-        
-<li class="m-nav-item">
-			
-				<a href="/tags" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-tags"></i>
-					
-					标签
-				</a>
-          
-        </li>
-        
-<li class="m-nav-item">
-			
-				<a href="/categories" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-bookmark"></i>
-					
-					分类
-				</a>
-          
-        </li>
-        
-<li class="m-nav-item">
-			
-				<a href="/archives" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-archive"></i>
-					
-					归档
-				</a>
-          
-        </li>
-        
-<li class="m-nav-item">
-			
-				<a href="/about" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-user-circle"></i>
-					
-					关于
-				</a>
-          
-        </li>
-        
-<li class="m-nav-item">
-			
-				<a href="/friends" class="waves-effect waves-light">
-					
-					<i class="fa-fw fas fa-address-book"></i>
-					
-					友情链接
-				</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/kalifun" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/kalifun" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-    
-    html, body {
-        height:100%;
-    }
-
-    #page {
-        height:100%;
-        min-height: 100%;
-        width:100%;
-    }
-</style>
-
-
-
-<div id="page" class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-    <div id="prev-cover" class="left waves-effect carousel-control">
-        <i class="icon fas fa-angle-left"></i>
-    </div>
-    <div id="next-cover" class="right waves-effect carousel-control">
-        <i class="icon fas fa-angle-right"></i>
-    </div>
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                世界第一大剑豪
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="typed"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-                <script>
-                    var typed = new Typed("#typed", {
-                        strings: ['既然已经决定做一件事，那么除了当初决定做这件事的我之外，没人可以叫我傻瓜。', '既然这么险恶的环境在等着我 那我也只好变的更强了'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fas fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                <a href="https://github.com/kalifun" class="waves-effect waves-light btn" target="_blank">
-                    <i class="fab fa-github-alt"></i>Github
-                </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/kalifun" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:kalifun@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-        </div>
-    </div>
-
-    
-    
-
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/2.jpg');">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">CVE-2019-14287提权漏洞</div>
-                    <div class="description center-align">
-                    
-                        CVE-2019-14287提权漏洞sudo是linux系统管理指令，是允许系统管理员让普通用户执行一些或者全部的root命令的一个工具。
-漏洞描述这个漏洞比较鸡肋，并不是sudo版本低就可以让你能够提权，需要满足一定条件才能触发这个漏洞。
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/10/16/cve-2019-14287/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon far fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/6.jpg');">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">功能强大的 JS 文件上传库：FilePond</div>
-                    <div class="description center-align">
-                    
-                        功能强大的 JS 文件上传库：FilePond
-本文作者：HelloGitHub-kalifun
-本文首发 HelloGitHub 欢迎大家加入 HelloGitHub-Team 大家庭
-
-
-这是 HelloGitHub 推出的《讲解开源项
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/08/23/gong-neng-qiang-da-de-js-wen-jian-shang-chuan-ku-filepond/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon far fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/3.jpg');">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">教你用开源 JS 库快速画出 GitHub 章鱼猫</div>
-                    <div class="description center-align">
-                    
-                        教你用开源 JS 库快速画出 GitHub 章鱼猫
-本文作者：HelloGitHub-kalifun
-本文首发 HelloGitHub 欢迎大家加入 HelloGitHub-Team 大家庭
-
-
-
-Zdog 项目地址：https://git
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/09/19/jiao-ni-yong-kai-yuan-js-ku-kuai-su-hua-chu-github-zhang-yu-mao/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon far fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/4.jpg');">
-        <div class="container" style="right: 0px;left: 0px;">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">让你成为灵魂画手的 JS 引擎：Zdog</div>
-                    <div class="description center-align">
-                    
-                        让你成为灵魂画手的 JS 引擎：Zdog
-本文作者：HelloGitHub-kalifun  
-本文首发 HelloGitHub 欢迎大家加入 HelloGitHub-Team 大家庭
-
-
-今天给大家推荐一个使用 JavaScript 语言
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2019/08/29/rang-ni-cheng-wei-ling-hun-hua-shou-de-js-yin-qing-zdog/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon far fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-</div>
-
-<script>
-$(function () {
-    let coverSlider = $('.carousel');
-    coverSlider.carousel({
-        duration: Number('120'),
-        fullWidth: true,
-        indicators: 'false' === 'true'
-    });
-
-    let carouselIntervalId;
-    
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
-
-    let restartPlay = function () {
-        
-        clearInterval(carouselIntervalId);
-        autoCarousel();
-        
-    };
-
-    
-    // prev and next cover post.
-    $('#prev-cover').click(function () {
-        coverSlider.carousel('prev');
-        restartPlay();
-    });
-    $('#next-cover').click(function () {
-        coverSlider.carousel('next');
-        restartPlay();
-    });
-    
-});
-</script>
-
-
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;Tips
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            所谓强，不是指力气，也不是指技巧，而是心！--罗罗诺亚·索隆
-        </div>
-    </div>
-</div>
-                    
-
-                    
-
-                    
-
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-
-
-<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
-
-<div class="row">
-
-    
-    
-    <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/8.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/开源项目/" class="category">开源项目</a>
-                    
-                </div>
-                <a href="/2019/09/19/jiao-ni-yong-kai-yuan-js-ku-kuai-su-hua-chu-github-zhang-yu-mao/">
-                    <h3 class="post-title">教你用开源 JS 库快速画出 GitHub 章鱼猫</h3>
-                </a>
-                <p class="post-description">
-                    
-                        教你用开源 JS 库快速画出 GitHub 章鱼猫
-本文作者：HelloGitHub-kalifun
-本文首发 HelloGitHub 欢迎
-                    
-                </p>
-                <a href="/2019/09/19/jiao-ni-yong-kai-yuan-js-ku-kuai-su-hua-chu-github-zhang-yu-mao/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/7.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/开源项目/" class="category">开源项目</a>
-                    
-                </div>
-                <a href="/2019/08/29/rang-ni-cheng-wei-ling-hun-hua-shou-de-js-yin-qing-zdog/">
-                    <h3 class="post-title">让你成为灵魂画手的 JS 引擎：Zdog</h3>
-                </a>
-                <p class="post-description">
-                    
-                        让你成为灵魂画手的 JS 引擎：Zdog
-本文作者：HelloGitHub-kalifun  
-本文首发 HelloGitHub 欢迎大家加
-                    
-                </p>
-                <a href="/2019/08/29/rang-ni-cheng-wei-ling-hun-hua-shou-de-js-yin-qing-zdog/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-
-</div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/30/ji-yu-di-bao-chuang-jian-xin-de-jing-xiang/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="基于底包创建新的镜像">
-                            
-                            <span class="card-title">基于底包创建新的镜像</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                基于底包创建新的镜像
-由于项目依赖了OpenCV对图像进行处理，而且项目都是采用Docker部署的。目前公司提供的镜像仓库都没有可用的包，所以只能自己修改。
-
-下载底包docker image pull xxx/xxx/xxxx/xxx:l
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/工具/" class="post-category">
-                                    工具
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/docker/">
-                            <span class="chip bg-color">docker</span>
-                        </a>
-                        
-                        <a href="/tags/opencv/">
-                            <span class="chip bg-color">opencv</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/02/19/golang-ding-shi-qi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Golang 定时器">
-                            
-                            <span class="card-title">Golang 定时器</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Golang 定时器
-有一批业务数据需要定时处理，业务是采取的分布式架构，部署了多个节点，但是不想因为这一部分的功能开新的节点，或者利用redis来处理。所以在后台代码中新增了一个定时处理的逻辑。  
-
-痛点：
-
-多节点启动时会造成数据处理
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/go/">
-                            <span class="chip bg-color">go</span>
-                        </a>
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/01/13/golang-jian-dan-gong-han-mo-shi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Golang-简单工厂模式">
-                            
-                            <span class="card-title">Golang-简单工厂模式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                简单工厂模式简单来说，简单工厂模式有一个具体的工厂类，可以生成多个不同的产品，属于创建型设计模式。简单工厂模式不在 GoF 23 种设计模式之列。
-优点和缺点优点：1.工厂类包含必要的逻辑判断，可以决定在什么时候创建哪一个产品的实例。客户端
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/go/">
-                            <span class="chip bg-color">go</span>
-                        </a>
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                        <a href="/tags/gin/">
-                            <span class="chip bg-color">gin</span>
-                        </a>
-                        
-                        <a href="/tags/设计模式/">
-                            <span class="chip bg-color">设计模式</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/12/28/go-server-ru-he-you-ya-de-qi-dong-re-chong-qi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Go-Server如何优雅的启动（热重启）">
-                            
-                            <span class="card-title">Go-Server如何优雅的启动（热重启）</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Go-Server如何优雅的启动（热重启）
-假设平台修改了配置文件只能重启才生效，但又不能影响正在访问的用户该如何是好呢～
-
-A：负载均衡不就好了，我们一个一个来更新～
-B：那你需要重启的节点刚好正在处理咋办呢？
-A：那就等着没有请求了我们
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/go/">
-                            <span class="chip bg-color">go</span>
-                        </a>
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                        <a href="/tags/gin/">
-                            <span class="chip bg-color">gin</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/19/golang-bing-fa/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Golang并发(goroutine)">
-                            
-                            <span class="card-title">Golang并发(goroutine)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Golang并发go语言这么受欢迎的原因之一，我们只需要将go关键字放到函数前，这样就实现了并发；不需要考虑CPU的调度，这些go都在底层帮我们实现了。不要通过共享内存来通信，而应该通过通信来共享内存。
-前言通常我们都会听到并发，并行，进程
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/17/reflect/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Golang反射(reflect)">
-                            
-                            <span class="card-title">Golang反射(reflect)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Golang反射(reflect)大表哥我创建了一个数据库，我想通过一个函数就能实现所有表的插入。那你就用传入不定参数进行数据添加啊。可是我觉得好麻烦哦，我还得分析它的类型符不符合，它属于哪个表的数据。这样太费劲了，我还不如直接使用别人的o
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/01/13/golang-shu-zu-yu-qie-pian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="golang数组与切片">
-                            
-                            <span class="card-title">golang数组与切片</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                golang数组与切片声明数组，切片类型的基本语法：
-
-数组： var 数组变量名 [元素数量]元素类型
-切片： var 变量名 []元素类型
-
-单纯看上面的类型，你会发现它们很相似。没错切片就是基于数组类型做的一层封装。让它更加灵活，支持
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Golang/" class="post-category">
-                                    Golang
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/golang/">
-                            <span class="chip bg-color">golang</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/11/18/flask-jiao-se-quan-xian-kong-zhi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Flask角色权限控制">
-                            
-                            <span class="card-title">Flask角色权限控制</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Flask角色权限控制前言目前flask的组件并不能完美的解决角色权限控制问题。大部分组件都是check是否登录，每次请求检查session？
-这并不是我想要的啊！我很喜欢前后端分离的理念，我不喜欢使用Python 模板语言，我觉得很臃肿。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Python/" class="post-category">
-                                    Python
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                        <a href="/tags/flask/">
-                            <span class="chip bg-color">flask</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/10/16/cve-2019-14287/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CVE-2019-14287提权漏洞">
-                            
-                            <span class="card-title">CVE-2019-14287提权漏洞</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                CVE-2019-14287提权漏洞sudo是linux系统管理指令，是允许系统管理员让普通用户执行一些或者全部的root命令的一个工具。
-漏洞描述这个漏洞比较鸡肋，并不是sudo版本低就可以让你能够提权，需要满足一定条件才能触发这个漏洞。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/信息安全/" class="post-category">
-                                    信息安全
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/提权漏洞/">
-                            <span class="chip bg-color">提权漏洞</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/19/jiao-ni-yong-kai-yuan-js-ku-kuai-su-hua-chu-github-zhang-yu-mao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="教你用开源 JS 库快速画出 GitHub 章鱼猫">
-                            
-                            <span class="card-title">教你用开源 JS 库快速画出 GitHub 章鱼猫</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                教你用开源 JS 库快速画出 GitHub 章鱼猫
-本文作者：HelloGitHub-kalifun
-本文首发 HelloGitHub 欢迎大家加入 HelloGitHub-Team 大家庭
-
-
-
-Zdog 项目地址：https://git
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/开源项目/" class="post-category">
-                                    开源项目
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaScript/">
-                            <span class="chip bg-color">JavaScript</span>
-                        </a>
-                        
-                        <a href="/tags/js/">
-                            <span class="chip bg-color">js</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
-
-</main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 7</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
-
-
-
-
-    <footer class="page-footer bg-color">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            <span id="year">年份</span>
-            <a href="https://kalifun.github.io" target="_blank">kalifun</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">61.8k</span>&nbsp;字
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2020";
-                    var startMonth = "1";
-                    var startDate = "08";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
-            <br>
-            
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
-                <a href="https://blog.kalifun.top" target="_blank">赣ICP 18014942号</a>
-            </span>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/kalifun" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:kalifun@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-    </div>
-</footer>
-
-<div class="progress-bar"></div>
-
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script src="/js/search.js"></script>
-<script type="text/javascript">
-$(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
-});
-</script>
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    <!-- Baidu Analytics -->
-
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            document.documentElement.dataset.userColorScheme = 'dark';
         } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            document.documentElement.dataset.userColorScheme = 'light';
         }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
+    <body class="dark">
+        <main>
+            
 
-    
+<div class="container">
+    <div class="my">
+        <div class="content">
+            <h1>hi, kalifun 👋 </h1>
+        </div>
+    </div>
+</div>
 
-    
+<div class="container">
+    <section class="my">
+        <div class="content">
+            
+            <p>路漫漫其修远兮, 吾将上下而求索</p>
 
-    
+            
+            <div class="bio-social">
+                
+            </div>
+        </div>
+    </section>
+</div>
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-    
-    
 
-</body>
 
+
+
+
+
+
+
+<div class="container">
+    
+    <section>
+        <h2>Me</h2>
+        <div class="posts">
+            
+            <div class="post">
+                <a href="/me/about/">
+                    <div class="post-row">
+                        <time>Jan 19</time>
+                        <h3>About Me</h3>
+                    </div>
+                    
+                </a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section>
+        <h2>
+            Post
+            
+            <a class="section-button" href="/articles/">View all</a>
+            
+        </h2>
+        <div class="posts">
+            
+            <div class="post">
+                <a href="/post/arch/broadcom_wireless_arch/">
+                    <div class="post-row">
+                        <time>Mar 06</time>
+                        <h3>Broadcom Wrieless Archlinux</h3>
+                    </div>
+                    
+                </a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section>
+        <h2>Projects</h2>
+        <div class="projects">
+            
+            <div class="project">
+                <div>
+                    <a href="https://marketplace.visualstudio.com/items?itemName=kalifun.lazyswitch" target="_blank" rel="noreferrer">
+                        <div class="icon">🥑</div>
+                        <h3>lazy switch</h3>
+                    </a>
+                    <div class="description">Convert YAML and JSON files to GO code.</div>
+                </div>
+                <div class="flex">
+                    <a href="https://github.com/kalifun/lazyswitch-vscode" class="button" target="_blank" rel="noreferrer">Source</a>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div>
+                    <a href="https://github.com/kalifun/vscode-proto3-tools" target="_blank" rel="noreferrer">
+                        <div class="icon">🍚</div>
+                        <h3>vscode proto3 tools</h3>
+                    </a>
+                    <div class="description">Vscode Extension of proto3 language server</div>
+                </div>
+                <div class="flex">
+                    <a href="https://github.com/kalifun/vscode-proto3-tools" class="button" target="_blank" rel="noreferrer">Source</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+</div>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+        </nav>
+
+        
+    </section>
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
 </html>
