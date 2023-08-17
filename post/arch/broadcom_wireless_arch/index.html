@@ -48,7 +48,7 @@
     },
     "datePublished": "2023-03-06",
     "description": "",
-    "wordCount":  127 ,
+    "wordCount":  131 ,
     "mainEntityOfPage": "True",
     "dateModified": "2023-03-06",
     "publisher": {
@@ -134,8 +134,15 @@
     </a>
     Look for problems
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lspic -vnn -d 14e4:
-</span></span></code></pre></div><p><img loading="lazy" 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lspic -vnn -d 14e4:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" 
     src="/./images/arch/lspci.png" 
     alt="lspic" 
      
@@ -153,8 +160,15 @@
     display message
 </h3>
 <p>Check whether the system starts abnormally.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dmesg
-</span></span></code></pre></div><p><img loading="lazy" 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dmesg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" 
     src="/./images/arch/1.png" 
     alt="" 
      
@@ -171,16 +185,30 @@
     </a>
     hwinfo
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hwinfo --netcard --bluetooth | grep -Ei <span style="color:#e6db74">&#34;(speed|hotplug|model|status|cmd|file|detected|driver:)&#34;</span> | grep -v <span style="color:#e6db74">&#34;Config S&#34;</span>
-</span></span></code></pre></div><p><img loading="lazy" 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hwinfo --netcard --bluetooth <span class="p">|</span> grep -Ei <span class="s2">&#34;(speed|hotplug|model|status|cmd|file|detected|driver:)&#34;</span> <span class="p">|</span> grep -v <span class="s2">&#34;Config S&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img loading="lazy" 
     src="/./images/arch/4.png" 
     alt="" 
      
     width=743 
     height="121"  /></p>
 <p>To find the problem, the driver needs to execute the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>modprobe wl
-</span></span></code></pre></div><p>But to restart, you still need to execute the command again.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">modprobe wl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>But to restart, you still need to execute the command again.</p>
 <p>It&rsquo;s awful, I need to really fix it. Maybe execute a script at startup?</p>
 
     </div>
