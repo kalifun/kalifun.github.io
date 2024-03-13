@@ -13,13 +13,7 @@
       <link>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</guid>
-      <description>I recently installed Arch. but my network card is not working.
-I was surprised, i still had to install the driver myself?
-The Arch documentation is so rich.
-You can visit this link.
-Look for problems 1 lspic -vnn -d 14e4: The NIC is already recognized by the system.
-display message Check whether the system starts abnormally.
-1 dmesg I thought it was a driver error and I tried uninstalling the installation.</description>
+      <description>I recently installed Arch. but my network card is not working.&#xA;I was surprised, i still had to install the driver myself?&#xA;The Arch documentation is so rich.&#xA;You can visit this link.&#xA;Look for problems 1 lspic -vnn -d 14e4: The NIC is already recognized by the system.&#xA;display message Check whether the system starts abnormally.&#xA;1 dmesg I thought it was a driver error and I tried uninstalling the installation.</description>
     </item>
   </channel>
 </rss>

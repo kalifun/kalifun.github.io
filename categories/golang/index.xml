@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on kalifun</title>
-    <link>https://blog.kalifun.top/post/</link>
-    <description>Recent content in Posts on kalifun</description>
+    <title>golang on kalifun</title>
+    <link>https://blog.kalifun.top/categories/golang/</link>
+    <description>Recent content in golang on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.kalifun.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.kalifun.top/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解锁Go并发编程的新姿势 -- conc项目解析</title>
       <link>https://blog.kalifun.top/post/golang/conc/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/post/golang/conc/</guid>
       <description>编写高并发程序常常让人头疼:代码冗余、死锁风险、逻辑复杂等等。Go语言的标准库提供了sync.WaitGroup、channel等工具来实现并发控制,但使用起来还是有一些困难。conc项目就是为了解决这些痛点而生的。&#xA;主要功能 1. WaitGroup 在编写并发demo时,我们经常需要用到sync.WaitGroup来等待所有goroutine执行完毕。每次都要添加Add(),在goroutine退出前调用Done(),最后Wait()等待,非常繁琐。&#xA;标准库示例:&#xA;1 2 3 4 5 6 7 8 9 10 11 12 func main() { var wg sync.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.Add(1) go func() { defer wg.Done() // 如果doSomething()panic,程序会崩溃 doSomething() }() } wg.Wait() } 使用conc后:&#xA;1 2 3 4 5 6 7 func main() { var wg conc.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.</description>
-    </item>
-    <item>
-      <title>Broadcom Wrieless Archlinux</title>
-      <link>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</link>
-      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</guid>
-      <description>I recently installed Arch. but my network card is not working.&#xA;I was surprised, i still had to install the driver myself?&#xA;The Arch documentation is so rich.&#xA;You can visit this link.&#xA;Look for problems 1 lspic -vnn -d 14e4: The NIC is already recognized by the system.&#xA;display message Check whether the system starts abnormally.&#xA;1 dmesg I thought it was a driver error and I tried uninstalling the installation.</description>
     </item>
   </channel>
 </rss>
