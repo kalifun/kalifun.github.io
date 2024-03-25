@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>golang on kalifun</title>
-    <link>https://blog.kalifun.top/categories/golang/</link>
-    <description>Recent content in golang on kalifun</description>
+    <title>test on kalifun</title>
+    <link>https://blog.kalifun.top/categories/test/</link>
+    <description>Recent content in test on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.kalifun.top/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.kalifun.top/categories/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>探索golang测试的多种形式</title>
       <link>https://blog.kalifun.top/post/golang/tests/</link>
       <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/post/golang/tests/</guid>
       <description>在软件开发中，测试是确保代码质量和功能稳定性的关键步骤之一。然而，除了其在质量保证方面的重要性之外，测试还对我们的编程思想产生了深远的影响。通过本文，我们将探讨测试如何塑造我们的编程思维，以及如何通过测试驱动开发（TDD）、重构和面向对象编程等技术来提高代码质量和开发效率。&#xA;测试的种类 单元测试 单元测试是一个代码块，用于验证较小、孤立的应用程序代码块（通常是函数或方法）的准确性。&#xA;单元测试的要求：&#xA;程序需要采用这种命名规则 xxx_test.go 测试函数名必须以Test 开头 测试函数参数参数是 t *testing.T 性能测试 性能测试是采用测试手段对软件的响应及时性进行评价的一种方式。&#xA;性能测试的要求：&#xA;程序需要采用这种命名规则 xxx_test.go 测试函数名必须以Benchmark 开头 测试函数参数参数是 b *testing.B 模糊测试 模糊测试是通过向目标系统提供非预期的输入并监视异常结果来发现软件漏洞的方法。&#xA;模糊测试的要求：&#xA;程序需要采用这种命名规则 xxx_test.go 测试函数名必须以Fuzz 开头 测试函数参数参数是 f *testing.F 测试驱动开发 如果采用测试驱动开发(TDD)的流程,我们会先编写测试用例,再基于测试用例来实现最小可行的代码。这种做法可以促使我们先思考设计,再动手编码,从而产生更加优雅、简洁的代码。&#xA;现在我们现在有一个需求，是求解矩形的面积。按照我们常规的思路我们是先实现面积的代码，然后再编写测试用例。但是在很多情况下，实现完需求就接着写其他的了。并不会编写测试用例，这样代码并不能保证它的可靠性。&#xA;所以我们应该采用TDD的形式来开发，会得到不一样的效果。&#xA;rectangle_test.go&#xA;1 2 3 4 5 6 7 8 9 10 11 package rectangle import &amp;#34;testing&amp;#34; func TestRectangleArea(t *testing.T) { got := Area(2, 5) want := 10.0 if got != want { t.Errorf(&amp;#34;got &amp;#39;%f&amp;#39; want &amp;#39;%f&amp;#39;&amp;#34;, got, want) } } 1 2 3 4 ❯ go test -v # demo/rectangle [demo/rectangle.</description>
-    </item>
-    <item>
-      <title>解锁Go并发编程的新姿势 -- conc项目解析</title>
-      <link>https://blog.kalifun.top/post/golang/conc/</link>
-      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.kalifun.top/post/golang/conc/</guid>
-      <description>编写高并发程序常常让人头疼:代码冗余、死锁风险、逻辑复杂等等。Go语言的标准库提供了sync.WaitGroup、channel等工具来实现并发控制,但使用起来还是有一些困难。conc项目就是为了解决这些痛点而生的。&#xA;主要功能 1. WaitGroup 在编写并发demo时,我们经常需要用到sync.WaitGroup来等待所有goroutine执行完毕。每次都要添加Add(),在goroutine退出前调用Done(),最后Wait()等待,非常繁琐。&#xA;标准库示例:&#xA;1 2 3 4 5 6 7 8 9 10 11 12 func main() { var wg sync.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.Add(1) go func() { defer wg.Done() // 如果doSomething()panic,程序会崩溃 doSomething() }() } wg.Wait() } 使用conc后:&#xA;1 2 3 4 5 6 7 func main() { var wg conc.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.</description>
     </item>
   </channel>
 </rss>
