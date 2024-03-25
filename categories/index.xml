@@ -6,8 +6,22 @@
     <description>Recent content in Categories on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.kalifun.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dev</title>
+      <link>https://blog.kalifun.top/categories/dev/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.kalifun.top/categories/dev/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>workflow</title>
+      <link>https://blog.kalifun.top/categories/workflow/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.kalifun.top/categories/workflow/</guid>
+      <description></description>
+    </item>
     <item>
       <title>golang</title>
       <link>https://blog.kalifun.top/categories/golang/</link>

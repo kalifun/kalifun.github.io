@@ -1,33 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on kalifun</title>
-    <link>https://blog.kalifun.top/post/</link>
-    <description>Recent content in Posts on kalifun</description>
+    <title>dev on kalifun</title>
+    <link>https://blog.kalifun.top/categories/dev/</link>
+    <description>Recent content in dev on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.kalifun.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.kalifun.top/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Workflow Wizard</title>
       <link>https://blog.kalifun.top/post/workflow/workflow_wizard/</link>
       <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/post/workflow/workflow_wizard/</guid>
       <description>工欲善其事，必先利其器&#xA;这个是记录自己在工作流上感觉很方便，很好用的工具集。可能会随着时间的推移它会变得越来越有效率。&#xA;你也可以理解我正在直播带货，我会将这些好用的工具分享给各位，但不用担心他们都是免费的。&#xA;我会按照工具的分类来介绍，也会提供一些简单的玩法，更多可能需要你自己的探索。&#xA;输入法 输入法是日常工作中必不可少的工具,选择一个高效的输入方案可以极大提高输入速度。本人推荐使用双拼输入方案,相比全拼,它只需通过声母+韵母的组合即可输入所需的汉字,击键次数更少,输入效率更高。&#xA;双拼是汉语拼音输入法的一种编码方案。相对于全拼而言，使用双拼输入汉字时只需输入一个代表声母的字母，一个代表韵母的字母，就可以打出任意一个中文字了。&#xA;我举个简单的例子：&#xA;全拼 双 s h u a n g 我们需要输入6次 双拼 双 sh uang我们只需要输入2次 那会好奇，键盘上没有这种组合键啊？其实和五笔是一个逻辑，就是它有自己的一套标准，需要我们记忆键位，才能完美的输出自己想要的字。市面有很多双拼方案，他们的键位映射是不一样的，所以可以先去了解不同的方案的键位，我们这边推荐小鹤双拼。&#xA;小鹤双拼 当我们输入双的时候，我们只需要u + l，就可以了，这个需要自己形成肌肉记忆。推荐看看官网，会有一些记忆法可以帮助到你。&#xA;如果对输入法隐私有所顾虑,也可以考虑使用开源的Rime输入法引擎,它支持高度定制,并且无需连接在线服务器。&#xA;启动器 Raycast Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.&#xA;具体使用这边就不介绍了，它是一个功能丰富的启动器，我们可以自定义启动器的快捷键，我这边的是option + space. 然后你可以同通过启动器来启动软件，不再需要翻软件列表了。当然它有很多的功能，日历，剪切板历史，窗口管理等&amp;hellip;&#xA;Hotkey 你可以理解它其实就是全局的快捷键，我们可以将常用的application设置hotkey。这样我们可以快速的打开它。换着快速切换到它活跃的窗口。&#xA;Window Management 我们会不会经常需要左边打开浏览器，右边打开编辑器。你还在那不断的拖拽窗口来调整他们的大小吗？&#xA;很惊喜，Raycast自带窗口管理器，我们可以通过它的command或者自己设置hotkey来进行窗口管理。&#xA;它拥有丰富的插件库，如果你感兴趣可以去翻翻，还有很多好的功能。&#xA;终端 Wezterm WezTerm is a powerful cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust</description>
-    </item>
-    <item>
-      <title>解锁Go并发编程的新姿势 -- conc项目解析</title>
-      <link>https://blog.kalifun.top/post/golang/conc/</link>
-      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.kalifun.top/post/golang/conc/</guid>
-      <description>编写高并发程序常常让人头疼:代码冗余、死锁风险、逻辑复杂等等。Go语言的标准库提供了sync.WaitGroup、channel等工具来实现并发控制,但使用起来还是有一些困难。conc项目就是为了解决这些痛点而生的。&#xA;主要功能 1. WaitGroup 在编写并发demo时,我们经常需要用到sync.WaitGroup来等待所有goroutine执行完毕。每次都要添加Add(),在goroutine退出前调用Done(),最后Wait()等待,非常繁琐。&#xA;标准库示例:&#xA;1 2 3 4 5 6 7 8 9 10 11 12 func main() { var wg sync.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.Add(1) go func() { defer wg.Done() // 如果doSomething()panic,程序会崩溃 doSomething() }() } wg.Wait() } 使用conc后:&#xA;1 2 3 4 5 6 7 func main() { var wg conc.WaitGroup for i := 0; i &amp;lt; 10; i++ { wg.</description>
-    </item>
-    <item>
-      <title>Broadcom Wrieless Archlinux</title>
-      <link>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</link>
-      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.kalifun.top/post/arch/broadcom_wireless_arch/</guid>
-      <description>I recently installed Arch. but my network card is not working.&#xA;I was surprised, i still had to install the driver myself?&#xA;The Arch documentation is so rich.&#xA;You can visit this link.&#xA;Look for problems 1 lspic -vnn -d 14e4: The NIC is already recognized by the system.&#xA;display message Check whether the system starts abnormally.&#xA;1 dmesg I thought it was a driver error and I tried uninstalling the installation.</description>
     </item>
   </channel>
 </rss>

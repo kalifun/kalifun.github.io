@@ -5,7 +5,256 @@
     <description>Recent content on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kalifun.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.kalifun.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Workflow Wizard</title>
+    <link>https://blog.kalifun.top/post/workflow/workflow_wizard/</link>
+    <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+    <author>kalifun</author>
+    <guid>https://blog.kalifun.top/post/workflow/workflow_wizard/</guid>
+    <description>
+        &lt;blockquote&gt;
+&lt;p&gt;工欲善其事，必先利其器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个是记录自己在工作流上感觉很方便，很好用的工具集。可能会随着时间的推移它会变得越来越有效率。&lt;/p&gt;
+&lt;p&gt;你也可以理解我正在直播带货，我会将这些好用的工具分享给各位，但不用担心他们都是免费的。&lt;/p&gt;
+&lt;p&gt;我会按照工具的分类来介绍，也会提供一些简单的玩法，更多可能需要你自己的探索。&lt;/p&gt;
+&lt;h2 id=&#34;输入法&#34;&gt;
+    &lt;a href=&#34;#%e8%be%93%e5%85%a5%e6%b3%95&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    输入法
+&lt;/h2&gt;
+&lt;p&gt;输入法是日常工作中必不可少的工具,选择一个高效的输入方案可以极大提高输入速度。本人推荐使用&lt;strong&gt;双拼&lt;/strong&gt;输入方案,相比全拼,它只需通过声母+韵母的组合即可输入所需的汉字,击键次数更少,输入效率更高。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;双拼&lt;/strong&gt;是&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95&#34; title=&#34;汉语拼音输入法&#34;&gt;汉语拼音输入法&lt;/a&gt;的一种编码方案。相对于&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%85%A8%E6%8B%BC&#34; title=&#34;全拼&#34;&gt;全拼&lt;/a&gt;而言，使用双拼输入&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%B1%89%E5%AD%97&#34; title=&#34;汉字&#34;&gt;汉字&lt;/a&gt;时只需输入一个代表&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%A3%B0%E6%AF%8D&#34; title=&#34;声母&#34;&gt;声母&lt;/a&gt;的字母，一个代表&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E9%9F%B5%E6%AF%8D&#34; title=&#34;韵母&#34;&gt;韵母&lt;/a&gt;的字母，就可以打出任意一个中文字了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我举个简单的例子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全拼
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;双 s h u a n g&lt;/code&gt; 我们需要输入&lt;code&gt;6&lt;/code&gt;次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;双拼
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;双 sh uang&lt;/code&gt;我们只需要输入&lt;code&gt;2&lt;/code&gt;次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那会好奇，键盘上没有这种组合键啊？其实和五笔是一个逻辑，就是它有自己的一套标准，需要我们记忆键位，才能完美的输出自己想要的字。市面有很多双拼方案，他们的键位映射是不一样的，所以可以先去了解不同的方案的键位，我们这边推荐&lt;code&gt;小鹤双拼&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;小鹤双拼&#34;&gt;
+    &lt;a href=&#34;#%e5%b0%8f%e9%b9%a4%e5%8f%8c%e6%8b%bc&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    小鹤双拼
+&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; 
+    src=&#34;https://flypy.cc/assets/img/heup.png&#34; 
+    alt=&#34;&#34; 
+     /&gt;&lt;/p&gt;
+&lt;p&gt;当我们输入&lt;code&gt;双&lt;/code&gt;的时候，我们只需要&lt;code&gt;u&lt;/code&gt; + &lt;code&gt;l&lt;/code&gt;，就可以了，这个需要自己形成肌肉记忆。推荐看看&lt;a href=&#34;https://flypy.com/&#34;&gt;官网&lt;/a&gt;，会有一些记忆法可以帮助到你。&lt;/p&gt;
+&lt;p&gt;如果对输入法隐私有所顾虑,也可以考虑使用开源的&lt;strong&gt;Rime&lt;/strong&gt;输入法引擎,它支持高度定制,并且无需连接在线服务器。&lt;/p&gt;
+&lt;h2 id=&#34;启动器&#34;&gt;
+    &lt;a href=&#34;#%e5%90%af%e5%8a%a8%e5%99%a8&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    启动器
+&lt;/h2&gt;
+&lt;h3 id=&#34;raycasthttpswwwraycastcom&#34;&gt;
+    &lt;a href=&#34;#raycasthttpswwwraycastcom&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;a href=&#34;https://www.raycast.com/&#34;&gt;Raycast&lt;/a&gt;
+&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Raycast is a blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;具体使用这边就不介绍了，它是一个功能丰富的启动器，我们可以自定义启动器的快捷键，我这边的是&lt;code&gt;option&lt;/code&gt; + &lt;code&gt;space&lt;/code&gt;. 然后你可以同通过启动器来启动软件，不再需要翻软件列表了。当然它有很多的功能，&lt;code&gt;日历&lt;/code&gt;，&lt;code&gt;剪切板历史&lt;/code&gt;，&lt;code&gt;窗口管理&lt;/code&gt;等&amp;hellip;&lt;/p&gt;
+&lt;h4 id=&#34;hotkey&#34;&gt;
+    &lt;a href=&#34;#hotkey&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Hotkey
+&lt;/h4&gt;
+&lt;p&gt;你可以理解它其实就是全局的快捷键，我们可以将常用的&lt;code&gt;application&lt;/code&gt;设置&lt;code&gt;hotkey&lt;/code&gt;。这样我们可以快速的打开它。换着快速切换到它活跃的窗口。&lt;/p&gt;
+&lt;h4 id=&#34;window-management&#34;&gt;
+    &lt;a href=&#34;#window-management&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Window Management
+&lt;/h4&gt;
+&lt;p&gt;我们会不会经常需要左边打开浏览器，右边打开编辑器。你还在那不断的拖拽窗口来调整他们的大小吗？&lt;/p&gt;
+&lt;p&gt;很惊喜，&lt;code&gt;Raycast&lt;/code&gt;自带窗口管理器，我们可以通过它的&lt;code&gt;command&lt;/code&gt;或者自己设置&lt;code&gt;hotkey&lt;/code&gt;来进行窗口管理。&lt;/p&gt;
+&lt;p&gt;它拥有丰富的插件库，如果你感兴趣可以去翻翻，还有很多好的功能。&lt;/p&gt;
+&lt;h2 id=&#34;终端&#34;&gt;
+    &lt;a href=&#34;#%e7%bb%88%e7%ab%af&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    终端
+&lt;/h2&gt;
+&lt;h3 id=&#34;wezterm&#34;&gt;
+    &lt;a href=&#34;#wezterm&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Wezterm
+&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;WezTerm is a powerful cross-platform terminal emulator and multiplexer written by &lt;a href=&#34;https://github.com/wez/&#34;&gt;&lt;/a&gt;&lt;a href=&#34;https://github.com/wez&#34; title=&#34;GitHub User: wez&#34;&gt;@wez&lt;/a&gt; and implemented in &lt;a href=&#34;https://www.rust-lang.org/&#34;&gt;Rust&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果喜欢在终端上编程的同学，也许它是一个不错的选择。它可以使用&lt;code&gt;lua&lt;/code&gt;进行配置，并自定义快捷键来对&lt;code&gt;pane&lt;/code&gt;进行操作。如果你是&lt;code&gt;win&lt;/code&gt;+&lt;code&gt;wsl&lt;/code&gt;的用户，我真心推荐。&lt;/p&gt;
+&lt;h4 id=&#34;fzfhttpsgithubcomjunegunnfzf&#34;&gt;
+    &lt;a href=&#34;#fzfhttpsgithubcomjunegunnfzf&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;a href=&#34;https://github.com/junegunn/fzf&#34;&gt;fzf&lt;/a&gt;
+&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;fzf is a general-purpose command-line fuzzy finder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我会用于搜索目录，并通过&lt;code&gt;tmux&lt;/code&gt;来创建一个&lt;code&gt;session&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;zoxidehttpsgithubcomajeetdsouzazoxide&#34;&gt;
+    &lt;a href=&#34;#zoxidehttpsgithubcomajeetdsouzazoxide&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    &lt;a href=&#34;https://github.com/ajeetdsouza/zoxide&#34;&gt;zoxide&lt;/a&gt;
+&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A smarter cd command. Supports all major shells.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果我们配置好了&lt;code&gt;zoxide&lt;/code&gt;后，我们进入过一个文件夹&lt;code&gt;/Users/kalifun/Code/github/openCore&lt;/code&gt;下次我们还这样输入完整路径？No！我们可以模糊匹配。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;z github open
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;浏览器&#34;&gt;
+    &lt;a href=&#34;#%e6%b5%8f%e8%a7%88%e5%99%a8&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    浏览器
+&lt;/h2&gt;
+&lt;h3 id=&#34;arc&#34;&gt;
+    &lt;a href=&#34;#arc&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Arc
+&lt;/h3&gt;
+&lt;p&gt;感觉是一个用了就回不去的浏览器，它虽然是&lt;code&gt;Chromium&lt;/code&gt;内核，但确在改变我们使用正常浏览器的思路。
+我想我们的浏览器tab页多到头皮发麻吧，但很多页面呢都是搜索引擎的列表什么的。&lt;code&gt;Arc&lt;/code&gt;可以悬浮查看页面，如果满意可以全屏，如果不满意就直接关闭了这个检索结果。或者你在浏览博客，有人引入了其他的页面，你想看看写的是什么，它可以直接&lt;code&gt;split&lt;/code&gt;，将会分出一半的屏幕给你预览。
+还有什么Workspace，还有一些ai功能，都是非常好用的。&lt;/p&gt;
+&lt;p&gt;这里我也没有提到扩展，有了扩展我们可以让效率再次提升。&lt;/p&gt;
+&lt;h2 id=&#34;开发工具&#34;&gt;
+    &lt;a href=&#34;#%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    开发工具
+&lt;/h2&gt;
+&lt;h3 id=&#34;neovim&#34;&gt;
+    &lt;a href=&#34;#neovim&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    Neovim
+&lt;/h3&gt;
+&lt;p&gt;我非常喜欢结合&lt;code&gt;tmux&lt;/code&gt;一起来使用，这样我可以同时管理多个项目，且切换起来非常方便。
+大多数人一看到这个就会觉得你在装，用VSCode不用，非要用这种毛坯？一堆的快捷键，用着好繁琐。&lt;/p&gt;
+&lt;p&gt;这些都是让我使用它的原因，使用它我可以让我慢慢的抛弃鼠标，能键盘做的事情绝不用鼠标。
+如果你觉得配置好头痛，你可以使用&lt;code&gt;lazyvim&lt;/code&gt;或者其他的配置，他们都帮我配置好了，你可以直接使用。可能一些快捷键需要熟悉一下。&lt;/p&gt;
+&lt;h3 id=&#34;tmux&#34;&gt;
+    &lt;a href=&#34;#tmux&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    tmux
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;prefix&lt;/code&gt; + &lt;code&gt;w&lt;/code&gt; 窗口列表
+&lt;code&gt;prefix&lt;/code&gt; + &lt;code&gt;b&lt;/code&gt; 下个窗口
+&amp;hellip;&amp;hellip;.&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;
+    &lt;a href=&#34;#%e6%80%bb%e7%bb%93&#34; class=&#34;anchor&#34;&gt;
+        &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
+            &lt;path fill-rule=&#34;evenodd&#34;
+                d=&#34;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&#34;&gt;
+            &lt;/path&gt;
+        &lt;/svg&gt;
+    &lt;/a&gt;
+    总结
+&lt;/h2&gt;
+&lt;p&gt;我这里不想过多的去讲配置，使用方法，不然每个软件都可以输出一个文章了。后面我也会写一些我的配置，也是用来记录。我觉得在工作流程中如果能用快捷键解决的就别用鼠标去点了，真的操作起来慢，还费手腕。&lt;/p&gt;
+&lt;p&gt;我也简单说说我这边用的爽的点吧！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我要聊微信的时候&lt;code&gt;option&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;我需要打开wezterm时&lt;code&gt;option&lt;/code&gt; + &lt;code&gt;w&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;我需要使用浏览器时&lt;code&gt;option&lt;/code&gt; + &lt;code&gt;a&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;我在&lt;code&gt;Arc&lt;/code&gt;上需要搜索&lt;code&gt;lazyvim&lt;/code&gt;代码库时，&lt;code&gt;⌘&lt;/code&gt; + &lt;code&gt;t&lt;/code&gt;,输入&lt;code&gt;gh&lt;/code&gt; + &lt;code&gt;tab&lt;/code&gt; + &lt;code&gt;lazyvim&lt;/code&gt;。浏览器就帮我打开&lt;code&gt;GitHub&lt;/code&gt;搜索&lt;code&gt;lazyvim&lt;/code&gt;代码库。
+还有很多使用场景我就不一一列举，如果感兴趣我们可以交流交流。&lt;/li&gt;
+&lt;/ul&gt;
+
+    </description>
+    </item>
+    
     <item>
     <title>解锁Go并发编程的新姿势 -- conc项目解析</title>
     <link>https://blog.kalifun.top/post/golang/conc/</link>
