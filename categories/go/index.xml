@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on kalifun</title>
+    <link>https://blog.kalifun.top/categories/go/</link>
+    <description>Recent content in go on kalifun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.kalifun.top/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自动化状态管理：优化项目开发中的状态流转</title>
+      <link>https://blog.kalifun.top/post/mathmodel/fsm_demo/</link>
+      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.kalifun.top/post/mathmodel/fsm_demo/</guid>
+      <description>有限状态机（英语：finite-state machine，缩写：FSM）又称有限状态自动机（英语：finite-state automaton，缩写：FSA），简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学计算模型。&#xA;状态机是由以下几个核心组成：&#xA;状态（state）：表示我们常见的a-&amp;gt;b-&amp;gt;c的状态序列。 事件（event）：触发从一个状态到另一个状态转换的条件。 动作（action）：在从一个状态转换到另一个状态时执行的具体操作。 转换（transition）：表示从一个状态到另一个状态的过程。 使用状态机的原因 随着项目的迭代，状态的数量可能会越来越多。以前可能还能通过使用if和switch语句来维护状态，但随着状态的增加，这种方法变得难以应付。状态的嵌套层级越来越深，并且许多产品还涉及到状态的回退，导致状态转换的判断变得复杂且难以维护。&#xA;使用状态机，我们可以根据预先定义好的状态自动进行状态流转。通过将状态和行为进行抽象和模块化，我们可以更好地管理和维护状态。&#xA;项目实践 下面是一个简单的示例，展示了一个真实项目中的状态流转：&#xA;状态 值 操作 标注待领取 1 领取: 标注中 标注中 2 提交: 内检待领取 内检待领取 3 领取: 内检中 内检中 4 提交: 验收待领取 打回: 标注待领取 验收待领取 5 领取: 验收中 验收中 6 提交: 已完成 打回: 内检待领取 已完成 7 在这个例子中，我们先构建了一个状态和操作的映射表（Map），然后根据事件来判断要执行的操作。如果存在对应的事件和操作，就进行状态的转换。这样就完成了整个流程。&#xA;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 package main import ( &amp;#34;fmt&amp;#34; ) func main() { Run(Default, Submit) Run(MarkPick, Submit) Run(Mark, Submit) Run(MarkPick, Receive) Run(Check, CallBack) } func Run(state State, event Event) { if v, ok := transitions[state][event]; ok { s := &amp;#34;&amp;#34; if v1, ok := stateName[state]; ok { s = v1 } s2 := &amp;#34;&amp;#34; if v2, ok := stateName[v]; ok { s2 = v2 } fmt.</description>
+    </item>
+  </channel>
+</rss>

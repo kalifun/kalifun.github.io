@@ -18,7 +18,13 @@
     <loc>https://blog.kalifun.top/categories/dev/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.kalifun.top/categories/go/</loc>
+    <lastmod>2024-03-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.kalifun.top/categories/golang/</loc>
+    <lastmod>2024-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kalifun.top/categories/math-model/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.kalifun.top/post/</loc>
@@ -34,6 +40,9 @@
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.kalifun.top/post/golang/tests/</loc>
+    <lastmod>2024-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kalifun.top/post/mathmodel/fsm_demo/</loc>
     <lastmod>2024-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.kalifun.top/categories/golang%E5%BC%80%E6%BA%90%E5%BA%93/</loc>
