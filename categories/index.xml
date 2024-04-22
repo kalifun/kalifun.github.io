@@ -6,20 +6,27 @@
     <description>Recent content in Categories on kalifun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.kalifun.top/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dev</title>
       <link>https://blog.kalifun.top/categories/dev/</link>
-      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/categories/dev/</guid>
       <description></description>
     </item>
     <item>
       <title>go</title>
       <link>https://blog.kalifun.top/categories/go/</link>
-      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/categories/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>math model</title>
+      <link>https://blog.kalifun.top/categories/math-model/</link>
+      <pubDate>Fri, 19 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.kalifun.top/categories/math-model/</guid>
       <description></description>
     </item>
     <item>
@@ -27,13 +34,6 @@
       <link>https://blog.kalifun.top/categories/golang/</link>
       <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.kalifun.top/categories/golang/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>math model</title>
-      <link>https://blog.kalifun.top/categories/math-model/</link>
-      <pubDate>Mon, 25 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.kalifun.top/categories/math-model/</guid>
       <description></description>
     </item>
     <item>
